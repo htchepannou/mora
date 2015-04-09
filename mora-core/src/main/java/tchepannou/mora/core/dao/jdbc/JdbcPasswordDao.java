@@ -20,6 +20,16 @@ public class JdbcPasswordDao extends JdbcModelDao implements PasswordDao {
 
     //-- PasswordDao overrides
     @Override
+    public Password findById(long id) {
+        try {
+            return template.queryForObject("SELECT * FROM t_password WHERE id=?", new Object[] {id}, MAPPER);
+        } catch (org.springframework.dao.EmptyResultDataAccessException e){ // NOSONAR - Each exception intentionally
+            return null;
+        }
+    }
+
+
+    @Override
     public Password findByUser(long userId) {
         try{
             String sql = "SELECT * FROM t_password WHERE user_id=?";
@@ -55,8 +65,8 @@ public class JdbcPasswordDao extends JdbcModelDao implements PasswordDao {
 
     @Override
     public void update(final Password password) {
-        String sql = "UPDATE t_password SET value=?, user_id=?, last_update=? WHERE id=?";
-        template.update(sql, password.getValue(), password.getUserId(), password.getLastUpdate(), password.getId());
+        String sql = "UPDATE t_password SET value=?, last_update=? WHERE id=?";
+        template.update(sql, password.getValue(), password.getLastUpdate(), password.getId());
     }
 
 }

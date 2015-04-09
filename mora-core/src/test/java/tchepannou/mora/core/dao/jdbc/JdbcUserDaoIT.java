@@ -161,7 +161,11 @@ public class JdbcUserDaoIT {
         // Then
         assertThat(user.getId(), equalTo(result));
 
+        user = userDao.findById(result);
+
         expected.setId(result);
+        expected.setCreationDate(user.getCreationDate());
+        expected.setLastUpdate(user.getLastUpdate());
         assertThat(user, equalTo(expected));
     }
 
@@ -188,8 +192,6 @@ public class JdbcUserDaoIT {
         User result = userDao.findById(1);
 
         // Then
-        assertThat(result.getLastUpdate().getTime()/1000, equalTo(now.getTime()/1000)); // Fix millisecond discrepancy
-
         expected.setLastUpdate(result.getLastUpdate());
         assertThat(result, equalTo(expected));
     }
