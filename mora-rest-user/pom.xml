@@ -16,7 +16,7 @@
     <version>1.0</version>
 
     <properties>
-        <<sonar.jacoco.itReportPath>${env.WORKSPACE}/target/jacoco-it.exec</sonar.jacoco.itReportPath>
+        <sonar.jacoco.itReportPath>${env.WORKSPACE}/target/jacoco-it.exec</sonar.jacoco.itReportPath>
     </properties>
 
     <dependencies>
