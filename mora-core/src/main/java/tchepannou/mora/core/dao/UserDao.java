@@ -9,4 +9,5 @@ public interface UserDao {
     List<User> findByUsername(String username, boolean deleted);
     List<User> findByEmail(String email, boolean deleted);
     void save(User user);
+    void delete(User user);
 }

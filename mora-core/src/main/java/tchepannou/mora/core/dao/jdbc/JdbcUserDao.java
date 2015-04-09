@@ -52,7 +52,7 @@ public class JdbcUserDao extends JdbcModelDao implements UserDao {
                     ps.setString(2, user.getEmail());
                     ps.setString(3, user.getFirstName());
                     ps.setString(4, user.getLastName());
-                    ps.setBoolean(5, user.isDeleted());
+                    ps.setBoolean(5, false);
                     ps.setTimestamp(6, new Timestamp(user.getCreationDate().getTime()));
                     ps.setTimestamp(7, new Timestamp(user.getLastUpdate().getTime()));
                     return ps;
@@ -62,9 +62,17 @@ public class JdbcUserDao extends JdbcModelDao implements UserDao {
 
             user.setId(holder.getKey().longValue());
         } else {
-            String sql = "UPDATE t_user SET username=?, email=?, firstname=?, lastname=?, deleted=?, creation_date=?, last_update=? WHERE id=?";
-            template.update(sql, user.getUsername(), user.getEmail(), user.getFirstName(), user.getLastName(), user.isDeleted(), user.getCreationDate(), user.getLastUpdate(), user.getId());
+            String sql = "UPDATE t_user SET username=?, email=?, firstname=?, lastname=?, last_update=? WHERE id=?";
+            template.update(sql, user.getUsername(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getLastUpdate(), user.getId());
         }
 
     }
+
+
+    @Override
+    public void delete(final User user) {
+        String sql = "UPDATE t_user SET deleted=? WHERE id=?";
+        template.update(sql, true, user.getId());
+    }
 }
+

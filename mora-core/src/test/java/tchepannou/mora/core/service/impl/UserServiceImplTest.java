@@ -225,15 +225,10 @@ public class UserServiceImplTest{
         // Given
         User user = new User (1);
 
-        User expected = new User (user);
-        expected.setDeleted(true);
-
         // When
         service.delete(user);
 
         // Then
-        verify(userDao).save(user);
-
-        assertThat(user, equalTo(expected));
+        verify(userDao).delete(user);
     }
 }

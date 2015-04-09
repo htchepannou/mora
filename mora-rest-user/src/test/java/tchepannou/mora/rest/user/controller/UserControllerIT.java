@@ -30,7 +30,7 @@ import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 @SpringApplicationConfiguration (classes = Application.class)
 @WebIntegrationTest
 @SqlGroup({
-        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/clean.sql", "classpath:db/populate.sql"}),
+        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/core-populate.sql"}),
 })
 public class UserControllerIT {
     @Value ("${server.port}")

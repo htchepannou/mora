@@ -1,5 +1,6 @@
 package tchepannou.mora.core.dao.jdbc;
 
+import org.apache.commons.lang.time.DateUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,25 +15,35 @@ import tchepannou.mora.core.domain.User;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
-import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.Matchers.greaterThan;
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
 
 @RunWith (SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JdbcConfig.class})
 @SqlGroup ({
-        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/clean.sql", "classpath:db/populate.sql"}),
+        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/core-populate.sql"}),
 })
 public class JdbcUserDaoIT {
     @Autowired
     private UserDao userDao;
 
+    private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
 
     @Test
     public void testFindById() throws Exception {
         // Given
-        DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        // When
+        User result = userDao.findById(1);
+
+        // Then
         User expected = new User (1);
         expected.setUsername("ray.sponsible");
         expected.setEmail("ray.sponsible@gmail.com");
@@ -41,26 +52,163 @@ public class JdbcUserDaoIT {
         expected.setDeleted(false);
         expected.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
         expected.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
+        assertThat(result, equalTo(expected));
+    }
+    @Test
+    public void testFindById_notFound_shouldReturnsNull() throws Exception {
+        // Given
 
         // When
-        User user = userDao.findById(1);
+        User result = userDao.findById(999);
 
         // Then
+        assertThat(result, nullValue());
+    }
+
+    @Test
+    public void testFindByEmail() throws Exception {
+        // Given
+
+        // When
+        List<User> result = userDao.findByEmail("ray.sponsible@gmail.com", true);
+
+        // Then
+        User user1 = new User (10);
+        user1.setUsername("#ray.sponsible");
+        user1.setEmail("ray.sponsible@gmail.com");
+        user1.setLastName("Sponsible");
+        user1.setFirstName("Ray");
+        user1.setDeleted(true);
+        user1.setCreationDate(new Timestamp(fmt.parse("2011-01-01 10:30:55").getTime()));
+        user1.setLastUpdate(new Timestamp(fmt.parse("2012-12-01 14:30:55").getTime()));
+
+        User user2 = new User (11);
+        user2.setUsername("##ray.sponsible");
+        user2.setEmail("ray.sponsible@gmail.com");
+        user2.setLastName("Sponsible");
+        user2.setFirstName("Ray");
+        user2.setDeleted(true);
+        user2.setCreationDate(new Timestamp(fmt.parse("2011-01-01 10:30:55").getTime()));
+        user2.setLastUpdate(new Timestamp(fmt.parse("2012-12-01 14:30:55").getTime()));
+
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(user1, user2));
+    }
+
+    @Test
+    public void testFindByEmail_notFound_shouldReturnEmptyList() throws Exception {
+        // Given
+
+        // When
+        List<User> result = userDao.findByEmail("__ray.sponsible__@gmail.com", true);
+
+        // Then
+        assertThat(result, hasSize(0));
+    }
+
+    //    @Test
+    public void testFindByUsername() throws Exception {
+        // Given
+
+        // When
+        List<User> result = userDao.findByEmail("#ray.sponsible@gmail.com", true);
+
+        // Then
+        User user1 = new User (10);
+        user1.setUsername("#ray.sponsible");
+        user1.setEmail("ray.sponsible@gmail.com");
+        user1.setLastName("Sponsible");
+        user1.setFirstName("Ray");
+        user1.setDeleted(true);
+        user1.setCreationDate(new Timestamp(fmt.parse("2011-01-01 10:30:55").getTime()));
+        user1.setLastUpdate(new Timestamp(fmt.parse("2012-12-01 14:30:55").getTime()));
+
+        assertThat(result, hasSize(1));
+        assertThat(result, hasItems(user1));
+
+    }
+
+
+    @Test
+    public void testFindByUsername_notFound_shouldReturnEmptyList() throws Exception {
+        // Given
+
+        // When
+        List<User> result = userDao.findByUsername("__ray.sponsible__", true);
+
+        // Then
+        assertThat(result, hasSize(0));
+    }
+
+    @Test
+    public void testSave_Insert() throws Exception {
+        // Given
+        Date now = new Date();
+        String username =  String.valueOf(System.currentTimeMillis());
+        User user = new User ();
+        user.setUsername(username);
+        user.setEmail(username + "@gmail.com");
+        user.setDeleted(false);
+        user.setLastName("Tchepannou");
+        user.setFirstName("Herve");
+        user.setCreationDate(DateUtils.addDays(now, -1));
+        user.setLastUpdate(now);
+
+        User expected = new User(user);
+
+        // When
+        userDao.save(user);
+
+        // Then
+        assertThat(user.getId(), greaterThan(0L));
+
+        expected.setId(user.getId());
         assertThat(user, equalTo(expected));
     }
 
-//    @Test
-//    public void testFindByEmail() throws Exception {
-//
-//    }
-//
-//    @Test
-//    public void testFindByUsername() throws Exception {
-//
-//    }
-//
-//    @Test
-//    public void testSave() throws Exception {
-//
-//    }
+
+    @Test
+    public void testSave_Update() throws Exception {
+        // Given
+        Date now = new Date();
+        String username =  String.valueOf(System.currentTimeMillis());
+        User user = new User ();
+        user.setId(1);
+        user.setUsername(username);
+        user.setEmail(username + "@gmail.com");
+        user.setLastName("Tchepannou");
+        user.setFirstName("Herve");
+        user.setCreationDate(DateUtils.addDays(now, -1));
+        user.setLastUpdate(now);
+
+        User expected = new User(user);
+        expected.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+
+        // When
+        userDao.save(user);
+        User result = userDao.findById(1);
+
+        // Then
+        assertThat(result.getLastUpdate().getTime()/1000, equalTo(now.getTime()/1000)); // Fix millisecond discrepancy
+
+        expected.setLastUpdate(result.getLastUpdate());
+        assertThat(result, equalTo(expected));
+    }
+
+
+
+    @Test
+    public void testDelete() throws Exception {
+        // Given
+        User user = userDao.findById(1);
+
+        // When
+        userDao.delete(user);
+        User result = userDao.findById(1);
+
+        // Then
+        User expected = new User (user);
+        expected.setDeleted(true);
+        assertThat(result, equalTo(expected));
+    }
 }
