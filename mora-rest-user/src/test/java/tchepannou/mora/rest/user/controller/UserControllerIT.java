@@ -1,14 +1,16 @@
 package tchepannou.mora.rest.user.controller;
 
+import com.jayway.restassured.RestAssured;
 import org.apache.http.HttpStatus;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.boot.test.IntegrationTest;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import tchepannou.mora.rest.user.Application;
 
 import static com.jayway.restassured.RestAssured.when;
@@ -16,13 +18,18 @@ import static org.hamcrest.Matchers.is;
 
 @RunWith (SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration (classes = Application.class)
-@WebAppConfiguration
-@IntegrationTest ("server.port:8080")
+@WebIntegrationTest
 @SqlGroup({
-        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = "classpath:db/setup.sql"),
-        @Sql (executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD, scripts = "classpath:db/teardown.sql")
+        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/clean.sql", "classpath:db/populate.sql"}),
 })
 public class UserControllerIT {
+    @Value ("${server.port}")
+    private int port;
+
+    @Before
+    public void setUp (){
+        RestAssured.port = this.port;
+    }
 
     @Test
     public void testGet() throws Exception {

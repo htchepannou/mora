@@ -2,31 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_json_path_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_rest_assured_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_rest_assured_common_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_xml_path_2_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_3_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_3_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_3_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ccil_cowan_tagsoup_tagsoup_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_2_3_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_json_2_3_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_xml_2_3_11.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/setup.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/teardown.sql" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerTest.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/swagger/ApiPathProvider.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/swagger/ApiPathProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/impl/PasswordServiceImpl.java" afterPath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/impl/PasswordServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/mapper/UserMapper.java" afterPath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/mapper/UserMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/exception/UserNotFoundException.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/exception/UserNotFoundException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" afterPath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/pom.xml" afterPath="$PROJECT_DIR$/mora-rest-user/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/setup.sql" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/teardown.sql" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/clean.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora.iml" afterPath="$PROJECT_DIR$/mora.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
@@ -61,18 +42,62 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.078431" vertical-offset="581" max-vertical-offset="1320">
-              <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
+            <state vertical-scroll-proportion="-3.372549" vertical-offset="83" max-vertical-offset="1320">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-domain/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.6078432" vertical-offset="173" max-vertical-offset="1395">
+              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mora-rest-user/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.27071825" vertical-offset="852" max-vertical-offset="1395">
-              <caret line="47" column="108" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+            <state vertical-scroll-proportion="-2.2916667" vertical-offset="845" max-vertical-offset="1395">
+              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+              <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserControllerIT.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2549476" vertical-offset="126" max-vertical-offset="1335">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1108#1109#0" expanded="true" />
+                <element signature="e#1152#1153#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Sql.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.1.6.RELEASE/spring-test-4.1.6.RELEASE.jar!/org/springframework/test/context/jdbc/Sql.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.64" vertical-offset="149" max-vertical-offset="510">
+              <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -86,7 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/UserService.java" />
         <option value="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/PasswordService.java" />
         <option value="$PROJECT_DIR$/mora-rest/src/main/java/tchepannou/mora/rest/controller/user/UserResource.java" />
         <option value="$PROJECT_DIR$/mora-rest/src/main/java/tchepannou/mora/rest/controller/user/UserController.java" />
@@ -118,7 +142,6 @@
         <option value="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcPasswordDao.java" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/Application.java" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/SwaggerConfig.java" />
-        <option value="$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/main/resources/public/docs/index.html" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/UserResource.java" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/UserSaveRequest.java" />
@@ -137,6 +160,8 @@
         <option value="$PROJECT_DIR$/mora-rest-user/src/it/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-user/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties" />
+        <option value="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
       </list>
     </option>
   </component>
@@ -185,15 +210,9 @@
               <option name="myItemId" value="moe" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="moe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -203,10 +222,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -221,6 +236,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mora-rest-user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -243,6 +276,14 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -314,6 +355,9 @@
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../teamz" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/mora-rest-user/src/it/java" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -344,35 +388,7 @@
       <recent name="$PROJECT_DIR$/mora-rest-user/src/main/resources/public/docs" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.tchepannou.mora.core in mora-domain">
-    <configuration default="false" name="UserControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tchepannou.mora.rest.user.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="mora-rest-user" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.user.controller" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.user.controller.UserControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.UserControllerIT.testGet">
     <configuration default="false" name="UserControllerIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -399,38 +415,6 @@
       <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="UserControllerIT.testGet_NotFound_ShouldReturn404" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tchepannou.mora.rest.user.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="mora-rest-user" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.user.controller" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.user.controller.UserControllerIT" />
-      <option name="METHOD_NAME" value="testGet_NotFound_ShouldReturn404" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="false" name="UserControllerIT.testGet_notFound_shouldReturn404" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
@@ -490,6 +474,63 @@
       <envs />
       <patterns />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in mora-rest-user" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="mora-rest-user" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="UserControllerIT.testGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tchepannou.mora.rest.user.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mora-rest-user" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.user.controller" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.user.controller.UserControllerIT" />
+      <option name="METHOD_NAME" value="testGet" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -647,19 +688,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.UserControllerTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.UserControllerIT" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet_NotFound_ShouldReturn404" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet_notFound_shouldReturn404" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.tchepannou.mora.core in mora-domain" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.UserControllerIT" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet_notFound_shouldReturn404" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.tchepannou.mora.core in mora-domain" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in mora-rest-user" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.tchepannou.mora.core in mora-domain" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserControllerIT" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet_notFound_shouldReturn404" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet_NotFound_ShouldReturn404" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.UserControllerTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in mora-rest-user" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UserControllerIT" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.tchepannou.mora.core in mora-domain" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.UserControllerIT.testGet_notFound_shouldReturn404" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -686,12 +727,13 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36527622" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45546788" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6583991" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -725,7 +767,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java</url>
+          <line>30</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -910,13 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48816568" vertical-offset="0" max-vertical-offset="338">
-          <caret line="11" column="30" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/wordnik/swagger-annotations/1.3.2/swagger-annotations-1.3.2.jar!/com/wordnik/swagger/annotations/ApiModelProperty.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33546326" vertical-offset="0" max-vertical-offset="435">
@@ -1010,14 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.1.6.RELEASE/spring-test-4.1.6.RELEASE.jar!/org/springframework/test/context/jdbc/Sql.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/UserDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1275">
@@ -1026,18 +1061,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/teardown.sql">
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/clean.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="90">
           <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-domain/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70902395" vertical-offset="560" max-vertical-offset="1395">
-          <caret line="63" column="40" selection-start-line="63" selection-start-column="37" selection-end-line="63" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1061,7 +1088,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/setup.sql">
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="105">
           <caret line="0" column="203" selection-start-line="0" selection-start-column="203" selection-end-line="0" selection-end-column="222" />
@@ -1079,16 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="284" max-vertical-offset="1230">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/mapper/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6128405" vertical-offset="0" max-vertical-offset="514">
@@ -1097,21 +1114,133 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.078431" vertical-offset="581" max-vertical-offset="1320">
-          <caret line="73" column="38" selection-start-line="73" selection-start-column="38" selection-end-line="73" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-user/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.27071825" vertical-offset="852" max-vertical-offset="1395">
-          <caret line="47" column="108" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
+        <state vertical-scroll-proportion="-2.2916667" vertical-offset="845" max-vertical-offset="1395">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.372549" vertical-offset="83" max-vertical-offset="1320">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-domain/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6078432" vertical-offset="173" max-vertical-offset="1395">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/4.1.6.RELEASE/spring-test-4.1.6.RELEASE.jar!/org/springframework/test/context/jdbc/Sql.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.64" vertical-offset="149" max-vertical-offset="510">
+          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2549476" vertical-offset="126" max-vertical-offset="1335">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1152#1153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>GAE 1.8.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>mora</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
