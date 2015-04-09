@@ -44,7 +44,7 @@ public class AuthServiceTest {
     public void testFindByKey() throws Exception {
         // Given
         AccessToken token = new AccessToken();
-        when(accessTokenDao.findByKey("toto")).thenReturn(token);
+        when(accessTokenDao.findByValue("toto")).thenReturn(token);
 
         // When/Then
         assertThat(service.findByKey("toto"), equalTo(token));
@@ -54,7 +54,7 @@ public class AuthServiceTest {
     public void testLogout() throws Exception {
         // Given
         AccessToken token = mock(AccessToken.class);
-        when(accessTokenDao.findByKey("toto")).thenReturn(token);
+        when(accessTokenDao.findByValue("toto")).thenReturn(token);
 
         // When
         service.logout("toto");
@@ -102,7 +102,7 @@ public class AuthServiceTest {
         assertThat(DateUtils.addMinutes(result.getCreationDate(), 15), greaterThanOrEqualTo(result.getExpiryDate()));
 
         AccessToken expected = new AccessToken(user);
-        expected.setKey("_key_");
+        expected.setValue("_key_");
         expected.setCreationDate(result.getCreationDate());
         expected.setExpiryDate(result.getExpiryDate());
         assertThat(result, equalTo(expected));
@@ -172,7 +172,7 @@ public class AuthServiceTest {
         assertThat(DateUtils.addMinutes(result.getCreationDate(), 15), greaterThanOrEqualTo(result.getExpiryDate()));
 
         AccessToken expected = new AccessToken(user);
-        expected.setKey("_key_");
+        expected.setValue("_key_");
         expected.setCreationDate(result.getCreationDate());
         expected.setExpiryDate(result.getExpiryDate());
         assertThat(result, equalTo(expected));

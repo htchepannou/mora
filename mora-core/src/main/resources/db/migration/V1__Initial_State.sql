@@ -26,13 +26,13 @@ create table t_password(
 );
 
 create table t_access_token(
-    id in primary key auto_increment,
+    id int primary key auto_increment,
     user_id int not null,
 
-    key varchar(32) not null,
-    creation_date timestamp not null,
-    expiry_date timestamp not null,
+    value varchar(32) not null,
+    creation_date timestamp null,
+    expiry_date timestamp null,
 
-    unique(key),
+    unique(value),
     foreign key (user_id) references t_user(id)
 );

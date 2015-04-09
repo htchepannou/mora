@@ -15,7 +15,7 @@ public class AccessTokenMapper  implements RowMapper<AccessToken> {
         result.setUserId(rs.getLong("user_id"));
         result.setCreationDate(rs.getTimestamp("creation_date"));
         result.setExpiryDate(rs.getTimestamp("expiry_date"));
-        result.setKey(rs.getString("key"));
+        result.setValue(rs.getString("value"));
 
         return result;
     }

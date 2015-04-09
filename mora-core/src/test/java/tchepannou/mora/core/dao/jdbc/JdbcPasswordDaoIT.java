@@ -24,7 +24,7 @@ import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 @RunWith (SpringJUnit4ClassRunner.class)
 @ContextConfiguration (classes = {JdbcConfig.class})
 @SqlGroup ({
-        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/core-populate.sql"}),
+        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/JdbcPasswordDao.sql"}),
 })
 public class JdbcPasswordDaoIT {
     @Autowired
@@ -67,6 +67,9 @@ public class JdbcPasswordDaoIT {
         // Then
         assertThat(id, equalTo(password.getId()));
 
+        assertThat(result.getCreationDate().getTime()/1000, equalTo(expected.getCreationDate().getTime()/1000));
+        assertThat(result.getLastUpdate().getTime()/1000, equalTo(expected.getLastUpdate().getTime()/1000));
+
         expected.setId(id);
         expected.setLastUpdate(result.getLastUpdate());
         expected.setCreationDate(result.getCreationDate());
@@ -89,8 +92,9 @@ public class JdbcPasswordDaoIT {
         Password result = dao.findById(1);
 
         // Then
-        expected.setLastUpdate(result.getLastUpdate());
+        assertThat(result.getLastUpdate().getTime()/1000, equalTo(expected.getLastUpdate().getTime()/1000));
 
+        expected.setLastUpdate(result.getLastUpdate());
         assertThat(result, equalTo(expected));
 
     }

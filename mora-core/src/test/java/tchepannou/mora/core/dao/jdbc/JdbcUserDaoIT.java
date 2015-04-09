@@ -26,7 +26,7 @@ import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 @RunWith (SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {JdbcConfig.class})
 @SqlGroup ({
-        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/core-populate.sql"}),
+        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/JdbcUserDao.sql"}),
 })
 public class JdbcUserDaoIT {
     @Autowired
@@ -156,17 +156,19 @@ public class JdbcUserDaoIT {
         User expected = new User(user);
 
         // When
-        long result = userDao.create(user);
+        long id = userDao.create(user);
+        User result = userDao.findById(id);
 
         // Then
-        assertThat(user.getId(), equalTo(result));
+        assertThat(user.getId(), equalTo(id));
 
-        user = userDao.findById(result);
+        assertThat(result.getCreationDate().getTime()/1000, equalTo(expected.getCreationDate().getTime()/1000));
+        assertThat(result.getLastUpdate().getTime()/1000, equalTo(expected.getLastUpdate().getTime()/1000));
 
-        expected.setId(result);
-        expected.setCreationDate(user.getCreationDate());
-        expected.setLastUpdate(user.getLastUpdate());
-        assertThat(user, equalTo(expected));
+        expected.setId(id);
+        expected.setCreationDate(result.getCreationDate());
+        expected.setLastUpdate(result.getLastUpdate());
+        assertThat(result, equalTo(expected));
     }
 
 
@@ -192,6 +194,8 @@ public class JdbcUserDaoIT {
         User result = userDao.findById(1);
 
         // Then
+        assertThat(result.getLastUpdate().getTime()/1000, equalTo(expected.getLastUpdate().getTime()/1000));
+
         expected.setLastUpdate(result.getLastUpdate());
         assertThat(result, equalTo(expected));
     }

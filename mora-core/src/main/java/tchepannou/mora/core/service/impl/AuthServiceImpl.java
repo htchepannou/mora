@@ -43,7 +43,7 @@ public class AuthServiceImpl implements AuthService {
     //-- AuthService overrides
     @Override
     public AccessToken findByKey(String key) {
-        return accessTokenDao.findByKey(key);
+        return accessTokenDao.findByValue(key);
     }
 
     @Override
@@ -72,7 +72,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     @Transactional
     public void logout(String key) {
-        AccessToken token = accessTokenDao.findByKey(key);
+        AccessToken token = accessTokenDao.findByValue(key);
         if (token != null) {
             token.expire();
             accessTokenDao.update(token);
@@ -102,7 +102,7 @@ public class AuthServiceImpl implements AuthService {
         AccessToken result = new AccessToken(user);
         result.setCreationDate(now);
         result.setExpiryDate(DateUtils.addMinutes(now, tokenTTLMinutes));
-        result.setKey(hashService.generate(key));
+        result.setValue(hashService.generate(key));
         accessTokenDao.create(result);
 
         return result;

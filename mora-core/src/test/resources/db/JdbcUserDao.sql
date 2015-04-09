@@ -3,5 +3,3 @@ insert into t_user(id, username, email, firstname, lastname, deleted, creation_d
 
 insert into t_user(id, username, email, firstname, lastname, deleted, creation_date, last_update) values(10, '#ray.sponsible', 'ray.sponsible@gmail.com', 'Ray', 'Sponsible', 1, '2011-01-01 10:30:55', '2012-12-01 14:30:55');
 insert into t_user(id, username, email, firstname, lastname, deleted, creation_date, last_update) values(11, '##ray.sponsible', 'ray.sponsible@gmail.com', 'Ray', 'Sponsible', 1, '2011-01-01 10:30:55', '2012-12-01 14:30:55');
-
-insert into t_password(id, user_id, value, creation_date, last_update) values(1, 1, 'bc9a50e1e0085b13c4bba866f6dfe57c', '2014-01-01 10:30:55', '2014-12-01 14:30:55');

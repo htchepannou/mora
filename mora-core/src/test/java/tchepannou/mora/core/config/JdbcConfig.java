@@ -6,8 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.PasswordDao;
 import tchepannou.mora.core.dao.UserDao;
+import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
 import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
 
@@ -53,5 +55,10 @@ public class JdbcConfig {
     @Bean
     public UserDao userDao (){
         return new JdbcUserDao();
+    }
+
+    @Bean
+    public AccessTokenDao accessTokenDao() {
+        return new JdbcAccessTokenDao();
     }
 }
