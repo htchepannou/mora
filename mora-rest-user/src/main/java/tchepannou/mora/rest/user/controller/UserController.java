@@ -36,7 +36,7 @@ public class UserController {
     @ApiOperation(value="Get User")
     public UserDto get(@PathVariable long userId) throws UserNotFoundException {
         User user = userService.findById(userId);
-        if (user == null){
+        if (user == null || user.isDeleted()){
             throw new UserNotFoundException(userId);
         }
 
@@ -67,7 +67,7 @@ public class UserController {
     @ApiOperation(value="Update User")
     public UserDto update (@PathVariable long userId, @Valid @RequestBody SaveUserDto request) throws UserNotFoundException{
         User user = userService.findById(userId);
-        if (user == null) {
+        if (user == null || user.isDeleted()) {
             throw new UserNotFoundException(userId);
         }
 

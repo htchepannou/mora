@@ -22,6 +22,7 @@ public class ApiPathProvider implements SwaggerPathProvider {
         return defaultSwaggerPathProvider.getApiResourcePrefix();
     }
 
+    @Override
     public String getAppBasePath() {
         return UriComponentsBuilder
                 .fromHttpUrl(docsLocation)

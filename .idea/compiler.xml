@@ -32,6 +32,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="mora" target="1.8" />
+      <module name="mora-domain" target="1.8" />
+      <module name="mora-rest-core" target="1.8" />
       <module name="mora-rest-user" target="1.6" />
     </bytecodeTargetLevel>
   </component>

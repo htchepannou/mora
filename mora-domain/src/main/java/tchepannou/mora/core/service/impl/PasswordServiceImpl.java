@@ -44,8 +44,7 @@ public class PasswordServiceImpl implements PasswordService {
             MessageDigest md = MessageDigest.getInstance(algo);
             md.update(clearValue.getBytes());
             byte[] bytes = md.digest();
-            String xpassword = Hex.encodeHexString(bytes);
-            return xpassword;
+            return Hex.encodeHexString(bytes);
         } catch (NoSuchAlgorithmException e){
             throw new IllegalStateException("Encryption algorithm not supported: " + algo);
         }
