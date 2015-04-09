@@ -15,9 +15,6 @@
     <artifactId>mora-rest-user</artifactId>
     <version>1.0</version>
 
-    <properties>
-        <sonar.jacoco.itReportPath>${project.build.directory}/jacoco-it.exec</sonar.jacoco.itReportPath>
-    </properties>
 
     <dependencies>
         <!-- ========================= Compile ========================= -->

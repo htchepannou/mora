@@ -3,19 +3,25 @@ package tchepannou.mora.rest.user.controller;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.Password;
 import tchepannou.mora.core.domain.User;
+import tchepannou.mora.core.exception.EmailAlreadyAssignedException;
+import tchepannou.mora.core.exception.UserException;
+import tchepannou.mora.core.exception.UserNotFoundException;
+import tchepannou.mora.core.exception.UsernameAlreadyAssignedException;
 import tchepannou.mora.core.service.PasswordService;
 import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.rest.user.dto.CreateUserDto;
 import tchepannou.mora.rest.user.dto.SaveUserDto;
 import tchepannou.mora.rest.user.dto.UserDto;
-import tchepannou.mora.rest.user.exception.UserNotFoundException;
 
 import javax.validation.Valid;
 
@@ -47,7 +53,7 @@ public class UserController {
 
     @RequestMapping(value = "/", method = RequestMethod.PUT)
     @ApiOperation(value="Create New User")
-    public UserDto create (@Valid @RequestBody CreateUserDto request){
+    public UserDto create (@Valid @RequestBody CreateUserDto request) throws UserException{
         /* Create the user */
         User user = new User ();
         request.toUser(user);
@@ -65,7 +71,7 @@ public class UserController {
 
     @RequestMapping(value="/{userId}", method = RequestMethod.POST)
     @ApiOperation(value="Update User")
-    public UserDto update (@PathVariable long userId, @Valid @RequestBody SaveUserDto request) throws UserNotFoundException{
+    public UserDto update (@PathVariable long userId, @Valid @RequestBody SaveUserDto request) throws UserException {
         User user = userService.findById(userId);
         if (user == null || user.isDeleted()) {
             throw new UserNotFoundException(userId);
@@ -86,5 +92,23 @@ public class UserController {
         if (user != null) {
             userService.delete(user);
         }
+    }
+
+    //-- Exception handlers
+    @ResponseStatus (value= HttpStatus.NOT_FOUND)
+    @ExceptionHandler (UserNotFoundException.class)
+    public void notFound (){
+    }
+
+    @ResponseStatus (value= HttpStatus.CONFLICT, reason = "email_already_assigned")
+    @ExceptionHandler (EmailAlreadyAssignedException.class)
+    public void emailAlreadyAssigned(){
+
+    }
+
+    @ResponseStatus (value= HttpStatus.CONFLICT, reason = "username_already_assigned")
+    @ExceptionHandler (UsernameAlreadyAssignedException.class)
+    public void usernameAlreadyAssigned(){
+
     }
 }

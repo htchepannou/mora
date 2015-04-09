@@ -15,7 +15,7 @@
         <!-- ========================= Compile ========================= -->
         <dependency>
             <groupId>tchepannou.mora</groupId>
-            <artifactId>mora-domain</artifactId>
+            <artifactId>mora-core</artifactId>
             <version>1.0</version>
         </dependency>
 

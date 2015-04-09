@@ -1,10 +1,12 @@
 package tchepannou.mora.rest.user.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.wordnik.swagger.annotations.ApiModel;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.rest.core.dto.ModelDto;
+import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
 import java.util.Date;
 
@@ -51,12 +53,20 @@ public class UserDto extends ModelDto {
     }
 
     //-- Getter
-    public String getName() {
-        return name;
-    }
 
+    @JsonSerialize (using=JsonDateSerializer.class)
     public Date getCreationDate() {
         return creationDate;
+    }
+
+    @JsonSerialize (using=JsonDateSerializer.class)
+    public Date getLastUpdate() {
+        return lastUpdate;
+    }
+
+
+    public String getEmail() {
+        return email;
     }
 
     public String getFirstName() {
@@ -71,47 +81,11 @@ public class UserDto extends ModelDto {
         return lastName;
     }
 
-    public Date getLastUpdate() {
-        return lastUpdate;
+    public String getName() {
+        return name;
     }
 
     public String getUsername() {
         return username;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }

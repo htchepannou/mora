@@ -1,23 +1,20 @@
 package tchepannou.mora.rest.user.dto;
 
 import com.wordnik.swagger.annotations.ApiModel;
-import com.wordnik.swagger.annotations.ApiModelProperty;
 import tchepannou.mora.core.domain.User;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @ApiModel ()
 public class CreateUserDto extends SaveUserDto {
     //-- Attributes
     @NotNull
-    @Min(6)
-    @ApiModelProperty(required = true)
+    @Size (min=6, max=16)
     private String username;
 
     @NotNull
-    @Min(6)
-    @ApiModelProperty(required = true)
+    @Size (min=6, max=100)
     private String password;
 
 
@@ -32,42 +29,37 @@ public class CreateUserDto extends SaveUserDto {
 
     @Override
     @NotNull
-    @ApiModelProperty(required = true)
     public String getEmail() {
         return super.getEmail();
     }
 
     @Override
     @NotNull
-    @ApiModelProperty(required = true)
+    @Size (min=1)
     public String getFirstName() {
         return super.getFirstName();
     }
 
     @Override
     @NotNull
-    @ApiModelProperty(required = true)
+    @Size (min=1)
     public String getLastName() {
         return super.getLastName();
     }
 
     //-- Getter/Setter
-    @ApiModelProperty(required = true)
     public String getUsername() {
         return username;
     }
 
-    @ApiModelProperty(required = true)
     public void setUsername(String username) {
         this.username = username;
     }
 
-    @ApiModelProperty(required = true)
     public String getPassword() {
         return password;
     }
 
-    @ApiModelProperty(required = true)
     public void setPassword(String password) {
         this.password = password;
     }
