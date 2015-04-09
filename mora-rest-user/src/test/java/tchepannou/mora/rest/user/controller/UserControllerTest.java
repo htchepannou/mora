@@ -211,9 +211,9 @@ public class UserControllerTest{
             @Override
             public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
                 User user = (User)invocationOnMock.getArguments()[0];
-                user.setId(++uid);
-                user.setCreationDate(new Date ());
-                user.setLastUpdate(new Date());
+                if (user.isTransient()) {
+                    user.setId(++uid);
+                }
                 return null;
             }
         };
@@ -223,10 +223,10 @@ public class UserControllerTest{
         return new Answer() {
             @Override
             public Object answer(InvocationOnMock invocationOnMock) throws Throwable {
-                Password user = (Password)invocationOnMock.getArguments()[0];
-                user.setId(++uid);
-                user.setCreationDate(new Date ());
-                user.setLastUpdate(new Date());
+                Password password = (Password)invocationOnMock.getArguments()[0];
+                if (password.isTransient()) {
+                    password.setId(++uid);
+                }
                 return null;
             }
         };
