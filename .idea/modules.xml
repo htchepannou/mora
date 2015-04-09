@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/mora.iml" filepath="$PROJECT_DIR$/mora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mora-domain/mora-domain.iml" filepath="$PROJECT_DIR$/mora-domain/mora-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" filepath="$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" filepath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" />
+    </modules>
+  </component>
+</project>
