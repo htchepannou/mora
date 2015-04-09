@@ -42,17 +42,28 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    public void save(User user) throws UserException {
+    public void create(User user) throws UserException {
         ensureEmailNotAssigned(user);
         ensureUsernameNotAssigned(user);
 
         Date now = new Date ();
-        if (user.getCreationDate() == null) {
-            user.setCreationDate(now);
-        }
+        user.setCreationDate(now);
         user.setLastUpdate(now);
 
-        userDao.save(user);
+        userDao.create(user);
+    }
+
+
+    @Override
+    @Transactional
+    public void update(User user) throws UserException {
+        ensureEmailNotAssigned(user);
+        ensureUsernameNotAssigned(user);
+
+        Date now = new Date ();
+        user.setLastUpdate(now);
+
+        userDao.update(user);
     }
 
     @Override

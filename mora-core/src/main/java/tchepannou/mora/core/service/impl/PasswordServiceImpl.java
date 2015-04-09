@@ -23,6 +23,11 @@ public class PasswordServiceImpl implements PasswordService {
     private PasswordDao passwordDao;
 
 
+    //-- Main
+    public static void main(String[] args){
+        System.out.println(new PasswordServiceImpl().encrypt("_secret_"));
+    }
+
     //-- PasswordService overrides
     @Override
     public Password findByUser(long userId) {
@@ -30,16 +35,23 @@ public class PasswordServiceImpl implements PasswordService {
     }
 
     @Override
-    public void save(Password password) {
+    public void create(Password password) {
         Date now = new Date ();
-        if (password.getCreationDate() == null) {
-            password.setCreationDate(now);
-        }
+        password.setCreationDate(now);
         password.setLastUpdate(now);
 
-
-        passwordDao.save(password);
+        passwordDao.create(password);
     }
+
+
+    @Override
+    public void update(Password password) {
+        Date now = new Date ();
+        password.setLastUpdate(now);
+
+        passwordDao.create(password);
+    }
+
 
     @Override
     public String encrypt(String clearValue) {

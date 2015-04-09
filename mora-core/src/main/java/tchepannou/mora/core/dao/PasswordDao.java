@@ -4,5 +4,6 @@ import tchepannou.mora.core.domain.Password;
 
 public interface PasswordDao {
     Password findByUser (long userId);
-    void save(Password password);
+    long create(Password password);
+    void update (Password password);
 }

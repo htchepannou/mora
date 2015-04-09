@@ -7,6 +7,7 @@ public interface UserService {
     User findById (long id);
     User findByUsername (String username);
     User findByEmail (String email);
-    void save (User user) throws UserException;
+    void create (User user) throws UserException;
+    void update (User user) throws UserException;
     void delete(User user);
 }

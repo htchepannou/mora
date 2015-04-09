@@ -39,35 +39,36 @@ public class JdbcUserDao extends JdbcModelDao implements UserDao {
     }
 
     @Override
-    public void save(final User user) {
-        if (user.isTransient()){
-            KeyHolder holder = new GeneratedKeyHolder();
+    public long create(final User user) {
+        KeyHolder holder = new GeneratedKeyHolder();
 
-            final String sql = "INSERT INTO t_user(username, email, firstname, lastname, deleted, creation_date, last_update) VALUES(?,?,?,?,?,?,?)";
-            PreparedStatementCreator ps = new PreparedStatementCreator() {
-                @Override
-                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                    PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-                    ps.setString(1, user.getUsername());
-                    ps.setString(2, user.getEmail());
-                    ps.setString(3, user.getFirstName());
-                    ps.setString(4, user.getLastName());
-                    ps.setBoolean(5, false);
-                    ps.setTimestamp(6, new Timestamp(user.getCreationDate().getTime()));
-                    ps.setTimestamp(7, new Timestamp(user.getLastUpdate().getTime()));
-                    return ps;
-                }
-            };
-            template.update(ps, holder);
+        final String sql = "INSERT INTO t_user(username, email, firstname, lastname, deleted, creation_date, last_update) VALUES(?,?,?,?,?,?,?)";
+        PreparedStatementCreator ps = new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                ps.setString(1, user.getUsername());
+                ps.setString(2, user.getEmail());
+                ps.setString(3, user.getFirstName());
+                ps.setString(4, user.getLastName());
+                ps.setBoolean(5, false);
+                ps.setTimestamp(6, new Timestamp(user.getCreationDate().getTime()));
+                ps.setTimestamp(7, new Timestamp(user.getLastUpdate().getTime()));
+                return ps;
+            }
+        };
+        template.update(ps, holder);
 
-            user.setId(holder.getKey().longValue());
-        } else {
-            String sql = "UPDATE t_user SET username=?, email=?, firstname=?, lastname=?, last_update=? WHERE id=?";
-            template.update(sql, user.getUsername(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getLastUpdate(), user.getId());
-        }
-
+        long id=holder.getKey().longValue();
+        user.setId(id);
+        return id;
     }
 
+    @Override
+    public void update(final User user) {
+        String sql = "UPDATE t_user SET username=?, email=?, firstname=?, lastname=?, last_update=? WHERE id=?";
+        template.update(sql, user.getUsername(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getLastUpdate(), user.getId());
+    }
 
     @Override
     public void delete(final User user) {

@@ -30,29 +30,33 @@ public class JdbcPasswordDao extends JdbcModelDao implements PasswordDao {
     }
 
     @Override
-    public void save(final Password password) {
-        if (password.isTransient()){
-            KeyHolder holder = new GeneratedKeyHolder();
+    public long create(final Password password) {
+        KeyHolder holder = new GeneratedKeyHolder();
 
-            final String sql = "INSERT INTO t_password(value, user_id, creation_date, last_update) VALUES(?,?,?,?)";
-            PreparedStatementCreator ps = new PreparedStatementCreator() {
-                @Override
-                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
-                    PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-                    ps.setString(1, password.getValue());
-                    ps.setLong(2, password.getUserId());
-                    ps.setTimestamp(3, new Timestamp(password.getCreationDate().getTime()));
-                    ps.setTimestamp(4, new Timestamp(password.getLastUpdate().getTime()));
-                    return ps;
-                }
-            };
-            template.update(ps, holder);
+        final String sql = "INSERT INTO t_password(value, user_id, creation_date, last_update) VALUES(?,?,?,?)";
+        PreparedStatementCreator ps = new PreparedStatementCreator() {
+            @Override
+            public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                ps.setString(1, password.getValue());
+                ps.setLong(2, password.getUserId());
+                ps.setTimestamp(3, new Timestamp(password.getCreationDate().getTime()));
+                ps.setTimestamp(4, new Timestamp(password.getLastUpdate().getTime()));
+                return ps;
+            }
+        };
+        template.update(ps, holder);
 
-            password.setId(holder.getKey().longValue());
-        } else {
-            String sql = "UPDATE t_password SET value=?, user_id=?, creation_date=?, last_update=? WHERE id=?";
-            template.update(sql, password.getValue(), password.getUserId(), password.getCreationDate(), password.getLastUpdate(), password.getId());
-        }
+        long id = holder.getKey().longValue();
+        password.setId(id);
+        return id;
+    }
+
+
+    @Override
+    public void update(final Password password) {
+        String sql = "UPDATE t_password SET value=?, user_id=?, last_update=? WHERE id=?";
+        template.update(sql, password.getValue(), password.getUserId(), password.getLastUpdate(), password.getId());
     }
 
 }

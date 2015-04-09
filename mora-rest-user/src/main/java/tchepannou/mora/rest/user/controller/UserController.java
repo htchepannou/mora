@@ -57,12 +57,12 @@ public class UserController {
         /* Create the user */
         User user = new User ();
         request.toUser(user);
-        userService.save(user);
+        userService.create(user);
 
         /* create the password */
         Password password = new Password(user);
         password.setValue(passwordService.encrypt(request.getPassword()));
-        passwordService.save(password);
+        passwordService.create(password);
 
         return new UserDto.Builder()
                 .withUser(user)
@@ -78,7 +78,7 @@ public class UserController {
         }
 
         request.toUser(user);
-        userService.save(user);
+        userService.update(user);
 
         return new UserDto.Builder()
                 .withUser(user)

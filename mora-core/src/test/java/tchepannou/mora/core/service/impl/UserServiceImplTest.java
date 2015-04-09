@@ -121,7 +121,7 @@ public class UserServiceImplTest{
 
 
     @Test
-    public void testSaveNew () throws Exception {
+    public void testCreate () throws Exception {
         // Given
         Date now = new Date ();
         User user = new User ();
@@ -131,17 +131,17 @@ public class UserServiceImplTest{
         expected.setLastUpdate(now);
 
         // When
-        service.save(user);
+        service.create(user);
 
         // Then
-        verify(userDao).save(user);
+        verify(userDao).create(user);
 
         assertThat(user.getCreationDate(), greaterThanOrEqualTo(now));
         assertThat(user.getLastUpdate(), greaterThanOrEqualTo(now));
     }
 
     @Test(expected = EmailAlreadyAssignedException.class)
-    public void testSaveNew_EmailAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
+    public void testCreate_EmailAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
         // Given
         User user = new User ();
         user.setEmail("foo.bar@gmail.com");
@@ -151,11 +151,11 @@ public class UserServiceImplTest{
         when(userDao.findByEmail(user2.getEmail(), false)).thenReturn(Arrays.asList(user2));
 
         // When
-        service.save(user);
+        service.create(user);
     }
 
     @Test(expected = UsernameAlreadyAssignedException.class)
-    public void testSaveNew_UsernameAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
+    public void testCreate_UsernameAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
         // Given
         User user = new User ();
         user.setUsername("foo.bar");
@@ -165,13 +165,13 @@ public class UserServiceImplTest{
         when(userDao.findByUsername(user2.getUsername(), false)).thenReturn(Arrays.asList(user2));
 
         // When
-        service.save(user);
+        service.create(user);
     }
 
 
 
     @Test
-    public void testSaveUpdate () throws Exception {
+    public void testUpdate () throws Exception {
         // Given
         Date now = new Date ();
         User user = new User (1);
@@ -181,17 +181,17 @@ public class UserServiceImplTest{
         expected.setLastUpdate(new Date());
 
         // When
-        service.save(user);
+        service.update(user);
 
         // Then
-        verify(userDao).save(user);
+        verify(userDao).update(user);
 
         assertThat(user.getCreationDate(), equalTo(user.getCreationDate()));
         assertThat(user.getLastUpdate(), greaterThanOrEqualTo(now));
     }
 
     @Test(expected = EmailAlreadyAssignedException.class)
-    public void testSaveUpdate_EmailAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
+    public void testUpdate_EmailAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
         // Given
         User user = new User (1);
         user.setEmail("foo.bar@gmail.com");
@@ -201,12 +201,12 @@ public class UserServiceImplTest{
         when(userDao.findByEmail(user2.getEmail(), false)).thenReturn(Arrays.asList(user2));
 
         // When
-        service.save(user);
+        service.update(user);
     }
 
 
     @Test(expected = UsernameAlreadyAssignedException.class)
-    public void testSaveUpdate_UsernameAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
+    public void testUpdate_UsernameAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
         // Given
         User user = new User (1);
         user.setUsername("foo.bar");
@@ -216,7 +216,7 @@ public class UserServiceImplTest{
         when(userDao.findByUsername(user2.getUsername(), false)).thenReturn(Arrays.asList(user2));
 
         // When
-        service.save(user);
+        service.update(user);
     }
 
 

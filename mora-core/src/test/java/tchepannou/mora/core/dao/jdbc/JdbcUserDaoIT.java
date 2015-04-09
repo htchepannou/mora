@@ -19,7 +19,6 @@ import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
@@ -141,7 +140,7 @@ public class JdbcUserDaoIT {
     }
 
     @Test
-    public void testSave_Insert() throws Exception {
+    public void testCreate() throws Exception {
         // Given
         Date now = new Date();
         String username =  String.valueOf(System.currentTimeMillis());
@@ -157,18 +156,18 @@ public class JdbcUserDaoIT {
         User expected = new User(user);
 
         // When
-        userDao.save(user);
+        long result = userDao.create(user);
 
         // Then
-        assertThat(user.getId(), greaterThan(0L));
+        assertThat(user.getId(), equalTo(result));
 
-        expected.setId(user.getId());
+        expected.setId(result);
         assertThat(user, equalTo(expected));
     }
 
 
     @Test
-    public void testSave_Update() throws Exception {
+    public void testUpdate() throws Exception {
         // Given
         Date now = new Date();
         String username =  String.valueOf(System.currentTimeMillis());
@@ -185,7 +184,7 @@ public class JdbcUserDaoIT {
         expected.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
 
         // When
-        userDao.save(user);
+        userDao.update(user);
         User result = userDao.findById(1);
 
         // Then
