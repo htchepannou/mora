@@ -1,6 +1,5 @@
 package tchepannou.mora.rest.user.controller;
 
-import com.google.common.base.Joiner;
 import org.apache.commons.lang.time.DateUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,24 +10,18 @@ import org.mockito.Mock;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.mockito.stubbing.Answer;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import tchepannou.mora.core.domain.Password;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.service.PasswordService;
 import tchepannou.mora.core.service.UserService;
-import tchepannou.mora.rest.core.util.HttpHelper;
 import tchepannou.mora.rest.user.dto.CreateUserDto;
-import tchepannou.mora.rest.user.dto.UserDto;
 import tchepannou.mora.rest.user.dto.SaveUserDto;
+import tchepannou.mora.rest.user.dto.UserDto;
 import tchepannou.mora.rest.user.exception.UserNotFoundException;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
@@ -176,25 +169,6 @@ public class UserControllerTest{
 
 
     //-- Private
-    private void assertEquals (HttpStatus status, User user, ResponseEntity<UserDto> result){
-        assertThat(result.getStatusCode(), equalTo(status));
-
-        UserDto body = result.getBody();
-        assertThat(body.getId(), equalTo(user.getId()));
-        assertThat(body.getFirstName(), equalTo(user.getFirstName()));
-        assertThat(body.getLastName(), equalTo(user.getLastName()));
-        assertThat(body.getEmail(), equalTo(user.getEmail()));
-        assertThat(body.getName(), equalTo(Joiner.on(' ').join(user.getFirstName(), user.getLastName())));
-        assertThat(body.getLastUpdate(), equalTo(user.getLastUpdate()));
-        assertThat(body.getCreationDate(), equalTo(user.getCreationDate()));
-
-        HttpHeaders headers = result.getHeaders();
-        List<String> lst = headers.get("Last-Modified");
-        SimpleDateFormat fmt = new SimpleDateFormat(HttpHelper.LAST_MODIFIED_PATTERN);
-        String xdate = fmt.format(user.getLastUpdate());
-        assertThat(lst, allOf(hasItems(xdate)));
-    }
-
     private User createUser (long id){
         User result = new User (id);
         result.setEmail("ray" + id + "@gmail.com");
