@@ -2,47 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/json/JsonDateSerializer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/json/JsonDateSerializerTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_17_0.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/mora-domain.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/AccessTokenDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/PasswordDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/UserDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcModelDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcPasswordDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcUserDao.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/mapper/PasswordMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/mapper/UserMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/domain/AccessToken.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/domain/Model.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/domain/Password.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/domain/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/PasswordService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/UserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/impl/PasswordServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/main/resources/db/migration/V1__Initial_State.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/test/java/tchepannou/mora/core/dao/jdbc/mapper/PasswordMapperTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/test/java/tchepannou/mora/core/dao/jdbc/mapper/UserMapperTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/test/java/tchepannou/mora/core/service/impl/PasswordServiceImplTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-domain/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/exception/UserNotFoundException.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/CreateUserDto.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/CreateUserDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/UserDto.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/UserDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" afterPath="$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" afterPath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora.iml" afterPath="$PROJECT_DIR$/mora.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/pom.xml" afterPath="$PROJECT_DIR$/mora-rest-core/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/pom.xml" afterPath="$PROJECT_DIR$/mora-rest-user/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -90,11 +51,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="V1__Initial_State.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/resources/db/migration/V1__Initial_State.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.275862" vertical-offset="29" max-vertical-offset="450">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="populate.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="135">
+              <caret line="2" column="154" selection-start-line="2" selection-start-column="154" selection-end-line="2" selection-end-column="154" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="UserControllerIT.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6394231" vertical-offset="724" max-vertical-offset="1500">
-              <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.35096154" vertical-offset="634" max-vertical-offset="1785">
+              <caret line="173" column="34" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
               <folding>
                 <element signature="method#testGet#0;class#UserControllerIT#0" expanded="false" />
                 <element signature="method#testGet_notFound_shouldReturn404#0;class#UserControllerIT#0" expanded="false" />
@@ -103,7 +84,6 @@
                 <element signature="method#testUpdate_notFound_shouldReturn404#0;class#UserControllerIT#0" expanded="false" />
                 <element signature="method#testUpdate_deleted_shouldReturn404#0;class#UserControllerIT#0" expanded="false" />
                 <element signature="method#testCreate#0;class#UserControllerIT#0" expanded="false" />
-                <element signature="method#testCreate_DuplicateEmail_shouldReturn409#0;class#UserControllerIT#0" expanded="false" />
                 <element signature="method#testCreate_DuplicateUserName_shouldReturn409#0;class#UserControllerIT#0" expanded="false" />
                 <element signature="method#testDelete#0;class#UserControllerIT#0" expanded="false" />
                 <element signature="method#testDelete_deletedUser#0;class#UserControllerIT#0" expanded="false" />
@@ -147,7 +127,6 @@
         <option value="$PROJECT_DIR$/mora-domain/pom.xml" />
         <option value="$PROJECT_DIR$/mora-domain/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/CreateUserDto.java" />
-        <option value="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql" />
         <option value="$PROJECT_DIR$/mora-domain/src/main/resources/db/migration/V1__Initial_State.sql" />
         <option value="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/mora-domain/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcUserDao.java" />
@@ -170,6 +149,7 @@
         <option value="$PROJECT_DIR$/mora-core/pom.xml" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql" />
         <option value="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
       </list>
     </option>
@@ -254,7 +234,103 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="mora-rest-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="target" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -688,7 +764,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35738444" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -697,7 +773,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37919176" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4994363" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4994363" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -906,13 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025684932" vertical-offset="0" max-vertical-offset="584">
-          <caret line="1" column="183" selection-start-line="1" selection-start-column="183" selection-end-line="1" selection-end-column="183" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Password.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="900">
@@ -935,24 +1004,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/resources/db/migration/V1__Initial_State.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.275862" vertical-offset="29" max-vertical-offset="450">
-          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcUserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1020">
           <caret line="63" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#findById#0;class#JdbcUserDao#0" expanded="false" />
+            <element signature="method#findByUsername#0;class#JdbcUserDao#0" expanded="false" />
+            <element signature="e#1758#2557#0" expanded="true" />
+            <element signature="e#2556#2557#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1162,6 +1224,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32451922" vertical-offset="0" max-vertical-offset="416">
+          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/resources/db/migration/V1__Initial_State.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.275862" vertical-offset="29" max-vertical-offset="450">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/populate.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="135">
+          <caret line="2" column="154" selection-start-line="2" selection-start-column="154" selection-end-line="2" selection-end-column="154" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="689" max-vertical-offset="1320">
@@ -1178,8 +1266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6394231" vertical-offset="724" max-vertical-offset="1500">
-          <caret line="187" column="0" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.35096154" vertical-offset="634" max-vertical-offset="1785">
+          <caret line="173" column="34" selection-start-line="173" selection-start-column="34" selection-end-line="173" selection-end-column="34" />
           <folding>
             <element signature="method#testGet#0;class#UserControllerIT#0" expanded="false" />
             <element signature="method#testGet_notFound_shouldReturn404#0;class#UserControllerIT#0" expanded="false" />
@@ -1188,7 +1276,6 @@
             <element signature="method#testUpdate_notFound_shouldReturn404#0;class#UserControllerIT#0" expanded="false" />
             <element signature="method#testUpdate_deleted_shouldReturn404#0;class#UserControllerIT#0" expanded="false" />
             <element signature="method#testCreate#0;class#UserControllerIT#0" expanded="false" />
-            <element signature="method#testCreate_DuplicateEmail_shouldReturn409#0;class#UserControllerIT#0" expanded="false" />
             <element signature="method#testCreate_DuplicateUserName_shouldReturn409#0;class#UserControllerIT#0" expanded="false" />
             <element signature="method#testDelete#0;class#UserControllerIT#0" expanded="false" />
             <element signature="method#testDelete_deletedUser#0;class#UserControllerIT#0" expanded="false" />

@@ -171,7 +171,7 @@ public class UserControllerIT {
         User user = userDao.findById(1);
 
         SaveUserDto request = new SaveUserDto();
-        request.setEmail("ray.sponsibler@gmail.com");
+        request.setEmail("john.doe@gmail.com");
         request.setFirstName("Foo");
         request.setLastName("Bar");
         String json = new ObjectMapper().writeValueAsString(request);
