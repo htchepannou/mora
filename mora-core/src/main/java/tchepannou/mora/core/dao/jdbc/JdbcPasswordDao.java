@@ -24,7 +24,7 @@ public class JdbcPasswordDao extends JdbcModelDao implements PasswordDao {
         try{
             String sql = "SELECT * FROM t_password WHERE user_id=?";
             return template.queryForObject(sql, new Object[] {userId}, MAPPER);
-        } catch (org.springframework.dao.EmptyResultDataAccessException e){
+        } catch (org.springframework.dao.EmptyResultDataAccessException e){ // NOSONAR - Each exception intentionally
             return null;
         }
     }

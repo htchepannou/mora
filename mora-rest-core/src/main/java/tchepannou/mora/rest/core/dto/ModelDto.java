@@ -6,7 +6,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 
 import java.io.Serializable;
 
-public class ModelDto implements Serializable {
+public abstract class ModelDto implements Serializable {
     //-- Object overrides
     @Override
     public boolean equals(Object obj) {

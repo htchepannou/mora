@@ -54,7 +54,7 @@ public class PasswordServiceImpl implements PasswordService {
             byte[] bytes = md.digest();
             return Hex.encodeHexString(bytes);
         } catch (NoSuchAlgorithmException e){
-            throw new IllegalStateException("Encryption algorithm not supported: " + algo);
+            throw new IllegalStateException("Encryption algorithm not supported: " + algo, e);
         }
     }
 

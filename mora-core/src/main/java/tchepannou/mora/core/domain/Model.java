@@ -45,12 +45,8 @@ public abstract class Model implements Serializable {
 
     @Override
     public int hashCode() {
-        Serializable id = getId();
-        if (id != null){
-            return id.hashCode();
-        } else {
-            return HashCodeBuilder.reflectionHashCode(this);
-        }
+        long key = getId();
+        return key > 0 ? Long.hashCode(key) : HashCodeBuilder.reflectionHashCode(this);
     }
 
     @Override

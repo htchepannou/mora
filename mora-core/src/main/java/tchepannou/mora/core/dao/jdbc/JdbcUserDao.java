@@ -23,7 +23,7 @@ public class JdbcUserDao extends JdbcModelDao implements UserDao {
     public User findById(long id) {
         try {
             return template.queryForObject("SELECT * FROM t_user WHERE id=?", new Object[] {id}, MAPPER);
-        } catch (org.springframework.dao.EmptyResultDataAccessException e){
+        } catch (org.springframework.dao.EmptyResultDataAccessException e){ // NOSONAR - Each exception intentionally
             return null;
         }
     }

@@ -42,7 +42,7 @@ public class UserController {
     @ApiOperation(value="Get User")
     public UserDto get(@PathVariable long userId) throws UserNotFoundException {
         User user = userService.findById(userId);
-        if (user == null || user.isDeleted()){
+        if (user == null){
             throw new UserNotFoundException(userId);
         }
 
@@ -73,7 +73,7 @@ public class UserController {
     @ApiOperation(value="Update User")
     public UserDto update (@PathVariable long userId, @Valid @RequestBody SaveUserDto request) throws UserException {
         User user = userService.findById(userId);
-        if (user == null || user.isDeleted()) {
+        if (user == null) {
             throw new UserNotFoundException(userId);
         }
 
@@ -97,18 +97,18 @@ public class UserController {
     //-- Exception handlers
     @ResponseStatus (value= HttpStatus.NOT_FOUND)
     @ExceptionHandler (UserNotFoundException.class)
-    public void notFound (){
+    public void notFound (){    // NOSONAR - This function is left empty intentionally
     }
 
     @ResponseStatus (value= HttpStatus.CONFLICT, reason = "email_already_assigned")
     @ExceptionHandler (EmailAlreadyAssignedException.class)
-    public void emailAlreadyAssigned(){
+    public void emailAlreadyAssigned(){ // NOSONAR - This function is left empty intentionally
 
     }
 
     @ResponseStatus (value= HttpStatus.CONFLICT, reason = "username_already_assigned")
     @ExceptionHandler (UsernameAlreadyAssignedException.class)
-    public void usernameAlreadyAssigned(){
+    public void usernameAlreadyAssigned(){  // NOSONAR - This function is left empty intentionally
 
     }
 }
