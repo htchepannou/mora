@@ -7,9 +7,9 @@ import java.util.Date;
 public class AccessToken extends Model{
     //-- Attributes
     private long userId;
+    private String key;
     private Date creationDate = new Date ();
     private Date expiryDate;
-    private boolean expired;
 
     //-- Constructor
     public AccessToken(){
@@ -22,7 +22,16 @@ public class AccessToken extends Model{
     }
 
 
+    //-- Public
+    public void expire (){
+        this.expiryDate = new Date ();
+    }
+
     //-- Getter/Setter
+    public boolean isExpired (){
+        return this.expiryDate != null && this.expiryDate.getTime() <= System.currentTimeMillis();
+    }
+
     public Date getCreationDate() {
         return creationDate;
     }
@@ -47,11 +56,11 @@ public class AccessToken extends Model{
         this.expiryDate = expiryDate;
     }
 
-    public boolean isExpired() {
-        return expired;
+    public String getKey() {
+        return key;
     }
 
-    public void setExpired(boolean expired) {
-        this.expired = expired;
+    public void setKey(String key) {
+        this.key = key;
     }
 }

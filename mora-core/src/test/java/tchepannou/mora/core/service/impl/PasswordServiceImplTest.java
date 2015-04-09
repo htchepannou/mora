@@ -1,6 +1,7 @@
 package tchepannou.mora.core.service.impl;
 
 
+import org.apache.commons.lang.time.DateUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -9,17 +10,23 @@ import org.mockito.MockitoAnnotations;
 import tchepannou.mora.core.dao.PasswordDao;
 import tchepannou.mora.core.domain.Password;
 import tchepannou.mora.core.domain.User;
+import tchepannou.mora.core.service.HashService;
 import tchepannou.mora.core.service.PasswordService;
 
+import java.util.Date;
+
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.hamcrest.core.IsNot.not;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.Assert.assertThat;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class PasswordServiceImplTest{
     @Mock
     private PasswordDao passwordDao;
+
+    @Mock
+    private HashService hashService;
 
     @InjectMocks
     PasswordService service = new PasswordServiceImpl();
@@ -49,66 +56,61 @@ public class PasswordServiceImplTest{
     public void testEncrypt() throws Exception {
         // Given
         String password = "sample password";
+        when(hashService.generate(password)).thenReturn("___encrypted__");
 
         // Then
         String result = service.encrypt(password);
 
         // Then
-        assertThat(result, not(equalTo(password)));
+        assertThat(result, equalTo("___encrypted__"));
     }
 
     @Test
-    public void testEncryptNull_shouldReturnNull() throws Exception {
+    public void testCreate () throws Exception {
         // Given
-        String password = null;
+        Date now = new Date();
+        Password password = new Password(new User(1));
+        password.setValue("_secret_");
+
+        Password expected = new Password (password);
+        expected.setCreationDate(now);
+        expected.setLastUpdate(now);
+
+        // When
+        service.create(password);
 
         // Then
-        String result = service.encrypt(password);
+        verify(passwordDao).create(password);
 
-        // Then
-        assertThat(result, nullValue());
+        assertThat(password.getCreationDate(), greaterThanOrEqualTo(now));
+        assertThat(password.getLastUpdate(), greaterThanOrEqualTo(now));
+
+        expected.setLastUpdate(password.getLastUpdate());
+        expected.setCreationDate(password.getCreationDate());
+        assertThat(password, equalTo(expected));
     }
 
 
     @Test
-    public void testMatches() throws Exception {
+    public void testUpdate () throws Exception {
         // Given
-        String clear = "_password_";
-        Password pwd = new Password();
-        pwd.setValue(service.encrypt(clear));
+        Date now = new Date();
+        Password password = new Password(1, new User(1));
+        password.setCreationDate(DateUtils.addDays(now, -1));
+        password.setValue("_secret_");
+
+        Password expected = new Password (password);
+        expected.setLastUpdate(now);
+
+        // When
+        service.update(password);
 
         // Then
-        boolean result = service.matches(pwd, clear);
+        verify(passwordDao).update(password);
 
-        // Then
-        assertThat(result, equalTo(true));
-    }
+        assertThat(password.getLastUpdate(), greaterThanOrEqualTo(now));
 
-    @Test
-    public void testMatchesNull_shouldReturnFalse() throws Exception {
-        // Given
-        String clear = null;
-        Password pwd = new Password();
-        pwd.setValue(null);
-
-        // Then
-        boolean result = service.matches(pwd, clear);
-
-        // Then
-        assertThat(result, equalTo(false));
-    }
-
-    @Test
-    public void testMathesCaseSensitive (){
-        // Given
-        String clear = "_password_";
-        Password pwd = new Password();
-        pwd.setValue(service.encrypt(clear));
-
-        // Then
-        boolean result = service.matches(pwd, "_Password_");
-
-        // Then
-        assertThat(result, equalTo(false));
+        expected.setLastUpdate(password.getLastUpdate());
+        assertThat(password, equalTo(expected));
     }
 }

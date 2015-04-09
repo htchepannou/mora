@@ -138,6 +138,10 @@ public class UserServiceImplTest{
 
         assertThat(user.getCreationDate(), greaterThanOrEqualTo(now));
         assertThat(user.getLastUpdate(), greaterThanOrEqualTo(now));
+
+        expected.setLastUpdate(user.getLastUpdate());
+        expected.setCreationDate(user.getCreationDate());
+        assertThat(user, equalTo(expected));
     }
 
     @Test(expected = EmailAlreadyAssignedException.class)
@@ -186,8 +190,10 @@ public class UserServiceImplTest{
         // Then
         verify(userDao).update(user);
 
-        assertThat(user.getCreationDate(), equalTo(user.getCreationDate()));
         assertThat(user.getLastUpdate(), greaterThanOrEqualTo(now));
+
+        expected.setLastUpdate(user.getLastUpdate());
+        assertThat(user, equalTo(expected));
     }
 
     @Test(expected = EmailAlreadyAssignedException.class)

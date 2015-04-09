@@ -10,8 +10,10 @@ import tchepannou.mora.core.dao.PasswordDao;
 import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
 import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
+import tchepannou.mora.core.service.HashService;
 import tchepannou.mora.core.service.PasswordService;
 import tchepannou.mora.core.service.UserService;
+import tchepannou.mora.core.service.impl.Md5HashService;
 import tchepannou.mora.core.service.impl.PasswordServiceImpl;
 import tchepannou.mora.core.service.impl.UserServiceImpl;
 
@@ -63,6 +65,11 @@ public class Application {
     @Bean
     public PasswordService passwordService (){
         return new PasswordServiceImpl();
+    }
+
+    @Bean
+    public HashService hashService (){
+        return new Md5HashService();
     }
 
 

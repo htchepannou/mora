@@ -5,8 +5,9 @@ import tchepannou.mora.core.domain.AccessToken;
 import java.util.List;
 
 public interface AccessTokenDao {
-    AccessToken findById (long id);
-    List<AccessToken> findActiveByUser (long userId);
-    void save (AccessToken token);
-    void save (List<AccessToken> tokens);
+    AccessToken findByKey (String key);
+    List<AccessToken> findByUserByExpired (long userId, boolean expired);
+    void create (AccessToken token);
+    void update (AccessToken token);
+    void update (List<AccessToken> tokens);
 }
