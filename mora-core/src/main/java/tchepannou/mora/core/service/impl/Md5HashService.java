@@ -13,12 +13,6 @@ public class Md5HashService implements HashService {
     public static final String DIGEST_ALGORITHM = "MD5";
 
 
-    //-- Public
-    public static void main(String[] args){
-        System.out.println(new Md5HashService().generate("_secret_"));
-    }
-
-
     //-- HashGeneratorService overrides
     @Override
     public String generate(String token) {

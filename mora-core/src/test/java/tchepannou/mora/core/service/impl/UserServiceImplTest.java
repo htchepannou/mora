@@ -54,7 +54,18 @@ public class UserServiceImplTest{
     }
 
     @Test
-    public void testFindById_Deleted_shouldReturnNull (){
+    public void testFindById_notFound_shouldReturnNull (){
+        // Given
+
+        // When
+        User result = service.findById(1);
+
+        // Then
+        assertThat(result, nullValue());
+    }
+
+    @Test
+    public void testFindById_deleted_shouldReturnNull (){
         // Given
         User user = new User (1);
         user.setDeleted(true);
@@ -81,7 +92,7 @@ public class UserServiceImplTest{
         assertThat(result, equalTo(user));
     }
     @Test
-    public void testFindByEmail_NotFound_shouldReturnNull() throws Exception {
+    public void testFindByEmail_notFound_shouldReturnNull() throws Exception {
         // Given
         User user = new User (1);
         when(userDao.findByEmail("foo@gmail.com", false)).thenReturn((List)Collections.emptyList());
@@ -107,7 +118,7 @@ public class UserServiceImplTest{
         assertThat(result, equalTo(user));
     }
     @Test
-    public void testFindByUsername_NotFound_shouldReturnNull() throws Exception {
+    public void testFindByUsername_notFound_shouldReturnNull() throws Exception {
         // Given
         when(userDao.findByUsername("foo", false)).thenReturn((List)Collections.emptyList());
 
