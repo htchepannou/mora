@@ -1,29 +1,28 @@
-package tchepannou.mora.rest.user;
+package tchepannou.mora.rest.auth;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import tchepannou.mora.core.dao.PasswordDao;
 import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
 import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
+import tchepannou.mora.core.service.AuthService;
 import tchepannou.mora.core.service.HashService;
 import tchepannou.mora.core.service.PasswordService;
 import tchepannou.mora.core.service.UserService;
+import tchepannou.mora.core.service.impl.AuthServiceImpl;
 import tchepannou.mora.core.service.impl.Md5HashService;
 import tchepannou.mora.core.service.impl.PasswordServiceImpl;
 import tchepannou.mora.core.service.impl.UserServiceImpl;
-import tchepannou.mora.swagger.config.SwaggerConfig;
 
 import javax.sql.DataSource;
 
 @Configuration
 @SpringBootApplication
-@Import (SwaggerConfig.class)
 public class Application {
     //-- Attributes
     @Value ("${database.driver}")
@@ -75,6 +74,10 @@ public class Application {
         return new Md5HashService();
     }
 
+    @Bean
+    public AuthService authService () {
+        return new AuthServiceImpl();
+    }
 
     //-- Main
     public static void main (String [] args){

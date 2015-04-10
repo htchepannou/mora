@@ -27,6 +27,7 @@
         <module name="mora-core" />
         <module name="mora-domain" />
         <module name="mora-rest" />
+        <module name="mora-rest-auth" />
         <module name="mora-rest-core" />
         <module name="mora-rest-user" />
         <module name="mora-swagger" />
@@ -35,6 +36,7 @@
     <bytecodeTargetLevel>
       <module name="mora" target="1.8" />
       <module name="mora-domain" target="1.8" />
+      <module name="mora-rest-auth" target="1.8" />
       <module name="mora-rest-core" target="1.8" />
       <module name="mora-rest-user" target="1.8" />
     </bytecodeTargetLevel>

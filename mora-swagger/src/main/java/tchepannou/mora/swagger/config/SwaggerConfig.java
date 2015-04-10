@@ -17,31 +17,69 @@ import com.wordnik.swagger.model.LoginEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
 
-public abstract class AbstractSwaggerConfig {
+@Configuration
+@ComponentScan (basePackages = "com.mangofactory.swagger")
+public class SwaggerConfig {
 
-    @Value ("${app.docs}")
+    @Value ("${swagger.app.docs}")
     private String docsLocation;
+
+    @Value ("${swagger.app.title}")
+    private String title;
+
+    @Value ("${swagger.app.description}")
+    private String description;
+
+    @Value ("${swagger.app.TOS.url}")
+    private String termOfServiceUrl;
+
+    @Value ("${swagger.app.contact}")
+    private String contact;
+
+    @Value ("${swagger.app.license}")
+    private String license;
+
+    @Value ("${swagger.app.license.url}")
+    private String licenseUrl;
+
+    @Value("${swagger.app.include.patterns}")
+    private String includePatterns;
+
+    @Value("${swagger.app.group}")
+    private String group;
 
     @Autowired
     private SpringSwaggerConfig springSwaggerConfig;
+
     @Autowired
     private SpringSwaggerModelConfig springSwaggerModelConfig;
 
 
-    //-- Abstract
+    //-- Protected
     /**
      * API Info as it appears on the swagger-ui page
      */
-    protected abstract ApiInfo apiInfo();
+    protected ApiInfo apiInfo(){
+            ApiInfo apiInfo = new ApiInfo(title, description, termOfServiceUrl, contact, license, licenseUrl);
+            return apiInfo;
+    }
 
-    protected abstract String getSwaggerGroup();
-    protected abstract List<String> getIncludePatterns ();
+    protected String getSwaggerGroup(){
+        return group;
+    }
+
+    protected List<String> getIncludePatterns (){
+        return Arrays.asList(includePatterns);
+    }
 
 
     //-- Public
