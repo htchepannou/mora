@@ -124,14 +124,14 @@ public class AuthServiceImpl implements AuthService {
             InternetAddress emailAddr = new InternetAddress(email);
             emailAddr.validate();
             return true;
-        } catch (AddressException ex) {
+        } catch (AddressException ex) { // NOSONAR - It's OK to eat this exception
             return false;
         }
     }
 
     private boolean matches (Password password, String clearPassword){
         String xpassword = passwordService.encrypt(clearPassword);
-        return xpassword != null & xpassword.equals(password.getValue());
+        return xpassword != null && xpassword.equals(password.getValue());
     }
 
 }
