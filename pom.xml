@@ -12,11 +12,13 @@
         <module>mora-core</module>
         <module>mora-rest-user</module>
         <module>mora-rest-core</module>
+        <module>mora-swagger</module>
     </modules>
 
     <properties>
         <java-version>1.8</java-version>
 
+        <javax.servlet.version>3.0.1</javax.servlet.version>
         <org.springframework.version>4.1.6.RELEASE</org.springframework.version>
         <org.springframework.boot.version>1.2.3.RELEASE</org.springframework.boot.version>
 

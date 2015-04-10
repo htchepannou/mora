@@ -29,6 +29,7 @@
         <module name="mora-rest" />
         <module name="mora-rest-core" />
         <module name="mora-rest-user" />
+        <module name="mora-swagger" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

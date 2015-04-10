@@ -1,4 +1,4 @@
-package tchepannou.mora.rest.user.swagger;
+package tchepannou.mora.swagger.config;
 
 import com.mangofactory.swagger.configuration.JacksonScalaSupport;
 import com.mangofactory.swagger.configuration.SpringSwaggerConfig;
@@ -17,20 +17,13 @@ import com.wordnik.swagger.model.LoginEndpoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
 
-@Configuration
-@ComponentScan (basePackages = "com.mangofactory.swagger")
-public class SwaggerConfig {
-    public static final List<String> DEFAULT_INCLUDE_PATTERNS = Arrays.asList("/users/.*");
-    public static final String SWAGGER_GROUP = "mobile-api";
+public abstract class AbstractSwaggerConfig {
 
     @Value ("${app.docs}")
     private String docsLocation;
@@ -40,6 +33,18 @@ public class SwaggerConfig {
     @Autowired
     private SpringSwaggerModelConfig springSwaggerModelConfig;
 
+
+    //-- Abstract
+    /**
+     * API Info as it appears on the swagger-ui page
+     */
+    protected abstract ApiInfo apiInfo();
+
+    protected abstract String getSwaggerGroup();
+    protected abstract List<String> getIncludePatterns ();
+
+
+    //-- Public
     /**
      * Adds the jackson scala module to the MappingJackson2HttpMessageConverter registered with spring
      * Swagger core models are scala so we need to be able to convert to JSON
@@ -66,13 +71,6 @@ public class SwaggerConfig {
         return swaggerGlobalSettings;
     }
 
-    /**
-     * API Info as it appears on the swagger-ui page
-     */
-    private ApiInfo apiInfo() {
-        ApiInfo apiInfo = new ApiInfo("User API", "REST User API", "http://www.google.ca", "herve@tchepannou.com", "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0.html");
-        return apiInfo;
-    }
 
     /**
      * Configure a SwaggerApiResourceListing for each swagger instance within your app. e.g. 1. private  2. external apis
@@ -84,7 +82,7 @@ public class SwaggerConfig {
     public SwaggerApiResourceListing swaggerApiResourceListing() {
         //The group name is important and should match the group set on ApiListingReferenceScanner
         //Note that swaggerCache() is by DefaultSwaggerController to serve the swagger json
-        SwaggerApiResourceListing swaggerApiResourceListing = new SwaggerApiResourceListing(springSwaggerConfig.swaggerCache(), SWAGGER_GROUP);
+        SwaggerApiResourceListing swaggerApiResourceListing = new SwaggerApiResourceListing(springSwaggerConfig.swaggerCache(), getSwaggerGroup());
 
         //Set the required swagger settings
         swaggerApiResourceListing.setSwaggerGlobalSettings(swaggerGlobalSettings());
@@ -125,10 +123,10 @@ public class SwaggerConfig {
         apiListingReferenceScanner.setSwaggerPathProvider(apiPathProvider());
 
         //Must match the swagger group set on the SwaggerApiResourceListing
-        apiListingReferenceScanner.setSwaggerGroup(SWAGGER_GROUP);
+        apiListingReferenceScanner.setSwaggerGroup(getSwaggerGroup());
 
         //Only include paths that match the supplied regular expressions
-        apiListingReferenceScanner.setIncludePatterns(DEFAULT_INCLUDE_PATTERNS);
+        apiListingReferenceScanner.setIncludePatterns(getIncludePatterns());
 
         return apiListingReferenceScanner;
     }

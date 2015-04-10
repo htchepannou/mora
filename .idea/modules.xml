@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/mora-core/mora-core.iml" filepath="$PROJECT_DIR$/mora-core/mora-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" filepath="$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" filepath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mora-swagger/mora-swagger.iml" filepath="$PROJECT_DIR$/mora-swagger/mora-swagger.iml" />
     </modules>
   </component>
 </project>

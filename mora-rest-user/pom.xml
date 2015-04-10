@@ -24,9 +24,9 @@
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.mangofactory</groupId>
-            <artifactId>swagger-springmvc</artifactId>
-            <version>0.8.2</version>
+            <groupId>tchepannou.mora</groupId>
+            <artifactId>mora-swagger</artifactId>
+            <version>1.0</version>
         </dependency>
 
         <!-- =================== Test ======================= -->

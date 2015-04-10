@@ -1,4 +1,4 @@
-package tchepannou.mora.rest.user.swagger;
+package tchepannou.mora.swagger.config;
 
 import com.mangofactory.swagger.core.SwaggerPathProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +8,7 @@ import javax.servlet.ServletContext;
 
 public class ApiPathProvider implements SwaggerPathProvider {
     private SwaggerPathProvider defaultSwaggerPathProvider;
+
     @Autowired
     private ServletContext servletContext;
 
