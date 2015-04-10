@@ -15,6 +15,10 @@
     <artifactId>mora-rest-user</artifactId>
     <version>1.0</version>
 
+    <properties>
+        <start-class>tchepannou.mora.rest.user.Application</start-class>
+        <java.version>1.8</java.version>
+    </properties>
 
     <dependencies>
         <!-- ========================= Compile ========================= -->
@@ -46,6 +50,14 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                </configuration>
+            </plugin>
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>

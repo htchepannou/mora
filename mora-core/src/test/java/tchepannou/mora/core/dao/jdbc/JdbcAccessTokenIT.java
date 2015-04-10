@@ -20,6 +20,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.lessThan;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
@@ -29,7 +30,7 @@ import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 @SqlGroup ({
         @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/JdbcAccessTokenDao.sql"}),
 })
-public class JdbcAccessTokenITTest {
+public class JdbcAccessTokenIT {
     @Autowired
     private AccessTokenDao dao;
 
@@ -49,6 +50,18 @@ public class JdbcAccessTokenITTest {
         expected.setExpiryDate(new Timestamp(fmt.parse("2017-01-01 11:30:55").getTime()));
 
         assertThat(result, equalTo(expected));
+
+    }
+
+    @Test
+    public void testFindByKey_notFound_returnNull() throws Exception {
+        // Given
+
+        // When
+        AccessToken result = dao.findByValue("???");
+
+        // Then
+        assertThat(result, nullValue());
 
     }
 

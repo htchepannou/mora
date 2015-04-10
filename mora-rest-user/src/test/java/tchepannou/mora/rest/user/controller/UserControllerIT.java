@@ -126,8 +126,6 @@ public class UserControllerIT {
     @Test
     public void testUpdate_notFound_shouldReturn404() throws Exception {
         // Given
-        User user = userDao.findById(1);
-
         SaveUserDto request = new SaveUserDto();
         request.setEmail("foo.bar@gmail.com");
         request.setFirstName("Foo");

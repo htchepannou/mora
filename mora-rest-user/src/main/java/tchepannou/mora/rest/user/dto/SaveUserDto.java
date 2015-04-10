@@ -1,6 +1,7 @@
 package tchepannou.mora.rest.user.dto;
 
 import com.wordnik.swagger.annotations.ApiModel;
+import org.hibernate.validator.constraints.Email;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
@@ -9,6 +10,8 @@ public class SaveUserDto extends ModelDto {
     //-- Attributes
     private String firstName;
     private String lastName;
+
+    @Email
     private String email;
 
     //-- Public
