@@ -11,7 +11,7 @@ create table t_user(
 
     index(email, deleted),
     index(username, deleted)
-);
+) engine=InnoDB;
 
 create table t_password(
     id int primary key  auto_increment,
@@ -23,7 +23,7 @@ create table t_password(
 
     unique (user_id),
     foreign key (user_id) references t_user(id)
-);
+) engine=InnoDB;
 
 create table t_access_token(
     id int primary key auto_increment,
@@ -35,4 +35,4 @@ create table t_access_token(
 
     unique(value),
     foreign key (user_id) references t_user(id)
-);
+) engine=InnoDB;
