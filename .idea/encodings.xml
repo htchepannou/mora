@@ -9,6 +9,5 @@
     <file url="file://$PROJECT_DIR$/mora-rest-user" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/AbstractSwaggerConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/ApiPathProvider.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mora-swagger/src/main/resources/docs" charset="UTF-8" />
   </component>
 </project>

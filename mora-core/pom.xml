@@ -90,6 +90,22 @@
                     	<version>5.1.35</version>
                     </dependency>
                 </dependencies>
+                <executions>
+                    <execution>
+                        <id>clean-db</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>migrate-db</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>migrate</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
