@@ -37,13 +37,13 @@ public class AuthServiceImpl implements AuthService {
     @Autowired
     private HashService hashService;
 
-    @Value ("${AuthService.token.ttl.minutes}")
+    @Value ("${access_token.ttl.minutes}")
     private int tokenTTLMinutes = 30;
 
     //-- AuthService overrides
     @Override
-    public AccessToken findByKey(String key) {
-        return accessTokenDao.findByValue(key);
+    public AccessToken findByValue(String key) {
+        return key != null ? accessTokenDao.findByValue(key) : null;
     }
 
     @Override

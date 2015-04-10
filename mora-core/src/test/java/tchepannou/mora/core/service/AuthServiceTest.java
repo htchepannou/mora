@@ -41,13 +41,13 @@ public class AuthServiceTest {
     private AuthServiceImpl service = new AuthServiceImpl();
 
     @Test
-    public void testFindByKey() throws Exception {
+    public void testFindByValue() throws Exception {
         // Given
         AccessToken token = new AccessToken();
         when(accessTokenDao.findByValue("toto")).thenReturn(token);
 
         // When/Then
-        assertThat(service.findByKey("toto"), equalTo(token));
+        assertThat(service.findByValue("toto"), equalTo(token));
     }
 
     @Test

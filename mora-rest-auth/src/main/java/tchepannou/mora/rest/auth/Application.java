@@ -6,8 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.PasswordDao;
 import tchepannou.mora.core.dao.UserDao;
+import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
 import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
 import tchepannou.mora.core.service.AuthService;
@@ -47,6 +49,11 @@ public class Application {
         ds.setDriverClassName(driver);
         ds.setUrl(url);
         return ds;
+    }
+
+    @Bean
+    public AccessTokenDao accessTokenDao (){
+        return new JdbcAccessTokenDao();
     }
 
     @Bean
