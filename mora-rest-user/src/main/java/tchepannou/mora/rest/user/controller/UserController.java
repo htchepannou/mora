@@ -2,6 +2,8 @@ package tchepannou.mora.rest.user.controller;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
+import com.wordnik.swagger.annotations.ApiResponse;
+import com.wordnik.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -30,6 +32,11 @@ import javax.validation.Valid;
 @Api (value="Users", description = "Manage users")
 public class UserController {
     //-- Attributes
+    public static final String ERROR_SUCCESS = "success";
+    public static final String ERROR_NOT_FOUND = "user_not_found";
+    public static final String ERROR_EMAIL_ALREADY_ASSIGNED = "email_already_assigned";
+    public static final String ERROR_USERNAME_ALREADY_ASSIGNED = "username_already_assigned";
+
     @Autowired
     private UserService userService;
 
@@ -40,6 +47,10 @@ public class UserController {
     //-- REST methods
     @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
     @ApiOperation(value="Get User")
+    @ApiResponses({
+            @ApiResponse (code = 200, message = ERROR_SUCCESS),
+            @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
+    })
     public UserDto get(@PathVariable long userId) throws UserNotFoundException {
         User user = userService.findById(userId);
         if (user == null){
@@ -53,6 +64,11 @@ public class UserController {
 
     @RequestMapping(value = "/", method = RequestMethod.PUT)
     @ApiOperation(value="Create New User")
+    @ApiResponses({
+            @ApiResponse (code = 200, message = ERROR_SUCCESS),
+            @ApiResponse (code = 409, message = ERROR_EMAIL_ALREADY_ASSIGNED),
+            @ApiResponse (code = 409, message = ERROR_USERNAME_ALREADY_ASSIGNED),
+    })
     public UserDto create (@Valid @RequestBody CreateUserDto request) throws UserException{
         /* Create the user */
         User user = new User ();
@@ -60,7 +76,7 @@ public class UserController {
         userService.create(user);
 
         /* create the password */
-        Password password = new Password(user);
+        Password password        = new Password(user);
         password.setValue(passwordService.encrypt(request.getPassword()));
         passwordService.create(password);
 
@@ -71,6 +87,12 @@ public class UserController {
 
     @RequestMapping(value="/{userId}", method = RequestMethod.POST)
     @ApiOperation(value="Update User")
+    @ApiResponses({
+            @ApiResponse (code = 200, message = ERROR_SUCCESS),
+            @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
+            @ApiResponse (code = 409, message = ERROR_EMAIL_ALREADY_ASSIGNED),
+            @ApiResponse (code = 409, message = ERROR_USERNAME_ALREADY_ASSIGNED),
+    })
     public UserDto update (@PathVariable long userId, @Valid @RequestBody SaveUserDto request) throws UserException {
         User user = userService.findById(userId);
         if (user == null) {
@@ -87,6 +109,9 @@ public class UserController {
 
     @RequestMapping(value="/{userId}", method = RequestMethod.DELETE)
     @ApiOperation(value="Delete User")
+    @ApiResponses({
+            @ApiResponse (code = 200, message = ERROR_SUCCESS),
+    })
     public void delete (@PathVariable long userId){
         User user = userService.findById(userId);
         if (user != null) {
@@ -100,13 +125,13 @@ public class UserController {
     public void notFound (){    // NOSONAR - This function is left empty intentionally
     }
 
-    @ResponseStatus (value= HttpStatus.CONFLICT, reason = "email_already_assigned")
+    @ResponseStatus (value= HttpStatus.CONFLICT, reason = ERROR_EMAIL_ALREADY_ASSIGNED)
     @ExceptionHandler (EmailAlreadyAssignedException.class)
     public void emailAlreadyAssigned(){ // NOSONAR - This function is left empty intentionally
 
     }
 
-    @ResponseStatus (value= HttpStatus.CONFLICT, reason = "username_already_assigned")
+    @ResponseStatus (value= HttpStatus.CONFLICT, reason = ERROR_USERNAME_ALREADY_ASSIGNED)
     @ExceptionHandler (UsernameAlreadyAssignedException.class)
     public void usernameAlreadyAssigned(){  // NOSONAR - This function is left empty intentionally
 
