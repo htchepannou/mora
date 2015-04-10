@@ -204,7 +204,7 @@ public class UserControllerIT {
             .contentType("application/json")
             .body(json)
         .when()
-            .put("/users/")
+            .put("/users")
         .then()
             .statusCode(HttpStatus.SC_OK)
             .log().all()
@@ -250,7 +250,7 @@ public class UserControllerIT {
             .contentType("application/json")
             .body(json)
         .when()
-            .put("/users/")
+            .put("/users")
         .then()
             .statusCode(HttpStatus.SC_CONFLICT)
         ;
@@ -272,7 +272,7 @@ public class UserControllerIT {
             .contentType("application/json")
             .body(json)
         .when()
-            .put("/users/")
+            .put("/users")
         .then()
             .statusCode(HttpStatus.SC_CONFLICT)
         ;

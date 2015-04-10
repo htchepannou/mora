@@ -14,41 +14,41 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.AccessToken;
-import tchepannou.mora.core.exception.AccessTokenNotFoundException;
-import tchepannou.mora.core.exception.AuthException;
-import tchepannou.mora.core.service.AuthService;
+import tchepannou.mora.core.exception.AccessTokenException;
+import tchepannou.mora.core.exception.AuthFailedException;
+import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.rest.auth.dto.AccessTokenDto;
 import tchepannou.mora.rest.auth.dto.AuthRequest;
 
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping (value = "/auth")
-@Api (value="Authentication", description = "Authenticates users")
-public class AuthController {
+@Api (value="AccessToken", description = "Manages access token")
+public class AccessTokenController {
     //-- Attributes
+    public static final String HEADER_TOKEN = "X-AccessToken";
     public static final String SUCCESS = "success";
     public static final String ERROR_AUTH_FAILED = "auth_failed";
-    public static final String ERROR_NOT_FOUND = "not_found";
     public static final String ERROR_UNAUTHORIZED = "unauthorized";
+    public static final String ERROR_BAD_REQUEST = "bad_request";
 
     @Autowired
-    private AuthService authService;
+    private AccessTokenService accessTokenService;
 
     //-- REST methods
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value="/access_token", method = RequestMethod.GET)
     @ApiOperation (value="Get the user's access token")
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
-            @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
+            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public AccessTokenDto get(@RequestHeader ("X-AccessToken") String key) throws AuthException {
-        AccessToken token = authService.findByValue(key);
+    public AccessTokenDto get(@RequestHeader (HEADER_TOKEN)  String key) throws AccessTokenException {
+        AccessToken token = accessTokenService.findByValue(key);
         if (token == null){
-            throw new AccessTokenNotFoundException("No token found for " + key);
+            throw new AccessTokenException("No token found for " + key);
         } if (token.isExpired()){
-            throw new AuthException("Token has expired");
+            throw new AccessTokenException("Token has expired");
         }
 
         return new AccessTokenDto.Builder()
@@ -56,23 +56,26 @@ public class AuthController {
                 .build();
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.DELETE)
+    @RequestMapping(value="/access_token", method = RequestMethod.DELETE)
     @ApiOperation (value="Release the current access token")
     @ApiResponses ({
-            @ApiResponse (code = 200, message = SUCCESS)
+            @ApiResponse (code = 200, message = SUCCESS),
+            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public void delete(@RequestHeader ("X-AccessToken") String key){
-        authService.logout(key);
+    public void delete(@RequestHeader (HEADER_TOKEN) String key){
+        accessTokenService.logout(key);
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.PUT)
-    @ApiOperation (value="Authenticate a user")
+    @RequestMapping(value="/access_token", method = RequestMethod.PUT)
+    @ApiOperation (value="Authenticate a user and assign him a new token")
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
+            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
+            @ApiResponse (code = 409, message = ERROR_AUTH_FAILED),
     })
-    public AccessTokenDto authenticate (@Valid @RequestBody AuthRequest request) throws AuthException{
-        AccessToken token = authService.authenticate(request.getUsernameOrEmail(), request.getPassword());
+    public AccessTokenDto create (@Valid @RequestBody AuthRequest request) throws AccessTokenException {
+        AccessToken token = accessTokenService.authenticate(request.getUsernameOrEmail(), request.getPassword());
 
         return new AccessTokenDto.Builder()
                 .withAccessToken(token)
@@ -81,13 +84,13 @@ public class AuthController {
 
 
     //-- Error handlers
-    @ResponseStatus (value= HttpStatus.NOT_FOUND, reason = ERROR_NOT_FOUND)
-    @ExceptionHandler (AccessTokenNotFoundException.class)
-    public void notFound(){  // NOSONAR - This function is left empty intentionally
+    @ResponseStatus (value= HttpStatus.CONFLICT, reason = ERROR_AUTH_FAILED)
+    @ExceptionHandler (AuthFailedException.class)
+    public void authFailed(){  // NOSONAR - This function is left empty intentionally
     }
 
     @ResponseStatus (value= HttpStatus.UNAUTHORIZED, reason = ERROR_UNAUTHORIZED)
-    @ExceptionHandler (AuthException.class)
+    @ExceptionHandler (AccessTokenException.class)
     public void unauthorized(){  // NOSONAR - This function is left empty intentionally
     }
 }

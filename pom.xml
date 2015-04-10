@@ -10,10 +10,10 @@
     <version>1.0</version>
     <modules>
         <module>mora-core</module>
+        <module>mora-rest-auth</module>
         <module>mora-rest-user</module>
         <module>mora-rest-core</module>
         <module>mora-swagger</module>
-        <module>mora-rest-auth</module>
     </modules>
 
     <properties>

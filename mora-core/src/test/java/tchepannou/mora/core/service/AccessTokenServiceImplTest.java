@@ -10,9 +10,8 @@ import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.Password;
 import tchepannou.mora.core.domain.User;
-import tchepannou.mora.core.exception.AuthException;
-import tchepannou.mora.core.exception.NoPasswordException;
-import tchepannou.mora.core.service.impl.AuthServiceImpl;
+import tchepannou.mora.core.exception.AuthFailedException;
+import tchepannou.mora.core.service.impl.AccessTokenServiceImpl;
 
 import java.util.Arrays;
 import java.util.Date;
@@ -24,7 +23,7 @@ import static org.mockito.Mockito.*;
 
 
 @RunWith(MockitoJUnitRunner.class)
-public class AuthServiceTest {
+public class AccessTokenServiceImplTest {
     @Mock
     private AccessTokenDao accessTokenDao;
 
@@ -38,7 +37,7 @@ public class AuthServiceTest {
     private HashService hashService;
 
     @InjectMocks
-    private AuthServiceImpl service = new AuthServiceImpl();
+    private AccessTokenServiceImpl service = new AccessTokenServiceImpl();
 
     @Test
     public void testFindByValue() throws Exception {
@@ -108,8 +107,8 @@ public class AuthServiceTest {
         assertThat(result, equalTo(expected));
     }
 
-    @Test(expected = AuthException.class)
-    public void testAuthenticateByEmail_notFound_shouldThrowAuthException() throws Exception {
+    @Test(expected = AuthFailedException.class)
+    public void testAuthenticateByEmail_notFound_shouldThrowAuthFailedException() throws Exception {
         // Given
         User user = new User (1);
 
@@ -178,8 +177,8 @@ public class AuthServiceTest {
         assertThat(result, equalTo(expected));
     }
 
-    @Test(expected = AuthException.class)
-    public void testAuthenticateByUsername_notFound_shouldThrowAuthException() throws Exception {
+    @Test(expected = AuthFailedException.class)
+    public void testAuthenticateByUsername_notFound_shouldThrowAuthFailedException() throws Exception {
         // Given
         User user = new User (1);
 
@@ -202,8 +201,8 @@ public class AuthServiceTest {
     }
 
 
-    @Test(expected = NoPasswordException.class)
-    public void testAuthenticate_noPassword_shouldThrowNoPasswordException() throws Exception {
+    @Test(expected = AuthFailedException.class)
+    public void testAuthenticate_noPassword_shouldThrowAuthFailedException() throws Exception {
         // Given
         User user = new User (1);
         when(userService.findByUsername("toto")).thenReturn(user);
@@ -221,8 +220,8 @@ public class AuthServiceTest {
         service.authenticate("toto", "secret");
     }
 
-    @Test(expected = AuthException.class)
-    public void testAuthenticate_BadPassword_shouldThrowAuthExcepion() throws Exception {
+    @Test(expected = AuthFailedException.class)
+    public void testAuthenticate_BadPassword_shouldThrowAuthFailedException() throws Exception {
         // Given
         User user = new User (1);
         when(userService.findByUsername("toto")).thenReturn(user);

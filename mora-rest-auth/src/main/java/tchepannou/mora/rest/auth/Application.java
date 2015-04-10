@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.PasswordDao;
@@ -12,19 +13,21 @@ import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
 import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
-import tchepannou.mora.core.service.AuthService;
+import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.HashService;
 import tchepannou.mora.core.service.PasswordService;
 import tchepannou.mora.core.service.UserService;
-import tchepannou.mora.core.service.impl.AuthServiceImpl;
+import tchepannou.mora.core.service.impl.AccessTokenServiceImpl;
 import tchepannou.mora.core.service.impl.Md5HashService;
 import tchepannou.mora.core.service.impl.PasswordServiceImpl;
 import tchepannou.mora.core.service.impl.UserServiceImpl;
+import tchepannou.mora.swagger.config.SwaggerConfig;
 
 import javax.sql.DataSource;
 
 @Configuration
 @SpringBootApplication
+@Import (SwaggerConfig.class)
 public class Application {
     //-- Attributes
     @Value ("${database.driver}")
@@ -82,8 +85,8 @@ public class Application {
     }
 
     @Bean
-    public AuthService authService () {
-        return new AuthServiceImpl();
+    public AccessTokenService accessTokenService () {
+        return new AccessTokenServiceImpl();
     }
 
     //-- Main

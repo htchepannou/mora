@@ -1,8 +1,10 @@
 package tchepannou.mora.rest.auth.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.rest.core.dto.ModelDto;
+import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
 import java.util.Date;
 
@@ -37,10 +39,12 @@ public class AccessTokenDto extends ModelDto{
     }
 
     //-- Getter
+    @JsonSerialize (using=JsonDateSerializer.class)
     public Date getCreationDate() {
         return creationDate;
     }
 
+    @JsonSerialize (using=JsonDateSerializer.class)
     public Date getExpiryDate() {
         return expiryDate;
     }

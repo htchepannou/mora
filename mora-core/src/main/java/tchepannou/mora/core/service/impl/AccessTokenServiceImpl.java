@@ -10,9 +10,9 @@ import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.Password;
 import tchepannou.mora.core.domain.User;
-import tchepannou.mora.core.exception.AuthException;
-import tchepannou.mora.core.exception.NoPasswordException;
-import tchepannou.mora.core.service.AuthService;
+import tchepannou.mora.core.exception.AccessTokenException;
+import tchepannou.mora.core.exception.AuthFailedException;
+import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.HashService;
 import tchepannou.mora.core.service.PasswordService;
 import tchepannou.mora.core.service.UserService;
@@ -23,7 +23,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class AuthServiceImpl implements AuthService {
+public class AccessTokenServiceImpl implements AccessTokenService {
     //-- Attributes
     @Autowired
     private AccessTokenDao accessTokenDao;
@@ -48,20 +48,20 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     @Transactional
-    public AccessToken authenticate(String usernameOrEmail, String clearPassword) throws AuthException {
+    public AccessToken authenticate(String usernameOrEmail, String clearPassword) throws AccessTokenException {
         Preconditions.checkArgument(usernameOrEmail != null, "usernameOrEmail == null");
         Preconditions.checkArgument(clearPassword != null, "password == null");
 
         User user = findUser(usernameOrEmail);
         if (user == null) {
-            throw new AuthException("No user found with username or email: " + usernameOrEmail);
+            throw new AuthFailedException("No user found with username or email: " + usernameOrEmail);
         }
 
         Password password = passwordService.findByUser(user.getId());
         if (password == null) {
-            throw new NoPasswordException("No password assigned to " + user);
+            throw new AuthFailedException("No password assigned to " + user);
         } else if (!matches(password, clearPassword)) {
-            throw new AuthException("Password mismatch");
+            throw new AuthFailedException("Password mismatch");
         }
 
         expireTokens(user);

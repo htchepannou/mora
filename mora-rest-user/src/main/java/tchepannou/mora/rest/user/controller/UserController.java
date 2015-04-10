@@ -28,7 +28,6 @@ import tchepannou.mora.rest.user.dto.UserDto;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(value = "/users")
 @Api (value="Users", description = "Manage users")
 public class UserController {
     //-- Attributes
@@ -45,7 +44,7 @@ public class UserController {
 
 
     //-- REST methods
-    @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
     @ApiOperation(value="Get User")
     @ApiResponses({
             @ApiResponse (code = 200, message = ERROR_SUCCESS),
@@ -62,7 +61,7 @@ public class UserController {
                 .build();
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.PUT)
+    @RequestMapping(value="/users", method = RequestMethod.PUT)
     @ApiOperation(value="Create New User")
     @ApiResponses({
             @ApiResponse (code = 200, message = ERROR_SUCCESS),
@@ -85,7 +84,7 @@ public class UserController {
                 .build();
     }
 
-    @RequestMapping(value="/{userId}", method = RequestMethod.POST)
+    @RequestMapping(value="/users/{userId}", method = RequestMethod.POST)
     @ApiOperation(value="Update User")
     @ApiResponses({
             @ApiResponse (code = 200, message = ERROR_SUCCESS),
@@ -107,7 +106,7 @@ public class UserController {
                 .build();
     }
 
-    @RequestMapping(value="/{userId}", method = RequestMethod.DELETE)
+    @RequestMapping(value="/users/{userId}", method = RequestMethod.DELETE)
     @ApiOperation(value="Delete User")
     @ApiResponses({
             @ApiResponse (code = 200, message = ERROR_SUCCESS),
