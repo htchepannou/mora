@@ -21,6 +21,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.lessThan;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
 @RunWith (SpringJUnit4ClassRunner.class)
@@ -119,8 +120,8 @@ public class JdbcAccessTokenITTest {
         // Then
         assertThat(id, equalTo(result.getId()));
 
-        assertThat(result.getCreationDate().getTime()/1000, equalTo(expected.getCreationDate().getTime()/1000));
-        assertThat(result.getExpiryDate().getTime()/1000, equalTo(expected.getExpiryDate().getTime()/1000));
+        assertThat(result.getCreationDate().getTime()-expected.getCreationDate().getTime(), lessThan(2000L));
+        assertThat(result.getExpiryDate().getTime()-expected.getExpiryDate().getTime(), lessThan(2000L));
 
         expected.setId(id);
         expected.setCreationDate(result.getCreationDate());
@@ -141,7 +142,7 @@ public class JdbcAccessTokenITTest {
         AccessToken result = dao.findByValue(token.getValue());
 
         // Then
-        assertThat(result.getExpiryDate().getTime()/1000, equalTo(expected.getExpiryDate().getTime()/1000));
+        assertThat(result.getExpiryDate().getTime()-expected.getExpiryDate().getTime(), lessThan(2000L));
 
         expected.setExpiryDate(result.getExpiryDate());
         assertThat(result, equalTo(expected));

@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.Matchers.lessThan;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
@@ -162,8 +163,8 @@ public class JdbcUserDaoIT {
         // Then
         assertThat(user.getId(), equalTo(id));
 
-        assertThat(result.getCreationDate().getTime()/1000, equalTo(expected.getCreationDate().getTime()/1000));
-        assertThat(result.getLastUpdate().getTime()/1000, equalTo(expected.getLastUpdate().getTime()/1000));
+        assertThat(result.getCreationDate().getTime()-expected.getCreationDate().getTime(), lessThan(2000L));
+        assertThat(result.getLastUpdate().getTime()-expected.getLastUpdate().getTime(), lessThan(2000L));
 
         expected.setId(id);
         expected.setCreationDate(result.getCreationDate());
@@ -194,7 +195,7 @@ public class JdbcUserDaoIT {
         User result = userDao.findById(1);
 
         // Then
-        assertThat(result.getLastUpdate().getTime()/1000, equalTo(expected.getLastUpdate().getTime()/1000));
+        assertThat(result.getLastUpdate().getTime()-expected.getLastUpdate().getTime(), lessThan(2000L));
 
         expected.setLastUpdate(result.getLastUpdate());
         assertThat(result, equalTo(expected));
