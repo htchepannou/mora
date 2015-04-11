@@ -59,6 +59,6 @@ public class AccessTokenTest {
         token.expire();
 
         // Then
-        assertThat(token.getExpiryDate(), equalTo(now));
+        assertThat(Math.abs(token.getExpiryDate().getTime()/1000 - now.getTime()/1000), equalTo(1L));
     }
 }

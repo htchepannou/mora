@@ -37,7 +37,7 @@ public class AccessToken extends Model{
 
     //-- Public
     public void expire (){
-        this.expiryDate = new Date ();
+        this.expiryDate = new Date (System.currentTimeMillis()-1000);
     }
 
     //-- Getter/Setter
