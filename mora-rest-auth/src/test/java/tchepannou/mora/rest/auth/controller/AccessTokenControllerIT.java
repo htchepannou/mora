@@ -103,7 +103,6 @@ public class AccessTokenControllerIT {
             .statusCode(HttpStatus.SC_OK);
 
         AccessToken token = accessTokenDao.findByValue("bc9a50e1e0085b13c4bba866f6dfe57c");
-        System.out.println("token=" + token);
         assertThat(token.isExpired(), equalTo(true));
     }
 
