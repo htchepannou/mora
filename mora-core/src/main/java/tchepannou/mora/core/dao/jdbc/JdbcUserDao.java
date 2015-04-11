@@ -1,8 +1,7 @@
 package tchepannou.mora.core.dao.jdbc;
 
 import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.dao.jdbc.mapper.UserMapper;
 import tchepannou.mora.core.domain.User;
@@ -14,36 +13,15 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.List;
 
-public class JdbcUserDao extends JdbcModelDao implements UserDao {
+public class JdbcUserDao extends JdbcModelDao<User> implements UserDao {
     //-- Attributes
     private static final UserMapper MAPPER = new UserMapper();
 
-    //-- UserDao overrides
+    //-- JdbcModelDao overrides
     @Override
-    public User findById(long id) {
-        try {
-            return template.queryForObject("SELECT * FROM t_user WHERE id=?", new Object[] {id}, MAPPER);
-        } catch (org.springframework.dao.EmptyResultDataAccessException e){ // NOSONAR - Each exception intentionally
-            return null;
-        }
-    }
-
-    @Override
-    public List<User> findByEmail(String email, boolean deleted) {
-        return template.query("SELECT * FROM t_user WHERE email=? AND deleted=?", new Object[]{email, deleted}, MAPPER);
-    }
-
-    @Override
-    public List<User> findByUsername(String username, boolean deleted) {
-        return template.query("SELECT * FROM t_user WHERE username=? AND deleted=?", new Object[] {username, deleted}, MAPPER);
-    }
-
-    @Override
-    public long create(final User user) {
-        KeyHolder holder = new GeneratedKeyHolder();
-
+    protected PreparedStatementCreator getPreparedStatementCreator(final User user) {
         final String sql = "INSERT INTO t_user(username, email, firstname, lastname, deleted, creation_date, last_update) VALUES(?,?,?,?,?,?,?)";
-        PreparedStatementCreator ps = new PreparedStatementCreator() {
+        return new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
                 PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
@@ -57,11 +35,27 @@ public class JdbcUserDao extends JdbcModelDao implements UserDao {
                 return ps;
             }
         };
-        template.update(ps, holder);
+    }
 
-        long id=holder.getKey().longValue();
-        user.setId(id);
-        return id;
+    @Override
+    protected String getTableName() {
+        return "t_user";
+    }
+
+    @Override
+    protected RowMapper<User> getRowMapper() {
+        return MAPPER;
+    }
+
+    //-- UserDao overrides
+    @Override
+    public List<User> findByEmail(String email, boolean deleted) {
+        return template.query("SELECT * FROM t_user WHERE email=? AND deleted=?", new Object[]{email, deleted}, MAPPER);
+    }
+
+    @Override
+    public List<User> findByUsername(String username, boolean deleted) {
+        return template.query("SELECT * FROM t_user WHERE username=? AND deleted=?", new Object[] {username, deleted}, MAPPER);
     }
 
     @Override
