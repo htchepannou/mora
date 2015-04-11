@@ -71,12 +71,9 @@ public class AccessTokenServiceImpl implements AccessTokenService {
 
     @Override
     @Transactional
-    public void logout(String key) {
-        AccessToken token = accessTokenDao.findByValue(key);
-        if (token != null) {
-            token.expire();
-            accessTokenDao.update(token);
-        }
+    public void expire(AccessToken token) {
+        token.expire();
+        accessTokenDao.update(token);
     }
 
     //-- Setter

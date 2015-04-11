@@ -103,6 +103,7 @@ public class AccessTokenControllerIT {
             .statusCode(HttpStatus.SC_OK);
 
         AccessToken token = accessTokenDao.findByValue("bc9a50e1e0085b13c4bba866f6dfe57c");
+        System.out.println("token=" + token);
         assertThat(token.isExpired(), equalTo(true));
     }
 
@@ -116,13 +117,13 @@ public class AccessTokenControllerIT {
     }
 
     @Test
-    public void testDelete_badHeader_returnsOK() throws Exception {
+    public void testDelete_badHeader_returns401() throws Exception {
         given()
-           .header(new Header(AccessTokenController.HEADER_TOKEN, "bc9a50e1e0085b13c4bba866f6dfe57c"))
+           .header(new Header(AccessTokenController.HEADER_TOKEN, "????"))
         .when()
             .delete("/access_token")
         .then()
-            .statusCode(HttpStatus.SC_OK);
+            .statusCode(HttpStatus.SC_UNAUTHORIZED);
     }
 
 

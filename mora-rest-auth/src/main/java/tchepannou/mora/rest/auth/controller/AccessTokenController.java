@@ -60,10 +60,16 @@ public class AccessTokenController {
     @ApiOperation (value="Release the current access token")
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
+            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public void delete(@RequestHeader (HEADER_TOKEN) String key){
-        accessTokenService.logout(key);
+    public void delete(@RequestHeader (HEADER_TOKEN) String key) throws AccessTokenException {
+        AccessToken token = accessTokenService.findByValue(key);
+        if (token == null){
+            throw new AccessTokenException("No token found for " + key);
+        } if (!token.isExpired()){
+            accessTokenService.expire(token);
+        }
     }
 
     @RequestMapping(value="/access_token", method = RequestMethod.PUT)

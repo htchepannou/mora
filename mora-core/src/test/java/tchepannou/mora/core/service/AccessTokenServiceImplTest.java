@@ -50,13 +50,12 @@ public class AccessTokenServiceImplTest {
     }
 
     @Test
-    public void testLogout() throws Exception {
+    public void testExpire() throws Exception {
         // Given
         AccessToken token = mock(AccessToken.class);
-        when(accessTokenDao.findByValue("toto")).thenReturn(token);
 
         // When
-        service.logout("toto");
+        service.expire(token);
 
         // Then
         verify(token).expire();
