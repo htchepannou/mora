@@ -14,7 +14,7 @@ create table t_user(
 ) engine=InnoDB;
 
 create table t_password(
-    id int primary key  auto_increment,
+    id int not null primary key  auto_increment,
     user_id int not null,
 
     value varchar(32),
@@ -26,7 +26,7 @@ create table t_password(
 ) engine=InnoDB;
 
 create table t_access_token(
-    id int primary key auto_increment,
+    id int not null primary key auto_increment,
     user_id int not null,
 
     value varchar(32) not null,
@@ -36,3 +36,18 @@ create table t_access_token(
     unique(value),
     foreign key (user_id) references t_user(id)
 ) engine=InnoDB;
+
+
+create table t_space_type(
+    id int not null primary key auto_increment,
+
+    name varchar(32) not null,
+
+    unique(name)
+) engine=InnoDB;
+
+insert into t_space_type (id, name) values(1, 'club');
+insert into t_space_type (id, name) values(2, 'team');
+
+
+
