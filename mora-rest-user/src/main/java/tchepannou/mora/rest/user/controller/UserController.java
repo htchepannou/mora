@@ -45,9 +45,9 @@ public class UserController {
 
     //-- REST methods
     @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
-    @ApiOperation(value="Get User")
+    @ApiOperation(value="Retrieve User")
     @ApiResponses({
-            @ApiResponse (code = 200, message = ERROR_SUCCESS),
+            @ApiResponse (code = 200, message = ERROR_SUCCESS, response = UserDto.class),
             @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
     })
     public UserDto get(@PathVariable long userId) throws UserNotFoundException {
@@ -90,7 +90,6 @@ public class UserController {
             @ApiResponse (code = 200, message = ERROR_SUCCESS),
             @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
             @ApiResponse (code = 409, message = ERROR_EMAIL_ALREADY_ASSIGNED),
-            @ApiResponse (code = 409, message = ERROR_USERNAME_ALREADY_ASSIGNED),
     })
     public UserDto update (@PathVariable long userId, @Valid @RequestBody SaveUserDto request) throws UserException {
         User user = userService.findById(userId);

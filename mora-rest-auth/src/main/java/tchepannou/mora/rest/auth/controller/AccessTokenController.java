@@ -37,7 +37,7 @@ public class AccessTokenController {
 
     //-- REST methods
     @RequestMapping(value="/access_token", method = RequestMethod.GET)
-    @ApiOperation (value="Get the user's access token")
+    @ApiOperation (value="Retrieuve the user's access token")
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),

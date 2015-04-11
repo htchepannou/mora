@@ -8,7 +8,7 @@ public class AccessToken extends Model{
     //-- Attributes
     private long userId;
     private String value;
-    private Date creationDate = new Date ();
+    private Date creationDate;
     private Date expiryDate;
 
     //-- Constructor
