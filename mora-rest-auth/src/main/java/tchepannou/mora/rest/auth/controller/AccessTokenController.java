@@ -47,7 +47,7 @@ public class AccessTokenController {
         AccessToken token = accessTokenService.findByValue(key);
         if (token == null){
             throw new AccessTokenException("No token found for " + key);
-        } if (token.isExpired()){
+        } else if (token.isExpired()){
             throw new AccessTokenException("Token has expired");
         }
 
@@ -67,7 +67,7 @@ public class AccessTokenController {
         AccessToken token = accessTokenService.findByValue(key);
         if (token == null){
             throw new AccessTokenException("No token found for " + key);
-        } if (!token.isExpired()){
+        } else if (!token.isExpired()){
             accessTokenService.expire(token);
         }
     }
