@@ -25,7 +25,7 @@ import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
 
 @RunWith (SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {JdbcConfig.class})
+@ContextConfiguration (classes = {JdbcConfig.class})
 @SqlGroup ({
         @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/core-clean.sql", "classpath:db/JdbcUserDao.sql"}),
 })
