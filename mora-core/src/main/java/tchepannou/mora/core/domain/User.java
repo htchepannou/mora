@@ -8,7 +8,7 @@ public class User extends Model {
     private String firstName;
     private String lastName;
     private String email;
-    private Date creationDate = new Date ();
+    private Date creationDate;
     private Date lastUpdate;
     private boolean deleted;
 

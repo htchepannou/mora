@@ -166,8 +166,6 @@ public class UserControllerIT {
     @Test
     public void testUpdate_duplicateEmail_shouldReturn409() throws Exception {
         // Given
-        User user = userDao.findById(1);
-
         SaveUserDto request = new SaveUserDto();
         request.setEmail("john.doe@gmail.com");
         request.setFirstName("Foo");
@@ -278,6 +276,159 @@ public class UserControllerIT {
         ;
     }
 
+    @Test
+    public void testCreate_nullEmail_shouldReturn400() throws Exception {
+        // Given
+        CreateUserDto request = new CreateUserDto();
+        request.setUsername("ray.sponsible");
+        request.setEmail(null);
+        request.setFirstName("Foo");
+        request.setLastName("Bar");
+        request.setPassword("_secret_password_");
+        String json = new ObjectMapper().writeValueAsString(request);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .put("/users")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
+
+    @Test
+    public void testCreate_emptyEmail_shouldReturn400() throws Exception {
+        // Given
+        CreateUserDto request = new CreateUserDto();
+        request.setUsername("ray.sponsible");
+        request.setEmail(null);
+        request.setFirstName("Foo");
+        request.setLastName("Bar");
+        request.setPassword("_secret_password_");
+        String json = new ObjectMapper().writeValueAsString(request);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .put("/users")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
+
+    @Test
+    public void testCreate_badEmail_shouldReturn400() throws Exception {
+        // Given
+        CreateUserDto request = new CreateUserDto();
+        request.setUsername("ray.sponsible");
+        request.setEmail("xxx");
+        request.setFirstName("Foo");
+        request.setLastName("Bar");
+        request.setPassword("_secret_password_");
+        String json = new ObjectMapper().writeValueAsString(request);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .put("/users")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
+
+    @Test
+    public void testCreate_nullUsername_shouldReturn400() throws Exception {
+        // Given
+        CreateUserDto request = new CreateUserDto();
+        request.setUsername(null);
+        request.setEmail("ray.sponsible@gmail.com");
+        request.setFirstName("Foo");
+        request.setLastName("Bar");
+        request.setPassword("_secret_password_");
+        String json = new ObjectMapper().writeValueAsString(request);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .put("/users")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
+
+    @Test
+    public void testCreate_shortUsername_shouldReturn400() throws Exception {
+        // Given
+        CreateUserDto request = new CreateUserDto();
+        request.setUsername("12345");
+        request.setEmail("ray.sponsible@gmail.com");
+        request.setFirstName("Foo");
+        request.setLastName("Bar");
+        request.setPassword("_secret_password_");
+        String json = new ObjectMapper().writeValueAsString(request);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .put("/users")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
+
+    @Test
+    public void testCreate_noPassword_shouldReturn400() throws Exception {
+        // Given
+        CreateUserDto request = new CreateUserDto();
+        request.setUsername("ray.sponsible");
+        request.setEmail("ray.sponsible@gmail.com");
+        request.setFirstName("Foo");
+        request.setLastName("Bar");
+        request.setPassword(null);
+        String json = new ObjectMapper().writeValueAsString(request);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .put("/users")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
+
+    @Test
+    public void testCreate_shortPassword_shouldReturn400() throws Exception {
+        // Given
+        CreateUserDto request = new CreateUserDto();
+        request.setUsername("ray.sponsible");
+        request.setEmail("ray.sponsible@gmail.com");
+        request.setFirstName("Foo");
+        request.setLastName("Bar");
+        request.setPassword("12345");
+        String json = new ObjectMapper().writeValueAsString(request);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .put("/users")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
 
 
     @Test
@@ -311,4 +462,6 @@ public class UserControllerIT {
             delete("/users/{userId}", 999).
         then().
             statusCode(HttpStatus.SC_OK);
-    }}
+    }
+
+}

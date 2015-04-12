@@ -1,6 +1,7 @@
 package tchepannou.mora.rest.user.dto;
 
 import com.wordnik.swagger.annotations.ApiModel;
+import org.hibernate.validator.constraints.Email;
 import tchepannou.mora.core.domain.User;
 
 import javax.validation.constraints.NotNull;
@@ -14,7 +15,7 @@ public class CreateUserDto extends SaveUserDto {
     private String username;
 
     @NotNull
-    @Size (min=6, max=100)
+    @Size (min=6)
     private String password;
 
 
@@ -29,22 +30,9 @@ public class CreateUserDto extends SaveUserDto {
 
     @Override
     @NotNull
+    @Email
     public String getEmail() {
         return super.getEmail();
-    }
-
-    @Override
-    @NotNull
-    @Size (min=1)
-    public String getFirstName() {
-        return super.getFirstName();
-    }
-
-    @Override
-    @NotNull
-    @Size (min=1)
-    public String getLastName() {
-        return super.getLastName();
     }
 
     //-- Getter/Setter

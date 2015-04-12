@@ -1,5 +1,6 @@
 package tchepannou.mora.rest.user.dto;
 
+import com.google.common.base.Strings;
 import com.wordnik.swagger.annotations.ApiModel;
 import org.hibernate.validator.constraints.Email;
 import tchepannou.mora.core.domain.User;
@@ -16,9 +17,17 @@ public class SaveUserDto extends ModelDto {
 
     //-- Public
     public void toUser (User user){
-        user.setFirstName(getFirstName());
-        user.setLastName(getLastName());
-        user.setEmail(getEmail());
+        if (!Strings.isNullOrEmpty(firstName)) {
+            user.setFirstName(firstName);
+        }
+
+        if (!Strings.isNullOrEmpty(lastName)) {
+            user.setLastName(lastName);
+        }
+
+        if (!Strings.isNullOrEmpty(email)) {
+            user.setEmail(email);
+        }
     }
 
 
