@@ -9,6 +9,9 @@ public class SpaceType extends Model{
     public SpaceType(){
 
     }
+    public SpaceType(long id){
+        super(id);
+    }
     public SpaceType(long id, String name){
         super(id);
         this.name = name;

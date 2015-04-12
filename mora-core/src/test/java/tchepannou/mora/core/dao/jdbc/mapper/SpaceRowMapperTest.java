@@ -29,7 +29,8 @@ public class SpaceRowMapperTest {
         when(rs.getLong("id")).thenReturn(1L);
         when(rs.getLong("user_id")).thenReturn(10L);
         when(rs.getLong("space_type_id")).thenReturn(100L);
-        when(rs.getString("name")).thenReturn("yo");
+        when(rs.getString("name")).thenReturn("New York Soccer Club");
+        when(rs.getString("abbreviation")).thenReturn("NYSC");
         when(rs.getString("description")).thenReturn("This is a description");
         when(rs.getString("logo_url")).thenReturn("http://img.com/1.png");
         when(rs.getString("website_url")).thenReturn("http://www.google.ca");
@@ -44,7 +45,8 @@ public class SpaceRowMapperTest {
 
         // Then
         Space expected = new Space(1, new SpaceType(100, "club"), new User(10));
-        expected.setName("yo");
+        expected.setName("New York Soccer Club");
+        expected.setAbbreviation("NYSC");
         expected.setDescription("This is a description");
         expected.setLogoUrl("http://img.com/1.png");
         expected.setWebsiteUrl("http://www.google.ca");

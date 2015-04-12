@@ -14,6 +14,8 @@ public class SpaceRowMapper implements RowMapper<Space> {
         result.setUserId(rs.getLong("user_id"));
         result.setTypeId(rs.getLong("space_type_id"));
         result.setName(rs.getString("name"));
+        result.setAbbreviation(rs.getString("abbreviation"));
+        result.setAbbreviation(rs.getString("abbreviation"));
         result.setDescription(rs.getString("description"));
         result.setLogoUrl(rs.getString("logo_url"));
         result.setWebsiteUrl(rs.getString("website_url"));

@@ -9,6 +9,7 @@ public class Space extends Model implements  SoftDeleteSupport{
     private long typeId;
     private long userId;
     private String name;
+    private String abbreviation;
     private String description;
     private String logoUrl;
     private String websiteUrl;
@@ -33,12 +34,21 @@ public class Space extends Model implements  SoftDeleteSupport{
         this.userId = user.getId();
     }
 
+    public Space (SpaceType type, User user){
+        Preconditions.checkArgument(type != null, "type == null");
+        Preconditions.checkArgument(user != null, "user == null");
+
+        this.typeId = type.getId();
+        this.userId = user.getId();
+    }
+
     public Space (Space space){
         super(space);
 
         this.typeId = space.getTypeId();
         this.userId = space.getUserId();
         this.name = space.getName();
+        this.abbreviation = space.getAbbreviation();
         this.description = space.getDescription();
         this.deleted = space.isDeleted();
         this.creationDate = space.getCreationDate();
@@ -140,5 +150,13 @@ public class Space extends Model implements  SoftDeleteSupport{
 
     public void setWebsiteUrl(String websiteUrl) {
         this.websiteUrl = websiteUrl;
+    }
+
+    public String getAbbreviation() {
+        return abbreviation;
+    }
+
+    public void setAbbreviation(String abbreviation) {
+        this.abbreviation = abbreviation;
     }
 }
