@@ -14,6 +14,8 @@ import tchepannou.mora.core.domain.SpaceType;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
 
@@ -26,6 +28,27 @@ public class JdbcSpaceTypeDaoIT {
     @Autowired
     private SpaceTypeDao spaceTypeDao;
 
+
+    @Test
+    public void testFindById (){
+        // Given
+
+        // When
+        SpaceType result = spaceTypeDao.findById(1);
+
+        // Then
+        assertThat(result, equalTo(new SpaceType(1, "club")));
+    }
+    @Test
+    public void testFindById_notFound_returnsNull (){
+        // Given
+
+        // When
+        SpaceType result = spaceTypeDao.findById(999);
+
+        // Then
+        assertThat(result, nullValue());
+    }
 
     @Test
     public void testFindAll (){

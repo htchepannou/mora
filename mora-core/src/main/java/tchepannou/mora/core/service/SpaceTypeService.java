@@ -1,10 +1,10 @@
-package tchepannou.mora.core.dao;
+package tchepannou.mora.core.service;
 
 import tchepannou.mora.core.domain.SpaceType;
 
 import java.util.List;
 
-public interface SpaceTypeDao {
+public interface SpaceTypeService {
     SpaceType findById (long id);
 
     List<SpaceType> findAll ();
