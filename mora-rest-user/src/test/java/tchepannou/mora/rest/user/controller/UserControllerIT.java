@@ -445,7 +445,7 @@ public class UserControllerIT {
 
         // Then
         User user = userDao.findById(1);
-        assertThat(user, equalTo(expected));
+        assertThat(user, nullValue());
     }
 
     @Test
