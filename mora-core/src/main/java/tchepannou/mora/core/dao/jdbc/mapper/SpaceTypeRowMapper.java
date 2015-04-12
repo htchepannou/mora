@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 
-public class SpaceTypeMapper implements RowMapper<SpaceType> {
+public class SpaceTypeRowMapper implements RowMapper<SpaceType> {
     @Override
     public SpaceType mapRow(ResultSet rs, int i) throws SQLException {
         SpaceType result = new SpaceType();

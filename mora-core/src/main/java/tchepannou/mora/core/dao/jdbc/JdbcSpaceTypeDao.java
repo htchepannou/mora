@@ -2,13 +2,13 @@ package tchepannou.mora.core.dao.jdbc;
 
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.SpaceTypeDao;
-import tchepannou.mora.core.dao.jdbc.mapper.SpaceTypeMapper;
+import tchepannou.mora.core.dao.jdbc.mapper.SpaceTypeRowMapper;
 import tchepannou.mora.core.domain.SpaceType;
 
 import java.util.List;
 
 public class JdbcSpaceTypeDao extends JdbcReadOnlyModelDao<SpaceType> implements SpaceTypeDao{
-    private static final RowMapper<SpaceType> MAPPER = new SpaceTypeMapper();
+    private static final RowMapper<SpaceType> MAPPER = new SpaceTypeRowMapper();
 
     //-- JdbcModelDao overrides
     @Override

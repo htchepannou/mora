@@ -3,7 +3,7 @@ package tchepannou.mora.core.dao.jdbc;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.PasswordDao;
-import tchepannou.mora.core.dao.jdbc.mapper.PasswordMapper;
+import tchepannou.mora.core.dao.jdbc.mapper.PasswordRowMapper;
 import tchepannou.mora.core.domain.Password;
 
 import java.sql.Connection;
@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 
 public class JdbcPasswordDao extends JdbcModelDao<Password> implements PasswordDao {
     //-- Attributes
-    private static final PasswordMapper MAPPER = new PasswordMapper();
+    private static final PasswordRowMapper MAPPER = new PasswordRowMapper();
 
 
     //-- JdbcModelDao overrides

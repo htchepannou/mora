@@ -3,7 +3,7 @@ package tchepannou.mora.core.dao.jdbc;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.UserDao;
-import tchepannou.mora.core.dao.jdbc.mapper.UserMapper;
+import tchepannou.mora.core.dao.jdbc.mapper.UserRowMapper;
 import tchepannou.mora.core.domain.User;
 
 import java.sql.Connection;
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class JdbcUserDao extends JdbcModelDao<User> implements UserDao {
     //-- Attributes
-    private static final UserMapper MAPPER = new UserMapper();
+    private static final UserRowMapper MAPPER = new UserRowMapper();
 
     //-- JdbcModelDao overrides
     @Override

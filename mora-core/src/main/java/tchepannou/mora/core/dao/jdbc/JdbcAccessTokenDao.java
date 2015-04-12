@@ -3,7 +3,7 @@ package tchepannou.mora.core.dao.jdbc;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.AccessTokenDao;
-import tchepannou.mora.core.dao.jdbc.mapper.AccessTokenMapper;
+import tchepannou.mora.core.dao.jdbc.mapper.AccessRowTokenMapper;
 import tchepannou.mora.core.domain.AccessToken;
 
 import java.sql.Connection;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class JdbcAccessTokenDao extends JdbcModelDao<AccessToken> implements AccessTokenDao {
     //-- Attributes
-    private static final AccessTokenMapper MAPPER = new AccessTokenMapper();
+    private static final AccessRowTokenMapper MAPPER = new AccessRowTokenMapper();
 
 
     //-- JdbcModelDao overrides

@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 //-- Inner
-public final class PasswordMapper implements RowMapper<Password> {
+public final class PasswordRowMapper implements RowMapper<Password> {
     @Override
     public Password mapRow(ResultSet rs, int i) throws SQLException {
         Password password = new Password();

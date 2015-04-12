@@ -6,7 +6,7 @@ import tchepannou.mora.core.domain.AccessToken;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class AccessTokenMapper  implements RowMapper<AccessToken> {
+public class AccessRowTokenMapper implements RowMapper<AccessToken> {
     @Override
     public AccessToken mapRow(ResultSet rs, int i) throws SQLException {
         AccessToken result = new AccessToken ();

@@ -13,7 +13,7 @@ import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
 @RunWith (MockitoJUnitRunner.class)
-public class SpaceTypeMapperTest {
+public class SpaceTypeRowMapperTest {
     @Mock
     private ResultSet rs;
 
@@ -25,7 +25,7 @@ public class SpaceTypeMapperTest {
         when(rs.getString("name")).thenReturn("foo");
 
         // When
-        SpaceType result = new SpaceTypeMapper().mapRow(rs, 0);
+        SpaceType result = new SpaceTypeRowMapper().mapRow(rs, 0);
 
         // Then
         SpaceType expected = new SpaceType(1, "foo");
