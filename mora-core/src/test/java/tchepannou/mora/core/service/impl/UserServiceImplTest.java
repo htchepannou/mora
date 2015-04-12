@@ -66,20 +66,6 @@ public class UserServiceImplTest{
         assertThat(result, nullValue());
     }
 
-    @Test
-    public void testFindById_deleted_shouldReturnNull (){
-        // Given
-        User user = new User (1);
-        user.setDeleted(true);
-        when(userDao.findById(1)).thenReturn(user);
-
-        // When
-        User result = service.findById(1);
-
-        // Then
-        assertThat(result, nullValue());
-    }
-
 
     @Test
     public void testFindByEmail() throws Exception {

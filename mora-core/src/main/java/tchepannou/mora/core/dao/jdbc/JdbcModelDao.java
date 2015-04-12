@@ -4,6 +4,7 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 import tchepannou.mora.core.domain.Model;
+import tchepannou.mora.core.domain.SoftDeleteSupport;
 
 public abstract class JdbcModelDao<T extends Model> extends JdbcReadOnlyModelDao<T>{
     //-- Abstract
@@ -20,5 +21,17 @@ public abstract class JdbcModelDao<T extends Model> extends JdbcReadOnlyModelDao
         long id = holder.getKey().longValue();
         model.setId(id);
         return id;
+    }
+
+    public final void delete (T model){
+        if (model instanceof SoftDeleteSupport) {
+            String sql = String.format("UPDATE %s SET deleted=? WHERE id=?", getTableName());
+            template.update(sql, true, model.getId());
+
+            ((SoftDeleteSupport) model).setDeleted(true);
+        } else {
+            String sql = "DELETE " + getTableName() + " WHERE id=?";
+            template.update(sql, model.getId());
+        }
     }
 }

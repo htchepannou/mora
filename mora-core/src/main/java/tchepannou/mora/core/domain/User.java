@@ -2,7 +2,7 @@ package tchepannou.mora.core.domain;
 
 import java.util.Date;
 
-public class User extends Model {
+public class User extends Model implements SoftDeleteSupport{
     //-- Attributes
     private String username;
     private String firstName;
@@ -29,6 +29,19 @@ public class User extends Model {
         this.lastUpdate = user.getLastUpdate();
         this.deleted = user.isDeleted();
     }
+
+    //-- SoftDeleteSupport overrides
+    @Override
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    @Override
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
+    }
+
+
     //-- Getter/Setter
     public Date getCreationDate() {
         return creationDate;
@@ -76,13 +89,5 @@ public class User extends Model {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
     }
 }

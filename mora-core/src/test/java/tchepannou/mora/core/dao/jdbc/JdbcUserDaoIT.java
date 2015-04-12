@@ -20,6 +20,7 @@ import java.util.List;
 
 import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.Matchers.lessThan;
+import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
@@ -60,6 +61,16 @@ public class JdbcUserDaoIT {
 
         // When
         User result = userDao.findById(999);
+
+        // Then
+        assertThat(result, nullValue());
+    }
+    @Test
+    public void testFindById_deleted_shouldReturnsNull() throws Exception {
+        // Given
+
+        // When
+        User result = userDao.findById(10);
 
         // Then
         assertThat(result, nullValue());
@@ -208,13 +219,15 @@ public class JdbcUserDaoIT {
         // Given
         User user = userDao.findById(1);
 
+        User expected = new User (user);
+        expected.setDeleted(true);
+
         // When
         userDao.delete(user);
         User result = userDao.findById(1);
 
         // Then
-        User expected = new User (user);
-        expected.setDeleted(true);
-        assertThat(result, equalTo(expected));
+        assertThat(user, equalTo(expected));
+        assertThat(result, nullValue());
     }
 }

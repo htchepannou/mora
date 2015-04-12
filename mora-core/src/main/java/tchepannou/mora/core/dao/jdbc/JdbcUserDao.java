@@ -63,11 +63,5 @@ public class JdbcUserDao extends JdbcModelDao<User> implements UserDao {
         String sql = "UPDATE t_user SET username=?, email=?, firstname=?, lastname=?, last_update=? WHERE id=?";
         template.update(sql, user.getUsername(), user.getEmail(), user.getFirstName(), user.getLastName(), user.getLastUpdate(), user.getId());
     }
-
-    @Override
-    public void delete(final User user) {
-        String sql = "UPDATE t_user SET deleted=? WHERE id=?";
-        template.update(sql, true, user.getId());
-    }
 }
 

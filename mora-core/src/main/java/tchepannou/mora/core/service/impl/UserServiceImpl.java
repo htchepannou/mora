@@ -24,8 +24,7 @@ public class UserServiceImpl implements UserService{
     //-- UserService overrides
     @Override
     public User findById(long id) {
-        User user = userDao.findById(id);
-        return user != null && !user.isDeleted() ? user : null;
+        return userDao.findById(id);
     }
 
     @Override
