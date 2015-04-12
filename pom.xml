@@ -12,9 +12,9 @@
         <module>mora-core</module>
         <module>mora-rest-auth</module>
         <module>mora-rest-core</module>
-        <module>mora-rest-space</module>
         <module>mora-rest-user</module>
         <module>mora-swagger</module>
+        <module>mora-rest-space</module>
     </modules>
 
     <properties>

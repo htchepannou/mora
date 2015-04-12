@@ -35,6 +35,7 @@ public class UserController {
     public static final String ERROR_NOT_FOUND = "user_not_found";
     public static final String ERROR_EMAIL_ALREADY_ASSIGNED = "email_already_assigned";
     public static final String ERROR_USERNAME_ALREADY_ASSIGNED = "username_already_assigned";
+    public static final String ERROR_BAD_REQUEST = "bad_Request";
 
     @Autowired
     private UserService userService;
@@ -47,7 +48,7 @@ public class UserController {
     @RequestMapping(value = "/users/{userId}", method = RequestMethod.GET)
     @ApiOperation(value="Retrieve User")
     @ApiResponses({
-            @ApiResponse (code = 200, message = ERROR_SUCCESS, response = UserDto.class),
+            @ApiResponse (code = 200, message = ERROR_SUCCESS),
             @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
     })
     public UserDto get(@PathVariable long userId) throws UserNotFoundException {
@@ -65,6 +66,7 @@ public class UserController {
     @ApiOperation(value="Create New User")
     @ApiResponses({
             @ApiResponse (code = 200, message = ERROR_SUCCESS),
+            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
             @ApiResponse (code = 409, message = ERROR_EMAIL_ALREADY_ASSIGNED),
             @ApiResponse (code = 409, message = ERROR_USERNAME_ALREADY_ASSIGNED),
     })
@@ -88,6 +90,7 @@ public class UserController {
     @ApiOperation(value="Update User")
     @ApiResponses({
             @ApiResponse (code = 200, message = ERROR_SUCCESS),
+            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
             @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
             @ApiResponse (code = 409, message = ERROR_EMAIL_ALREADY_ASSIGNED),
     })

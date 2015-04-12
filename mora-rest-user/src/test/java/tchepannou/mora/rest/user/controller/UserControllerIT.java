@@ -24,7 +24,7 @@ import tchepannou.mora.rest.user.dto.SaveUserDto;
 import static com.jayway.restassured.RestAssured.given;
 import static com.jayway.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
-import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
+import static org.junit.Assert.assertThat;
 
 @RunWith (SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration (classes = Application.class)
