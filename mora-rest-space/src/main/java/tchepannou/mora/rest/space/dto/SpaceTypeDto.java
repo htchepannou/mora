@@ -2,8 +2,9 @@ package tchepannou.mora.rest.space.dto;
 
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.SpaceType;
+import tchepannou.mora.rest.core.dto.ModelDto;
 
-public class SpaceTypeDto {
+public class SpaceTypeDto extends ModelDto {
     //-- Attributes
     private long id;
     private String name;
