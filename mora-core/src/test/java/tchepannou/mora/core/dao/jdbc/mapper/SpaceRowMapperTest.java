@@ -28,10 +28,13 @@ public class SpaceRowMapperTest {
 
         when(rs.getLong("id")).thenReturn(1L);
         when(rs.getLong("user_id")).thenReturn(10L);
-        when(rs.getLong("type_id")).thenReturn(100L);
+        when(rs.getLong("space_type_id")).thenReturn(100L);
         when(rs.getString("name")).thenReturn("yo");
         when(rs.getString("description")).thenReturn("This is a description");
         when(rs.getString("logo_url")).thenReturn("http://img.com/1.png");
+        when(rs.getString("website_url")).thenReturn("http://www.google.ca");
+        when(rs.getString("email")).thenReturn("info@google.ca");
+        when(rs.getString("address")).thenReturn("3030 Linton, Montreal, CA");
         when(rs.getBoolean("deleted")).thenReturn(true);
         when(rs.getTimestamp("creation_date")).thenReturn(now);
         when(rs.getTimestamp("last_update")).thenReturn(now);
@@ -44,6 +47,9 @@ public class SpaceRowMapperTest {
         expected.setName("yo");
         expected.setDescription("This is a description");
         expected.setLogoUrl("http://img.com/1.png");
+        expected.setWebsiteUrl("http://www.google.ca");
+        expected.setEmail("info@google.ca");
+        expected.setAddress("3030 Linton, Montreal, CA");
         expected.setDeleted(true);
         expected.setCreationDate(now);
         expected.setLastUpdate(now);

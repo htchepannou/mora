@@ -11,6 +11,9 @@ public class Space extends Model implements  SoftDeleteSupport{
     private String name;
     private String description;
     private String logoUrl;
+    private String websiteUrl;
+    private String email;
+    private String address;
     private boolean deleted;
     private Date creationDate;
     private Date lastUpdate;
@@ -40,6 +43,10 @@ public class Space extends Model implements  SoftDeleteSupport{
         this.deleted = space.isDeleted();
         this.creationDate = space.getCreationDate();
         this.lastUpdate = space.getLastUpdate();
+        this.logoUrl = space.getLogoUrl();
+        this.websiteUrl = space.getWebsiteUrl();
+        this.email = space.getEmail();
+        this.address = space.getAddress();
     }
 
 
@@ -109,5 +116,29 @@ public class Space extends Model implements  SoftDeleteSupport{
 
     public void setUserId(long userId) {
         this.userId = userId;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getWebsiteUrl() {
+        return websiteUrl;
+    }
+
+    public void setWebsiteUrl(String websiteUrl) {
+        this.websiteUrl = websiteUrl;
     }
 }

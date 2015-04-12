@@ -1,3 +1,6 @@
+-- ====================
+-- user
+-- ====================
 create table t_user(
     id int not null primary key auto_increment,
 
@@ -13,6 +16,9 @@ create table t_user(
     index(username, deleted)
 ) engine=InnoDB;
 
+-- ====================
+-- password
+-- ====================
 create table t_password(
     id int not null primary key  auto_increment,
     user_id int not null,
@@ -25,6 +31,9 @@ create table t_password(
     foreign key (user_id) references t_user(id)
 ) engine=InnoDB;
 
+-- ====================
+-- access_token
+-- ====================
 create table t_access_token(
     id int not null primary key auto_increment,
     user_id int not null,
@@ -37,7 +46,9 @@ create table t_access_token(
     foreign key (user_id) references t_user(id)
 ) engine=InnoDB;
 
-
+-- ====================
+-- space_type
+-- ====================
 create table t_space_type(
     id int not null primary key auto_increment,
 
@@ -49,5 +60,24 @@ create table t_space_type(
 insert into t_space_type (id, name) values(1, 'club');
 insert into t_space_type (id, name) values(2, 'team');
 
+-- ====================
+-- space
+-- ====================
+create table t_space(
+    id int not null primary key auto_increment,
+    user_id int not null,
+    space_type_id int not null,
+
+    name varchar(100) not null,
+    description varchar(1024),
+    logo_url varchar(255),
+    website_url varchar(255),
+    email varchar(255),
+    address varchar(255),
+    deleted bit(1),
+
+    foreign key (space_type_id) references t_space_type(id),
+    foreign key (user_id) references t_user(id)
+) engine=InnoDB;
 
 
