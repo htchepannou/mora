@@ -16,4 +16,5 @@ public class SpaceTypeDtoTest {
         assertThat(result.getId(), equalTo(type.getId()));
         assertThat(result.getName(), equalTo(type.getName()));
     }
+
 }

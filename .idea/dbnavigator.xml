@@ -93,7 +93,9 @@
           </object-type-filter>
           <object-name-filters />
         </object-filters>
-        <consoles />
+        <consoles>
+          <console name="mora:localhost" />
+        </consoles>
       </connection>
     </connections>
     <browser-settings>

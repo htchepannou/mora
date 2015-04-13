@@ -11,9 +11,9 @@ public class SpaceTypeDto extends ModelDto {
 
 
     //-- Constructor
-    private SpaceTypeDto (){
+    private SpaceTypeDto(){
     }
-    public SpaceTypeDto (long id, String name){
+    public SpaceTypeDto(long id, String name){
         this.id = id;
         this.name = name;
     }

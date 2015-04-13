@@ -16,7 +16,7 @@ import tchepannou.mora.swagger.config.SwaggerConfig;
 public class Application {
     //-- Beans
     @Bean
-    public SpaceTypeService spaceTypeService (){
+    public SpaceTypeService spaceTypeService () {
         return new SpaceTypeServiceImpl();
     }
 
