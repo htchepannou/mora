@@ -7,6 +7,7 @@ import com.wordnik.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.exception.SpaceException;
+import tchepannou.mora.core.exception.SpaceNotFoundException;
 import tchepannou.mora.core.exception.SpaceTypeNotFoundException;
 import tchepannou.mora.core.exception.UserException;
 import tchepannou.mora.core.exception.UserNotFoundException;
@@ -27,6 +29,7 @@ import tchepannou.mora.core.service.SpaceTypeService;
 import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.rest.core.security.SecurityContants;
 import tchepannou.mora.rest.space.dto.CreateSpaceDto;
+import tchepannou.mora.rest.space.dto.SaveSpaceDto;
 import tchepannou.mora.rest.space.dto.SpaceDto;
 import tchepannou.mora.rest.space.dto.SpaceTypeDto;
 
@@ -100,6 +103,31 @@ public class SpaceController {
                 .build();
     }
 
+    @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.POST)
+    @ApiOperation (value="Update Space")
+    @ApiResponses ({
+            @ApiResponse (code = 200, message = SUCCESS),
+            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
+            @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
+    })
+    public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) throws UserException, SpaceException{
+        Space space = spaceService.findById(spaceId);
+        if (space == null){
+            throw new SpaceNotFoundException("Space not found: " + spaceId);
+        }
+
+        request.toSpace(space);
+
+        spaceService.update(space);
+
+        SpaceType type = spaceTypeService.findById(space.getTypeId());
+        return new SpaceDto.Builder()
+                .withSpace(space)
+                .withSpaceType(type)
+                .build();
+    }
+
+
 
     //-- Private
     protected User getCurrentUser (String accessToken) throws UserNotFoundException{
@@ -120,6 +148,11 @@ public class SpaceController {
 
 
     //-- Exception handlers
+    @ResponseStatus (value= HttpStatus.NOT_FOUND)
+    @ExceptionHandler (SpaceNotFoundException.class)
+    public void notFound (){    // NOSONAR - This function is left empty intentionally
+    }
+
     @ResponseStatus (value= HttpStatus.UNAUTHORIZED)
     @ExceptionHandler (UserNotFoundException.class)
     public void unauthorized (){    // NOSONAR - This function is left empty intentionally

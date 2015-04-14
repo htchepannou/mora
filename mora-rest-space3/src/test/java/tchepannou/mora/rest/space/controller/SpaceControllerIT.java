@@ -18,6 +18,7 @@ import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.rest.space.Application;
 import tchepannou.mora.rest.space.dto.CreateSpaceDto;
+import tchepannou.mora.rest.space.dto.SaveSpaceDto;
 import tchepannou.mora.rest.space.dto.SpaceTypeDto;
 
 import java.util.Arrays;
@@ -59,7 +60,8 @@ public class SpaceControllerIT {
         assertThat(result, hasSize(2));
         assertThat(result, hasItems(new SpaceTypeDto(1, "club"), new SpaceTypeDto(2, "team")));
     }
-    
+
+
     @Test
     public void testCreate () throws Exception {
         // Given
@@ -161,6 +163,80 @@ public class SpaceControllerIT {
             .put("/spaces")
         .then()
             .statusCode(HttpStatus.SC_UNAUTHORIZED)
+        ;
+    }
+
+
+    @Test
+    public void testUpdate () throws Exception {
+        // Given
+        SaveSpaceDto dto = new SaveSpaceDto();
+        dto.setDescription("desc");
+        dto.setAbbreviation("ABR");
+        dto.setAddress("address");
+        dto.setEmail("email@gmail.com");
+        dto.setName("name");
+        dto.setWebsiteUrl("http://www.web.com");
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        Space expected = spaceDao.findById(1);
+        expected.setEmail("email@gmail.com");
+        expected.setDescription("desc");
+        expected.setAbbreviation("ABR");
+        expected.setAddress("address");
+        expected.setEmail("email@gmail.com");
+        expected.setName("name");
+        expected.setWebsiteUrl("http://www.web.com");
+
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .body(json)
+        .when()
+            .post("/spaces/{spaceId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_OK)
+            .log().all()
+            .body("id", is(1))
+            .body("name", is("name"))
+            .body("email", is("email@gmail.com"))
+            .body("websiteUrl", is("http://www.web.com"))
+            .body("address", is("address"))
+            .body("abbreviation", is("ABR"))
+            .body("description", is("desc"))
+            .body("type.id", is(1))
+            .body("type.name", is("club"))
+        ;
+
+        // Then
+        Space space = spaceDao.findById(1);
+
+        expected.setLastUpdate(space.getLastUpdate());
+        assertThat(space, equalTo(expected));
+    }
+
+    @Test
+    public void testUpdate_badId_shouldReturns404 () throws Exception {
+        // Given
+        SaveSpaceDto dto = new SaveSpaceDto();
+        dto.setDescription("desc");
+        dto.setAbbreviation("ABR");
+        dto.setAddress("address");
+        dto.setEmail("email@gmail.com");
+        dto.setName("name");
+        dto.setWebsiteUrl("http://www.web.com");
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .body(json)
+        .when()
+            .post("/spaces/{spaceId}", 999)
+        .then()
+            .statusCode(HttpStatus.SC_NOT_FOUND)
         ;
     }
 }

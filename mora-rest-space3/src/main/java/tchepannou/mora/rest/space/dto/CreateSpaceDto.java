@@ -2,6 +2,9 @@ package tchepannou.mora.rest.space.dto;
 
 import tchepannou.mora.core.domain.Space;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class CreateSpaceDto extends SaveSpaceDto{
     //-- Attributes
     private long typeId;
@@ -18,6 +21,12 @@ public class CreateSpaceDto extends SaveSpaceDto{
     }
 
     //-- Getter/Setter
+    @NotNull
+    @Size (min=1, max=100)
+    public String getName() {
+        return super.getName();
+    }
+
     public long getTypeId() {
         return typeId;
     }
