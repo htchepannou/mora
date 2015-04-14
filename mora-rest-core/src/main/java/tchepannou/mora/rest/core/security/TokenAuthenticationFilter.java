@@ -1,8 +1,6 @@
 package tchepannou.mora.rest.core.security;
 
 import com.google.common.base.Preconditions;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
@@ -22,7 +20,6 @@ import java.io.IOException;
 
 public class TokenAuthenticationFilter extends GenericFilterBean {
     //-- Attributes
-    private static final Logger LOG = LoggerFactory.getLogger(TokenAuthenticationFilter.class);
     private AuthenticationManager authenticationManager;
 
 

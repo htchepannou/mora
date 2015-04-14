@@ -23,7 +23,6 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.fail;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -143,7 +142,7 @@ public class UserServiceImplTest{
         assertThat(user, equalTo(expected));
     }
 
-    @Test()
+    @Test(expected = EmailAlreadyAssignedException.class)
     public void testCreate_EmailAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
         // Given
         User user = new User ();
@@ -153,17 +152,11 @@ public class UserServiceImplTest{
         user2.setEmail(user.getEmail());
         when(userDao.findByEmail(user2.getEmail(), false)).thenReturn(Arrays.asList(user2));
 
-        try {
-            // When
-            service.create(user);
-            fail();
-        } catch (EmailAlreadyAssignedException e){
-            // Then
-            assertThat(e.getEmail(), equalTo(user.getEmail()));
-        }
+        // When
+        service.create(user);
     }
 
-    @Test()
+    @Test(expected = UsernameAlreadyAssignedException.class)
     public void testCreate_UsernameAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
         // Given
         User user = new User ();
@@ -173,13 +166,8 @@ public class UserServiceImplTest{
         user2.setUsername(user.getUsername());
         when(userDao.findByUsername(user2.getUsername(), false)).thenReturn(Arrays.asList(user2));
 
-        try {
-            // When
-            service.create(user);
-        } catch (UsernameAlreadyAssignedException e){
-            // Then
-            assertThat(e.getUsername(), equalTo(user.getUsername()));
-        }
+        // When
+        service.create(user);
     }
 
 
@@ -206,7 +194,7 @@ public class UserServiceImplTest{
         assertThat(user, equalTo(expected));
     }
 
-    @Test()
+    @Test(expected = EmailAlreadyAssignedException.class)
     public void testUpdate_EmailAlreadyAssigned_shouldThrowEmailAlreadyAssignedException () throws Exception {
         // Given
         User user = new User (1);
@@ -216,14 +204,8 @@ public class UserServiceImplTest{
         user2.setEmail(user.getEmail());
         when(userDao.findByEmail(user2.getEmail(), false)).thenReturn(Arrays.asList(user2));
 
-        try {
-            // When
-            service.update(user);
-            fail();
-        } catch (EmailAlreadyAssignedException e){
-            // Then
-            assertThat(e.getEmail(), equalTo(user.getEmail()));
-        }
+        // When
+        service.update(user);
     }
 
 

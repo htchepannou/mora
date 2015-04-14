@@ -14,17 +14,21 @@ import tchepannou.mora.rest.core.security.AbstractRestSecurityConfig;
 public class SecurityConfig extends AbstractRestSecurityConfig {
     //-- AbstractSecurityConfig overrides
     @Override
-    protected void configureAuthorization(HttpSecurity http) throws Exception{
-        // @formatter:off
-        http.authorizeRequests()
-            .antMatchers(HttpMethod.PUT, "/**")
-                .permitAll()
-            .anyRequest()
-                .authenticated()
-            .and()
-                .anonymous().disable()
-        ;
-        // @formatter:om
+    protected void configureAuthorization(HttpSecurity http) {
+        try{
+            // @formatter:off
+            http.authorizeRequests()
+                .antMatchers(HttpMethod.PUT, "/**")
+                    .permitAll()
+                .anyRequest()
+                    .authenticated()
+                .and()
+                    .anonymous().disable()
+            ;
+            // @formatter:om
+        } catch (Exception e){
+            throw new IllegalStateException("Unable to configure authorizations", e);
+        }
     }
 
 }

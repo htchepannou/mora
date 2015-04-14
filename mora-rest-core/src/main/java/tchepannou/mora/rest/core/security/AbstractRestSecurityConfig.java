@@ -22,7 +22,7 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
 
 
     //-- Abstract
-    protected abstract void configureAuthorization(HttpSecurity http) throws Exception;
+    protected abstract void configureAuthorization(HttpSecurity http);
 
     //-- WebSecurityConfigurerAdapter overrides
     @Override
