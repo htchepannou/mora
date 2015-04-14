@@ -6,34 +6,30 @@ import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.exception.SpaceException;
 import tchepannou.mora.core.exception.SpaceNotFoundException;
 import tchepannou.mora.core.exception.SpaceTypeNotFoundException;
-import tchepannou.mora.core.exception.UserException;
-import tchepannou.mora.core.exception.UserNotFoundException;
-import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.SpaceTypeService;
 import tchepannou.mora.core.service.UserService;
-import tchepannou.mora.rest.core.security.SecurityContants;
 import tchepannou.mora.rest.space.dto.CreateSpaceDto;
 import tchepannou.mora.rest.space.dto.SaveSpaceDto;
 import tchepannou.mora.rest.space.dto.SpaceDto;
 import tchepannou.mora.rest.space.dto.SpaceTypeDto;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +37,6 @@ import java.util.List;
 @Api (value="Spaces", description = "Manage the spaces")
 public class SpaceController {
     //-- Attributes
-    public static final String HEADER_TOKEN = SecurityContants.HEADER_AUTH_TOKEN;
     public static final String SUCCESS = "success";
     public static final String ERROR_BAD_REQUEST = "bad_request";
     public static final String ERROR_NOT_FOUND = "space_not_found";
@@ -51,9 +46,6 @@ public class SpaceController {
 
     @Autowired
     private SpaceService spaceService;
-
-    @Autowired
-    private AccessTokenService accessTokenService;
 
     @Autowired
     private UserService userService;
@@ -83,8 +75,8 @@ public class SpaceController {
             @ApiResponse (code = 200, message = SUCCESS),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public SpaceDto create (@RequestHeader (HEADER_TOKEN) String accesToken, @Valid  @RequestBody CreateSpaceDto request) throws UserException, SpaceException{
-        User user = getCurrentUser(accesToken);
+    public SpaceDto create (@AuthenticationPrincipal Principal currentUser, @Valid  @RequestBody CreateSpaceDto request) throws SpaceException{
+        User user = getCurrentUser(currentUser);
 
         SpaceType type = spaceTypeService.findById(request.getTypeId());
         if (type == null){
@@ -110,7 +102,7 @@ public class SpaceController {
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
             @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
     })
-    public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) throws UserException, SpaceException{
+    public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) throws SpaceException{
         Space space = spaceService.findById(spaceId);
         if (space == null){
             throw new SpaceNotFoundException("Space not found: " + spaceId);
@@ -132,7 +124,7 @@ public class SpaceController {
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
     })
-    public void delete (@PathVariable long spaceId) throws UserException, SpaceException{
+    public void delete (@PathVariable long spaceId) {
         Space space = spaceService.findById(spaceId);
         if (space != null){
             spaceService.delete(space);
@@ -141,20 +133,9 @@ public class SpaceController {
 
 
     //-- Private
-    protected User getCurrentUser (String accessToken) throws UserNotFoundException{
-        AccessToken token = accessTokenService.findByValue(accessToken);
-        if (token == null){
-            throw new UserNotFoundException("Invalid token: " + accessToken);
-        } else if (token.isExpired()){
-            throw new UserNotFoundException("Token is expired: " + accessToken);
-        }
-
-        User user = userService.findById(token.getId());
-        if (user == null){
-            throw new IllegalStateException("No user associated with token " + accessToken);
-        }
-
-        return user;
+    protected User getCurrentUser (Principal currentUser) {
+        long userId = Long.parseLong(currentUser.getName());
+        return userService.findById(userId);
     }
 
 
@@ -162,11 +143,6 @@ public class SpaceController {
     @ResponseStatus (value= HttpStatus.NOT_FOUND)
     @ExceptionHandler (SpaceNotFoundException.class)
     public void notFound (){    // NOSONAR - This function is left empty intentionally
-    }
-
-    @ResponseStatus (value= HttpStatus.UNAUTHORIZED)
-    @ExceptionHandler (UserNotFoundException.class)
-    public void unauthorized (){    // NOSONAR - This function is left empty intentionally
     }
 
     @ResponseStatus (value= HttpStatus.BAD_REQUEST)

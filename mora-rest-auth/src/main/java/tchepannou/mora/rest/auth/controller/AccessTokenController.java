@@ -19,7 +19,6 @@ import tchepannou.mora.core.exception.AuthFailedException;
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.rest.auth.dto.AccessTokenDto;
 import tchepannou.mora.rest.auth.dto.AuthRequest;
-import tchepannou.mora.rest.core.security.SecurityContants;
 
 import javax.validation.Valid;
 
@@ -27,7 +26,6 @@ import javax.validation.Valid;
 @Api (value="AccessToken", description = "Manages access token")
 public class AccessTokenController {
     //-- Attributes
-    public static final String HEADER_TOKEN = SecurityContants.HEADER_AUTH_TOKEN;
     public static final String SUCCESS = "success";
     public static final String ERROR_AUTH_FAILED = "auth_failed";
     public static final String ERROR_UNAUTHORIZED = "unauthorized";
@@ -44,7 +42,7 @@ public class AccessTokenController {
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public AccessTokenDto get(@RequestHeader (HEADER_TOKEN)  String key) throws AccessTokenException {
+    public AccessTokenDto get(@RequestHeader ("X_AUTH_TOKEN")  String key) throws AccessTokenException {
         AccessToken token = accessTokenService.findByValue(key);
         if (token == null){
             throw new AccessTokenException("No token found for " + key);
@@ -64,7 +62,7 @@ public class AccessTokenController {
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public void delete(@RequestHeader (HEADER_TOKEN) String key) throws AccessTokenException {
+    public void delete(@RequestHeader ("X_AUTH_TOKEN") String key) throws AccessTokenException {
         AccessToken token = accessTokenService.findByValue(key);
         if (token == null){
             throw new AccessTokenException("No token found for " + key);

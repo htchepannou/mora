@@ -18,6 +18,7 @@ import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.rest.auth.Application;
 import tchepannou.mora.rest.auth.dto.AuthRequest;
+import tchepannou.mora.rest.core.security.SecurityContants;
 
 import static com.jayway.restassured.RestAssured.given;
 import static com.jayway.restassured.RestAssured.when;
@@ -49,7 +50,7 @@ public class AccessTokenControllerIT {
     @Test
     public void testGet() throws Exception {
         given()
-           .header(new Header(AccessTokenController.HEADER_TOKEN, "bc9a50e1e0085b13c4bba866f6dfe57c"))
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "bc9a50e1e0085b13c4bba866f6dfe57c"))
         .when()
             .get("/access_token")
         .then()
@@ -73,7 +74,7 @@ public class AccessTokenControllerIT {
     @Test
     public void testGet_badHeader_returns401() throws Exception {
         given()
-           .header(new Header(AccessTokenController.HEADER_TOKEN, "???"))
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "???"))
         .when()
             .get("/access_token")
         .then()
@@ -84,7 +85,7 @@ public class AccessTokenControllerIT {
     @Test
     public void testGet_expiredToken_returns401() throws Exception {
         given()
-           .header(new Header(AccessTokenController.HEADER_TOKEN, "xc9a50e1e0085b13c4bba866f6dfe57c"))
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "xc9a50e1e0085b13c4bba866f6dfe57c"))
         .when()
             .get("/access_token")
         .then()
@@ -96,7 +97,7 @@ public class AccessTokenControllerIT {
     @Test
     public void testDelete() throws Exception {
         given()
-           .header(new Header(AccessTokenController.HEADER_TOKEN, "bc9a50e1e0085b13c4bba866f6dfe57c"))
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "bc9a50e1e0085b13c4bba866f6dfe57c"))
         .when()
             .delete("/access_token")
         .then()
@@ -118,7 +119,7 @@ public class AccessTokenControllerIT {
     @Test
     public void testDelete_badHeader_returns401() throws Exception {
         given()
-           .header(new Header(AccessTokenController.HEADER_TOKEN, "????"))
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "????"))
         .when()
             .delete("/access_token")
         .then()

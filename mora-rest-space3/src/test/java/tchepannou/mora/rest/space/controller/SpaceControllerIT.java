@@ -16,6 +16,7 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.domain.Space;
+import tchepannou.mora.rest.core.security.SecurityContants;
 import tchepannou.mora.rest.space.Application;
 import tchepannou.mora.rest.space.dto.CreateSpaceDto;
 import tchepannou.mora.rest.space.dto.SaveSpaceDto;
@@ -25,7 +26,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.jayway.restassured.RestAssured.given;
-import static com.jayway.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -52,9 +52,11 @@ public class SpaceControllerIT {
 
     @Test
     public void testTypes() throws Exception {
-        SpaceTypeDto[] aresult = when()
-                .get("/spaces/types")
-                .as(SpaceTypeDto[].class);
+        SpaceTypeDto[] aresult = given()
+                    .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+                .when()
+                    .get("/spaces/types")
+                    .as(SpaceTypeDto[].class);
         List<SpaceTypeDto> result = Arrays.asList(aresult);
 
         assertThat(result, hasSize(2));
@@ -78,7 +80,7 @@ public class SpaceControllerIT {
         // When
         int spaceId = given()
             .contentType("application/json")
-            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .put("/spaces")
@@ -132,7 +134,7 @@ public class SpaceControllerIT {
         // When
         given()
             .contentType("application/json")
-            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .put("/spaces")
@@ -142,7 +144,7 @@ public class SpaceControllerIT {
     }
 
     @Test
-    public void testCreate_badToken_shouldReturn401 () throws Exception {
+    public void testCreate_badTokenInRequestHeader_shouldReturn401 () throws Exception {
         // Given
         CreateSpaceDto dto = new CreateSpaceDto();
         dto.setTypeId(1);
@@ -157,7 +159,31 @@ public class SpaceControllerIT {
         // When
         given()
             .contentType("application/json")
-            .header(new Header(SpaceController.HEADER_TOKEN, "????"))
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "????"))
+            .body(json)
+        .when()
+            .put("/spaces")
+        .then()
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
+        ;
+    }
+
+    @Test
+    public void testCreate_noTokenInRequestHeader_shouldReturn401 () throws Exception {
+        // Given
+        CreateSpaceDto dto = new CreateSpaceDto();
+        dto.setTypeId(1);
+        dto.setDescription("desc");
+        dto.setAbbreviation("ABR");
+        dto.setAddress("address");
+        dto.setEmail("email@gmail.com");
+        dto.setName("name");
+        dto.setWebsiteUrl("http://www.web.com");
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        // When
+        given()
+            .contentType("application/json")
             .body(json)
         .when()
             .put("/spaces")
@@ -191,7 +217,7 @@ public class SpaceControllerIT {
         // When
         given()
             .contentType("application/json")
-            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .post("/spaces/{spaceId}", 1)
@@ -231,12 +257,59 @@ public class SpaceControllerIT {
         // When
         given()
             .contentType("application/json")
-            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .post("/spaces/{spaceId}", 999)
         .then()
             .statusCode(HttpStatus.SC_NOT_FOUND)
+        ;
+    }
+
+    @Test
+    public void testUpdate_badTokenInRequestHeader_shouldReturns404 () throws Exception {
+        // Given
+        SaveSpaceDto dto = new SaveSpaceDto();
+        dto.setDescription("desc");
+        dto.setAbbreviation("ABR");
+        dto.setAddress("address");
+        dto.setEmail("email@gmail.com");
+        dto.setName("name");
+        dto.setWebsiteUrl("http://www.web.com");
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "???"))
+            .body(json)
+        .when()
+            .post("/spaces/{spaceId}", 999)
+        .then()
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
+        ;
+    }
+
+    @Test
+    public void testUpdate_noTokenInRequestHeader_shouldReturns404 () throws Exception {
+        // Given
+        SaveSpaceDto dto = new SaveSpaceDto();
+        dto.setDescription("desc");
+        dto.setAbbreviation("ABR");
+        dto.setAddress("address");
+        dto.setEmail("email@gmail.com");
+        dto.setName("name");
+        dto.setWebsiteUrl("http://www.web.com");
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        // When
+        given()
+            .contentType("application/json")
+            .body(json)
+        .when()
+            .post("/spaces/{spaceId}", 999)
+        .then()
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
         ;
     }
 
@@ -246,7 +319,7 @@ public class SpaceControllerIT {
         // When
         given()
             .contentType("application/json")
-            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
         .when()
             .delete("/spaces/{spaceId}", 1)
         .then()
@@ -262,11 +335,36 @@ public class SpaceControllerIT {
     public void testDelete_notFound_shouldReturn200 () throws Exception {
         given()
             .contentType("application/json")
-            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
         .when()
             .delete("/spaces/{spaceId}", 999)
         .then()
             .statusCode(HttpStatus.SC_OK)
+                ;
+    }
+
+    @Test
+    public void testDelete_badTokenInRequestHeader_shouldReturn401 () throws Exception {
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "????"))
+        .when()
+            .delete("/spaces/{spaceId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
+                ;
+    }
+
+    @Test
+    public void testDelete_noTokenInRequestHeader_shouldReturn401 () throws Exception {
+        // When
+        given()
+            .contentType("application/json")
+        .when()
+            .delete("/spaces/{spaceId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
                 ;
     }
 }
