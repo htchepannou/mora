@@ -19,6 +19,7 @@ import tchepannou.mora.core.exception.AuthFailedException;
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.rest.auth.dto.AccessTokenDto;
 import tchepannou.mora.rest.auth.dto.AuthRequest;
+import tchepannou.mora.rest.core.security.SecurityContants;
 
 import javax.validation.Valid;
 
@@ -26,7 +27,7 @@ import javax.validation.Valid;
 @Api (value="AccessToken", description = "Manages access token")
 public class AccessTokenController {
     //-- Attributes
-    public static final String HEADER_TOKEN = "X-AccessToken";
+    public static final String HEADER_TOKEN = SecurityContants.HEADER_AUTH_TOKEN;
     public static final String SUCCESS = "success";
     public static final String ERROR_AUTH_FAILED = "auth_failed";
     public static final String ERROR_UNAUTHORIZED = "unauthorized";

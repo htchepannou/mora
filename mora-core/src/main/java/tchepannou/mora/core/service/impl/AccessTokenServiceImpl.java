@@ -37,7 +37,7 @@ public class AccessTokenServiceImpl implements AccessTokenService {
     @Autowired
     private HashService hashService;
 
-    @Value ("${access_token.ttl.minutes}")
+    @Value ("${access_token.ttl.minutes:30}")
     private int tokenTTLMinutes = 30;
 
     //-- AuthService overrides

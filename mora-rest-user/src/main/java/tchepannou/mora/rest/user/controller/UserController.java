@@ -54,7 +54,7 @@ public class UserController {
     public UserDto get(@PathVariable long userId) throws UserNotFoundException {
         User user = userService.findById(userId);
         if (user == null){
-            throw new UserNotFoundException(userId);
+            throw new UserNotFoundException("User not found: " + userId);
         }
 
         return new UserDto.Builder()
@@ -97,7 +97,7 @@ public class UserController {
     public UserDto update (@PathVariable long userId, @Valid @RequestBody SaveUserDto request) throws UserException {
         User user = userService.findById(userId);
         if (user == null) {
-            throw new UserNotFoundException(userId);
+            throw new UserNotFoundException("User not found: " + userId);
         }
 
         request.toUser(user);
