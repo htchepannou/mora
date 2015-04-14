@@ -83,4 +83,19 @@ create table t_space(
     foreign key (user_id) references t_user(id)
 ) engine=InnoDB;
 
+-- ====================
+-- role
+-- ====================
+create table t_role(
+    id int not null primary key auto_increment,
+
+    name varchar(32) not null,
+
+    unique(name)
+) engine=InnoDB;
+
+insert into t_role (id, name) values(1, 'admin');
+insert into t_role (id, name) values(2, 'coach');
+insert into t_role (id, name) values(3, 'player');
+
 

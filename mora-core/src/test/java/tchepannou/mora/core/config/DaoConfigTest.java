@@ -3,6 +3,7 @@ package tchepannou.mora.core.config;
 import org.junit.Test;
 import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
+import tchepannou.mora.core.dao.jdbc.JdbcRoleDao;
 import tchepannou.mora.core.dao.jdbc.JdbcSpaceDao;
 import tchepannou.mora.core.dao.jdbc.JdbcSpaceTypeDao;
 import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
@@ -36,5 +37,11 @@ public class DaoConfigTest {
     @Test
     public void testSpaceDao () throws Exception {
         assertThat(config.spaceDao(), instanceOf(JdbcSpaceDao.class));
+    }
+
+    @Test
+    public void testRoleDao (){
+        assertThat(config.roleDao(), instanceOf(JdbcRoleDao.class));
+
     }
 }
