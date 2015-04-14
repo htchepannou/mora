@@ -239,4 +239,34 @@ public class SpaceControllerIT {
             .statusCode(HttpStatus.SC_NOT_FOUND)
         ;
     }
+
+
+    @Test
+    public void testDelete () throws Exception {
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+        .when()
+            .delete("/spaces/{spaceId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_OK)
+                ;
+
+        // Then
+        Space space = spaceDao.findById(1);
+        assertThat(space, nullValue());
+    }
+
+    @Test
+    public void testDelete_notFound_shouldReturn200 () throws Exception {
+        given()
+            .contentType("application/json")
+            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+        .when()
+            .delete("/spaces/{spaceId}", 999)
+        .then()
+            .statusCode(HttpStatus.SC_OK)
+                ;
+    }
 }

@@ -127,6 +127,17 @@ public class SpaceController {
                 .build();
     }
 
+    @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.DELETE)
+    @ApiOperation (value="Delete a Space")
+    @ApiResponses ({
+            @ApiResponse (code = 200, message = SUCCESS),
+    })
+    public void delete (@PathVariable long spaceId) throws UserException, SpaceException{
+        Space space = spaceService.findById(spaceId);
+        if (space != null){
+            spaceService.delete(space);
+        }
+    }
 
 
     //-- Private
