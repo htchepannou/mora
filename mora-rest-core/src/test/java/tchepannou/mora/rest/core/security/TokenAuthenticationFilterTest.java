@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -14,13 +15,11 @@ import javax.servlet.FilterChain;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
+import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith (MockitoJUnitRunner.class)
 public class TokenAuthenticationFilterTest {
@@ -110,10 +109,8 @@ public class TokenAuthenticationFilterTest {
     }
 
     @Test
-    public void testDoFilter_aoTokenInRequestHeader_returns401() throws Exception {
+    public void testDoFilter_noTokenInRequestHeader_returnAnonymous() throws Exception {
         // Given
-        when(req.getHeader(SecurityContants.X_AUTH_TOKEN.name())).thenReturn("123");
-
         Authentication auth = mock(Authentication.class);
         when(auth.isAuthenticated()).thenReturn(false);
 
@@ -123,12 +120,11 @@ public class TokenAuthenticationFilterTest {
         filter.doFilter(req, resp, chain);
 
         // Then
-        ArgumentCaptor<Integer> code = ArgumentCaptor.forClass(Integer.class);
-        ArgumentCaptor<String> msg = ArgumentCaptor.forClass(String.class);
-        verify(resp).sendError(code.capture(), msg.capture());
-        assertThat(code.getValue(), equalTo(HttpServletResponse.SC_UNAUTHORIZED));
-
         Authentication result = SecurityContextHolder.getContext().getAuthentication();
-        assertThat(result, nullValue());
+        assertThat(result, instanceOf(AnonymousAuthenticationToken.class));
+        assertThat(result.getAuthorities(), hasSize(1));
+        assertThat(result.getAuthorities().iterator().next().getAuthority(), equalTo(Role.ROLE_ANONYMOUS.name()));
+
+
     }
 }

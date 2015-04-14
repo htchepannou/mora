@@ -63,16 +63,16 @@ public class AccessTokenControllerIT {
     }
 
     @Test
-    public void testGet_noHeader_returns400() throws Exception {
+    public void testGet_anonymous_returns401() throws Exception {
         when().
             get("/access_token")
         .then()
-            .statusCode(HttpStatus.SC_BAD_REQUEST)
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
         ;
     }
 
     @Test
-    public void testGet_badHeader_returns401() throws Exception {
+    public void testGet_invalidAccessToken_returns401() throws Exception {
         given()
            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "???"))
         .when()
@@ -83,7 +83,7 @@ public class AccessTokenControllerIT {
     }
 
     @Test
-    public void testGet_expiredToken_returns401() throws Exception {
+    public void testGet_expiredAccessToken_returns401() throws Exception {
         given()
            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "xc9a50e1e0085b13c4bba866f6dfe57c"))
         .when()
@@ -108,16 +108,16 @@ public class AccessTokenControllerIT {
     }
 
     @Test
-    public void testDelete_noHeader_returns400() throws Exception {
+    public void testDelete_anonymous_returns401() throws Exception {
         when().
             delete("/access_token")
         .then()
-            .statusCode(HttpStatus.SC_BAD_REQUEST)
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
         ;
     }
 
     @Test
-    public void testDelete_badHeader_returns401() throws Exception {
+    public void testDelete_invalidAccessToken_returns401() throws Exception {
         given()
            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "????"))
         .when()
@@ -125,6 +125,17 @@ public class AccessTokenControllerIT {
         .then()
             .statusCode(HttpStatus.SC_UNAUTHORIZED);
     }
+
+    @Test
+    public void testDelete_expiredAccessToken_returns401() throws Exception {
+        given()
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), "xc9a50e1e0085b13c4bba866f6dfe57c"))
+        .when()
+            .delete("/access_token")
+        .then()
+            .statusCode(HttpStatus.SC_UNAUTHORIZED);
+    }
+
 
 
     @Test

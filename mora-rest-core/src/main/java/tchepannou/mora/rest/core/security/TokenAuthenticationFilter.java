@@ -1,10 +1,14 @@
 package tchepannou.mora.rest.core.security;
 
 import com.google.common.base.Preconditions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.GenericFilterBean;
 
@@ -18,6 +22,7 @@ import java.io.IOException;
 
 public class TokenAuthenticationFilter extends GenericFilterBean {
     //-- Attributes
+    private static final Logger LOG = LoggerFactory.getLogger(TokenAuthenticationFilter.class);
     private AuthenticationManager authenticationManager;
 
 
@@ -35,6 +40,7 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
         HttpServletResponse resp = (HttpServletResponse)servletResponse;
         try {
             String token = req.getHeader(SecurityContants.X_AUTH_TOKEN.name());
+            LOG.info(">>>> req.getHeader(" + SecurityContants.X_AUTH_TOKEN + ")=" + token);
             authenticate(token);
 
             filterChain.doFilter(req, resp);
@@ -46,15 +52,18 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
 
     //-- Private
     private void authenticate (String token) throws AuthenticationException{
+        Authentication auth;
+
         if (token == null){
-            throw new InternalAuthenticationServiceException("No token available");
+            auth = new AnonymousAuthenticationToken("anonymous", "anonymous", AuthorityUtils.createAuthorityList(Role.ROLE_ANONYMOUS.name()));
         } else {
-            Authentication auth = authenticationManager.authenticate(new TokenAuthentication(token));
+            auth = authenticationManager.authenticate(new TokenAuthentication(token, AuthorityUtils.createAuthorityList(Role.ROLE_USER.name())));
             if (auth == null || !auth.isAuthenticated()) {
                 throw new InternalAuthenticationServiceException("Authentication failed: " + token);
             }
-
-            SecurityContextHolder.getContext().setAuthentication(auth);
         }
+
+        LOG.info(">>>> authenticated: " + auth);
+        SecurityContextHolder.getContext().setAuthentication(auth);
     }
 }

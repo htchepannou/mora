@@ -6,9 +6,9 @@ import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -21,6 +21,7 @@ import tchepannou.mora.rest.auth.dto.AccessTokenDto;
 import tchepannou.mora.rest.auth.dto.AuthRequest;
 
 import javax.validation.Valid;
+import java.security.Principal;
 
 @RestController
 @Api (value="AccessToken", description = "Manages access token")
@@ -42,13 +43,8 @@ public class AccessTokenController {
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public AccessTokenDto get(@RequestHeader ("X_AUTH_TOKEN")  String key) throws AccessTokenException {
-        AccessToken token = accessTokenService.findByValue(key);
-        if (token == null){
-            throw new AccessTokenException("No token found for " + key);
-        } else if (token.isExpired()){
-            throw new AccessTokenException("Token has expired");
-        }
+    public AccessTokenDto get(@AuthenticationPrincipal Principal currentToken) throws AccessTokenException {
+        AccessToken token = getCurrentAccessToken(currentToken);
 
         return new AccessTokenDto.Builder()
                 .withAccessToken(token)
@@ -62,13 +58,9 @@ public class AccessTokenController {
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public void delete(@RequestHeader ("X_AUTH_TOKEN") String key) throws AccessTokenException {
-        AccessToken token = accessTokenService.findByValue(key);
-        if (token == null){
-            throw new AccessTokenException("No token found for " + key);
-        } else if (!token.isExpired()){
-            accessTokenService.expire(token);
-        }
+    public void delete(@AuthenticationPrincipal Principal currentToken) throws AccessTokenException {
+        AccessToken token = getCurrentAccessToken(currentToken);
+        accessTokenService.expire(token);
     }
 
     @RequestMapping(value="/access_token", method = RequestMethod.PUT)
@@ -94,8 +86,9 @@ public class AccessTokenController {
     public void authFailed(){  // NOSONAR - This function is left empty intentionally
     }
 
-    @ResponseStatus (value= HttpStatus.UNAUTHORIZED, reason = ERROR_UNAUTHORIZED)
-    @ExceptionHandler (AccessTokenException.class)
-    public void unauthorized(){  // NOSONAR - This function is left empty intentionally
+
+    //-- Private
+    private AccessToken getCurrentAccessToken (Principal token) {
+        return accessTokenService.findByValue(token.getName());
     }
 }

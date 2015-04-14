@@ -1,7 +1,8 @@
-package tchepannou.mora.rest.space.config;
+package tchepannou.mora.rest.auth.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import tchepannou.mora.core.config.SecurityServicesConfig;
@@ -15,14 +16,15 @@ public class SecurityConfig extends AbstractRestSecurityConfig {
     @Override
     protected void configureAuthorization(HttpSecurity http) throws Exception{
         // @formatter:off
-        http
-            .authorizeRequests()
-                .anyRequest()
-                    .authenticated()
-                .and()
-                    .anonymous().disable()
+        http.authorizeRequests()
+            .antMatchers(HttpMethod.PUT, "/**")
+                .permitAll()
+            .anyRequest()
+                .authenticated()
+            .and()
+                .anonymous().disable()
         ;
-        // @formatter:on
+        // @formatter:om
     }
-}
 
+}

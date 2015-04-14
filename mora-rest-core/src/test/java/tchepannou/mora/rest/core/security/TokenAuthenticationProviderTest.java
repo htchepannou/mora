@@ -62,7 +62,7 @@ public class TokenAuthenticationProviderTest {
         Authentication xauth = provider.authenticate(auth);
 
         // Then
-        assertThat(xauth.getName(), equalTo(String.valueOf(user.getId())));
+        assertThat(xauth.getName(), equalTo(String.valueOf(token.getValue())));
         assertThat(xauth.getCredentials(), nullValue());
         assertThat(xauth.isAuthenticated(), equalTo(true));
     }

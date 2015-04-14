@@ -14,12 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.exception.SpaceException;
 import tchepannou.mora.core.exception.SpaceNotFoundException;
 import tchepannou.mora.core.exception.SpaceTypeNotFoundException;
+import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.SpaceTypeService;
 import tchepannou.mora.core.service.UserService;
@@ -40,6 +42,7 @@ public class SpaceController {
     public static final String SUCCESS = "success";
     public static final String ERROR_BAD_REQUEST = "bad_request";
     public static final String ERROR_NOT_FOUND = "space_not_found";
+    public static final String ERROR_UNAUTHORIZED = "unauthorized";
 
     @Autowired
     private SpaceTypeService spaceTypeService;
@@ -50,12 +53,16 @@ public class SpaceController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private AccessTokenService accessTokenService;
+
 
     //-- REST methods
     @RequestMapping (value = "/spaces/types", method = RequestMethod.GET)
     @ApiOperation (value="Retrieve Type of Spaces")
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
+            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
     })
     public List<SpaceTypeDto> types (){
         List<SpaceType> types = spaceTypeService.findAll();
@@ -74,9 +81,10 @@ public class SpaceController {
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
+            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
     })
-    public SpaceDto create (@AuthenticationPrincipal Principal currentUser, @Valid  @RequestBody CreateSpaceDto request) throws SpaceException{
-        User user = getCurrentUser(currentUser);
+    public SpaceDto create (@AuthenticationPrincipal Principal currentToken, @Valid  @RequestBody CreateSpaceDto request) throws SpaceException{
+        User user = getCurrentUser(currentToken);
 
         SpaceType type = spaceTypeService.findById(request.getTypeId());
         if (type == null){
@@ -100,6 +108,7 @@ public class SpaceController {
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
+            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
             @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
     })
     public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) throws SpaceException{
@@ -133,9 +142,10 @@ public class SpaceController {
 
 
     //-- Private
-    protected User getCurrentUser (Principal currentUser) {
-        long userId = Long.parseLong(currentUser.getName());
-        return userService.findById(userId);
+    protected User getCurrentUser (Principal currentToken) {
+        String token = currentToken.getName();
+        AccessToken accessToken = accessTokenService.findByValue(token);
+        return accessToken != null ? userService.findById(accessToken.getUserId()) : null;
     }
 
 
