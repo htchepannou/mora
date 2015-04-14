@@ -2,13 +2,14 @@ package tchepannou.mora.core.domain;
 
 import com.google.common.base.Preconditions;
 
-import java.sql.Date;
+import java.util.Date;
+
 
 public class Member extends Model{
     //-- Attribute
-    private Space space;
-    private User user;
-    private Role role;
+    private long spaceId;
+    private long userId;
+    private long roleId;
     private Date creationDate;
     
     //-- Public
@@ -24,9 +25,9 @@ public class Member extends Model{
         Preconditions.checkArgument(role != null, "role == null");
         Preconditions.checkArgument(role.getId() > 0, "roleid <= 0");
         
-        this.space = space;
-        this.user = user;
-        this.role = role;
+        this.spaceId = space.getId();
+        this.userId = user.getId();
+        this.roleId = role.getId();
     }
     
     //-- Getter/Setter
@@ -38,27 +39,27 @@ public class Member extends Model{
         this.creationDate = creationDate;
     }
 
-    public Role getRole() {
-        return role;
+    public long getRoleId() {
+        return roleId;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setRoleId(long roleId) {
+        this.roleId = roleId;
     }
 
-    public Space getSpace() {
-        return space;
+    public long getSpaceId() {
+        return spaceId;
     }
 
-    public void setSpace(Space space) {
-        this.space = space;
+    public void setSpaceId(long spaceId) {
+        this.spaceId = spaceId;
     }
 
-    public User getUser() {
-        return user;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 }
