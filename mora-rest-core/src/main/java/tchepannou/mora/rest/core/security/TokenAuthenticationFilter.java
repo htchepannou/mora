@@ -40,18 +40,17 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
         HttpServletResponse resp = (HttpServletResponse)servletResponse;
         try {
             String token = req.getHeader(SecurityContants.X_AUTH_TOKEN.name());
-            LOG.info(">>>> req.getHeader(" + SecurityContants.X_AUTH_TOKEN + ")=" + token);
             authenticate(token);
 
             filterChain.doFilter(req, resp);
-        } catch (AuthenticationException e){
+        } catch (AuthenticationException e){    // NOSONAR - no need to log or rethrow it
             SecurityContextHolder.clearContext();
             resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, e.getMessage());
         }
     }
 
     //-- Private
-    private void authenticate (String token) throws AuthenticationException{
+    private void authenticate (String token) {
         Authentication auth;
 
         if (token == null){
@@ -63,7 +62,6 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
             }
         }
 
-        LOG.info(">>>> authenticated: " + auth);
         SecurityContextHolder.getContext().setAuthentication(auth);
     }
 }

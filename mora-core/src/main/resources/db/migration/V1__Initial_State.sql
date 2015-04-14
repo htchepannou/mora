@@ -57,8 +57,6 @@ create table t_space_type(
     unique(name)
 ) engine=InnoDB;
 
-insert into t_space_type (id, name) values(1, 'club');
-insert into t_space_type (id, name) values(2, 'team');
 
 -- ====================
 -- space
@@ -94,8 +92,22 @@ create table t_role(
     unique(name)
 ) engine=InnoDB;
 
-insert into t_role (id, name) values(1, 'admin');
-insert into t_role (id, name) values(2, 'coach');
-insert into t_role (id, name) values(3, 'player');
+
+-- ====================
+-- member
+-- ====================
+create table t_member(
+    id int not null primary key auto_increment,
+    space_id int not null,
+    user_id int not null,
+    role_id int not null,
+
+    creation_date timestamp null,
+
+    foreign key (space_id) references t_space(id),
+    foreign key (user_id) references t_user(id),
+    foreign key (role_id) references t_role(id),
+    unique(space_id, user_id, role_id)
+) engine=InnoDB;
 
 

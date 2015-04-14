@@ -5,10 +5,10 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedCredentialsNotFoundException;
-import tchepannou.mora.core.domain.*;
+import tchepannou.mora.core.domain.AccessToken;
+import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.UserService;
 
@@ -30,7 +30,7 @@ public class TokenAuthenticationProvider implements AuthenticationProvider{
 
     //-- AuthenticationProvider overrides
     @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+    public Authentication authenticate(Authentication authentication) {
         /* get token */
         String token = authentication.getName();
         AccessToken accessToken = accessTokenService.findByValue(token);

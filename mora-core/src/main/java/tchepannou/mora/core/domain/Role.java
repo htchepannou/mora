@@ -5,7 +5,7 @@ public class Role extends Model{
     public static final String AUTHORITY_ROLE_ANONYMOUS = "ROLE_ANONYMOUS";
 
     //-- Attributes
-    public String name;
+    private String name;
 
     //-- Public
     public Role (){

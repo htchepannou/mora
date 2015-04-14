@@ -9,7 +9,6 @@
     <file url="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/AbstractRestSecurityConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/AuthenticationEntryPointImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/json/JsonDateSerializerTest.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mora-rest-space2" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-space3" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-user" charset="UTF-8" />
