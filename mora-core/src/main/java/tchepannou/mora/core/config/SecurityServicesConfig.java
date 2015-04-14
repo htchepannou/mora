@@ -5,10 +5,12 @@ import org.springframework.context.annotation.Configuration;
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.HashService;
 import tchepannou.mora.core.service.PasswordService;
+import tchepannou.mora.core.service.RoleService;
 import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.core.service.impl.AccessTokenServiceImpl;
 import tchepannou.mora.core.service.impl.Md5HashService;
 import tchepannou.mora.core.service.impl.PasswordServiceImpl;
+import tchepannou.mora.core.service.impl.RoleServiceImpl;
 import tchepannou.mora.core.service.impl.UserServiceImpl;
 
 @Configuration
@@ -31,6 +33,11 @@ public class SecurityServicesConfig {
     @Bean
     public AccessTokenService accessTokenService () {
         return new AccessTokenServiceImpl();
+    }
+
+    @Bean
+    public RoleService roleService () {
+        return new RoleServiceImpl();
     }
 
 }
