@@ -12,7 +12,6 @@ public class CreateSpaceDto extends SaveSpaceDto{
 
     //-- SaveSpaceDto overrides
 
-
     @Override
     public void toSpace(Space space) {
         super.toSpace(space);
@@ -23,6 +22,7 @@ public class CreateSpaceDto extends SaveSpaceDto{
     //-- Getter/Setter
     @NotNull
     @Size (min=1, max=100)
+    @Override
     public String getName() {
         return super.getName();
     }
