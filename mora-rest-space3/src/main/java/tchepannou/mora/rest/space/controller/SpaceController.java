@@ -5,15 +5,20 @@ import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
+import tchepannou.mora.core.exception.SpaceException;
+import tchepannou.mora.core.exception.SpaceTypeNotFoundException;
 import tchepannou.mora.core.exception.UserException;
 import tchepannou.mora.core.exception.UserNotFoundException;
 import tchepannou.mora.core.service.AccessTokenService;
@@ -35,7 +40,8 @@ public class SpaceController {
     //-- Attributes
     public static final String HEADER_TOKEN = SecurityContants.HEADER_AUTH_TOKEN;
     public static final String SUCCESS = "success";
-    public static final String BAD_REQUEST = "bad_request";
+    public static final String ERROR_BAD_REQUEST = "bad_request";
+    public static final String ERROR_NOT_FOUND = "space_not_found";
 
     @Autowired
     private SpaceTypeService spaceTypeService;
@@ -72,11 +78,16 @@ public class SpaceController {
     @ApiOperation (value="Create New Spaces")
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
-            @ApiResponse (code = 400, message = BAD_REQUEST),
+            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
     })
-    public SpaceDto create (@RequestHeader (HEADER_TOKEN) String accesToken, @Valid  @RequestBody CreateSpaceDto request) throws UserException{
+    public SpaceDto create (@RequestHeader (HEADER_TOKEN) String accesToken, @Valid  @RequestBody CreateSpaceDto request) throws UserException, SpaceException{
         User user = getCurrentUser(accesToken);
+
         SpaceType type = spaceTypeService.findById(request.getTypeId());
+        if (type == null){
+            throw new SpaceTypeNotFoundException("Invalid SpaceType: " + request.getTypeId());
+        }
+
         Space space = new Space(type, user);
 
         request.toSpace(space);
@@ -105,5 +116,17 @@ public class SpaceController {
         }
 
         return user;
+    }
+
+
+    //-- Exception handlers
+    @ResponseStatus (value= HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler (UserNotFoundException.class)
+    public void unauthorized (){    // NOSONAR - This function is left empty intentionally
+    }
+
+    @ResponseStatus (value= HttpStatus.BAD_REQUEST)
+    @ExceptionHandler (SpaceTypeNotFoundException.class)
+    public void invalidSpaceType (){    // NOSONAR - This function is left empty intentionally
     }
 }

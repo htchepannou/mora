@@ -113,4 +113,54 @@ public class SpaceControllerIT {
         expected.setLastUpdate(space.getLastUpdate());
         assertThat(space, equalTo(expected));
     }
+
+    @Test
+    public void testCreate_invalidSpaceType_shouldReturn400 () throws Exception {
+        // Given
+        CreateSpaceDto dto = new CreateSpaceDto();
+        dto.setTypeId(999);
+        dto.setDescription("desc");
+        dto.setAbbreviation("ABR");
+        dto.setAddress("address");
+        dto.setEmail("email@gmail.com");
+        dto.setName("name");
+        dto.setWebsiteUrl("http://www.web.com");
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SpaceController.HEADER_TOKEN, ACCESS_TOKEN))
+            .body(json)
+        .when()
+            .put("/spaces")
+        .then()
+            .statusCode(HttpStatus.SC_BAD_REQUEST)
+        ;
+    }
+
+    @Test
+    public void testCreate_badToken_shouldReturn401 () throws Exception {
+        // Given
+        CreateSpaceDto dto = new CreateSpaceDto();
+        dto.setTypeId(1);
+        dto.setDescription("desc");
+        dto.setAbbreviation("ABR");
+        dto.setAddress("address");
+        dto.setEmail("email@gmail.com");
+        dto.setName("name");
+        dto.setWebsiteUrl("http://www.web.com");
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SpaceController.HEADER_TOKEN, "????"))
+            .body(json)
+        .when()
+            .put("/spaces")
+        .then()
+            .statusCode(HttpStatus.SC_UNAUTHORIZED)
+        ;
+    }
 }
