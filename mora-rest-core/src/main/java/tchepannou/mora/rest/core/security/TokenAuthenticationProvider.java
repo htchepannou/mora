@@ -8,8 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.web.authentication.preauth.PreAuthenticatedCredentialsNotFoundException;
-import tchepannou.mora.core.domain.AccessToken;
-import tchepannou.mora.core.domain.User;
+import tchepannou.mora.core.domain.*;
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.UserService;
 
@@ -47,7 +46,7 @@ public class TokenAuthenticationProvider implements AuthenticationProvider{
             throw new PreAuthenticatedCredentialsNotFoundException(token + " is associated with no user!");
         }
 
-        Authentication result = new TokenAuthentication(accessToken, AuthorityUtils.createAuthorityList(Role.ROLE_USER.name()));
+        Authentication result = new TokenAuthentication(accessToken, AuthorityUtils.createAuthorityList(tchepannou.mora.core.domain.Role.AUTHORITY_ROLE_USER));
         result.setAuthenticated(true);
         return result;
     }

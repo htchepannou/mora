@@ -55,9 +55,9 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
         Authentication auth;
 
         if (token == null){
-            auth = new AnonymousAuthenticationToken("anonymous", "anonymous", AuthorityUtils.createAuthorityList(Role.ROLE_ANONYMOUS.name()));
+            auth = new AnonymousAuthenticationToken("anonymous", "anonymous", AuthorityUtils.createAuthorityList(tchepannou.mora.core.domain.Role.AUTHORITY_ROLE_ANONYMOUS));
         } else {
-            auth = authenticationManager.authenticate(new TokenAuthentication(token, AuthorityUtils.createAuthorityList(Role.ROLE_USER.name())));
+            auth = authenticationManager.authenticate(new TokenAuthentication(token, AuthorityUtils.createAuthorityList(tchepannou.mora.core.domain.Role.AUTHORITY_ROLE_USER)));
             if (auth == null || !auth.isAuthenticated()) {
                 throw new InternalAuthenticationServiceException("Authentication failed: " + token);
             }

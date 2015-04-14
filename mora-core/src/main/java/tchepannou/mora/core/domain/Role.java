@@ -1,6 +1,9 @@
 package tchepannou.mora.core.domain;
 
 public class Role extends Model{
+    public static final String AUTHORITY_ROLE_USER = "ROLE_USER";
+    public static final String AUTHORITY_ROLE_ANONYMOUS = "ROLE_ANONYMOUS";
+
     //-- Attributes
     public String name;
 

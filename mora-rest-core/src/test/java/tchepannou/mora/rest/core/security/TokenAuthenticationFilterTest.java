@@ -123,8 +123,6 @@ public class TokenAuthenticationFilterTest {
         Authentication result = SecurityContextHolder.getContext().getAuthentication();
         assertThat(result, instanceOf(AnonymousAuthenticationToken.class));
         assertThat(result.getAuthorities(), hasSize(1));
-        assertThat(result.getAuthorities().iterator().next().getAuthority(), equalTo(Role.ROLE_ANONYMOUS.name()));
-
-
+        assertThat(result.getAuthorities().iterator().next().getAuthority(), equalTo(tchepannou.mora.core.domain.Role.AUTHORITY_ROLE_ANONYMOUS));
     }
 }
