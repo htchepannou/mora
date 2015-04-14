@@ -2,6 +2,7 @@ package tchepannou.mora.rest.user.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.response.Header;
 import org.apache.http.HttpStatus;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +18,7 @@ import tchepannou.mora.core.dao.PasswordDao;
 import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.domain.Password;
 import tchepannou.mora.core.domain.User;
+import tchepannou.mora.rest.core.security.SecurityContants;
 import tchepannou.mora.rest.user.Application;
 import tchepannou.mora.rest.user.dto.CreateUserDto;
 import tchepannou.mora.rest.user.dto.SaveUserDto;
@@ -33,6 +35,8 @@ import static org.junit.Assert.assertThat;
         @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:db/rest-user-clean.sql", "classpath:db/rest-user-populate.sql"}),
 })
 public class UserControllerIT {
+    private static final String ACCESS_TOKEN = "bc9a50e1e0085b13c4bba866f6dfe57c";
+
     @Value ("${server.port}")
     private int port;
 
@@ -52,10 +56,12 @@ public class UserControllerIT {
 
     @Test
     public void testGet() throws Exception {
-        when().
-            get("/users/{userId}", 1).
-        then().
-            statusCode(HttpStatus.SC_OK)
+        given()
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+        .when()
+            .get("/users/{userId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_OK)
                 .log().all()
             .body("id", is(1))
             .body("username", is("ray.sponsible"))
@@ -70,18 +76,22 @@ public class UserControllerIT {
 
     @Test
     public void testGet_notFound_shouldReturn404() throws Exception {
-        when().
-            get("/users/{userId}", 9999).
-        then().
-            statusCode(HttpStatus.SC_NOT_FOUND);
+        given()
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+        .when()
+            .get("/users/{userId}", 9999)
+        .then()
+            .statusCode(HttpStatus.SC_NOT_FOUND);
     }
 
     @Test
     public void testGet_deletedUser_shouldReturn404() throws Exception {
-        when().
-            get("/users/{userId}", 2).
-        then().
-            statusCode(HttpStatus.SC_NOT_FOUND);
+        given()
+           .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+        .when()
+            .get("/users/{userId}", 2)
+        .then()
+            .statusCode(HttpStatus.SC_NOT_FOUND);
     }
 
 
@@ -100,6 +110,7 @@ public class UserControllerIT {
         // When
         given()
             .contentType("application/json")
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .post("/users/{userId}", 1)
@@ -135,6 +146,7 @@ public class UserControllerIT {
         // When
         given()
             .contentType("application/json")
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .post("/users/{userId}", 9999)
@@ -155,6 +167,7 @@ public class UserControllerIT {
         // When
         given()
             .contentType("application/json")
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .post("/users/{userId}", 2)
@@ -175,6 +188,7 @@ public class UserControllerIT {
         // When
         given()
             .contentType("application/json")
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .body(json)
         .when()
             .post("/users/{userId}", 1)
@@ -201,6 +215,7 @@ public class UserControllerIT {
         int userId = given()
             .contentType("application/json")
             .body(json)
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
         .when()
             .put("/users")
         .then()
@@ -245,6 +260,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -267,6 +283,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -289,6 +306,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -311,6 +329,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -333,6 +352,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -355,6 +375,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -377,6 +398,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -399,6 +421,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -421,6 +444,7 @@ public class UserControllerIT {
 
         // When
         given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -438,10 +462,12 @@ public class UserControllerIT {
         expected.setDeleted(true);
 
         // When
-        when().
-            delete("/users/{userId}", 1).
-        then().
-            statusCode(HttpStatus.SC_OK);
+        given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+        .when()
+            .delete("/users/{userId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_OK);
 
         // Then
         User user = userDao.findById(1);
@@ -450,7 +476,9 @@ public class UserControllerIT {
 
     @Test
     public void testDelete_deletedUser() throws Exception {
-        when().
+        given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+        .when().
             delete("/users/{userId}", 2).
         then().
             statusCode(HttpStatus.SC_OK);
@@ -458,7 +486,9 @@ public class UserControllerIT {
 
     @Test
     public void testDelete_notFound() throws Exception {
-        when().
+        given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+        .when().
             delete("/users/{userId}", 999).
         then().
             statusCode(HttpStatus.SC_OK);
