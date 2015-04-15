@@ -53,7 +53,6 @@ public class SpaceControllerIT {
     @Test
     public void testTypes() throws Exception {
         SpaceTypeDto[] aresult = given()
-                    .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
                 .when()
                     .get("/spaces/types")
                     .as(SpaceTypeDto[].class);
