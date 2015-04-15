@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.core.io.ClassPathResource;
 
 @Configuration
-@Profile("ehcache")
+@Profile("cache.ehcache")
 public class EhCacheConfig {
     @Bean
     public CacheManager cacheManager() {
