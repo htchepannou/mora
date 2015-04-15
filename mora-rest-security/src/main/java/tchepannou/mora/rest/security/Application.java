@@ -2,6 +2,7 @@ package tchepannou.mora.rest.security;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import tchepannou.mora.core.config.CacheConfig;
@@ -11,6 +12,7 @@ import tchepannou.mora.swagger.config.SwaggerConfig;
 
 @Configuration
 @SpringBootApplication
+@EnableCaching
 @Import ({DaoConfig.class, SwaggerConfig.class, SecurityServicesConfig.class, CacheConfig.class})
 public class Application {
     //-- Main
