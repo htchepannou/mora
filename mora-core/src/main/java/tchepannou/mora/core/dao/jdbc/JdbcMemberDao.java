@@ -16,6 +16,7 @@ import java.util.List;
 
 public class JdbcMemberDao extends JdbcModelDao<Member> implements MemberDao {
     private static final RowMapper<Member> MAPPER = new MemberRowMapper();
+    private static final String SQL_PREFIX = "SELECT * FROM t_member M JOIN t_space S ON S.id=M.space_id JOIN t_user U ON U.id=M.user_id ";
 
     //-- JdbcModelDao overrides
     @Override
@@ -49,9 +50,7 @@ public class JdbcMemberDao extends JdbcModelDao<Member> implements MemberDao {
     @Override
     public Member findBySpaceByUserByRole(long spaceId, long userId, long roleId) {
         try{
-            String sql = "SELECT *"
-                + " FROM t_member M JOIN t_space S ON S.id=M.space_id JOIN t_user U ON U.id=M.user_id "
-                + " WHERE M.space_id=? AND M.user_id=? AND M.role_id=? AND S.deleted=? AND U.deleted=?";
+            String sql = SQL_PREFIX + " WHERE M.space_id=? AND M.user_id=? AND M.role_id=? AND S.deleted=? AND U.deleted=?";
             return template.queryForObject(sql, new Object[] {spaceId, userId, roleId, false, false}, MAPPER);
         } catch (EmptyResultDataAccessException e){ // NOSONAR - This exception intentionally
             return null;
@@ -60,9 +59,7 @@ public class JdbcMemberDao extends JdbcModelDao<Member> implements MemberDao {
 
     @Override
     public List<Member> findBySpaceByUser(long spaceId, long userId) {
-        String sql = "SELECT *"
-            + " FROM t_member M JOIN t_space S ON S.id=M.space_id JOIN t_user U ON U.id=M.user_id "
-            + " WHERE M.space_id=? AND M.user_id=? AND S.deleted=? AND U.deleted=?";
+        String sql = SQL_PREFIX + " WHERE M.space_id=? AND M.user_id=? AND S.deleted=? AND U.deleted=?";
         return template.query(sql, new Object[]{
                 spaceId,
                 userId,
@@ -72,17 +69,13 @@ public class JdbcMemberDao extends JdbcModelDao<Member> implements MemberDao {
 
     @Override
     public List<Member> findBySpace(long spaceId) {
-        String sql = "SELECT *"
-            + " FROM t_member M JOIN t_space S ON S.id=M.space_id JOIN t_user U ON U.id=M.user_id "
-            + " WHERE M.space_id=? AND S.deleted=? AND U.deleted=?";
+        String sql = SQL_PREFIX + " WHERE M.space_id=? AND S.deleted=? AND U.deleted=?";
         return template.query(sql, new Object[] {spaceId, false, false}, MAPPER);
     }
 
     @Override
     public List<Member> findByUser(long userId) {
-        String sql = "SELECT *"
-            + " FROM t_member M JOIN t_space S ON S.id=M.space_id JOIN t_user U ON U.id=M.user_id "
-            + " WHERE M.user_id=? AND S.deleted=? AND U.deleted=?";
+        String sql = SQL_PREFIX + " WHERE M.user_id=? AND S.deleted=? AND U.deleted=?";
         return template.query(sql, new Object[] {userId, false, false}, MAPPER);
     }
 
