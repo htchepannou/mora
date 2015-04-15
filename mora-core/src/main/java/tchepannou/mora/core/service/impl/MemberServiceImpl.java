@@ -1,11 +1,12 @@
 package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.dao.DuplicateKeyException;
 import tchepannou.mora.core.dao.MemberDao;
 import tchepannou.mora.core.domain.Member;
-import tchepannou.mora.core.domain.Space;
-import tchepannou.mora.core.exception.DeleteSpaceOwnerException;
 import tchepannou.mora.core.exception.MemberDuplicationException;
 import tchepannou.mora.core.exception.MemberException;
 import tchepannou.mora.core.service.MemberService;
@@ -24,6 +25,12 @@ public class MemberServiceImpl implements MemberService {
 
 
     //-- MemberService overrides
+    @Override
+    @Cacheable ("Member")
+    public Member findById (long id){
+        return memberDao.findById (id);
+    }
+
     @Override
     public Member findBySpaceByUserByRole(long spaceId, long userId, long roleId) {
         return memberDao.findBySpaceByUserByRole(spaceId, userId, roleId);
@@ -45,32 +52,33 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void create(Member member)  throws MemberException {
+    @CachePut("Member")
+    public Member create(Member member)  throws MemberException {
         try {
             member.setCreationDate(new Date());
             memberDao.create(member);
+
+            return member;
         }catch (DuplicateKeyException e){
             throw new MemberDuplicationException("duplicate member", e);
         }
     }
 
     @Override
-    public void update(Member member) throws MemberException {
+    @CacheEvict("Member")
+    public Member update(Member member) throws MemberException {
         try {
             memberDao.update(member);
+            return member;
         }catch (DuplicateKeyException e){
             throw new MemberDuplicationException("duplicate member", e);
         }
     }
 
     @Override
-    public void delete(Member member) throws MemberException{
-        Space space = spaceService.findById(member.getSpaceId());
-        if (space != null) {
-            if (space.getUserId() == member.getUserId()){
-                throw new DeleteSpaceOwnerException("Can't delete the owner of the space");
-            }
-            memberDao.delete(member);
-        }
+    @CacheEvict("Member")
+    public Member delete(Member member){
+        memberDao.delete(member);
+        return member;
     }
 }

@@ -1,9 +1,11 @@
 package tchepannou.mora.rest.space.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.rest.core.dto.ModelDto;
+import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
 import java.util.Date;
 
@@ -73,6 +75,7 @@ public class SpaceDto extends ModelDto{
         return address;
     }
 
+    @JsonSerialize (using=JsonDateSerializer.class)
     public Date getCreationDate() {
         return creationDate;
     }
@@ -89,6 +92,7 @@ public class SpaceDto extends ModelDto{
         return id;
     }
 
+    @JsonSerialize (using=JsonDateSerializer.class)
     public Date getLastUpdate() {
         return lastUpdate;
     }

@@ -13,7 +13,6 @@ import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.exception.MemberDuplicationException;
-import tchepannou.mora.core.exception.DeleteSpaceOwnerException;
 import tchepannou.mora.core.service.MemberService;
 import tchepannou.mora.core.service.SpaceService;
 
@@ -166,18 +165,5 @@ public class MemberServiceImplTest {
 
         // Then
         verify(dao).delete(m);
-    }
-
-
-    @Test (expected = DeleteSpaceOwnerException.class)
-    public void testDelete_spaceOwner_shouldThrowDeleteSpaceOwnerException() throws Exception {
-        // Given
-        Space space = new Space (1, new SpaceType(1), new User(1));
-        Member m = new Member (1, space, new User(1), new Role(1));
-
-        when (spaceService.findById(1)).thenReturn(space);
-
-        // When
-        service.delete(m);
     }
 }

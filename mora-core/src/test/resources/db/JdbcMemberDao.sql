@@ -13,7 +13,6 @@ insert into t_role (id, name) values(2, 'member');
 
 insert into t_member(id, user_id, space_id, role_id, creation_date) VALUES (10, 1,  1, 1, '2014-12-01 14:30:55');
 insert into t_member(id, user_id, space_id, role_id, creation_date) VALUES (11, 1,  1, 2, '2014-12-01 14:30:55');
-
 insert into t_member(id, user_id, space_id, role_id, creation_date) VALUES (20, 2,  1, 1, '2014-12-01 14:30:55');
 insert into t_member(id, user_id, space_id, role_id, creation_date) VALUES (30, 10, 1, 1, '2014-12-01 14:30:55');
 

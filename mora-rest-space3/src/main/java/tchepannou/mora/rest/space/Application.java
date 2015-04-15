@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import tchepannou.mora.core.config.CacheConfig;
 import tchepannou.mora.core.config.DaoConfig;
+import tchepannou.mora.core.config.EhCacheConfig;
 import tchepannou.mora.core.config.SecurityServicesConfig;
 import tchepannou.mora.core.service.MemberService;
 import tchepannou.mora.core.service.SpaceService;
@@ -20,7 +21,7 @@ import tchepannou.mora.swagger.config.SwaggerConfig;
 @Configuration
 @SpringBootApplication
 @EnableCaching
-@Import ({DaoConfig.class, SwaggerConfig.class, SecurityServicesConfig.class, CacheConfig.class})
+@Import ({DaoConfig.class, SwaggerConfig.class, SecurityServicesConfig.class, EhCacheConfig.class, CacheConfig.class})
 public class Application {
     //-- Beans
     @Bean

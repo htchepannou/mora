@@ -1,13 +1,16 @@
 package tchepannou.mora.rest.space.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Member;
 import tchepannou.mora.rest.core.dto.ModelDto;
+import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
 import java.util.Date;
 
 public class MemberDto extends ModelDto{
     //-- Attributes
+    private long id;
     private long spaceId;
     private long userId;
     private long roleId;
@@ -25,6 +28,7 @@ public class MemberDto extends ModelDto{
             Preconditions.checkState(member != null, "member != null");
 
             MemberDto result = new MemberDto();
+            result.id = member.getId();
             result.spaceId = member.getSpaceId();
             result.userId = member.getUserId();
             result.roleId = member.getRoleId();
@@ -39,8 +43,13 @@ public class MemberDto extends ModelDto{
     }
 
     //-- Getter
+    @JsonSerialize (using=JsonDateSerializer.class)
     public Date getCreationDate() {
         return creationDate;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public long getRoleId() {

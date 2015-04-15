@@ -21,6 +21,7 @@ public class MemberDtoTest {
 
         MemberDto result = new MemberDto.Builder().withMember(member).build();
 
+        assertThat(result.getId(), equalTo(member.getId()));
         assertThat(result.getUserId(), equalTo(member.getUserId()));
         assertThat(result.getRoleId(), equalTo(member.getRoleId()));
         assertThat(result.getSpaceId(), equalTo(member.getSpaceId()));

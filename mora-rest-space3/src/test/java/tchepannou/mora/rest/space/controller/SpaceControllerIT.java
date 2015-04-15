@@ -104,7 +104,6 @@ public class SpaceControllerIT {
             .body("type.id", is(1))
             .body("type.name", is("club"))
         ;
-
     }
     @Test
     public void testGet_notFound_returns404 () throws Exception {
