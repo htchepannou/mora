@@ -2,6 +2,7 @@ package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.service.SpaceService;
@@ -21,6 +22,7 @@ public class SpaceServiceImpl implements SpaceService {
     }
 
     @Override
+    @Transactional
     public void create(Space space) {
         Date now = new Date();
         space.setCreationDate(now);
@@ -31,6 +33,7 @@ public class SpaceServiceImpl implements SpaceService {
     }
 
     @Override
+    @Transactional
     public void update(Space space) {
         Date now = new Date();
         space.setLastUpdate(now);
@@ -39,6 +42,7 @@ public class SpaceServiceImpl implements SpaceService {
     }
 
     @Override
+    @Transactional
     public void delete(Space space) {
         spaceDao.delete(space);
     }
