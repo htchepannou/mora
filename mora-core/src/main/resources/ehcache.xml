@@ -11,6 +11,10 @@
 	      maxBytesLocalHeap="1M"
 	      eternal="true"
     />
+    <cache name="Role"
+   	      maxBytesLocalHeap="1M"
+   	      eternal="true"
+       />
 
     <cache name="Space"
         maxEntriesLocalHeap="100"

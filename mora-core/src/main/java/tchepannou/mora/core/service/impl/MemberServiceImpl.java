@@ -5,7 +5,7 @@ import org.springframework.dao.DuplicateKeyException;
 import tchepannou.mora.core.dao.MemberDao;
 import tchepannou.mora.core.domain.Member;
 import tchepannou.mora.core.domain.Space;
-import tchepannou.mora.core.exception.MemberOwnershipException;
+import tchepannou.mora.core.exception.DeleteSpaceOwnerException;
 import tchepannou.mora.core.exception.MemberDuplicationException;
 import tchepannou.mora.core.exception.MemberException;
 import tchepannou.mora.core.service.MemberService;
@@ -68,7 +68,7 @@ public class MemberServiceImpl implements MemberService {
         Space space = spaceService.findById(member.getSpaceId());
         if (space != null) {
             if (space.getUserId() == member.getUserId()){
-                throw new MemberOwnershipException("Can't delete the owner of the space");
+                throw new DeleteSpaceOwnerException("Can't delete the owner of the space");
             }
             memberDao.delete(member);
         }

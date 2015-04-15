@@ -2,8 +2,6 @@ package tchepannou.mora.rest.space.controller;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
-import com.wordnik.swagger.annotations.ApiResponse;
-import com.wordnik.swagger.annotations.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +37,6 @@ import java.util.List;
 public class SpaceController extends BaseRestController{
     //-- Attributes
     private static final Logger LOG = LoggerFactory.getLogger(SpaceController.class);
-    public static final String SUCCESS = "success";
-    public static final String ERROR_BAD_REQUEST = "bad_request";
-    public static final String ERROR_NOT_FOUND = "space_not_found";
-    public static final String ERROR_UNAUTHORIZED = "unauthorized";
 
     @Autowired
     private SpaceTypeService spaceTypeService;
@@ -60,10 +54,6 @@ public class SpaceController extends BaseRestController{
     //-- REST methods
     @RequestMapping (value = "/spaces/types", method = RequestMethod.GET)
     @ApiOperation (value="Retrieve all SpaceTypes")
-    @ApiResponses ({
-            @ApiResponse (code = 200, message = SUCCESS),
-            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
-    })
     public List<SpaceTypeDto> types (){
         List<SpaceType> types = spaceTypeService.findAll();
 
@@ -77,10 +67,6 @@ public class SpaceController extends BaseRestController{
 
     @RequestMapping (value = "/spaces/types/{typeId}", method = RequestMethod.GET)
     @ApiOperation (value="Retrieve a SpaceType")
-    @ApiResponses ({
-            @ApiResponse (code = 200, message = SUCCESS),
-            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
-    })
     public SpaceTypeDto type (@PathVariable long typeId) {
         SpaceType type = spaceTypeService.findById(typeId);
         if (type == null){
@@ -108,11 +94,6 @@ public class SpaceController extends BaseRestController{
 
     @RequestMapping (value = "/spaces", method = RequestMethod.PUT)
     @ApiOperation (value="Create New Spaces")
-    @ApiResponses ({
-            @ApiResponse (code = 200, message = SUCCESS),
-            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
-            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
-    })
     public SpaceDto create (@AuthenticationPrincipal Principal currentToken, @Valid  @RequestBody CreateSpaceDto request){
         User user = getCurrentUser(currentToken);
 
@@ -138,12 +119,6 @@ public class SpaceController extends BaseRestController{
      */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.POST)
     @ApiOperation (value="Update Space")
-    @ApiResponses ({
-            @ApiResponse (code = 200, message = SUCCESS),
-            @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
-            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
-            @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
-    })
     public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) {
         Space space = spaceService.findById(spaceId);
         if (space == null){
@@ -166,9 +141,6 @@ public class SpaceController extends BaseRestController{
      */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.DELETE)
     @ApiOperation (value="Delete a Space")
-    @ApiResponses ({
-            @ApiResponse (code = 200, message = SUCCESS),
-    })
     public void delete (@PathVariable long spaceId) {
         Space space = spaceService.findById(spaceId);
         if (space != null){
