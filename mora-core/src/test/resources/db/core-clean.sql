@@ -1,3 +1,5 @@
+delete from t_member;
+
 delete from t_space;
 delete from t_space_type;
 

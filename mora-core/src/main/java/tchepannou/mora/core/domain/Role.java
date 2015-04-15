@@ -10,6 +10,9 @@ public class Role extends Model{
     //-- Public
     public Role (){
     }
+    public Role (long id){
+        super(id);
+    }
     public Role (long id, String name){
         super(id);
         this.name = name;

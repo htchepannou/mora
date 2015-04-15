@@ -2,6 +2,7 @@ package tchepannou.mora.core.config;
 
 import org.junit.Test;
 import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
+import tchepannou.mora.core.dao.jdbc.JdbcMemberDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
 import tchepannou.mora.core.dao.jdbc.JdbcRoleDao;
 import tchepannou.mora.core.dao.jdbc.JdbcSpaceDao;
@@ -42,6 +43,10 @@ public class DaoConfigTest {
     @Test
     public void testRoleDao (){
         assertThat(config.roleDao(), instanceOf(JdbcRoleDao.class));
+    }
 
+    @Test
+    public void testMemberDao (){
+        assertThat(config.memberDao(), instanceOf(JdbcMemberDao.class));
     }
 }

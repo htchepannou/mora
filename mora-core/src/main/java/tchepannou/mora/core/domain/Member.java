@@ -15,7 +15,9 @@ public class Member extends Model{
     //-- Public
     public Member(){
     }
-    public Member(Space space, User user, Role role){
+    public Member(long id, Space space, User user, Role role){
+        super(id);
+
         Preconditions.checkArgument(space != null, "space == null");
         Preconditions.checkArgument(space.getId() > 0, "spaceid <= 0");
         
@@ -24,10 +26,18 @@ public class Member extends Model{
         
         Preconditions.checkArgument(role != null, "role == null");
         Preconditions.checkArgument(role.getId() > 0, "roleid <= 0");
-        
+
         this.spaceId = space.getId();
         this.userId = user.getId();
         this.roleId = role.getId();
+    }
+    public Member(Member member){
+        super(member);
+
+        this.spaceId = member.getSpaceId();
+        this.userId = member.getUserId();
+        this.roleId = member.getRoleId();
+        this.creationDate = member.getCreationDate();
     }
     
     //-- Getter/Setter
