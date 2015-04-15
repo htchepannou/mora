@@ -10,7 +10,6 @@ import tchepannou.mora.core.domain.Member;
 import tchepannou.mora.core.exception.MemberDuplicationException;
 import tchepannou.mora.core.exception.MemberException;
 import tchepannou.mora.core.service.MemberService;
-import tchepannou.mora.core.service.SpaceService;
 
 import java.util.Date;
 import java.util.List;
@@ -19,9 +18,6 @@ public class MemberServiceImpl implements MemberService {
     //-- Attributes
     @Autowired
     private MemberDao memberDao;
-
-    @Autowired
-    private SpaceService spaceService;
 
 
     //-- MemberService overrides

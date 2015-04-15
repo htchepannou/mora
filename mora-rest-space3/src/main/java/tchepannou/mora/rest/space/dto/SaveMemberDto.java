@@ -4,7 +4,7 @@ import tchepannou.mora.core.domain.Member;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
 public class SaveMemberDto extends ModelDto{
-    public long roleId;
+    private long roleId;
 
     //-- Public
     public void toMember (Member member){

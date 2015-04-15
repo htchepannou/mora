@@ -3,8 +3,8 @@ package tchepannou.mora.rest.space.dto;
 import tchepannou.mora.core.domain.Member;
 
 public class CreateMemberDto extends SaveMemberDto{
-    public long spaceId;
-    public long userId;
+    private long spaceId;
+    private long userId;
 
     //-- Public
     @Override

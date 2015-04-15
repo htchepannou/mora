@@ -2,8 +2,6 @@ package tchepannou.mora.rest.space.controller;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,8 +34,6 @@ import java.util.List;
 @Api (value="Spaces", description = "Manage the spaces")
 public class SpaceController extends BaseRestController{
     //-- Attributes
-    private static final Logger LOG = LoggerFactory.getLogger(SpaceController.class);
-
     @Autowired
     private SpaceTypeService spaceTypeService;
 
