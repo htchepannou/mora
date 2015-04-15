@@ -4,6 +4,9 @@ import com.google.common.base.Preconditions;
 import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tchepannou.mora.core.dao.AccessTokenDao;
@@ -42,12 +45,14 @@ public class AccessTokenServiceImpl implements AccessTokenService {
 
     //-- AuthService overrides
     @Override
+    @Cacheable("AccessToken")
     public AccessToken findByValue(String key) {
         return key != null ? accessTokenDao.findByValue(key) : null;
     }
 
     @Override
     @Transactional
+    @CachePut ("AccessToken")
     public AccessToken authenticate(String usernameOrEmail, String clearPassword) throws AccessTokenException {
         Preconditions.checkArgument(usernameOrEmail != null, "usernameOrEmail == null");
         Preconditions.checkArgument(clearPassword != null, "password == null");
@@ -71,9 +76,12 @@ public class AccessTokenServiceImpl implements AccessTokenService {
 
     @Override
     @Transactional
-    public void expire(AccessToken token) {
+    @CacheEvict ("AccessToken")
+    public AccessToken expire(AccessToken token) {
         token.expire();
         accessTokenDao.update(token);
+
+        return token;
     }
 
     //-- Setter

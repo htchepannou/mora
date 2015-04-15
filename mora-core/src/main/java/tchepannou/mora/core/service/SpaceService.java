@@ -4,7 +4,7 @@ import tchepannou.mora.core.domain.Space;
 
 public interface SpaceService {
     Space findById (long id);
-    void create(Space space);
-    void update(Space space);
-    void delete(Space space);
+    Space create(Space space);
+    Space update(Space space);
+    Space delete(Space space);
 }

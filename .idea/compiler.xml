@@ -30,10 +30,10 @@
         <module name="mora-rest-auth" />
         <module name="mora-rest-core" />
         <module name="mora-rest-member" />
+        <module name="mora-rest-security" />
         <module name="mora-rest-space" />
         <module name="mora-rest-space2" />
         <module name="mora-rest-space3" />
-        <module name="mora-rest-user" />
         <module name="mora-swagger" />
       </profile>
     </annotationProcessing>
@@ -43,6 +43,7 @@
       <module name="mora-rest-auth" target="1.8" />
       <module name="mora-rest-core" target="1.8" />
       <module name="mora-rest-member" target="1.8" />
+      <module name="mora-rest-security" target="1.8" />
       <module name="mora-rest-space" target="1.8" />
       <module name="mora-rest-space2" target="1.8" />
       <module name="mora-rest-space3" target="1.8" />

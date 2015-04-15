@@ -1,6 +1,9 @@
 package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tchepannou.mora.core.dao.SpaceDao;
@@ -17,33 +20,39 @@ public class SpaceServiceImpl implements SpaceService {
 
     //-- SpaceService overrides
     @Override
+    @Cacheable ("Space")
     public Space findById(long id) {
         return spaceDao.findById(id);
     }
 
     @Override
     @Transactional
-    public void create(Space space) {
+    @CachePut ("Space")
+    public Space create(Space space) {
         Date now = new Date();
         space.setCreationDate(now);
         space.setLastUpdate(now);
 
         long id = spaceDao.create(space);
         space.setId(id);
+        return space;
     }
 
     @Override
     @Transactional
-    public void update(Space space) {
+    @CacheEvict ("Space")
+    public Space update(Space space) {
         Date now = new Date();
         space.setLastUpdate(now);
         spaceDao.update(space);
-
+        return space;
     }
 
     @Override
     @Transactional
-    public void delete(Space space) {
+    @CacheEvict ("Space")
+    public Space delete(Space space) {
         spaceDao.delete(space);
+        return space;
     }
 }

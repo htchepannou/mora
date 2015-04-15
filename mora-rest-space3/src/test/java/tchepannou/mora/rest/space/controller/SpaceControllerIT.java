@@ -81,6 +81,38 @@ public class SpaceControllerIT {
             .get("/spaces/types/{typeId}", 999)
         .then()
             .statusCode(HttpStatus.SC_NOT_FOUND)
+            .log().all()
+        ;
+    }
+
+
+    @Test
+    public void testGet () throws Exception {
+        when()
+            .get("/spaces/{spaceId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_OK)
+            .log().all()
+            .body("id", is(1))
+            .body("name", is("New York Soccer Club"))
+            .body("email", is("info@newyorksoccerclub.org"))
+            .body("logoUrl", is("http://img.com/nysc.png"))
+            .body("websiteUrl", is("http://newyorksoccerclub.org"))
+            .body("address", nullValue())
+            .body("abbreviation", is("NYSC"))
+            .body("description", is("Best soccer club"))
+            .body("type.id", is(1))
+            .body("type.name", is("club"))
+        ;
+
+    }
+    @Test
+    public void testGet_notFound_returns404 () throws Exception {
+        when()
+            .get("/spaces/{spaceId}", 999)
+        .then()
+            .statusCode(HttpStatus.SC_NOT_FOUND)
+            .log().all()
         ;
     }
 

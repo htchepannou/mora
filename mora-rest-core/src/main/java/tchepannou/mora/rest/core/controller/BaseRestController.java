@@ -31,11 +31,15 @@ public class BaseRestController {
         return handleRestException(ex);
     }
 
-    private  Map handleRestException(RestException ex) {
+    protected  Map handleRestException(RestException ex) {
         Map map = new HashMap();
         map.put("statusCode", ex.getStatusCode());
         map.put("message", ex.getMessage());
 
+        Throwable cause = ex.getCause();
+        if (cause != null){
+            map.put("cause", String.format("%s: %s", cause.getClass().getName(), cause.getMessage()));
+        }
         return map;
     }
 }

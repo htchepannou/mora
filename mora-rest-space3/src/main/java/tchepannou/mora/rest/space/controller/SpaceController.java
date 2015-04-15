@@ -64,7 +64,7 @@ public class SpaceController extends BaseRestController{
             @ApiResponse (code = 200, message = SUCCESS),
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
     })
-    public List<SpaceTypeDto> allTypes (){
+    public List<SpaceTypeDto> types (){
         List<SpaceType> types = spaceTypeService.findAll();
 
         List<SpaceTypeDto> result = new ArrayList<SpaceTypeDto>();
@@ -89,6 +89,22 @@ public class SpaceController extends BaseRestController{
         return new SpaceTypeDto.Builder().withSpaceType(type).build();
     }
 
+
+    @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.GET)
+    @ApiOperation (value="Retrieve a Space")
+    public SpaceDto get (@PathVariable long spaceId){
+        Space space = spaceService.findById(spaceId);
+        if (space == null){
+            throw new NotFoundException(spaceId);
+        }
+
+        SpaceType spaceType = spaceTypeService.findById(space.getTypeId());
+
+        return new SpaceDto.Builder()
+                .withSpace(space)
+                .withSpaceType(spaceType)
+                .build();
+    }
 
     @RequestMapping (value = "/spaces", method = RequestMethod.PUT)
     @ApiOperation (value="Create New Spaces")
@@ -117,6 +133,9 @@ public class SpaceController extends BaseRestController{
                 .build();
     }
 
+    /**
+     * TODO Should be restricted to ADMIN
+     */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.POST)
     @ApiOperation (value="Update Space")
     @ApiResponses ({
@@ -142,6 +161,9 @@ public class SpaceController extends BaseRestController{
                 .build();
     }
 
+    /**
+     * TODO Should be restricted to OWNER
+     */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.DELETE)
     @ApiOperation (value="Delete a Space")
     @ApiResponses ({

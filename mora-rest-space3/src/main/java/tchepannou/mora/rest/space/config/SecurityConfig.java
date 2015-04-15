@@ -2,6 +2,7 @@ package tchepannou.mora.rest.space.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import tchepannou.mora.core.config.SecurityServicesConfig;
@@ -19,6 +20,7 @@ public class SecurityConfig extends AbstractRestSecurityConfig {
             http
                 .authorizeRequests()
                     .antMatchers("/spaces/types/**").permitAll()
+                    .antMatchers(HttpMethod.GET, "/spaces/*").permitAll()
                     .anyRequest()
                         .authenticated()
                     .and()

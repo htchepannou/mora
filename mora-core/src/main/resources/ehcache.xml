@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<ehcache
+	xsi:noNamespaceSchemaLocation="ehcache.xsd"
+	updateCheck="true"
+	monitoring="autodetect"
+	dynamicConfig="true"
+>
+	<diskStore path="java.io.tmpdir"/>
+
+	<cache name="SpaceType"
+	      maxBytesLocalHeap="1M"
+	      eternal="true"
+    />
+
+    <cache name="Space"
+        maxEntriesLocalHeap="100"
+        maxEntriesLocalDisk="10"
+        eternal="false"
+        diskSpoolBufferSizeMB="20"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        memoryStoreEvictionPolicy="LRU"
+        transactionalMode="off">
+        <persistence strategy="localTempSwap" />
+    </cache>
+
+    <cache name="User"
+        maxEntriesLocalHeap="1000"
+        maxEntriesLocalDisk="100"
+        eternal="false"
+        diskSpoolBufferSizeMB="20"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        memoryStoreEvictionPolicy="LRU"
+        transactionalMode="off">
+        <persistence strategy="localTempSwap" />
+    </cache>
+
+    <cache name="AccessToken"
+        maxEntriesLocalHeap="1000"
+        maxEntriesLocalDisk="100"
+        eternal="false"
+        diskSpoolBufferSizeMB="20"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        memoryStoreEvictionPolicy="LRU"
+        transactionalMode="off">
+        <persistence strategy="localTempSwap" />
+    </cache>
+</ehcache>

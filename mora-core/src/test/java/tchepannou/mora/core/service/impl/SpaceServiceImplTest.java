@@ -58,16 +58,16 @@ public class SpaceServiceImplTest {
         Space expected = new Space(space);
 
         // When
-        service.create(space);
+        Space result = service.create(space);
 
         // Then
         verify(spaceDao).create(space);
-        assertThat(space.getCreationDate(), greaterThanOrEqualTo(now));
-        assertThat(space.getLastUpdate(), greaterThanOrEqualTo(now));
+        assertThat(result.getCreationDate(), greaterThanOrEqualTo(now));
+        assertThat(result.getLastUpdate(), greaterThanOrEqualTo(now));
 
-        expected.setLastUpdate(space.getLastUpdate());
-        expected.setCreationDate(space.getCreationDate());
-        assertThat(space, equalTo(expected));
+        expected.setLastUpdate(result.getLastUpdate());
+        expected.setCreationDate(result.getCreationDate());
+        assertThat(result, equalTo(expected));
     }
 
     @Test
@@ -85,13 +85,14 @@ public class SpaceServiceImplTest {
         Space expected = new Space(space);
 
         // When
-        service.update(space);
+        Space result = service.update(space);
 
         // Then
         verify(spaceDao).update(space);
-        assertThat(space.getLastUpdate(), greaterThanOrEqualTo(now));
 
-        expected.setLastUpdate(space.getLastUpdate());
+        assertThat(result.getLastUpdate(), greaterThanOrEqualTo(now));
+
+        expected.setLastUpdate(result.getLastUpdate());
         assertThat(space, equalTo(expected));
 
     }

@@ -24,7 +24,6 @@ import tchepannou.mora.rest.user.dto.CreateUserDto;
 import tchepannou.mora.rest.user.dto.SaveUserDto;
 
 import static com.jayway.restassured.RestAssured.given;
-import static com.jayway.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -215,7 +214,6 @@ public class UserControllerIT {
         int userId = given()
             .contentType("application/json")
             .body(json)
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
         .when()
             .put("/users")
         .then()
@@ -260,7 +258,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -283,7 +280,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -306,8 +302,7 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
-            .contentType("application/json")
+                .contentType("application/json")
             .body(json)
         .when()
             .put("/users")
@@ -329,7 +324,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -352,7 +346,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -375,7 +368,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -398,7 +390,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -421,7 +412,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()
@@ -444,7 +434,6 @@ public class UserControllerIT {
 
         // When
         given()
-            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
             .contentType("application/json")
             .body(json)
         .when()

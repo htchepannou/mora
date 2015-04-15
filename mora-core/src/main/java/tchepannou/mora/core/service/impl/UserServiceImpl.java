@@ -2,6 +2,8 @@ package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tchepannou.mora.core.dao.UserDao;
@@ -23,6 +25,7 @@ public class UserServiceImpl implements UserService{
 
     //-- UserService overrides
     @Override
+    @Cacheable ("User")
     public User findById(long id) {
         return userDao.findById(id);
     }
@@ -41,7 +44,8 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    public void create(User user) throws UserException {
+    @Cacheable ("User")
+    public User create(User user) throws UserException {
         ensureEmailNotAssigned(user);
         ensureUsernameNotAssigned(user);
 
@@ -50,12 +54,14 @@ public class UserServiceImpl implements UserService{
         user.setLastUpdate(now);
 
         userDao.create(user);
+        return user;
     }
 
 
     @Override
     @Transactional
-    public void update(User user) throws UserException {
+    @CacheEvict ("User")
+    public User update(User user) throws UserException {
         ensureEmailNotAssigned(user);
         ensureUsernameNotAssigned(user);
 
@@ -63,12 +69,15 @@ public class UserServiceImpl implements UserService{
         user.setLastUpdate(now);
 
         userDao.update(user);
+        return user;
     }
 
     @Override
     @Transactional
-    public void delete(User user) {
+    @CacheEvict ("User")
+    public User delete(User user) {
         userDao.delete(user);
+        return user;
     }
 
 

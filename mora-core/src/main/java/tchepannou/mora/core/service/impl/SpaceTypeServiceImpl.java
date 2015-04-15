@@ -17,12 +17,13 @@ public class SpaceTypeServiceImpl implements SpaceTypeService {
 
     //-- SpaceTypeService overrides  ---
     @Override
+    @Cacheable("SpaceType")
     public SpaceType findById(long id) {
         return spaceTypeDao.findById(id);
     }
 
     @Override
-    @Cacheable ("space_type")
+    @Cacheable("SpaceType")
     public List<SpaceType> findAll() {
         return spaceTypeDao.findAll();
     }

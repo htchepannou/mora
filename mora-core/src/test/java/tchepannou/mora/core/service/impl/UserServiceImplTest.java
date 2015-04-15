@@ -129,16 +129,16 @@ public class UserServiceImplTest{
         expected.setLastUpdate(now);
 
         // When
-        service.create(user);
+        User result = service.create(user);
 
         // Then
         verify(userDao).create(user);
 
-        assertThat(user.getCreationDate(), greaterThanOrEqualTo(now));
-        assertThat(user.getLastUpdate(), greaterThanOrEqualTo(now));
+        assertThat(result.getCreationDate(), greaterThanOrEqualTo(now));
+        assertThat(result.getLastUpdate(), greaterThanOrEqualTo(now));
 
-        expected.setLastUpdate(user.getLastUpdate());
-        expected.setCreationDate(user.getCreationDate());
+        expected.setLastUpdate(result.getLastUpdate());
+        expected.setCreationDate(result.getCreationDate());
         assertThat(user, equalTo(expected));
     }
 
@@ -183,14 +183,14 @@ public class UserServiceImplTest{
         expected.setLastUpdate(new Date());
 
         // When
-        service.update(user);
+        User result = service.update(user);
 
         // Then
         verify(userDao).update(user);
 
-        assertThat(user.getLastUpdate(), greaterThanOrEqualTo(now));
+        assertThat(result.getLastUpdate(), greaterThanOrEqualTo(now));
 
-        expected.setLastUpdate(user.getLastUpdate());
+        expected.setLastUpdate(result.getLastUpdate());
         assertThat(user, equalTo(expected));
     }
 

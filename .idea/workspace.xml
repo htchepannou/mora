@@ -2,39 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/Application.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/BadRequestException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/exception/BadRequestExceptionTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/BaseRestController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/controller/BaseRestControllerTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/controller/MemberController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/dto/MemberDto.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/MemberNotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/NotFoundException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/exception/NotFoundExceptionTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/OperationFailedException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/exception/OperationFailedExceptionTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/RestException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/config/SecurityConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/src/main/resources/config/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/mora-rest-member.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/src/test/resources/rest-member-clean.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-member/src/test/resources/rest-member-populate.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/dto/CreateUserDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_2_9_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_1_6_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/dto/SaveUserDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/dto/SaveUserDtoTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/UserController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/controller/UserControllerIT.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/dto/UserDto.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/Application.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/config/SecurityConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/controller/AccessTokenController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/controller/RoleController.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/dto/AccessTokenDto.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/dto/AuthRequest.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/dto/RoleDto.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/auth/controller/AccessTokenControllerIT.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/auth/controller/RoleControllerIT.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/auth/dto/AccessTokenDtoTest.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-auth/mora-rest-auth.iml" afterPath="$PROJECT_DIR$/mora-rest-security/mora-rest-security.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-auth/pom.xml" afterPath="$PROJECT_DIR$/mora-rest-security/pom.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/main/resources/config/application.properties" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/test/resources/db/rest-auth-clean.sql" afterPath="$PROJECT_DIR$/mora-rest-security/src/test/resources/db/rest-security-clean.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-auth/src/test/resources/db/rest-auth-populate.sql" afterPath="$PROJECT_DIR$/mora-rest-security/src/test/resources/db/rest-security-populate.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/rest-user-clean.sql" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/rest-security-clean.sql" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/rest-user-populate.sql" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/resources/db/rest-security-populate.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/AccessTokenService.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/AccessTokenService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/AccessTokenServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/AccessTokenServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java" afterPath="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/BaseRestController.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/BaseRestController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/controller/BaseRestControllerTest.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/controller/BaseRestControllerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/config/SecurityConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java" afterPath="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space3/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java" afterPath="$PROJECT_DIR$/mora-rest-space3/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceNotFoundException.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceNotFoundException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceTypeNotFoundException.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceTypeNotFoundException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/SpaceServiceImplTest.java" afterPath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/SpaceServiceImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties" afterPath="$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" afterPath="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java" afterPath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/mora-core.iml" afterPath="$PROJECT_DIR$/mora-core/mora-core.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-auth/mora-rest-auth.iml" afterPath="$PROJECT_DIR$/mora-rest-auth/mora-rest-auth.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" afterPath="$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-member/mora-rest-member.iml" afterPath="$PROJECT_DIR$/mora-rest-member/mora-rest-member.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space3/mora-rest-space3.iml" afterPath="$PROJECT_DIR$/mora-rest-space3/mora-rest-space3.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" afterPath="$PROJECT_DIR$/mora-rest-user/mora-rest-user.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
@@ -57,6 +73,7 @@
     <ignored path="$PROJECT_DIR$/mora-rest-space2/target/" />
     <ignored path="$PROJECT_DIR$/mora-rest-space3/target/" />
     <ignored path="$PROJECT_DIR$/mora-rest-member/target/" />
+    <ignored path="$PROJECT_DIR$/mora-rest-security/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,39 +105,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/DeleteSpaceOwnerException.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/MemberServiceImpl.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/MemberServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/mora-rest-member/pom.xml" />
-        <option value="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/Application.java" />
-        <option value="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java" />
-        <option value="$PROJECT_DIR$/mora-rest-core/pom.xml" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/DaoConfig.java" />
-        <option value="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/dto/RoleDto.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/RoleException.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/RoleNotFoundException.java" />
-        <option value="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/Application.java" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/resources/db/rest-auth-clean.sql" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/resources/db/rest-auth-populate.sql" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/resources/config/application.properties" />
-        <option value="$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/SwaggerConfig.java" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/dto/RoleDto.java" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/auth/controller/RoleControllerIT.java" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/controller/RoleController.java" />
-        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/controller/AccessTokenController.java" />
-        <option value="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/dto/MemberDto.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/MemberNotFoundException.java" />
         <option value="$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/controller/MemberController.java" />
         <option value="$PROJECT_DIR$/mora-rest-member/src/main/resources/config/application.properties" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/mora-core/pom.xml" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcSpaceTypeDao.java" />
         <option value="$PROJECT_DIR$/mora-rest-space3/src/test/resources/log4j.xml" />
         <option value="$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/NotFoundException.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/RestException.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/BadRequestException.java" />
@@ -128,17 +117,45 @@
         <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/RestException.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/exception/OperationFailedExceptionTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/NotFoundException.java" />
-        <option value="$PROJECT_DIR$/mora-rest-space3/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java" />
-        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java" />
-        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceNotFoundException.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceTypeNotFoundException.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/RestController.java" />
-        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java" />
-        <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/BaseRestController.java" />
-        <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/controller/BaseRestControllerTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/exception/BadRequestExceptionTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/exception/NotFoundExceptionTest.java" />
+        <option value="$PROJECT_DIR$/mora-core/pom.xml" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java" />
+        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java" />
+        <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/BaseRestController.java" />
+        <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/controller/BaseRestControllerTest.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/SpaceServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java" />
+        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java" />
+        <option value="$PROJECT_DIR$/mora-rest-space3/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/AccessTokenServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/AccessTokenService.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/AccessTokenServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/security/dto/CreateUserDto.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/security/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/security/Application.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/security/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/security/dto/SaveUserDtoTest.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/security/controller/RoleControllerIT.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/security/controller/AccessTokenControllerIT.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/resources/db/rest-security-populate.sql" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/security/controller/UserControllerIT.java" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/resources/config/application.properties" />
+        <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/security/controller/AccessTokenController.java" />
+        <option value="$PROJECT_DIR$/mora-rest-security/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -257,18 +274,18 @@
       <recent name="tchepannou.mora.core.dao.jdbc" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tchepannou.mora.rest.security.controller" />
+      <recent name="tchepannou.mora.rest.security.dto" />
       <recent name="tchepannou.mora.rest.core.exception" />
       <recent name="tchepannou.mora.core.exception" />
       <recent name="tchepannou.mora.rest.member.config" />
-      <recent name="tchepannou.mora.rest.member" />
-      <recent name="tchepannou.mora.core.service.impl" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/security/dto" />
       <recent name="$PROJECT_DIR$/mora-rest-member/src/test/resources" />
       <recent name="$PROJECT_DIR$/mora-rest-member/src/main/resources" />
       <recent name="$PROJECT_DIR$/mora-core/src/test/resources/db" />
       <recent name="$PROJECT_DIR$/mora-rest-space3/src/main/resources" />
-      <recent name="$PROJECT_DIR$/mora-rest-space3/src/test/resources/db" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
       <recent name="tchepannou.mora.core.domain.Role" />
@@ -293,29 +310,7 @@
       <recent name="tchepannou.mora.core.dao.jdbc" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in mora-rest-core">
-    <configuration default="false" name="Application (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tchepannou.mora.rest.member.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.member.Application" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="mora-rest-member" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Application">
     <configuration default="false" name="Application (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -366,37 +361,9 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="BaseRestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tchepannou.mora.rest.core.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="mora-rest-core" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.core.controller" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.core.controller.BaseRestControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="All in mora-rest-core" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="All in mora-rest-space3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="mora-rest-core" />
+      <module name="mora-rest-space3" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
@@ -413,6 +380,51 @@
       </option>
       <envs />
       <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="All in mora-rest-auth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="mora-rest-auth" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tchepannou.mora.rest.security.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.security.Application" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="mora-rest-auth" />
+      <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
@@ -600,19 +612,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.SpaceRowMapperTest" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Application (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Application (2)" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.SpaceControllerIT" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.BaseRestControllerTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.All in mora-rest-core" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Application (2)" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.SpaceControllerIT" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in mora-rest-space3" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.All in mora-rest-auth" />
+      <item index="5" class="java.lang.String" itemvalue="Application.Application" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.All in mora-rest-core" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.SpaceControllerIT" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.BaseRestControllerTest" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Application" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in mora-rest-auth" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.All in mora-rest-space3" />
         <item index="3" class="java.lang.String" itemvalue="Application.Application (2)" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Application (1)" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.SpaceControllerIT" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -694,9 +706,9 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3017301" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3017301" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.56935126" sideWeight="0.49896193" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.56935126" sideWeight="0.49896193" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
@@ -724,12 +736,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java</url>
-          <line>75</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/json/JsonDateSerializer.java</url>
           <line>17</line>
@@ -782,433 +788,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/RoleNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.057915058" vertical-offset="0" max-vertical-offset="518">
-          <caret line="2" column="56" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-member/src/test/resources/rest-member-clean.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="518">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/SecurityServicesConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14478764" vertical-offset="0" max-vertical-offset="518">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36252546" vertical-offset="632" max-vertical-offset="2805">
-          <caret line="80" column="53" selection-start-line="80" selection-start-column="53" selection-end-line="80" selection-end-column="53" />
-          <folding>
-            <element signature="e#2567#2568#0" expanded="true" />
-            <element signature="e#2631#2632#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44980696" vertical-offset="112" max-vertical-offset="630">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/auth/controller/AccessTokenControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3450">
-          <caret line="48" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/test/resources/db/rest-auth-clean.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.51724136" vertical-offset="0" max-vertical-offset="225">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/test/resources/db/rest-auth-populate.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.137931" vertical-offset="0" max-vertical-offset="210">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/dto/RoleDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4054054" vertical-offset="0" max-vertical-offset="444">
-          <caret line="12" column="15" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/RoleDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13513513" vertical-offset="0" max-vertical-offset="444">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/controller/RoleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="263" max-vertical-offset="885">
-          <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#all#0;class#RoleController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/test/java/tchepannou/mora/rest/auth/controller/RoleControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9980769" vertical-offset="396" max-vertical-offset="1260">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40384614" vertical-offset="0" max-vertical-offset="520">
-          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/TokenAuthenticationFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="810">
-          <caret line="38" column="57" selection-start-line="38" selection-start-column="41" selection-end-line="38" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/SecurityContants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/controller/AccessTokenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5044843" vertical-offset="450" max-vertical-offset="1140">
-          <caret line="66" column="61" selection-start-line="66" selection-start-column="61" selection-end-line="66" selection-end-column="61" />
-          <folding>
-            <element signature="method#authFailed#0;class#AccessTokenController#0" expanded="false" />
-            <element signature="method#getCurrentAccessToken#0;class#AccessTokenController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="495">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1095">
-          <caret line="21" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/javax/management/relation/RoleNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33632287" vertical-offset="0" max-vertical-offset="525">
-          <caret line="33" column="60" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="60" />
-          <folding>
-            <element signature="e#857#858#0" expanded="false" />
-            <element signature="e#887#888#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/dto/MemberDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7309417" vertical-offset="109" max-vertical-offset="555">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#Builder#0;class#MemberDto#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20179372" vertical-offset="0" max-vertical-offset="1815">
-          <caret line="31" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/MemberNotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="165">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42825112" vertical-offset="4" max-vertical-offset="450">
-          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
-          <folding>
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1185#1186#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-member/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79820627" vertical-offset="124" max-vertical-offset="570">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-member/src/main/java/tchepannou/mora/rest/member/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26923078" vertical-offset="780" max-vertical-offset="1290">
-          <caret line="59" column="70" selection-start-line="59" selection-start-column="70" selection-end-line="59" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#create#0;class#MemberController#0" expanded="false" />
-            <element signature="method#update#0;class#MemberController#0" expanded="false" />
-            <element signature="method#delete#0;class#MemberController#0" expanded="false" />
-            <element signature="method#badRequest#0;class#MemberController#0" expanded="false" />
-            <element signature="method#notFound#0;class#MemberController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75" vertical-offset="150" max-vertical-offset="2070">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.333334" vertical-offset="658" max-vertical-offset="1830">
-          <caret line="70" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcSpaceTypeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5044843" vertical-offset="0" max-vertical-offset="446">
-          <caret line="24" column="38" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
-          <folding>
-            <element signature="e#806#807#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/SpaceTypeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13452914" vertical-offset="0" max-vertical-offset="446">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcSpaceDao.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcSpaceTypeDao.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="120">
-          <caret line="2" column="52" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06077348" vertical-offset="117" max-vertical-offset="660">
-          <caret line="10" column="66" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/org/springframework/cache/annotation/Cacheable.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28957528" vertical-offset="0" max-vertical-offset="518">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="450">
-          <caret line="30" column="61" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#664#665#0" expanded="true" />
-            <element signature="e#712#713#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.055248618" vertical-offset="0" max-vertical-offset="543">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/BadRequestException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19337016" vertical-offset="0" max-vertical-offset="543">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#197#198#0" expanded="true" />
-            <element signature="e#275#276#0" expanded="true" />
-            <element signature="e#332#333#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/NotFoundException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-          <folding>
-            <element signature="e#189#190#0" expanded="true" />
-            <element signature="e#215#216#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/RestException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <caret line="7" column="59" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-          <folding>
-            <element signature="e#149#150#0" expanded="true" />
-            <element signature="e#179#180#0" expanded="true" />
-            <element signature="e#277#278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/exception/OperationFailedExceptionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="5" column="44" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding>
-            <element signature="e#491#492#0" expanded="true" />
-            <element signature="e#583#584#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/exception/OperationFailedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-          <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-            <element signature="e#291#292#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7058824" vertical-offset="18" max-vertical-offset="375">
-          <caret line="35" column="39" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceTypeNotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.084033616" vertical-offset="0" max-vertical-offset="357">
           <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/controller/BaseRestControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62184876" vertical-offset="348" max-vertical-offset="765">
-          <caret line="38" column="77" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/BaseRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7478992" vertical-offset="168" max-vertical-offset="705">
-          <caret line="29" column="71" selection-start-line="29" selection-start-column="71" selection-end-line="29" selection-end-column="71" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1187#1188#0" expanded="true" />
-            <element signature="e#1233#1234#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4509804" vertical-offset="64" max-vertical-offset="510">
-          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1218,25 +801,6 @@
         <state vertical-scroll-proportion="0.25210086" vertical-offset="0" max-vertical-offset="357">
           <caret line="8" column="14" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.403361" vertical-offset="5043" max-vertical-offset="5505">
-          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9747899" vertical-offset="1275" max-vertical-offset="2490">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getCurrentUser#0;class#SpaceController#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1253,6 +817,420 @@
         <state vertical-scroll-proportion="0.29411766" vertical-offset="0" max-vertical-offset="357">
           <caret line="12" column="109" selection-start-line="12" selection-start-column="109" selection-end-line="12" selection-end-column="109" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.333333" vertical-offset="658" max-vertical-offset="1995">
+          <caret line="62" column="4" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/controller/BaseRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="288" max-vertical-offset="705">
+          <caret line="35" column="71" selection-start-line="35" selection-start-column="50" selection-end-line="35" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1187#1188#0" expanded="true" />
+            <element signature="e#1233#1234#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/controller/BaseRestControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15966387" vertical-offset="168" max-vertical-offset="615">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="450">
+          <caret line="21" column="27" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#474#475#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
+          <caret line="8" column="9" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/SpaceServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.042016808" vertical-offset="615" max-vertical-offset="1485">
+          <caret line="59" column="9" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/java/tchepannou/mora/rest/user/controller/UserControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42016807" vertical-offset="6210" max-vertical-offset="6960">
+          <caret line="451" column="77" selection-start-line="451" selection-start-column="0" selection-end-line="451" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcRoleDao.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcSpaceTypeDao.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="120">
+          <caret line="2" column="99" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcUserDao.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcAccessTokenDao.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04573171" vertical-offset="0" max-vertical-offset="328">
+          <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/test/resources/db/rest-space-populate.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.137931" vertical-offset="0" max-vertical-offset="225">
+          <caret line="8" column="354" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="354" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceTypeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="78" max-vertical-offset="435">
+          <caret line="29" column="92" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1294" max-vertical-offset="1845">
+          <caret line="164" column="41" selection-start-line="164" selection-start-column="41" selection-end-line="164" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#types#0;class#SpaceController#0" expanded="false" />
+            <element signature="method#type#0;class#SpaceController#0" expanded="false" />
+            <element signature="method#get#0;class#SpaceController#0" expanded="false" />
+            <element signature="method#create#0;class#SpaceController#0" expanded="false" />
+            <element signature="method#update#0;class#SpaceController#0" expanded="false" />
+            <element signature="method#delete#0;class#SpaceController#0" expanded="false" />
+            <element signature="method#getCurrentUser#0;class#SpaceController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="423" max-vertical-offset="780">
+          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45938376" vertical-offset="886" max-vertical-offset="5985">
+          <caret line="100" column="28" selection-start-line="100" selection-start-column="28" selection-end-line="100" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37535015" vertical-offset="1" max-vertical-offset="390">
+          <caret line="22" column="120" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2730" max-vertical-offset="3255">
+          <caret line="225" column="28" selection-start-line="225" selection-start-column="0" selection-end-line="225" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.5" vertical-offset="432" max-vertical-offset="825">
+          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/AccessTokenServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27272728" vertical-offset="480" max-vertical-offset="3495">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1764706" vertical-offset="405" max-vertical-offset="1380">
+          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28851542" vertical-offset="17" max-vertical-offset="1815">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/dto/CreateUserDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33613446" vertical-offset="90" max-vertical-offset="510">
+          <caret line="20" column="29" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/config/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49019608" vertical-offset="65" max-vertical-offset="525">
+          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <caret line="13" column="78" selection-start-line="13" selection-start-column="78" selection-end-line="13" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/java/tchepannou/mora/rest/user/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="48" max-vertical-offset="405">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/dto/SaveUserDtoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37815127" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/main/resources/config/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/controller/RoleControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="361" max-vertical-offset="1260">
+          <caret line="30" column="148" selection-start-line="30" selection-start-column="148" selection-end-line="30" selection-end-column="148" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/controller/AccessTokenControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20728292" vertical-offset="46" max-vertical-offset="3450">
+          <caret line="33" column="148" selection-start-line="33" selection-start-column="148" selection-end-line="33" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-user/src/test/resources/db/rest-security-populate.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.586207" vertical-offset="0" max-vertical-offset="165">
+          <caret line="5" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/resources/db/rest-security-populate.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6206896" vertical-offset="0" max-vertical-offset="255">
+          <caret line="7" column="167" selection-start-line="7" selection-start-column="167" selection-end-line="7" selection-end-column="167" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/controller/UserControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2311" max-vertical-offset="7335">
+          <caret line="171" column="39" selection-start-line="171" selection-start-column="39" selection-end-line="171" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5882353" vertical-offset="0" max-vertical-offset="630">
+          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/AccessToken.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16806723" vertical-offset="0" max-vertical-offset="945">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.936937" vertical-offset="855" max-vertical-offset="2520">
+          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.375" vertical-offset="105" max-vertical-offset="2070">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/UserNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12605043" vertical-offset="0" max-vertical-offset="357">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding>
+            <element signature="e#148#149#0" expanded="true" />
+            <element signature="e#179#180#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/AccessTokenService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/AccessTokenServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="256" max-vertical-offset="1845">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
+          <folding>
+            <element signature="e#1710#1711#0" expanded="true" />
+            <element signature="e#1785#1786#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/AccessTokenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62184876" vertical-offset="813" max-vertical-offset="1170">
+          <caret line="91" column="39" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+          <folding>
+            <element signature="method#authFailed#0;class#AccessTokenController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/RoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="226" max-vertical-offset="885">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#all#0;class#RoleController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5854342" vertical-offset="631" max-vertical-offset="2220">
+          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
