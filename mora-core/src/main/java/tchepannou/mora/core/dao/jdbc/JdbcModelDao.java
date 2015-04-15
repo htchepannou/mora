@@ -30,7 +30,7 @@ public abstract class JdbcModelDao<T extends Model> extends JdbcReadOnlyModelDao
 
             ((SoftDeleteSupport) model).setDeleted(true);
         } else {
-            String sql = "DELETE " + getTableName() + " WHERE id=?";
+            String sql = "DELETE FROM " + getTableName() + " WHERE id=?";
             template.update(sql, model.getId());
         }
     }
