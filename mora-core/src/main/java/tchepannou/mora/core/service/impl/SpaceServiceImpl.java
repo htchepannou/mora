@@ -1,12 +1,14 @@
 package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.service.SpaceService;
 
 import java.util.Date;
 
+@Service
 public class SpaceServiceImpl implements SpaceService {
     //-- Attributes
     @Autowired

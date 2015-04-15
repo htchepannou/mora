@@ -4,6 +4,7 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
@@ -221,6 +222,21 @@ public class JdbcMemberDaoIT {
         expected.setId(id);
         expected.setCreationDate(result.getCreationDate());
         assertThat(result, equalTo(expected));
+    }
+
+    @Test(expected = DuplicateKeyException.class)
+    public void testCreate_duplicateMember() throws Exception {
+        // Given
+        Date now = new Date ();
+
+        Member member = new Member();
+        member.setUserId(1);
+        member.setSpaceId(1);
+        member.setRoleId(1);
+        member.setCreationDate(now);
+
+        // Given
+        dao.create(member);
     }
 
     @Test
