@@ -31,6 +31,10 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
             .csrf().disable()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
+                .authorizeRequests()
+                    .antMatchers("/api-docs/**").permitAll()
+                    .antMatchers("/docs/**").permitAll()
+            .and()
                 .exceptionHandling()
                     .authenticationEntryPoint(authenticationEntryPoint())
         ;
