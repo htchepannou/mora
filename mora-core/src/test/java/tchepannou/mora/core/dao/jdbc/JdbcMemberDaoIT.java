@@ -191,9 +191,10 @@ public class JdbcMemberDaoIT {
         // Given
 
         // When
-        List<Member> members = dao.findByUser(2);
+        List<Member> members = dao.findByUser(10);
 
         // Then
+        System.out.println(members);
         assertThat(members, hasSize(0));
     }
 
@@ -224,23 +225,18 @@ public class JdbcMemberDaoIT {
     @Test
     public void testUpdate () throws Exception{
         // Given
-        Member member = ((JdbcMemberDao)dao).findById(1);
+        Member member = ((JdbcMemberDao)dao).findById(20);
         member.setRoleId(2);
 
         Member expected = new Member(member);
 
         // Given
         dao.update(member);
-        Member result = ((JdbcMemberDao)dao).findById(1);
+        Member result = ((JdbcMemberDao)dao).findById(20);
 
         // Then
         expected.setRoleId(2);
         assertThat(result, equalTo(expected));
 
     }
-
-//    @Test
-//    public void testUpdate() throws Exception {
-//
-//    }
 }
