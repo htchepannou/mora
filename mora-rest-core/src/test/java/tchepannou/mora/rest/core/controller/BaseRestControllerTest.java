@@ -1,6 +1,9 @@
 package tchepannou.mora.rest.core.controller;
 
 import org.junit.Test;
+import tchepannou.mora.rest.core.exception.BadRequestException;
+import tchepannou.mora.rest.core.exception.NotFoundException;
+import tchepannou.mora.rest.core.exception.OperationFailedException;
 import tchepannou.mora.rest.core.exception.RestException;
 
 import java.io.IOException;
@@ -13,6 +16,41 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class BaseRestControllerTest {
+    @Test
+    public void testNotFoundException() throws Exception {
+        RestException ex = new NotFoundException("foo");
+
+        Map result = new BaseRestController().handleRestException(ex);
+
+        Map expected = new HashMap();
+        expected.put("statusCode", 404);
+        expected.put("message", "foo");
+        assertThat(result, equalTo(expected));
+    }
+
+    @Test
+    public void testBadRequestException() throws Exception {
+        RestException ex = new BadRequestException("foo");
+
+        Map result = new BaseRestController().handleRestException(ex);
+
+        Map expected = new HashMap();
+        expected.put("statusCode", 400);
+        expected.put("message", "foo");
+        assertThat(result, equalTo(expected));
+    }
+
+    @Test
+    public void testOperationFailedException() throws Exception {
+        RestException ex = new OperationFailedException("foo");
+
+        Map result = new BaseRestController().handleRestException(ex);
+
+        Map expected = new HashMap();
+        expected.put("statusCode", 409);
+        expected.put("message", "foo");
+        assertThat(result, equalTo(expected));
+    }
 
     @Test
     public void testHandleOperation() throws Exception {
