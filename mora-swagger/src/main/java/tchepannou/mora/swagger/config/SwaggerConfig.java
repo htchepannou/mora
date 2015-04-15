@@ -78,7 +78,7 @@ public class SwaggerConfig {
     }
 
     protected List<String> getIncludePatterns (){
-        return Arrays.asList(includePatterns);
+        return Arrays.asList(includePatterns.split(","));
     }
 
 

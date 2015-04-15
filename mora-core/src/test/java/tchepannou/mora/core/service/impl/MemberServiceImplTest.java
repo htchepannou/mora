@@ -35,6 +35,8 @@ public class MemberServiceImplTest {
     @InjectMocks
     private MemberService service = new MemberServiceImpl();
 
+
+    //-- Test
     @Test
     public void testFindBySpaceByUserByRole() throws Exception {
         // Given
