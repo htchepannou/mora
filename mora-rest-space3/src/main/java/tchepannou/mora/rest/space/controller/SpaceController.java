@@ -4,27 +4,26 @@ import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 import com.wordnik.swagger.annotations.ApiResponse;
 import com.wordnik.swagger.annotations.ApiResponses;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
-import tchepannou.mora.core.exception.SpaceException;
-import tchepannou.mora.core.exception.SpaceNotFoundException;
-import tchepannou.mora.core.exception.SpaceTypeNotFoundException;
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.SpaceTypeService;
 import tchepannou.mora.core.service.UserService;
+import tchepannou.mora.rest.core.controller.BaseRestController;
+import tchepannou.mora.rest.core.exception.BadRequestException;
+import tchepannou.mora.rest.core.exception.NotFoundException;
 import tchepannou.mora.rest.space.dto.CreateSpaceDto;
 import tchepannou.mora.rest.space.dto.SaveSpaceDto;
 import tchepannou.mora.rest.space.dto.SpaceDto;
@@ -37,8 +36,9 @@ import java.util.List;
 
 @RestController
 @Api (value="Spaces", description = "Manage the spaces")
-public class SpaceController {
+public class SpaceController extends BaseRestController{
     //-- Attributes
+    private static final Logger LOG = LoggerFactory.getLogger(SpaceController.class);
     public static final String SUCCESS = "success";
     public static final String ERROR_BAD_REQUEST = "bad_request";
     public static final String ERROR_NOT_FOUND = "space_not_found";
@@ -59,12 +59,12 @@ public class SpaceController {
 
     //-- REST methods
     @RequestMapping (value = "/spaces/types", method = RequestMethod.GET)
-    @ApiOperation (value="Retrieve Type of Spaces")
+    @ApiOperation (value="Retrieve all SpaceTypes")
     @ApiResponses ({
             @ApiResponse (code = 200, message = SUCCESS),
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
     })
-    public List<SpaceTypeDto> types (){
+    public List<SpaceTypeDto> allTypes (){
         List<SpaceType> types = spaceTypeService.findAll();
 
         List<SpaceTypeDto> result = new ArrayList<SpaceTypeDto>();
@@ -75,6 +75,20 @@ public class SpaceController {
         return result;
     }
 
+    @RequestMapping (value = "/spaces/types/{typeId}", method = RequestMethod.GET)
+    @ApiOperation (value="Retrieve a SpaceType")
+    @ApiResponses ({
+            @ApiResponse (code = 200, message = SUCCESS),
+            @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
+    })
+    public SpaceTypeDto type (@PathVariable long typeId) {
+        SpaceType type = spaceTypeService.findById(typeId);
+        if (type == null){
+            throw new NotFoundException(typeId);
+        }
+        return new SpaceTypeDto.Builder().withSpaceType(type).build();
+    }
+
 
     @RequestMapping (value = "/spaces", method = RequestMethod.PUT)
     @ApiOperation (value="Create New Spaces")
@@ -83,12 +97,12 @@ public class SpaceController {
             @ApiResponse (code = 400, message = ERROR_BAD_REQUEST),
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
     })
-    public SpaceDto create (@AuthenticationPrincipal Principal currentToken, @Valid  @RequestBody CreateSpaceDto request) throws SpaceException{
+    public SpaceDto create (@AuthenticationPrincipal Principal currentToken, @Valid  @RequestBody CreateSpaceDto request){
         User user = getCurrentUser(currentToken);
 
         SpaceType type = spaceTypeService.findById(request.getTypeId());
         if (type == null){
-            throw new SpaceTypeNotFoundException("Invalid SpaceType: " + request.getTypeId());
+            throw new BadRequestException("typeId");
         }
 
         Space space = new Space(type, user);
@@ -111,10 +125,10 @@ public class SpaceController {
             @ApiResponse (code = 401, message = ERROR_UNAUTHORIZED),
             @ApiResponse (code = 404, message = ERROR_NOT_FOUND),
     })
-    public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) throws SpaceException{
+    public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) {
         Space space = spaceService.findById(spaceId);
         if (space == null){
-            throw new SpaceNotFoundException("Space not found: " + spaceId);
+            throw new NotFoundException(spaceId);
         }
 
         request.toSpace(space);
@@ -146,17 +160,5 @@ public class SpaceController {
         String token = currentToken.getName();
         AccessToken accessToken = accessTokenService.findByValue(token);
         return accessToken != null ? userService.findById(accessToken.getUserId()) : null;
-    }
-
-
-    //-- Exception handlers
-    @ResponseStatus (value= HttpStatus.NOT_FOUND)
-    @ExceptionHandler (SpaceNotFoundException.class)
-    public void notFound (){    // NOSONAR - This function is left empty intentionally
-    }
-
-    @ResponseStatus (value= HttpStatus.BAD_REQUEST)
-    @ExceptionHandler (SpaceTypeNotFoundException.class)
-    public void invalidSpaceType (){    // NOSONAR - This function is left empty intentionally
     }
 }

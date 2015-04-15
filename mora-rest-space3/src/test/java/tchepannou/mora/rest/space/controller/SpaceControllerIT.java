@@ -26,6 +26,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.jayway.restassured.RestAssured.given;
+import static com.jayway.restassured.RestAssured.when;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -60,6 +61,27 @@ public class SpaceControllerIT {
 
         assertThat(result, hasSize(2));
         assertThat(result, hasItems(new SpaceTypeDto(1, "club"), new SpaceTypeDto(2, "team")));
+    }
+
+    @Test
+    public void testType() throws Exception {
+        when()
+            .get("/spaces/types/{typeId}", 1)
+        .then()
+            .statusCode(HttpStatus.SC_OK)
+            .log().all()
+            .body("id", greaterThan(0))
+            .body("name", is("club"))
+        ;
+    }
+
+    @Test
+    public void testType_notFound_returns404() throws Exception {
+        when()
+            .get("/spaces/types/{typeId}", 999)
+        .then()
+            .statusCode(HttpStatus.SC_NOT_FOUND)
+        ;
     }
 
 

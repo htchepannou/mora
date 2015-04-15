@@ -1,4 +1,4 @@
-package tchepannou.mora.rest.space.config;
+package tchepannou.mora.rest.member.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -18,7 +18,6 @@ public class SecurityConfig extends AbstractRestSecurityConfig {
             // @formatter:off
             http
                 .authorizeRequests()
-                    .antMatchers("/spaces/types/**").permitAll()
                     .anyRequest()
                         .authenticated()
                     .and()

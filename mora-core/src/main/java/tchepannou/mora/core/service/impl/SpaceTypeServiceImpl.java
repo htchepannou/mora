@@ -2,6 +2,7 @@ package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import tchepannou.mora.core.dao.SpaceTypeDao;
 import tchepannou.mora.core.domain.SpaceType;
@@ -21,6 +22,7 @@ public class SpaceTypeServiceImpl implements SpaceTypeService {
     }
 
     @Override
+    @Cacheable ("space_type")
     public List<SpaceType> findAll() {
         return spaceTypeDao.findAll();
     }
