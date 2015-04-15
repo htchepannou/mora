@@ -1,5 +1,6 @@
 package tchepannou.mora.core.dao.jdbc;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -237,6 +238,19 @@ public class JdbcMemberDaoIT {
         // Then
         expected.setRoleId(2);
         assertThat(result, equalTo(expected));
+    }
 
+
+    @Test
+    public void testDelete () throws Exception{
+        // Given
+        Member member = ((JdbcMemberDao)dao).findById(10);
+
+        // Given
+        dao.delete(member);
+
+        // Then
+        Member result = ((JdbcMemberDao)dao).findById(10);
+        assertThat(result, Matchers.nullValue());
     }
 }

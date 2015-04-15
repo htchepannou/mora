@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcMemberDao.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcMemberDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/UserException.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/UserException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JdbcMemberDao.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JdbcMemberDao.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcMemberDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62355214" vertical-offset="787" max-vertical-offset="1350">
-              <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="787" max-vertical-offset="1350">
+              <caret line="66" column="110" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1701#1702#0" expanded="true" />
@@ -108,6 +109,16 @@
                 <element signature="e#1790#1791#0" expanded="true" />
                 <element signature="e#1819#1820#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserException.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/UserException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.086872585" vertical-offset="0" max-vertical-offset="518">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -120,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-rest-space3/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-auth/src/main/java/tchepannou/mora/rest/auth/controller/AccessTokenController.java" />
         <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java" />
         <option value="$PROJECT_DIR$/mora-rest-auth/src/main/resources/config/application.properties" />
@@ -171,6 +181,7 @@
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/SpaceTypeNotFoundException.java" />
         <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/dao/jdbc/JdbcMemberDaoIT.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcMemberDao.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/UserException.java" />
       </list>
     </option>
   </component>
@@ -1149,14 +1160,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/UserException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/EmailAlreadyAssignedException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
@@ -1432,8 +1435,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcMemberDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62355214" vertical-offset="787" max-vertical-offset="1350">
-          <caret line="77" column="32" selection-start-line="77" selection-start-column="32" selection-end-line="77" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="787" max-vertical-offset="1350">
+          <caret line="66" column="110" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1701#1702#0" expanded="true" />
@@ -1441,6 +1444,14 @@
             <element signature="e#1790#1791#0" expanded="true" />
             <element signature="e#1819#1820#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/UserException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.086872585" vertical-offset="0" max-vertical-offset="518">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
