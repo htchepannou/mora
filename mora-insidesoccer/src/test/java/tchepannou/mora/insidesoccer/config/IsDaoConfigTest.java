@@ -4,6 +4,7 @@ import org.junit.Test;
 import tchepannou.mora.insidesoccer.dao.impl.IsAccessTokenDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
+import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
 import tchepannou.mora.insidesoccer.dao.impl.PartyDaoImpl;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
@@ -30,5 +31,10 @@ public class IsDaoConfigTest {
     @Test
     public void testPartyDao (){
         assertThat(config.partyDao(), instanceOf(PartyDaoImpl.class));
+    }
+
+    @Test
+    public void testPartyAttributeDao (){
+        assertThat(config.partyAttributeDao(), instanceOf(PartyAttributeDaoImpl.class));
     }
 }

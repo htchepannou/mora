@@ -14,6 +14,13 @@ public class Party extends Model implements SoftDeleteSupport{
     private Date date;
     private Date creationDate;
 
+    // Public
+    public Party (){
+
+    }
+    public Party(long id){
+        super(id);
+    }
 
     //-- SoftDeleteSupport overrides
     public boolean isDeleted() {

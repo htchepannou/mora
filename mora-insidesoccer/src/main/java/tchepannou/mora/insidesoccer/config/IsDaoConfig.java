@@ -6,10 +6,12 @@ import tchepannou.mora.core.config.DaoConfig;
 import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.RoleDao;
 import tchepannou.mora.core.dao.SpaceTypeDao;
+import tchepannou.mora.insidesoccer.dao.PartyAttributeDao;
 import tchepannou.mora.insidesoccer.dao.PartyDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsAccessTokenDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
+import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
 import tchepannou.mora.insidesoccer.dao.impl.PartyDaoImpl;
 
 @Configuration
@@ -18,6 +20,11 @@ public class IsDaoConfig extends DaoConfig{
     @Bean
     public PartyDao partyDao (){
         return new PartyDaoImpl();
+    }
+
+    @Bean
+    public PartyAttributeDao partyAttributeDao (){
+        return new PartyAttributeDaoImpl();
     }
 
     //-- DaoConfig overrides
@@ -38,4 +45,5 @@ public class IsDaoConfig extends DaoConfig{
     public SpaceTypeDao spaceTypeDao() {
         return new IsSpaceTypeDao();
     }
+
 }
