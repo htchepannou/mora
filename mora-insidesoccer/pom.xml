@@ -48,11 +48,10 @@
                             <url>jdbc:mysql://localhost:3306/</url>
                             <username>root</username>
                             <srcFiles>
-                                <srcFile>${basedir}/src/test/resources/sql/createdb.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/createdb.sql</srcFile>
                             </srcFiles>
                         </configuration>
                     </execution>
-
 
                     <execution>
                         <id>create-tables</id>
