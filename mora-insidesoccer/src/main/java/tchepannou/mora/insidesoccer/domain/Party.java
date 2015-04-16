@@ -2,6 +2,7 @@ package tchepannou.mora.insidesoccer.domain;
 
 import tchepannou.mora.core.domain.Model;
 import tchepannou.mora.core.domain.SoftDeleteSupport;
+import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 
 import java.util.Date;
@@ -29,6 +30,13 @@ public class Party extends Model implements SoftDeleteSupport{
         user.setDeleted(this.deleted);
         user.setCreationDate(this.creationDate);
         user.setLastUpdate(this.date);
+    }
+    
+    public void toSpace (Space space){
+        space.setId(getId());
+        space.setDeleted(this.deleted);
+        space.setCreationDate(this.creationDate);
+        space.setLastUpdate(this.date);
     }
 
     //-- SoftDeleteSupport overrides
