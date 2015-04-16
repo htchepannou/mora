@@ -16,7 +16,7 @@ import java.util.List;
 
 public class JdbcMemberDao extends JdbcModelDao<Member> implements MemberDao {
     private static final RowMapper<Member> MAPPER = new MemberRowMapper();
-    private static final String SQL_PREFIX = "SELECT * FROM t_member M JOIN t_space S ON S.id=M.space_id JOIN t_user U ON U.id=M.user_id ";
+    private static final String SQL_PREFIX = "SELECT M.* FROM t_member M JOIN t_space S ON S.id=M.space_id JOIN t_user U ON U.id=M.user_id ";
 
     //-- JdbcModelDao overrides
     @Override
