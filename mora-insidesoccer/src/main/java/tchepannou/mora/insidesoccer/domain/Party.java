@@ -7,12 +7,12 @@ import java.util.Date;
 
 public class Party extends Model implements SoftDeleteSupport{
     //-- Attribute
-    public long typeId;
-    public long ownerId;
-    public boolean deleted;
-    public int status;
-    public Date date;
-    public Date creationDate;
+    private long typeId;
+    private long ownerId;
+    private boolean deleted;
+    private int status;
+    private Date date;
+    private Date creationDate;
 
 
     //-- SoftDeleteSupport overrides
