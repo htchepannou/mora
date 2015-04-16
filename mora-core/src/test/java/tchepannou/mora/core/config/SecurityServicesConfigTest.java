@@ -11,7 +11,7 @@ import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
 
 public class SecurityServicesConfigTest {
-    SecurityServicesConfig config = new SecurityServicesConfig();
+    ServiceConfig config = new ServiceConfig();
 
     @Test
     public void testUserService() throws Exception {

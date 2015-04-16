@@ -25,28 +25,6 @@ public class IsUserDao implements UserDao{
 
 
 
-    //-- Private
-    private User toUser (Party party, Collection<PartyAttribute> attributes){
-        User result = new User ();
-        party.toUser(result);
-        PartyAttribute.toUser(attributes, result);
-        return result;
-    }
-
-    private List<User> findByAttributeNameValue(String name, String value) {
-        List<PartyAttribute> attributes = partyAttributeDao.findByNameByValueByPartyType(name, value, PARTY_TYPE_ID);
-        Set<Long> partyIds = PartyAttribute.toPartyIdSet(attributes);
-        List<Party> parties = partyDao.findByIds(partyIds);
-
-        List<User> result = new ArrayList<>();
-        for (Party party : parties){
-            List<PartyAttribute> xattributes = partyAttributeDao.findByPartyByNames(party.getId(), PartyAttribute.USER_ATTRIBUTE_NAMES);
-            User user = toUser(party, xattributes);
-            result.add(user);
-        }
-        return result;
-    }
-
     //-- UserDao overrides
     @Override
     public User findById(long id) {
@@ -55,7 +33,7 @@ public class IsUserDao implements UserDao{
             return null;
         }
 
-        List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id);
+        List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id, PartyAttribute.USER_ATTRIBUTE_NAMES);
 
         return toUser(party, attributes);
     }
@@ -84,4 +62,28 @@ public class IsUserDao implements UserDao{
     public void delete(User user) {
         throw new UnsupportedOperationException();
     }
+
+    //-- Private
+    private User toUser (Party party, Collection<PartyAttribute> attributes){
+        User result = new User ();
+        party.toUser(result);
+        PartyAttribute.toUser(attributes, result);
+        return result;
+    }
+
+    private List<User> findByAttributeNameValue(String name, String value) {
+        List<PartyAttribute> attributes = partyAttributeDao.findByNameByValueByPartyType(name, value, PARTY_TYPE_ID);
+        Set<Long> partyIds = PartyAttribute.toPartyIdSet(attributes);
+        List<Party> parties = partyDao.findByIds(partyIds);
+
+        List<User> result = new ArrayList<>();
+        for (Party party : parties){
+            List<PartyAttribute> xattributes = partyAttributeDao.findByPartyByNames(party.getId(), PartyAttribute.USER_ATTRIBUTE_NAMES);
+            User user = toUser(party, xattributes);
+            result.add(user);
+        }
+        return result;
+    }
+
+
 }

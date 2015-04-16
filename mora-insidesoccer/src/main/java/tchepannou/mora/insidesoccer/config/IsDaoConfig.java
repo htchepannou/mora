@@ -5,12 +5,14 @@ import org.springframework.context.annotation.Configuration;
 import tchepannou.mora.core.config.DaoConfig;
 import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.RoleDao;
+import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.dao.SpaceTypeDao;
 import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.insidesoccer.dao.PartyAttributeDao;
 import tchepannou.mora.insidesoccer.dao.PartyDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsAccessTokenDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
+import tchepannou.mora.insidesoccer.dao.impl.IsSpaceDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsUserDao;
 import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
@@ -34,6 +36,10 @@ public class IsDaoConfig extends DaoConfig{
         return new IsUserDao();
     }
 
+    @Bean
+    public SpaceDao spaceDao () {
+        return new IsSpaceDao();
+    }
 
     //-- DaoConfig overrides
     @Override
