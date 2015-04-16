@@ -35,7 +35,13 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>sql-maven-plugin</artifactId>
                 <version>1.5</version>
-
+                <dependencies>
+                    <dependency>
+                    	<groupId>mysql</groupId>
+                    	<artifactId>mysql-connector-java</artifactId>
+                    	<version>${mysql.version}</version>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>create-db</id>
@@ -64,7 +70,6 @@
                             <url>jdbc:mysql://localhost:3306/is5</url>
                             <username>isadmin</username>
                             <password>isadmin</password>
-
                             <srcFiles>
                                 <srcFile>${basedir}/src/test/resources/sql/schemas/country.sql</srcFile>
                                 <srcFile>${basedir}/src/test/resources/sql/schemas/application.sql</srcFile>
@@ -87,6 +92,7 @@
                                 <srcFile>${basedir}/src/test/resources/sql/schemas/optout.sql</srcFile>
                             </srcFiles>
                         </configuration>
+
                     </execution>
                 </executions>
             </plugin>
