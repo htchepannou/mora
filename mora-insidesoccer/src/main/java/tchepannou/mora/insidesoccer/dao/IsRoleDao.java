@@ -7,7 +7,7 @@ import tchepannou.mora.insidesoccer.dao.mapper.IsRoleRowMapper;
 
 import java.util.List;
 
-public class JdbcIsRoleDao extends JdbcIsReadOnlyModelDao<Role> implements RoleDao {
+public class IsRoleDao extends IsReadOnlyModelDao<Role> implements RoleDao {
     private static final RowMapper<Role> MAPPER = new IsRoleRowMapper();
 
     //-- JdbcIsReadOnlyModelDao overrides
@@ -29,7 +29,7 @@ public class JdbcIsRoleDao extends JdbcIsReadOnlyModelDao<Role> implements RoleD
     //-- Role overrides
     @Override
     public List<Role> findAll() {
-        return template.query("SELECT * FROM t_role", new Object[]{}, MAPPER);
+        return template.query("SELECT * FROM role", new Object[]{}, MAPPER);
     }
 
 }

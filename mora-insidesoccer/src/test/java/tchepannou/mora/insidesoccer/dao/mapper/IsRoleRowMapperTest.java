@@ -4,7 +4,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import tchepannou.mora.core.dao.jdbc.mapper.RoleRowMapper;
 import tchepannou.mora.core.domain.Role;
 
 import java.sql.ResultSet;
@@ -25,7 +24,7 @@ public class IsRoleRowMapperTest {
         when(rs.getString("role_name")).thenReturn("foo");
 
         // When
-        Role result = new RoleRowMapper().mapRow(rs, 0);
+        Role result = new IsRoleRowMapper().mapRow(rs, 0);
 
         // Then
         Role expected = new Role(1, "foo");

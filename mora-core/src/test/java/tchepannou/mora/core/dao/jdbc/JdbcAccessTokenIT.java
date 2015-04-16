@@ -35,7 +35,7 @@ public class JdbcAccessTokenIT {
     private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Test
-    public void testFindByKey() throws Exception {
+    public void testFindByValue() throws Exception {
         // Given
 
         // When
@@ -52,7 +52,7 @@ public class JdbcAccessTokenIT {
     }
 
     @Test
-    public void testFindByKey_notFound_returnNull() throws Exception {
+    public void testFindByValue_notFound_returnNull() throws Exception {
         // Given
 
         // When

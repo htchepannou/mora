@@ -21,7 +21,7 @@ import static org.junit.Assert.assertThat;
 
 @RunWith (SpringJUnit4ClassRunner.class)
 @ContextConfiguration (classes = {JdbcConfig.class})
-public class JdbcIsRoleDaoIT {
+public class IsRoleDaoIT {
     @Autowired
     private RoleDao roleDao;
 

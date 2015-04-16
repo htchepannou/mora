@@ -28,4 +28,69 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>sql-maven-plugin</artifactId>
+                <version>1.5</version>
+
+                <executions>
+                    <execution>
+                        <id>create-db</id>
+                        <phase>process-test-classes</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <driver>com.mysql.jdbc.Driver</driver>
+                            <url>jdbc:mysql://localhost:3306/</url>
+                            <username>root</username>
+                            <srcFiles>
+                                <srcFile>${basedir}/src/test/resources/sql/createdb.sql</srcFile>
+                            </srcFiles>
+                        </configuration>
+                    </execution>
+
+
+                    <execution>
+                        <id>create-tables</id>
+                        <phase>process-test-classes</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <driver>com.mysql.jdbc.Driver</driver>
+                            <url>jdbc:mysql://localhost:3306/is5</url>
+                            <username>isadmin</username>
+                            <password>isadmin</password>
+
+                            <srcFiles>
+                                <srcFile>${basedir}/src/test/resources/sql/country.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/application.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/package.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/security.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/party.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/login.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/node.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/performance.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/subscription.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/paypal.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/admin.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/tag.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/kpi.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/sms.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/comment.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/asb.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/roster.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/xmail.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/optout.sql</srcFile>
+                            </srcFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
