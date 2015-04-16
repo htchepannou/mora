@@ -1,4 +1,4 @@
-package tchepannou.mora.insidesoccer.dao;
+package tchepannou.mora.insidesoccer.dao.impl;
 
 import tchepannou.mora.core.dao.jdbc.JdbcReadOnlyModelDao;
 import tchepannou.mora.core.domain.Model;

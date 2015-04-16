@@ -1,4 +1,4 @@
-package tchepannou.mora.insidesoccer.dao;
+package tchepannou.mora.insidesoccer.dao.impl;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

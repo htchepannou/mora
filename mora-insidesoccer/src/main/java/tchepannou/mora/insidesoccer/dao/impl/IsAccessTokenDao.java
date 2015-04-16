@@ -1,4 +1,4 @@
-package tchepannou.mora.insidesoccer.dao;
+package tchepannou.mora.insidesoccer.dao.impl;
 
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.AccessTokenDao;
