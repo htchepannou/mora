@@ -26,6 +26,7 @@
         <module name="moe" />
         <module name="mora-core" />
         <module name="mora-domain" />
+        <module name="mora-insidesoccer" />
         <module name="mora-rest" />
         <module name="mora-rest-auth" />
         <module name="mora-rest-core" />

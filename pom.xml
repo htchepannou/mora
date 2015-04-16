@@ -14,6 +14,7 @@
         <module>mora-rest-security</module>
         <module>mora-rest-space3</module>
         <module>mora-swagger</module>
+        <module>mora-insidesoccer</module>
     </modules>
 
     <properties>

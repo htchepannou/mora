@@ -21,10 +21,15 @@ public abstract class JdbcReadOnlyModelDao<T extends Model> {
 
 
     //-- Public
-    public final T findById (long id){
+    public T findById (long id){
+        String sql = String.format("SELECT * FROM %s WHERE id=?", getTableName());
+        return findSingle(sql, new Object[] {id});
+    }
+
+    //-- Protected
+    protected T findSingle (String sql, Object[] params){
         try {
-            String sql = String.format("SELECT * FROM %s WHERE id=?", getTableName());
-            T result = template.queryForObject(sql, new Object[] {id}, getRowMapper());
+            T result = template.queryForObject(sql, params, getRowMapper());
             if ((result instanceof SoftDeleteSupport) && ((SoftDeleteSupport) result).isDeleted()){
                 return null;
             }
