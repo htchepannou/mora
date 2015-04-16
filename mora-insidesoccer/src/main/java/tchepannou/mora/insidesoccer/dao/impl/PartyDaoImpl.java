@@ -13,6 +13,7 @@ public class PartyDaoImpl extends IsReadOnlyModelDao<Party> implements PartyDao{
     private static final RowMapper<Party> MAPPER = new PartyRowMapper();
 
     //-- PartyDao overrides
+    @Override
     public List<Party> findByIds (Collection<Long> ids){
         StringBuilder sql = new StringBuilder(String.format("SELECT * FROM %s WHERE party_deleted=? AND %s IN (", getTableName(), getIdColumn()));
 

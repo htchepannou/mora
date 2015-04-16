@@ -6,8 +6,10 @@ import tchepannou.mora.core.domain.Model;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class PartyAttribute extends Model {
@@ -27,8 +29,8 @@ public class PartyAttribute extends Model {
     public static final String ZIP_CODE = "zip_code";
 
 
-    public static final String[] USER_ATTRIBUTE_NAMES = new String[] {EMAIL, USERNAME, FIRST_NAME, LAST_NAME};
-    public static final String[] SPACE_ATTRIBUTE_NAMES = new String[] {NAME, DESCRIPTION, LOGO_URL, WEBSITE_URL, EMAIL, STREET, CITY, COUNTRY};
+    public static final List<String> USER_ATTRIBUTE_NAMES = Arrays.asList(EMAIL, USERNAME, FIRST_NAME, LAST_NAME);
+    public static final List<String> SPACE_ATTRIBUTE_NAMES = Arrays.asList(NAME, DESCRIPTION, LOGO_URL, WEBSITE_URL, EMAIL, STREET, CITY, COUNTRY);
 
     private long partyId;
     private String name;

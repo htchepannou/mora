@@ -40,10 +40,12 @@ public class Party extends Model implements SoftDeleteSupport{
     }
 
     //-- SoftDeleteSupport overrides
+    @Override
     public boolean isDeleted() {
         return deleted;
     }
 
+    @Override
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
     }

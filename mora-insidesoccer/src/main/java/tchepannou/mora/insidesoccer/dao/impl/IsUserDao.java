@@ -33,7 +33,7 @@ public class IsUserDao implements UserDao{
             return null;
         }
 
-        List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id, PartyAttribute.USER_ATTRIBUTE_NAMES);
+        List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id, PartyAttribute.USER_ATTRIBUTE_NAMES.toArray(new String[]{}));
 
         return toUser(party, attributes);
     }
@@ -78,7 +78,7 @@ public class IsUserDao implements UserDao{
 
         List<User> result = new ArrayList<>();
         for (Party party : parties){
-            List<PartyAttribute> xattributes = partyAttributeDao.findByPartyByNames(party.getId(), PartyAttribute.USER_ATTRIBUTE_NAMES);
+            List<PartyAttribute> xattributes = partyAttributeDao.findByPartyByNames(party.getId(), PartyAttribute.USER_ATTRIBUTE_NAMES.toArray(new String[]{}));
             User user = toUser(party, xattributes);
             result.add(user);
         }

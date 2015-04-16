@@ -9,7 +9,7 @@ import java.util.List;
 
 public class IsAccessTokenDao extends IsReadOnlyModelDao<AccessToken> implements AccessTokenDao {
     //-- Attributes
-    private RowMapper<AccessToken> MAPPER = new IsAccessTokenRowMapper();
+    private static final RowMapper<AccessToken> MAPPER = new IsAccessTokenRowMapper();
 
     //--  AccessTokenDao overrides
     @Override

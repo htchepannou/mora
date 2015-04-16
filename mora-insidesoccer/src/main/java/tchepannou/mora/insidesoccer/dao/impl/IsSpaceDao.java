@@ -30,7 +30,7 @@ public class IsSpaceDao implements SpaceDao {
             return null;
         }
 
-        List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id, PartyAttribute.SPACE_ATTRIBUTE_NAMES);
+        List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id, PartyAttribute.SPACE_ATTRIBUTE_NAMES.toArray(new String[]{}));
 
         return toSpace(party, attributes);
     }

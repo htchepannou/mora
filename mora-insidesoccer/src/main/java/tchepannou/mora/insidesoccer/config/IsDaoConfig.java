@@ -31,17 +31,19 @@ public class IsDaoConfig extends DaoConfig{
         return new PartyAttributeDaoImpl();
     }
 
+    //-- DaoConfig overrides
     @Bean
+    @Override
     public UserDao userDao () {
         return new IsUserDao();
     }
 
     @Bean
+    @Override
     public SpaceDao spaceDao () {
         return new IsSpaceDao();
     }
 
-    //-- DaoConfig overrides
     @Override
     @Bean
     public RoleDao roleDao() {
