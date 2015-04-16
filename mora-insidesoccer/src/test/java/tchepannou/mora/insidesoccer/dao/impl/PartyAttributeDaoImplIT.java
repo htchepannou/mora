@@ -27,20 +27,31 @@ public class PartyAttributeDaoImplIT {
     @Autowired
     private PartyAttributeDao dao;
 
+
+    //-- Test
     @Test
     public void testFindByPartyByNames() throws Exception {
         // Given
-        Party party = new Party(1);
+        Party party = new Party(100);
 
         // When
-        List<PartyAttribute> result = dao.findByPartyByNames(1, "title", "description");
+        List<PartyAttribute> result = dao.findByPartyByNames(100, "title", "description");
 
         // Then
         assertThat(result, hasSize(2));
         assertThat(result, hasItems(
-                new PartyAttribute(1, party, "title", "This is title")
-                ,new PartyAttribute(2, party, "description", "This is description")
+                new PartyAttribute(100, party, "title", "title1")
+                ,new PartyAttribute(101, party, "description", "description1")
         ));
+    }
+
+    @Test
+    public void testFindByPartyByNames_DeletedParty_returnsEmpty() throws Exception {
+        // When
+        List<PartyAttribute> result = dao.findByPartyByNames(200, "title", "description");
+
+        // Then
+        assertThat(result, hasSize(0));
     }
 
     @Test
@@ -52,31 +63,33 @@ public class PartyAttributeDaoImplIT {
         assertThat(result, hasSize(0));
     }
 
+
     @Test
-    public void testFindByPartyByNames_DeletedParty_returnsEmpty() throws Exception {
+    public void testFindByNameByValueByPartyType () throws Exception{
         // When
-        List<PartyAttribute> result = dao.findByPartyByNames(2, "title", "description");
+        List<PartyAttribute> result = dao.findByNameByValueByPartyType("title", "duplicate", 1);
+
+        // Then
+        assertThat(result, hasSize(2));
+
+        PartyAttribute expected1 = new PartyAttribute(300, new Party(300), "title", "duplicate");
+        PartyAttribute expected2 = new PartyAttribute(310, new Party(310), "title", "duplicate");
+        assertThat(result, hasItems(expected1, expected2));
+    }
+
+    @Test
+    public void testFindByNameByValueByPartyType_badValue_returnsEmptyList () throws Exception{
+        // When
+        List<PartyAttribute> result = dao.findByNameByValueByPartyType("email", "???", 1);
 
         // Then
         assertThat(result, hasSize(0));
     }
 
-    public void testFindByNameByValue () throws Exception{
-        // When
-        List<PartyAttribute> result = dao.findByNameByValue("email", "user1@gmail.com");
-
-        // Then
-        assertThat(result, hasSize(2));
-
-        PartyAttribute expected1 = new PartyAttribute(4, new Party(1), "email", "email1@gmail.com");
-        PartyAttribute expected2 = new PartyAttribute(21, new Party(11), "email", "email1@gmail.com");
-        assertThat(result, hasItems(expected1, expected2));
-    }
-
     @Test
-    public void testFindByNameByValue_notFound_returnsEmptyList () throws Exception{
+    public void testFindByNameByValueByPartyType_badPartyType_returnsEmptyList () throws Exception{
         // When
-        List<PartyAttribute> result = dao.findByNameByValue("email", "???");
+        List<PartyAttribute> result = dao.findByNameByValueByPartyType("email", "email1@gmail.com", 999);
 
         // Then
         assertThat(result, hasSize(0));

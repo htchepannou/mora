@@ -15,6 +15,8 @@ import java.util.Set;
 
 public class IsUserDao implements UserDao{
     //-- Attributes
+    public static final long PARTY_TYPE_ID = 1L;    // Person
+
     @Autowired
     private PartyDao partyDao;
 
@@ -32,13 +34,14 @@ public class IsUserDao implements UserDao{
     }
 
     private List<User> findByAttributeNameValue(String name, String value) {
-        List<PartyAttribute> attributes = partyAttributeDao.findByNameByValue(name, value);
+        List<PartyAttribute> attributes = partyAttributeDao.findByNameByValueByPartyType(name, value, PARTY_TYPE_ID);
         Set<Long> partyIds = PartyAttribute.toPartyIdSet(attributes);
         List<Party> parties = partyDao.findByIds(partyIds);
 
         List<User> result = new ArrayList<>();
         for (Party party : parties){
-            User user = toUser(party, attributes);
+            List<PartyAttribute> xattributes = partyAttributeDao.findByPartyByNames(party.getId(), PartyAttribute.USER_ATTRIBUTE_NAMES);
+            User user = toUser(party, xattributes);
             result.add(user);
         }
         return result;
@@ -48,7 +51,7 @@ public class IsUserDao implements UserDao{
     @Override
     public User findById(long id) {
         Party party = partyDao.findById(id);
-        if (party == null){
+        if (party == null || party.getTypeId() != PARTY_TYPE_ID){
             return null;
         }
 

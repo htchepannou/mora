@@ -15,6 +15,8 @@ public class PartyAttribute extends Model {
     public static final String FIRST_NAME = "first_name";
     public static final String LAST_NAME = "last_name";
 
+    public static final String[] USER_ATTRIBUTE_NAMES = new String[] {EMAIL, USERNAME, FIRST_NAME, LAST_NAME};
+
     private long partyId;
     private String name;
     private String value;

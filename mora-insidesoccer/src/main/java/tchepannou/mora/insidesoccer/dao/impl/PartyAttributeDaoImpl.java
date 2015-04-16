@@ -52,9 +52,9 @@ public class PartyAttributeDaoImpl extends IsReadOnlyModelDao<PartyAttribute> im
     }
 
     @Override
-    public List<PartyAttribute> findByNameByValue(String name, String value) {
-        String sql = "SELECT A.* FROM pattr A JOIN party P ON A.pattr_party_fk=P.party_id WHERE P.party_deleted=? AND A.pattr_name=? AND A.pattr_value=?";
+    public List<PartyAttribute> findByNameByValueByPartyType(String name, String value, long partyTypeId){
+        String sql = "SELECT A.* FROM pattr A JOIN party P ON A.pattr_party_fk=P.party_id WHERE P.party_deleted=? AND A.pattr_name=? AND A.pattr_value=? AND P.party_type_fk=?";
 
-        return template.query(sql, new Object[] {false, name, value}, getRowMapper());
+        return template.query(sql, new Object[] {false, name, value, partyTypeId}, getRowMapper());
     }
 }

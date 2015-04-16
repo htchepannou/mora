@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface PartyAttributeDao {
     List<PartyAttribute> findByPartyByNames(long partyId, String...names);
-    List<PartyAttribute> findByNameByValue(String name, String value);
+    List<PartyAttribute> findByNameByValueByPartyType(String name, String value, long partyTypeId);
 }
