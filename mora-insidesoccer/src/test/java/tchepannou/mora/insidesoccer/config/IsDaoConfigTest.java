@@ -3,6 +3,7 @@ package tchepannou.mora.insidesoccer.config;
 import org.junit.Test;
 import tchepannou.mora.insidesoccer.dao.IsAccessTokenDao;
 import tchepannou.mora.insidesoccer.dao.IsRoleDao;
+import tchepannou.mora.insidesoccer.dao.IsSpaceTypeDao;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
@@ -18,7 +19,10 @@ public class IsDaoConfigTest {
     @Test
     public void testAccessTokenDao (){
         assertThat(config.accessTokenDao(), instanceOf(IsAccessTokenDao.class));
-
     }
 
+    @Test
+    public void testSpaceTypeDao (){
+        assertThat(config.spaceTypeDao(), instanceOf(IsSpaceTypeDao.class));
+    }
 }
