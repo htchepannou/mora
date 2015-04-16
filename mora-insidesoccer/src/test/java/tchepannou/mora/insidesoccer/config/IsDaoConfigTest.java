@@ -4,6 +4,7 @@ import org.junit.Test;
 import tchepannou.mora.insidesoccer.dao.impl.IsAccessTokenDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
+import tchepannou.mora.insidesoccer.dao.impl.IsUserDao;
 import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
 import tchepannou.mora.insidesoccer.dao.impl.PartyDaoImpl;
 
@@ -36,5 +37,10 @@ public class IsDaoConfigTest {
     @Test
     public void testPartyAttributeDao (){
         assertThat(config.partyAttributeDao(), instanceOf(PartyAttributeDaoImpl.class));
+    }
+
+    @Test
+    public void testUserDao (){
+        assertThat(config.userDao(), instanceOf(IsUserDao.class));
     }
 }

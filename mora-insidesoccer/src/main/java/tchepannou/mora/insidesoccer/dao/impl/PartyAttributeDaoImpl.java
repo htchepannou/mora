@@ -30,12 +30,14 @@ public class PartyAttributeDaoImpl extends IsReadOnlyModelDao<PartyAttribute> im
 
     @Override
     public List<PartyAttribute> findByPartyByNames(long partyId, String... names) {
-        StringBuilder sql = new StringBuilder(String.format("SELECT * FROM %s WHERE pattr_party_fk=?", getTableName()));
+        StringBuilder sql = new StringBuilder("SELECT A.* FROM pattr A JOIN party P ON A.pattr_party_fk=P.party_id WHERE A.pattr_party_fk=? AND P.party_deleted=?");
 
         List params = new ArrayList();
+        params.add(partyId);
+        params.add(false);
+
         if (names.length>0) {
             sql.append(" AND pattr_name IN(");
-            params.add(partyId);
             int i = 0;
             for (String name : names) {
                 if (i++ > 0) {
@@ -49,4 +51,10 @@ public class PartyAttributeDaoImpl extends IsReadOnlyModelDao<PartyAttribute> im
         return template.query(sql.toString(), params.toArray(), getRowMapper());
     }
 
+    @Override
+    public List<PartyAttribute> findByNameByValue(String name, String value) {
+        String sql = "SELECT A.* FROM pattr A JOIN party P ON A.pattr_party_fk=P.party_id WHERE P.party_deleted=? AND A.pattr_name=? AND A.pattr_value=?";
+
+        return template.query(sql, new Object[] {false, name, value}, getRowMapper());
+    }
 }

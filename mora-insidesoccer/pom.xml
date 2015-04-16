@@ -67,25 +67,25 @@
                             <password>isadmin</password>
 
                             <srcFiles>
-                                <srcFile>${basedir}/src/test/resources/sql/country.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/application.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/package.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/security.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/party.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/login.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/node.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/performance.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/subscription.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/paypal.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/admin.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/tag.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/kpi.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/sms.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/comment.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/asb.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/roster.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/xmail.sql</srcFile>
-                                <srcFile>${basedir}/src/test/resources/sql/optout.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/country.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/application.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/package.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/security.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/party.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/login.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/node.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/performance.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/subscription.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/paypal.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/admin.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/tag.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/kpi.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/sms.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/comment.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/asb.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/roster.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/xmail.sql</srcFile>
+                                <srcFile>${basedir}/src/test/resources/sql/schemas/optout.sql</srcFile>
                             </srcFiles>
                         </configuration>
                     </execution>

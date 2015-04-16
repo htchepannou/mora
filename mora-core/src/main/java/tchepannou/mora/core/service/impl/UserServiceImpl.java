@@ -32,13 +32,13 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User findByEmail(String email) {
-        List<User> users = userDao.findByEmail(email, false);
+        List<User> users = userDao.findByEmail(email);
         return users.isEmpty() ? null : users.get(0);
     }
 
     @Override
     public User findByUsername(String username) {
-        List<User> users = userDao.findByUsername(username, false);
+        List<User> users = userDao.findByUsername(username);
         return users.isEmpty() ? null : users.get(0);
     }
 

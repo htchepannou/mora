@@ -15,6 +15,8 @@ public abstract class IsReadOnlyModelDao<T extends Model> extends JdbcReadOnlyMo
         return findSingle(sql, new Object[]{id});
     }
 
+
+
     public void update(T token) {
         throw new UnsupportedOperationException();
     }

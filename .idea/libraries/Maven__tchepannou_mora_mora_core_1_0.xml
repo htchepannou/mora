@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: tchepannou.mora:mora-core:1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/mora-core/pom.xml!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/mora-core/mora-core-1.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/mora-core/mora-core-1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

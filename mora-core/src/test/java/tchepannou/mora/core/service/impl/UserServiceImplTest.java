@@ -70,7 +70,7 @@ public class UserServiceImplTest{
     public void testFindByEmail() throws Exception {
         // Given
         User user = new User (1);
-        when(userDao.findByEmail("foo@gmail.com", false)).thenReturn(Arrays.asList(user));
+        when(userDao.findByEmail("foo@gmail.com")).thenReturn(Arrays.asList(user));
 
         // When
         User result = service.findByEmail("foo@gmail.com");
@@ -82,7 +82,7 @@ public class UserServiceImplTest{
     public void testFindByEmail_notFound_shouldReturnNull() throws Exception {
         // Given
         User user = new User (1);
-        when(userDao.findByEmail("foo@gmail.com", false)).thenReturn((List)Collections.emptyList());
+        when(userDao.findByEmail("foo@gmail.com")).thenReturn((List)Collections.emptyList());
 
         // When
         User result = service.findByEmail("foo@gmail.com");
@@ -96,7 +96,7 @@ public class UserServiceImplTest{
     public void testFindByUsername() throws Exception {
         // Given
         User user = new User (1);
-        when(userDao.findByUsername("foo", false)).thenReturn(Arrays.asList(user));
+        when(userDao.findByUsername("foo")).thenReturn(Arrays.asList(user));
 
         // When
         User result = service.findByUsername("foo");
@@ -107,7 +107,7 @@ public class UserServiceImplTest{
     @Test
     public void testFindByUsername_notFound_shouldReturnNull() throws Exception {
         // Given
-        when(userDao.findByUsername("foo", false)).thenReturn((List)Collections.emptyList());
+        when(userDao.findByUsername("foo")).thenReturn((List)Collections.emptyList());
 
         // When
         User result = service.findByUsername("foo");
@@ -150,7 +150,7 @@ public class UserServiceImplTest{
 
         User user2 = new User (1);
         user2.setEmail(user.getEmail());
-        when(userDao.findByEmail(user2.getEmail(), false)).thenReturn(Arrays.asList(user2));
+        when(userDao.findByEmail(user2.getEmail())).thenReturn(Arrays.asList(user2));
 
         // When
         service.create(user);
@@ -164,7 +164,7 @@ public class UserServiceImplTest{
 
         User user2 = new User (1);
         user2.setUsername(user.getUsername());
-        when(userDao.findByUsername(user2.getUsername(), false)).thenReturn(Arrays.asList(user2));
+        when(userDao.findByUsername(user2.getUsername())).thenReturn(Arrays.asList(user2));
 
         // When
         service.create(user);
@@ -202,7 +202,7 @@ public class UserServiceImplTest{
 
         User user2 = new User (2);
         user2.setEmail(user.getEmail());
-        when(userDao.findByEmail(user2.getEmail(), false)).thenReturn(Arrays.asList(user2));
+        when(userDao.findByEmail(user2.getEmail())).thenReturn(Arrays.asList(user2));
 
         // When
         service.update(user);
@@ -217,7 +217,7 @@ public class UserServiceImplTest{
 
         User user2 = new User (2);
         user2.setUsername(user.getUsername());
-        when(userDao.findByUsername(user2.getUsername(), false)).thenReturn(Arrays.asList(user2));
+        when(userDao.findByUsername(user2.getUsername())).thenReturn(Arrays.asList(user2));
 
         // When
         service.update(user);

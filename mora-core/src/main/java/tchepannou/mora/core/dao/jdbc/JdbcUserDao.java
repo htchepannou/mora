@@ -49,13 +49,13 @@ public class JdbcUserDao extends JdbcModelDao<User> implements UserDao {
 
     //-- UserDao overrides
     @Override
-    public List<User> findByEmail(String email, boolean deleted) {
-        return template.query("SELECT * FROM t_user WHERE email=? AND deleted=?", new Object[]{email, deleted}, MAPPER);
+    public List<User> findByEmail(String email) {
+        return template.query("SELECT * FROM t_user WHERE email=? AND deleted=?", new Object[]{email, false}, MAPPER);
     }
 
     @Override
-    public List<User> findByUsername(String username, boolean deleted) {
-        return template.query("SELECT * FROM t_user WHERE username=? AND deleted=?", new Object[] {username, deleted}, MAPPER);
+    public List<User> findByUsername(String username) {
+        return template.query("SELECT * FROM t_user WHERE username=? AND deleted=?", new Object[] {username, false}, MAPPER);
     }
 
     @Override

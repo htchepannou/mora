@@ -81,24 +81,24 @@ public class JdbcUserDaoIT {
         // Given
 
         // When
-        List<User> result = userDao.findByEmail("ray.sponsible@gmail.com", true);
+        List<User> result = userDao.findByEmail("ray.sponsible@gmail.com");
 
         // Then
-        User user1 = new User (10);
-        user1.setUsername("#ray.sponsible");
+        User user1 = new User (1);
+        user1.setUsername("ray.sponsible");
         user1.setEmail("ray.sponsible@gmail.com");
         user1.setLastName("Sponsible");
         user1.setFirstName("Ray");
-        user1.setDeleted(true);
-        user1.setCreationDate(new Timestamp(fmt.parse("2011-01-01 10:30:55").getTime()));
-        user1.setLastUpdate(new Timestamp(fmt.parse("2012-12-01 14:30:55").getTime()));
+        user1.setDeleted(false);
+        user1.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        user1.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
 
         User user2 = new User (11);
         user2.setUsername("##ray.sponsible");
         user2.setEmail("ray.sponsible@gmail.com");
         user2.setLastName("Sponsible");
         user2.setFirstName("Ray");
-        user2.setDeleted(true);
+        user2.setDeleted(false);
         user2.setCreationDate(new Timestamp(fmt.parse("2011-01-01 10:30:55").getTime()));
         user2.setLastUpdate(new Timestamp(fmt.parse("2012-12-01 14:30:55").getTime()));
 
@@ -111,7 +111,7 @@ public class JdbcUserDaoIT {
         // Given
 
         // When
-        List<User> result = userDao.findByEmail("__ray.sponsible__@gmail.com", true);
+        List<User> result = userDao.findByEmail("__ray.sponsible__@gmail.com");
 
         // Then
         assertThat(result, hasSize(0));
@@ -122,7 +122,7 @@ public class JdbcUserDaoIT {
         // Given
 
         // When
-        List<User> result = userDao.findByEmail("#ray.sponsible@gmail.com", true);
+        List<User> result = userDao.findByEmail("#ray.sponsible@gmail.com");
 
         // Then
         User user1 = new User (10);
@@ -145,7 +145,7 @@ public class JdbcUserDaoIT {
         // Given
 
         // When
-        List<User> result = userDao.findByUsername("__ray.sponsible__", true);
+        List<User> result = userDao.findByUsername("__ray.sponsible__");
 
         // Then
         assertThat(result, hasSize(0));

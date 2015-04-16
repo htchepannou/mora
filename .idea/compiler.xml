@@ -40,7 +40,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mora" target="1.8" />
+      <module name="mora-core" target="1.8" />
       <module name="mora-domain" target="1.8" />
+      <module name="mora-insidesoccer" target="1.8" />
       <module name="mora-rest-auth" target="1.8" />
       <module name="mora-rest-core" target="1.8" />
       <module name="mora-rest-member" target="1.8" />
@@ -49,6 +51,7 @@
       <module name="mora-rest-space2" target="1.8" />
       <module name="mora-rest-space3" target="1.8" />
       <module name="mora-rest-user" target="1.8" />
+      <module name="mora-swagger" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
