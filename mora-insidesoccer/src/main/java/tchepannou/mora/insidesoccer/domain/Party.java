@@ -34,6 +34,8 @@ public class Party extends Model implements SoftDeleteSupport{
     
     public void toSpace (Space space){
         space.setId(getId());
+        space.setUserId(this.ownerId);
+        space.setTypeId(this.typeId);
         space.setDeleted(this.deleted);
         space.setCreationDate(this.creationDate);
         space.setLastUpdate(this.date);

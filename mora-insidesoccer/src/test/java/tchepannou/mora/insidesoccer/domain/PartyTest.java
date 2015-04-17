@@ -62,6 +62,8 @@ public class PartyTest {
         // Then
         Space expected = new Space();
         expected.setId(1);
+        expected.setTypeId(2);
+        expected.setUserId(3);
         expected.setDeleted(true);
         expected.setCreationDate(yesterday);
         expected.setLastUpdate(now);

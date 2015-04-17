@@ -26,7 +26,7 @@ public class IsSpaceDao implements SpaceDao {
     @Override
     public Space findById(long id) {
         Party party = partyDao.findById(id);
-        if (party == null || !PARTY_TYPE_IDS.contains(party.getId())){
+        if (party == null || !PARTY_TYPE_IDS.contains(party.getTypeId())){
             return null;
         }
 

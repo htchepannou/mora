@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.insidesoccer.config.JdbcConfig;
 
@@ -25,7 +26,7 @@ import static org.junit.Assert.assertThat;
 })
 public class IsUserDaoIT {
     @Autowired
-    private IsUserDao dao;
+    private UserDao dao;
 
     private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 

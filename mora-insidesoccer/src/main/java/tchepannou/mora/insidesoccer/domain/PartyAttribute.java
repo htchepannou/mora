@@ -70,8 +70,8 @@ public class PartyAttribute extends Model {
     }
 
     public static void toSpace(Collection<PartyAttribute> attributes, Space space){
-        String city = null;
-        String country = null;
+        String city = "";
+        String country = "";
 
         for (PartyAttribute attr : attributes){
             if (attr.getPartyId() != space.getId()){
