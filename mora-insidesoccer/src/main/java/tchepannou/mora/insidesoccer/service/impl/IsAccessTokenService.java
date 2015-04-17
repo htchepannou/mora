@@ -65,6 +65,7 @@ public class IsAccessTokenService implements AccessTokenService{
         }
     }
 
+    @Override
     @CacheEvict("AccessToken")
     public AccessToken expire(AccessToken token) throws AccessTokenException {
         try {
@@ -100,9 +101,9 @@ public class IsAccessTokenService implements AccessTokenService{
 
     //-- Inner classes
     public static class UserDto extends ModelDto{
-        public int id;
+        public int id;              // NOSONAR
         public String display_name; // NOSONAR
-        public String email;
+        public String email;        // NOSONAR
         public String super_user;   // NOSONAR
     }
 

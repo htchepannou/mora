@@ -5,7 +5,6 @@ import tchepannou.mora.core.service.HttpResponse;
 import tchepannou.mora.core.service.UrlFetchService;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.HttpURLConnection;
 
 public class UrlFetchServiceImpl implements UrlFetchService{
@@ -38,30 +37,7 @@ public class UrlFetchServiceImpl implements UrlFetchService{
 
     //-- Private
     private HttpResponse createHttpResponse (final HttpURLConnection cnn){
-        return new HttpResponse() {
-            @Override
-            public int getStatusCode() {
-                try {
-                    return cnn.getResponseCode();
-                } catch (IOException e){
-                    throw new IllegalStateException("Unable to get status code", e);
-                }
-            }
-
-            @Override
-            public String getContentType() {
-                return cnn.getContentType();
-            }
-
-            @Override
-            public InputStream getInputStream() throws IOException{
-                return cnn.getInputStream();
-            }
-
-            @Override
-            public void close() {
-                cnn.disconnect();
-            }
-        };
+        return new HttpResponseImpl(cnn);
     }
+
 }
