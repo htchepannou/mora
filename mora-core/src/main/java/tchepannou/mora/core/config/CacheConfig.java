@@ -5,5 +5,5 @@ import org.springframework.context.annotation.Import;
 
 @Configuration
 @Import ({NoOpCacheConfig.class, EhCacheConfig.class})
-public class CacheConfig {
+public class CacheConfig {  // NOSONAR - Empty class
 }

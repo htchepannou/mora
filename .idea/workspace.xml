@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
@@ -46,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="IsSpaceDaoIT.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDaoIT.java">
+      <file leaf-file-name="CacheConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33007336" vertical-offset="0" max-vertical-offset="1650">
-              <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.16759777" vertical-offset="0" max-vertical-offset="716">
+              <caret line="9" column="61" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,7 +65,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/PartyAttributeTest.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/config/IsDaoConfigTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/SecurityServicesConfig.java" />
@@ -115,6 +115,7 @@
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsSpaceDao.sql" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDaoTest.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDaoIT.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java" />
       </list>
     </option>
   </component>
@@ -126,9 +127,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="755" />
+    <option name="x" value="370" />
     <option name="y" value="86" />
-    <option name="width" value="1142" />
+    <option name="width" value="1527" />
     <option name="height" value="836" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -197,7 +198,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.40101954" />
-    <property name="options.lastSelected" value="reference.settings.project.maven.importing" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
@@ -705,14 +706,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="755" y="86" width="1142" height="836" extended-state="0" />
-    <editor active="false" />
+    <frame x="370" y="86" width="1527" height="836" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4126344" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4126344" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.327112" sideWeight="0.49965397" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -726,7 +727,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3609091" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26734006" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27419356" sideWeight="0.6911085" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -806,14 +807,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/NoOpCacheConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/HttpResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
@@ -917,14 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.916667" vertical-offset="206" max-vertical-offset="2145">
-          <caret line="28" column="67" selection-start-line="28" selection-start-column="67" selection-end-line="28" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-space3/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.45098" vertical-offset="1027" max-vertical-offset="2655">
@@ -953,14 +938,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.8" vertical-offset="0" max-vertical-offset="20100">
           <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.5" vertical-offset="120" max-vertical-offset="1590">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1138,7 +1115,7 @@
         <state vertical-scroll-proportion="0.6857542" vertical-offset="514" max-vertical-offset="1230">
           <caret line="80" column="158" selection-start-line="80" selection-start-column="158" selection-end-line="80" selection-end-column="158" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="method#toUser#0;class#IsUserDao#0" expanded="false" />
           </folding>
         </state>
@@ -1261,7 +1238,33 @@
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDaoIT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33007336" vertical-offset="0" max-vertical-offset="1650">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21965317" vertical-offset="1453" max-vertical-offset="2145">
+          <caret line="107" column="82" selection-start-line="107" selection-start-column="28" selection-end-line="107" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.433526" vertical-offset="0" max-vertical-offset="692">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="n#build#0;n#project#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16759777" vertical-offset="0" max-vertical-offset="716">
+          <caret line="9" column="61" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
