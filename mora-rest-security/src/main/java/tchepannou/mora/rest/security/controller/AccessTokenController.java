@@ -54,7 +54,7 @@ public class AccessTokenController extends BaseRestController{
 
     @RequestMapping(value="/access_token", method = RequestMethod.DELETE)
     @ApiOperation (value="Release an AccessToken")
-    public void delete(@AuthenticationPrincipal Principal currentToken) {
+    public void delete(@AuthenticationPrincipal Principal currentToken) throws AccessTokenException{
         AccessToken token = getCurrentAccessToken(currentToken);
         accessTokenService.expire(token);
     }
