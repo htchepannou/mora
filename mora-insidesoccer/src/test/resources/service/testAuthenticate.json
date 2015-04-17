@@ -1,0 +1,11 @@
+{
+  "error_code": "0",
+  "error_text": "Success",
+  "login_id": "100",
+  "user": {
+      "id": "101",
+      "display_name":"Ray Sponsible",
+      "email": "ray.sponsible@gmail.com",
+      "super_user": "0"
+  }
+}

@@ -8,6 +8,7 @@ import tchepannou.mora.core.service.impl.PasswordServiceImpl;
 import tchepannou.mora.core.service.impl.RoleServiceImpl;
 import tchepannou.mora.core.service.impl.SpaceServiceImpl;
 import tchepannou.mora.core.service.impl.SpaceTypeServiceImpl;
+import tchepannou.mora.core.service.impl.UrlFetchServiceImpl;
 import tchepannou.mora.core.service.impl.UserServiceImpl;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
@@ -54,5 +55,10 @@ public class ServiceConfigTest {
     @Test
     public void tesMemberService() throws Exception {
         assertThat(config.memberService(), instanceOf(MemberServiceImpl.class));
+    }
+
+    @Test
+    public void testUrlFetchService() throws Exception {
+        assertThat(config.urlFetchService(), instanceOf(UrlFetchServiceImpl.class));
     }
 }

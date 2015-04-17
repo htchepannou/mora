@@ -9,6 +9,7 @@ import tchepannou.mora.core.service.PasswordService;
 import tchepannou.mora.core.service.RoleService;
 import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.SpaceTypeService;
+import tchepannou.mora.core.service.UrlFetchService;
 import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.core.service.impl.AccessTokenServiceImpl;
 import tchepannou.mora.core.service.impl.Md5HashService;
@@ -17,6 +18,7 @@ import tchepannou.mora.core.service.impl.PasswordServiceImpl;
 import tchepannou.mora.core.service.impl.RoleServiceImpl;
 import tchepannou.mora.core.service.impl.SpaceServiceImpl;
 import tchepannou.mora.core.service.impl.SpaceTypeServiceImpl;
+import tchepannou.mora.core.service.impl.UrlFetchServiceImpl;
 import tchepannou.mora.core.service.impl.UserServiceImpl;
 
 @Configuration
@@ -59,5 +61,10 @@ public class ServiceConfig {
     @Bean
     public MemberService memberService () {
         return new MemberServiceImpl();
+    }
+
+    @Bean
+    public UrlFetchService urlFetchService (){
+        return new UrlFetchServiceImpl();
     }
 }

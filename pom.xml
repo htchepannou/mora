@@ -26,6 +26,7 @@
         <org.slf4j.version>1.7.8</org.slf4j.version>
         <org.springframework.version>4.1.6.RELEASE</org.springframework.version>
         <org.springframework.boot.version>1.2.3.RELEASE</org.springframework.boot.version>
+        <com.fasterxml.jackson.version>2.4.5</com.fasterxml.jackson.version>
 
         <junit.version>4.11</junit.version>
         <org.mockito.version>1.9.5</org.mockito.version>

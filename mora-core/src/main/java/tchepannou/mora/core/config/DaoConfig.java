@@ -3,6 +3,7 @@ package tchepannou.mora.core.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import tchepannou.mora.core.dao.AccessTokenDao;
@@ -23,6 +24,7 @@ import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
 import javax.sql.DataSource;
 
 @Configuration
+@Profile ("dao.default")
 public class DaoConfig {
     @Value ("${database.driver}")
     private String driver;

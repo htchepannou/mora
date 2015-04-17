@@ -6,5 +6,5 @@ import tchepannou.mora.core.exception.AccessTokenException;
 public interface AccessTokenService {
     AccessToken findByValue(String value);
     AccessToken authenticate (String usernameOrEmail, String clearPassword) throws AccessTokenException;
-    AccessToken expire(AccessToken token);
+    AccessToken expire(AccessToken token) throws AccessTokenException;
 }

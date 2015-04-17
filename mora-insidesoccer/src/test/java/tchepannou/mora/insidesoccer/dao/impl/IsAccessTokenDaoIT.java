@@ -28,7 +28,7 @@ import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 })
 public class IsAccessTokenDaoIT {
     @Autowired
-    private AccessTokenDao dao;
+    private AccessTokenDao accessTokenDao;
 
     private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -38,7 +38,7 @@ public class IsAccessTokenDaoIT {
         // Given
 
         // When
-        AccessToken result = dao.findByValue("1");
+        AccessToken result = accessTokenDao.findByValue("1");
 
         // Then
         AccessToken expected = new AccessToken (1, new User(1));
@@ -54,7 +54,7 @@ public class IsAccessTokenDaoIT {
         // Given
 
         // When
-        AccessToken result = dao.findByValue("???");
+        AccessToken result = accessTokenDao.findByValue("???");
 
         // Then
         assertThat(result, nullValue());
@@ -68,16 +68,16 @@ public class IsAccessTokenDaoIT {
 
     @Test(expected = UnsupportedOperationException.class)
     public void testUpdate() throws Exception {
-        dao.update(new AccessToken());
+        accessTokenDao.update(new AccessToken());
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testUpdateBatch() throws Exception {
-        dao.update(Arrays.asList(new AccessToken()));
+        accessTokenDao.update(Arrays.asList(new AccessToken()));
     }
 
     @Test(expected = UnsupportedOperationException.class)
     public void testCreate() throws Exception {
-        dao.create(new AccessToken());
+        accessTokenDao.create(new AccessToken());
     }
 }
