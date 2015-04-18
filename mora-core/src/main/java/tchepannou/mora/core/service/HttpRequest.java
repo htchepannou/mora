@@ -1,13 +1,12 @@
 package tchepannou.mora.core.service;
 
+import com.google.common.base.Preconditions;
+
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLConnection;
 
 public class HttpRequest {
-    public static final String USER_AGENT = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A";
-    public static final String CHARSET = "utf-8";
-    public static final String REFERER = "http://www.google.ca";
     public static final int TIMEOUT = 30000;
 
     //-- Attributes
@@ -58,13 +57,11 @@ public class HttpRequest {
         private URL url;
         private String userAgent;
         private String charset;
-        private int timeout;
+        private int timeout = TIMEOUT;
         private String referer;
 
         public HttpRequest build (){
-            if (url == null){
-                throw new IllegalStateException("url not set");
-            }
+            Preconditions.checkState(this.url != null, "url==null");
             return new HttpRequest(this);
         }
 

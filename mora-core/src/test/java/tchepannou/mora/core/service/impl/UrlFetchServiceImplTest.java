@@ -17,9 +17,7 @@ import java.net.URL;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class UrlFetchServiceImplTest {
@@ -59,7 +57,27 @@ public class UrlFetchServiceImplTest {
         verify(cnn).setRequestProperty(UrlFetchServiceImpl.HEADER_ACCEPT_CHARSET, "utf-8");
         verify(cnn).setRequestProperty(UrlFetchServiceImpl.HEADER_REFERER, "http://www.google.ca");
         verify(cnn).setRequestProperty(UrlFetchServiceImpl.HEADER_USER_AGENT, "test;user/agent");
+        verify(cnn).setConnectTimeout(5000);
 
+        assertThat(result.getStatusCode(), equalTo(200));
+        assertThat(result.getContentType(), equalTo("text/xml"));
+        assertThat(result.getInputStream(), equalTo(in));
+    }
+
+    @Test
+    public void testFetch_noRequestHeader() throws Exception {
+        // Given
+        InputStream in = mock(InputStream.class);
+        when(cnn.getContentType()).thenReturn("text/xml");
+        when(cnn.getInputStream()).thenReturn(in);
+        when(cnn.getResponseCode()).thenReturn(200);
+
+        when(request.openConnection()).thenReturn(cnn);
+
+        // When
+        HttpResponse result = service.fetch(request);
+
+        // Then
         assertThat(result.getStatusCode(), equalTo(200));
         assertThat(result.getContentType(), equalTo("text/xml"));
         assertThat(result.getInputStream(), equalTo(in));

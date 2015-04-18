@@ -1,10 +1,9 @@
 package tchepannou.mora.rest.core.security;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.filter.GenericFilterBean;
 
-import javax.servlet.Filter;
 import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -12,15 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Component
-public class CorsFilter implements Filter {
-    @Override
-    public void destroy() { // NOSONAR - Empty block
-    }
-
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException { // NOSONAR - Empty block
-    }
-
+public class CorsFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
