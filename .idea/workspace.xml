@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/AuthConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/config/AuthConfigTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/config/Config.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/CorsFilterTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/ExtConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-insidesoccer.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/AbstractRestSecurityConfig.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/AbstractRestSecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/DaoConfig.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/DaoConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsDaoConfig.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsDaoConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/ServiceConfig.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/ServiceConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/config/ServiceConfigTest.java" afterPath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/config/ServiceConfigTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UrlFetchServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UrlFetchServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/test/resources/config/application.properties" afterPath="$PROJECT_DIR$/mora-core/src/test/resources/config/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/config/application.properties" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/config/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application.properties" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-security/mora-rest-security.iml" afterPath="$PROJECT_DIR$/mora-rest-security/mora-rest-security.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-security/pom.xml" afterPath="$PROJECT_DIR$/mora-rest-security/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
@@ -68,79 +49,76 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application-insidesoccer.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-insidesoccer.properties">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="390">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1230">
+              <caret line="57" column="14" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+              <folding>
+                <element signature="method#get#0;class#UserController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsAuthConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.40145984" vertical-offset="0" max-vertical-offset="411">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsAuthConfigTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/config/IsAuthConfigTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="435">
+              <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JdbcConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/config/JdbcConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="225">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application.properties">
+        <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="225" max-vertical-offset="675">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IsPasswordService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordService.java">
+      <file leaf-file-name="UrlFetchServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UrlFetchServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IsPasswordServiceTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordServiceTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6880734" vertical-offset="0" max-vertical-offset="495">
-              <caret line="15" column="37" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IsConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="255">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="735">
+              <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IsAuthConfig.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java">
+      <file leaf-file-name="CorsFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-              <caret line="8" column="70" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+              <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/UserController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="1230">
-              <caret line="65" column="45" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="45" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="method#get#0;class#UserController#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -153,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception/AccessTokenException.java" />
         <option value="$PROJECT_DIR$/mora-core/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/service/AccessTokenService_OK.json" />
@@ -162,7 +139,6 @@
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/service/testAuthenticate_authFailed.json" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsAccessTokenDaoIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/AccessTokenController.java" />
-        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/HttpResponseImpl.java" />
         <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/HttpResponseImplTest.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/IsAccessTokenServiceTest.java" />
@@ -176,7 +152,6 @@
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDaoIT.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/CacheConfig.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CORSFilter.java" />
-        <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/CorsFilterTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-insidesoccer_test.properties" />
         <option value="$PROJECT_DIR$/mora-rest-security/pom.xml" />
@@ -196,14 +171,17 @@
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsAccessTokenService.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/HttpRequest.java" />
         <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/UrlFetchServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UrlFetchServiceImpl.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/config/application.properties" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-is_test.properties" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application.properties" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordService.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-insidesoccer.properties" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordServiceTest.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/config/IsAuthConfigTest.java" />
+        <option value="$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UrlFetchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java" />
       </list>
     </option>
   </component>
@@ -243,6 +221,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -271,7 +250,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-security" />
+              <option name="myItemId" value="mora-rest-space3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,17 +264,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-security" />
+              <option name="myItemId" value="mora-rest-space3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -307,7 +282,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-security" />
+              <option name="myItemId" value="mora-rest-space3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -337,7 +312,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-security" />
+              <option name="myItemId" value="mora-rest-space3" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -352,7 +327,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,11 +374,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="tchepannou.mora.insidesoccer.config" />
       <recent name="tchepannou.mora.insidesoccer.service.impl" />
       <recent name="tchepannou.mora.rest.core.security" />
       <recent name="tchepannou.mora.core.service.impl" />
       <recent name="tchepannou.mora.insidesoccer.dao.impl" />
-      <recent name="tchepannou.mora.insidesoccer.domain" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -635,6 +609,19 @@
       </ExternalSystemSettings>
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -661,19 +648,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -860,20 +834,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="157" y="243" width="1495" height="836" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4126344" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41152814" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56182796" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49492672" sideWeight="0.5004299" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32847533" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32795697" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295964" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -881,10 +853,12 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2732278" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.52284944" sideWeight="0.6911085" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252688" sideWeight="0.49965397" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.56182796" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32795697" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.52284944" sideWeight="0.6911085" order="7" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -960,27 +934,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsUserDao.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.02183406" vertical-offset="0" max-vertical-offset="735">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Space.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1770">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/mapper/IsSpaceTypeRowMapperTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10474861" vertical-offset="0" max-vertical-offset="716">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDaoIT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1800">
@@ -1083,13 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.13821138" vertical-offset="231" max-vertical-offset="600">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4878049" vertical-offset="0" max-vertical-offset="369">
@@ -1165,6 +1111,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.27675277" vertical-offset="0" max-vertical-offset="945">
           <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1259,13 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UrlFetchServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="318" max-vertical-offset="765">
-          <caret line="43" column="47" selection-start-line="43" selection-start-column="9" selection-end-line="43" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/resources/config/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.37037036" vertical-offset="0" max-vertical-offset="324">
@@ -1273,38 +1213,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="291" max-vertical-offset="1230">
-          <caret line="65" column="45" selection-start-line="65" selection-start-column="30" selection-end-line="65" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#get#0;class#UserController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
           <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
-          <caret line="8" column="70" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-insidesoccer.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="64" max-vertical-offset="390">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,19 +1232,82 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
           <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11002445" vertical-offset="0" max-vertical-offset="495">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-insidesoccer.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58679706" vertical-offset="0" max-vertical-offset="409">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1230">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="13" selection-end-line="57" selection-end-column="13" />
+          <folding>
+            <element signature="method#get#0;class#UserController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/config/IsAuthConfigTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="26" max-vertical-offset="435">
+          <caret line="21" column="83" selection-start-line="21" selection-start-column="83" selection-end-line="21" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/IsPasswordServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/config/JdbcConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6880734" vertical-offset="0" max-vertical-offset="495">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="675">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UrlFetchServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="735">
+          <caret line="42" column="43" selection-start-line="42" selection-start-column="43" selection-end-line="42" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+          <caret line="20" column="74" selection-start-line="20" selection-start-column="74" selection-end-line="20" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsAuthConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40145984" vertical-offset="0" max-vertical-offset="411">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

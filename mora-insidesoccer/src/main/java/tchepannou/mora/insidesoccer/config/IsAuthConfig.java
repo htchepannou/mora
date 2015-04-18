@@ -18,9 +18,4 @@ public class IsAuthConfig {
     public PasswordService passwordService (){
         return new IsPasswordService();
     }
-
-//    @Bean
-//    public HashService hashService (){
-//        return new Md5HashService();
-//    }
 }

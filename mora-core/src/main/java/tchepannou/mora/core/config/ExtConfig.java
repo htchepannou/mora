@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Import ({AuthConfig.class, DaoConfig.class})
 @Profile ("default")
-public class ExtConfig {  // SONAR - Empty class
+public class ExtConfig {  // NOSONAR - Empty class
 }
