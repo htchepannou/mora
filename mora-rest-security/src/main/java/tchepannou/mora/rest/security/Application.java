@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import tchepannou.mora.rest.security.config.Config;
 
-@Configuration
 @SpringBootApplication
 @EnableCaching
 @Import ({Config.class})

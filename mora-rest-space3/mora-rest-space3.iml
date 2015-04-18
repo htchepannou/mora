@@ -43,6 +43,7 @@
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-actuator:1.2.3.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-all:1.3" level="project" />
+    <orderEntry type="module" module-name="mora-insidesoccer" />
     <orderEntry type="module" module-name="mora-swagger" />
     <orderEntry type="library" name="Maven: com.mangofactory:swagger-springmvc:0.8.2" level="project" />
     <orderEntry type="library" name="Maven: com.wordnik:swagger-core_2.10:1.3.2" level="project" />

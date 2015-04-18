@@ -29,6 +29,11 @@
         </dependency>
         <dependency>
             <groupId>tchepannou.mora</groupId>
+            <artifactId>mora-insidesoccer</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>tchepannou.mora</groupId>
             <artifactId>mora-swagger</artifactId>
             <version>1.0</version>
         </dependency>
