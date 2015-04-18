@@ -22,5 +22,6 @@ public class HttpRequestTest {
         assertThat(req.getReferer(), equalTo("http://www.google.ca"));
         assertThat(req.getTimeout(), equalTo(50));
         assertThat(req.getUserAgent(), equalTo("foo/bar"));
+        assertThat(req.getUrl(), equalTo(new URL("http://www.google.ca")));
     }
 }

@@ -15,6 +15,19 @@ import tchepannou.mora.core.service.UserService;
 
 public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAdapter{
     //-- Attributes
+    private static final String[] ACTUATOR_ENDPOINTS = new String[]{
+            "/autoconfig/**"
+            ,"/beans/**"
+            ,"/configprops/**"
+            ,"/dump/**"
+            ,"/env/**"
+            ,"/health/**"
+            ,"/info/**"
+            ,"/metrics/**"
+            ,"/mappings/**"
+            ,"/trace/**"
+    };
+
     @Autowired
     protected UserService userService;
 
@@ -35,7 +48,7 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
                 .authorizeRequests()
                     .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                     .antMatchers("/api-docs/**").permitAll()
-                    .antMatchers("/docs/**").permitAll()
+                    .antMatchers(getActuatorEndpoints()).permitAll().antMatchers("/docs/**").permitAll()
             .and()
                 .exceptionHandling()
                     .authenticationEntryPoint(authenticationEntryPoint())
@@ -63,5 +76,9 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
     @Bean
     public AuthenticationProvider tokenAuthenticationProvider() {
         return new TokenAuthenticationProvider(accessTokenService, userService);
+    }
+
+    protected String[] getActuatorEndpoints(){
+        return ACTUATOR_ENDPOINTS;
     }
 }
