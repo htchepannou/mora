@@ -1,5 +1,7 @@
 package tchepannou.mora.core.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import tchepannou.mora.core.service.HttpRequest;
 import tchepannou.mora.core.service.HttpResponse;
 import tchepannou.mora.core.service.UrlFetchService;
@@ -9,6 +11,8 @@ import java.net.HttpURLConnection;
 
 public class UrlFetchServiceImpl implements UrlFetchService{
     //-- Constants
+    private static final Logger LOG = LoggerFactory.getLogger(UrlFetchServiceImpl.class);
+
     public static final String HEADER_USER_AGENT = "User-Agent";
     public static final String HEADER_REFERER = "Referer";
     public static final String HEADER_ACCEPT_CHARSET = "Accept-Charset";
@@ -32,12 +36,17 @@ public class UrlFetchServiceImpl implements UrlFetchService{
         cnn.setInstanceFollowRedirects(true);
         cnn.setConnectTimeout(request.getTimeout());
 
-        return createHttpResponse(cnn);
+
+        HttpResponse resp = createHttpResponse(cnn);
+
+        if (LOG.isDebugEnabled()) {
+            LOG.debug(String.format("GET %s %s\n%d", request.getUrl(), resp.getStatusCode()));
+        }
+        return resp;
     }
 
     //-- Private
     private HttpResponse createHttpResponse (final HttpURLConnection cnn){
         return new HttpResponseImpl(cnn);
     }
-
 }

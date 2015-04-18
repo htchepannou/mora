@@ -2,7 +2,6 @@ package tchepannou.mora.insidesoccer.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
 import tchepannou.mora.core.config.DaoConfig;
 import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.RoleDao;
@@ -20,7 +19,6 @@ import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
 import tchepannou.mora.insidesoccer.dao.impl.PartyDaoImpl;
 
 @Configuration
-@Profile ("dao.insidesoccer")
 public class IsDaoConfig extends DaoConfig{
     //-- Public
     @Bean

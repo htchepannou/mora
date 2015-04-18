@@ -24,7 +24,6 @@ import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
 import javax.sql.DataSource;
 
 @Configuration
-@Profile ("dao.default")
 public class DaoConfig {
     @Value ("${database.driver}")
     private String driver;

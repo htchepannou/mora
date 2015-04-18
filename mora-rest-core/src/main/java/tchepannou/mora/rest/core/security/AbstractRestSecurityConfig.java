@@ -2,6 +2,7 @@ package tchepannou.mora.rest.core.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -32,6 +33,7 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
                 .authorizeRequests()
+                    .antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                     .antMatchers("/api-docs/**").permitAll()
                     .antMatchers("/docs/**").permitAll()
             .and()
@@ -41,7 +43,9 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
 
         configureAuthorization(http);
 
-        http.addFilterBefore(new TokenAuthenticationFilter(authenticationManager()), BasicAuthenticationFilter.class);
+        http.addFilterBefore(new TokenAuthenticationFilter(authenticationManager()), BasicAuthenticationFilter.class)
+            .addFilterAfter(new CorsFilter(), TokenAuthenticationFilter.class)
+        ;
     }
 
     @Override
