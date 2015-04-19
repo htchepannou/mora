@@ -111,3 +111,22 @@ create table t_member(
 ) engine=InnoDB;
 
 
+-- ====================
+-- posts
+-- ====================
+create table t_post(
+    id int not null primary key auto_increment,
+    space_id int not null,
+    user_id int not null,
+
+    title varchar(255),
+    summary varchar(512),
+    content text,
+    deleted bit(1),
+    creation_date timestamp null,
+    last_update timestamp null,
+
+    foreign key (space_id) references t_space(id),
+    foreign key (user_id) references t_user(id),
+    index (last_update)
+) engine=InnoDB;

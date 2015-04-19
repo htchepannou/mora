@@ -4,6 +4,7 @@ import org.junit.Test;
 import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
 import tchepannou.mora.core.dao.jdbc.JdbcMemberDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
+import tchepannou.mora.core.dao.jdbc.JdbcPostDao;
 import tchepannou.mora.core.dao.jdbc.JdbcRoleDao;
 import tchepannou.mora.core.dao.jdbc.JdbcSpaceDao;
 import tchepannou.mora.core.dao.jdbc.JdbcSpaceTypeDao;
@@ -48,5 +49,10 @@ public class DaoConfigTest {
     @Test
     public void testMemberDao (){
         assertThat(config.memberDao(), instanceOf(JdbcMemberDao.class));
+    }
+
+    @Test
+    public void testPostDao (){
+        assertThat(config.postDao(), instanceOf(JdbcPostDao.class));
     }
 }

@@ -9,6 +9,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.MemberDao;
 import tchepannou.mora.core.dao.PasswordDao;
+import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.core.dao.RoleDao;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.dao.SpaceTypeDao;
@@ -16,6 +17,7 @@ import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
 import tchepannou.mora.core.dao.jdbc.JdbcMemberDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
+import tchepannou.mora.core.dao.jdbc.JdbcPostDao;
 import tchepannou.mora.core.dao.jdbc.JdbcRoleDao;
 import tchepannou.mora.core.dao.jdbc.JdbcSpaceDao;
 import tchepannou.mora.core.dao.jdbc.JdbcSpaceTypeDao;
@@ -93,5 +95,10 @@ public class DaoConfig {
     @Bean
     public MemberDao memberDao (){
         return new JdbcMemberDao();
+    }
+
+    @Bean
+    public PostDao postDao (){
+        return new JdbcPostDao();
     }
 }
