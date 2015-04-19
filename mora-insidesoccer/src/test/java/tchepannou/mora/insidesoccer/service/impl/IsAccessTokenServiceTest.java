@@ -77,7 +77,7 @@ public class IsAccessTokenServiceTest {
         verify(urlService).fetch(captor.capture());
 
         HttpRequest request = captor.getValue();
-        assertThat(request.getUrl(), equalTo(new URL(api + "/login/signout?id=" + token.getId())));
+        assertThat(request.getUrl(), equalTo(new URL(api + "/login/signout.json?id=" + token.getId())));
     }
 
     @Test
@@ -100,7 +100,7 @@ public class IsAccessTokenServiceTest {
         ArgumentCaptor<HttpRequest> captor = ArgumentCaptor.forClass(HttpRequest.class);
         verify(urlService).fetch(captor.capture());
         HttpRequest request = captor.getValue();
-        assertThat(request.getUrl(), equalTo(new URL(api + "/login/signin?name=foo&password=bar")));
+        assertThat(request.getUrl(), equalTo(new URL(api + "/login/signin.json?name=foo&password=bar")));
 
         verify(response).close();
     }

@@ -43,7 +43,7 @@ public class IsAccessTokenService implements AccessTokenService{
     @CachePut("AccessToken")
     public AccessToken authenticate(String usernameOrEmail, String clearPassword) throws AccessTokenException {
         try {
-            String path = String.format("/login/signin?name=%s&password=%s", encode(usernameOrEmail), encode(clearPassword));
+            String path = String.format("/login/signin.json?name=%s&password=%s", encode(usernameOrEmail), encode(clearPassword));
             URL url = buildUrl(path);
             HttpResponse resp = urlService.fetch(new HttpRequest.Builder().withUrl(url).build());
             try {
@@ -69,7 +69,7 @@ public class IsAccessTokenService implements AccessTokenService{
     @CacheEvict("AccessToken")
     public AccessToken expire(AccessToken token) throws AccessTokenException {
         try {
-            URL url = buildUrl("/login/signout?id=" + token.getId());
+            URL url = buildUrl("/login/signout.json?id=" + token.getId());
             urlService.fetch(new HttpRequest.Builder().withUrl(url).build());
 
             return accessTokenDao.findByValue(String.valueOf(token.getId()));

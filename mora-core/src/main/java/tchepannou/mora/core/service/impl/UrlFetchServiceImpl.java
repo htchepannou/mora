@@ -39,9 +39,7 @@ public class UrlFetchServiceImpl implements UrlFetchService{
 
         HttpResponse resp = createHttpResponse(cnn);
 
-        if (LOG.isDebugEnabled()) {
-            LOG.debug(String.format("GET %s - %d", request.getUrl(), resp.getStatusCode()));
-        }
+        LOG.info(String.format("GET %s - %d", request.getUrl(), resp.getStatusCode()));
         return resp;
     }
 

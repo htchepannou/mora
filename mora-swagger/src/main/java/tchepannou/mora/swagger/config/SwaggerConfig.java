@@ -36,19 +36,19 @@ public class SwaggerConfig {
     @Value ("${swagger.app.title}")
     private String title;
 
-    @Value ("${swagger.app.description}")
+    @Value ("${swagger.app.description}:")
     private String description;
 
-    @Value ("${swagger.app.TOS.url}")
+    @Value ("${swagger.app.TOS.url}:")
     private String termOfServiceUrl;
 
     @Value ("${swagger.app.contact}")
     private String contact;
 
-    @Value ("${swagger.app.license}")
+    @Value ("${swagger.app.license}:")
     private String license;
 
-    @Value ("${swagger.app.license.url}")
+    @Value ("${swagger.app.license.url}:")
     private String licenseUrl;
 
     @Value("${swagger.app.include.patterns}")
