@@ -24,6 +24,9 @@ public class Space extends Model implements  SoftDeleteSupport{
     public Space (){
     }
 
+    public Space (long id) {
+        super(id);
+    }
     public Space (long id, SpaceType type, User user){
         super(id);
 

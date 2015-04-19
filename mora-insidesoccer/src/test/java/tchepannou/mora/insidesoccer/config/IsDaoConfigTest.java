@@ -2,6 +2,7 @@ package tchepannou.mora.insidesoccer.config;
 
 import org.junit.Test;
 import tchepannou.mora.insidesoccer.dao.impl.IsAccessTokenDao;
+import tchepannou.mora.insidesoccer.dao.impl.IsMemberDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
@@ -49,4 +50,10 @@ public class IsDaoConfigTest {
     public void testSpaceDao (){
         assertThat(config.spaceDao(), instanceOf(IsSpaceDao.class));
     }
+
+    @Test
+    public void testMemberDao (){
+        assertThat(config.memberDao(), instanceOf(IsMemberDao.class));
+    }
+
 }

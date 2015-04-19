@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.MemberDao;
@@ -52,6 +53,11 @@ public class DaoConfig {
         ds.setDriverClassName(driver);
         ds.setUrl(url);
         return ds;
+    }
+
+    @Bean
+    public DataSourceTransactionManager transactionManager (){
+        return new DataSourceTransactionManager(dataSource());
     }
 
     @Bean
