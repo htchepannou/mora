@@ -2,7 +2,6 @@ package tchepannou.mora.insidesoccer.domain;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
-import tchepannou.mora.core.domain.Model;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 
@@ -12,7 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class PartyAttribute extends Model {
+public class PartyAttribute extends Attribute {
     //-- Attributes
     public static final String CITY = "city";
     public static final String COUNTRY = "country";
@@ -26,27 +25,22 @@ public class PartyAttribute extends Model {
     public static final String STREET = "street";
     public static final String USERNAME = "uname";
     public static final String WEBSITE_URL = "website_url";
-    public static final String ZIP_CODE = "zip_code";
 
 
     public static final List<String> USER_ATTRIBUTE_NAMES = Arrays.asList(EMAIL, USERNAME, FIRST_NAME, LAST_NAME);
     public static final List<String> SPACE_ATTRIBUTE_NAMES = Arrays.asList(NAME, DESCRIPTION, LOGO_URL, WEBSITE_URL, EMAIL, STREET, CITY, COUNTRY);
 
     private long partyId;
-    private String name;
-    private String value;
 
     public PartyAttribute(){
     }
     public PartyAttribute(long id, Party party, String name, String value){
-        super(id);
+        super(id, name, value);
 
         Preconditions.checkArgument(party != null, "party == null");
         Preconditions.checkArgument(party.getId()>0, "party.id <= 0");
 
         this.partyId = party.getId();
-        this.name = name;
-        this.value = value;
     }
 
     //-- Public
@@ -108,27 +102,11 @@ public class PartyAttribute extends Model {
     }
 
     //-- Getter/Setter
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public long getPartyId() {
         return partyId;
     }
 
     public void setPartyId(long partyId) {
         this.partyId = partyId;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 }
