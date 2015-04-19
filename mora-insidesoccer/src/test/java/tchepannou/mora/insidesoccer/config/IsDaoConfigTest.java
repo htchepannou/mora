@@ -7,6 +7,7 @@ import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
 import tchepannou.mora.insidesoccer.dao.impl.IsUserDao;
+import tchepannou.mora.insidesoccer.dao.impl.NodeDaoImpl;
 import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
 import tchepannou.mora.insidesoccer.dao.impl.PartyDaoImpl;
 
@@ -56,4 +57,9 @@ public class IsDaoConfigTest {
         assertThat(config.memberDao(), instanceOf(IsMemberDao.class));
     }
 
+
+    @Test
+    public void testNodeDao (){
+        assertThat(config.nodeDao(), instanceOf(NodeDaoImpl.class));
+    }
 }
