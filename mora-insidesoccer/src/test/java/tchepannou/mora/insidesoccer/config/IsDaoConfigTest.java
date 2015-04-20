@@ -1,15 +1,7 @@
 package tchepannou.mora.insidesoccer.config;
 
 import org.junit.Test;
-import tchepannou.mora.insidesoccer.dao.impl.IsAccessTokenDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsMemberDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsSpaceDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsUserDao;
-import tchepannou.mora.insidesoccer.dao.impl.NodeDaoImpl;
-import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
-import tchepannou.mora.insidesoccer.dao.impl.PartyDaoImpl;
+import tchepannou.mora.insidesoccer.dao.impl.*;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
@@ -62,4 +54,10 @@ public class IsDaoConfigTest {
     public void testNodeDao (){
         assertThat(config.nodeDao(), instanceOf(NodeDaoImpl.class));
     }
+
+    @Test
+    public void testNodeAttributeDao (){
+        assertThat(config.nodeAttributeDao(), instanceOf(NodeAttributeDaoImpl.class));
+    }
+
 }

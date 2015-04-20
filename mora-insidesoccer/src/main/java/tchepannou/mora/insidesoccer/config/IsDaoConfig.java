@@ -9,18 +9,11 @@ import tchepannou.mora.core.dao.RoleDao;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.dao.SpaceTypeDao;
 import tchepannou.mora.core.dao.UserDao;
+import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
 import tchepannou.mora.insidesoccer.dao.NodeDao;
 import tchepannou.mora.insidesoccer.dao.PartyAttributeDao;
 import tchepannou.mora.insidesoccer.dao.PartyDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsAccessTokenDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsMemberDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsRoleDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsSpaceDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsSpaceTypeDao;
-import tchepannou.mora.insidesoccer.dao.impl.IsUserDao;
-import tchepannou.mora.insidesoccer.dao.impl.NodeDaoImpl;
-import tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImpl;
-import tchepannou.mora.insidesoccer.dao.impl.PartyDaoImpl;
+import tchepannou.mora.insidesoccer.dao.impl.*;
 
 @Configuration
 public class IsDaoConfig extends DaoConfig{
@@ -38,6 +31,11 @@ public class IsDaoConfig extends DaoConfig{
     @Bean
     public NodeDao nodeDao(){
         return new NodeDaoImpl();
+    }
+
+    @Bean
+    public NodeAttributeDao nodeAttributeDao (){
+        return new NodeAttributeDaoImpl();
     }
 
     //-- DaoConfig overrides
