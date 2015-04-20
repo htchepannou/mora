@@ -1,16 +1,11 @@
 package tchepannou.mora.core.domain;
 
-import java.util.Date;
-
-public class User extends Model implements SoftDeleteSupport{
+public class User extends LifecycleAwareModel{
     //-- Attributes
     private String username;
     private String firstName;
     private String lastName;
     private String email;
-    private Date creationDate;
-    private Date lastUpdate;
-    private boolean deleted;
 
 
     //-- Public
@@ -25,32 +20,9 @@ public class User extends Model implements SoftDeleteSupport{
         this.firstName = user.getFirstName();
         this.lastName = user.getLastName();
         this.email = user.getEmail();
-        this.creationDate = user.getCreationDate();
-        this.lastUpdate = user.getLastUpdate();
-        this.deleted = user.isDeleted();
     }
-
-    //-- SoftDeleteSupport overrides
-    @Override
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    @Override
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
 
     //-- Getter/Setter
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
     public String getFirstName() {
         return firstName;
     }
@@ -65,14 +37,6 @@ public class User extends Model implements SoftDeleteSupport{
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
     }
 
     public String getUsername() {

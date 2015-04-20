@@ -2,18 +2,13 @@ package tchepannou.mora.core.domain;
 
 import com.google.common.base.Preconditions;
 
-import java.util.Date;
-
-public class Post extends Model implements SoftDeleteSupport {
+public class Post extends LifecycleAwareModel {
     //-- Attributes
     private long userId;
     private long spaceId;
     private String title;
     private String summary;
     private String content;
-    private boolean deleted;
-    private Date creationDate;
-    private Date lastUpdate;
 
 
     //-- Constructor
@@ -42,22 +37,8 @@ public class Post extends Model implements SoftDeleteSupport {
         this.title = post.title;
         this.summary = post.summary;
         this.content = post.content;
-        this.deleted = post.deleted;
-        this.creationDate = post.creationDate;
-        this.lastUpdate = post.lastUpdate;
     }
     
-    //-- SoftDeleteSupport overrides
-    @Override
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    @Override
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
     //-- Getter/Setter
     public long getUserId() {
         return userId;
@@ -81,22 +62,6 @@ public class Post extends Model implements SoftDeleteSupport {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
     }
 
     public String getSummary() {

@@ -2,9 +2,7 @@ package tchepannou.mora.core.domain;
 
 import com.google.common.base.Preconditions;
 
-import java.util.Date;
-
-public class Space extends Model implements  SoftDeleteSupport{
+public class Space extends LifecycleAwareModel{
     //-- Attributes
     private long typeId;
     private long userId;
@@ -15,9 +13,6 @@ public class Space extends Model implements  SoftDeleteSupport{
     private String websiteUrl;
     private String email;
     private String address;
-    private boolean deleted;
-    private Date creationDate;
-    private Date lastUpdate;
 
 
     //-- Constructor
@@ -53,9 +48,6 @@ public class Space extends Model implements  SoftDeleteSupport{
         this.name = space.getName();
         this.abbreviation = space.getAbbreviation();
         this.description = space.getDescription();
-        this.deleted = space.isDeleted();
-        this.creationDate = space.getCreationDate();
-        this.lastUpdate = space.getLastUpdate();
         this.logoUrl = space.getLogoUrl();
         this.websiteUrl = space.getWebsiteUrl();
         this.email = space.getEmail();
@@ -63,40 +55,13 @@ public class Space extends Model implements  SoftDeleteSupport{
     }
 
 
-    //-- SoftDeleteSupport overrides
-    @Override
-    public boolean isDeleted() {
-        return deleted;
-    }
-
-    @Override
-    public void setDeleted(boolean deleted) {
-        this.deleted = deleted;
-    }
-
     //-- Getter/Setter
-    public Date getCreationDate() {
-        return creationDate;
-    }
-
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
-    }
-
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
     }
 
     public String getLogoUrl() {
