@@ -20,7 +20,9 @@ public class SpaceDtoTest {
         space.setName("New York Soccer Club");
 
         // When
-        SpaceDto result = new SpaceDto.Builder().withSpace(space).build();
+        SpaceDto result = new SpaceDto.Builder()
+                .withSpace(space)
+                .build();
 
         // Then
         assertThat(result.getId(), equalTo(space.getId()));

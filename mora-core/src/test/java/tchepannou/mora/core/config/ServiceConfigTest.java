@@ -2,6 +2,7 @@ package tchepannou.mora.core.config;
 
 import org.junit.Test;
 import tchepannou.mora.core.service.impl.MemberServiceImpl;
+import tchepannou.mora.core.service.impl.PostServiceImpl;
 import tchepannou.mora.core.service.impl.RoleServiceImpl;
 import tchepannou.mora.core.service.impl.SpaceServiceImpl;
 import tchepannou.mora.core.service.impl.SpaceTypeServiceImpl;
@@ -37,6 +38,11 @@ public class ServiceConfigTest {
     @Test
     public void tesMemberService() throws Exception {
         assertThat(config.memberService(), instanceOf(MemberServiceImpl.class));
+    }
+
+    @Test
+    public void tesPostService() throws Exception {
+        assertThat(config.postService(), instanceOf(PostServiceImpl.class));
     }
 
     @Test

@@ -36,6 +36,6 @@ public class CorsFilterTest {
 
         verify(resp).setHeader("Access-Control-Allow-Origin", "*");
         verify(resp).setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
-        verify(resp).setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+        verify(resp).setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept," + SecurityContants.X_AUTH_TOKEN);
     }
 }

@@ -41,7 +41,7 @@ public class TokenAuthenticationProvider implements AuthenticationProvider{
         }
 
         /* user */
-        User user = userService.findById(accessToken.getId());
+        User user = userService.findById(accessToken.getUserId());
         if (user == null){
             throw new PreAuthenticatedCredentialsNotFoundException(token + " is associated with no user!");
         }

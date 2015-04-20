@@ -2,6 +2,7 @@ package tchepannou.mora.rest.post.dto;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
@@ -24,7 +25,9 @@ public class UserDto extends ModelDto {
             dto.id = user.getId();
             dto.firstName = user.getFirstName();
             dto.lastName = user.getLastName();
-            dto.name = Joiner.on(' ').join(user.getFirstName(), user.getLastName());
+            dto.name = Joiner.on(' ').join(
+                    Strings.nullToEmpty(user.getFirstName())
+                    , Strings.nullToEmpty(user.getLastName()));
 
             return dto;
         }

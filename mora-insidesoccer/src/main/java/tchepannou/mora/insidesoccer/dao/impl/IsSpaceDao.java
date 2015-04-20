@@ -1,6 +1,8 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
+import com.google.common.base.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.insidesoccer.dao.PartyAttributeDao;
@@ -22,6 +24,10 @@ public class IsSpaceDao implements SpaceDao {
     @Autowired
     private PartyAttributeDao partyAttributeDao;
 
+    @Value ("${insidesoccer.asset.url}")
+    private String assetUrl;
+
+
     //-- SpaceDao overrides
     @Override
     public Space findById(long id) {
@@ -34,7 +40,6 @@ public class IsSpaceDao implements SpaceDao {
 
         return toSpace(party, attributes);
     }
-
 
     @Override
     public long create(Space space) {
@@ -56,7 +61,13 @@ public class IsSpaceDao implements SpaceDao {
         Space result = new Space ();
         party.toSpace(result);
         PartyAttribute.toSpace(attributes, result);
+
+        if (!Strings.isNullOrEmpty(assetUrl)) {
+            String logoUrl = result.getLogoUrl();
+            if (!Strings.isNullOrEmpty(logoUrl) && !logoUrl.startsWith("http://") && !logoUrl.startsWith("https://")) {
+                result.setLogoUrl(assetUrl + logoUrl);
+            }
+        }
         return result;
     }
-
 }

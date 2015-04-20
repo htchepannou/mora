@@ -22,7 +22,7 @@ public class PostSummaryDtoTest {
         Space space = new Space(1);
         space.setEmail("info@newyorksoccerclub.org");
         space.setWebsiteUrl("http://newyorksoccerclub.org");
-        space.setLogoUrl("http://newyorksoccerclub.org/logo.png");
+        space.setLogoUrl("/logo.png");
         space.setAbbreviation("NYSC");
         space.setAddress("4040 linton");
         space.setDescription("This is a nice desc");

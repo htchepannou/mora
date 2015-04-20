@@ -1,10 +1,12 @@
 package tchepannou.mora.rest.post.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.rest.core.dto.ModelDto;
+import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
 import java.util.Date;
 
@@ -66,6 +68,7 @@ public class PostSummaryDto extends ModelDto{
         return id;
     }
 
+    @JsonSerialize (using=JsonDateSerializer.class)
     public Date getLastUpdate() {
         return lastUpdate;
     }

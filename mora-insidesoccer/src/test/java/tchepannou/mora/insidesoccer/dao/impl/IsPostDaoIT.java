@@ -25,7 +25,7 @@ import static org.junit.Assert.assertThat;
 @SqlGroup ({
         @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:sql/dao/is-clean.sql", "classpath:sql/dao/IsPostDao.sql"}),
 })
-public class IsPostDaoTest {
+public class IsPostDaoIT {
     @Autowired
     private IsPostDao dao;
 

@@ -45,7 +45,7 @@ public class TokenAuthenticationProviderTest {
 
         user = new User (1);
 
-        token = new AccessToken(1, user);
+        token = new AccessToken(100, user);
         token.setValue("1234");
         token.setExpiryDate(DateUtils.addDays(new Date(), 1));
 
