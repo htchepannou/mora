@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import tchepannou.mora.core.config.DaoConfig;
 import tchepannou.mora.core.dao.AccessTokenDao;
 import tchepannou.mora.core.dao.MemberDao;
+import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.core.dao.RoleDao;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.dao.SpaceTypeDao;
@@ -36,6 +37,11 @@ public class IsDaoConfig extends DaoConfig{
     @Bean
     public NodeAttributeDao nodeAttributeDao (){
         return new NodeAttributeDaoImpl();
+    }
+
+    @Bean
+    public PostDao postDao(){
+        return new IsPostDao();
     }
 
     //-- DaoConfig overrides

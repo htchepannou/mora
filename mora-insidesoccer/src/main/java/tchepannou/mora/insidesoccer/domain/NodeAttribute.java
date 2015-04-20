@@ -1,13 +1,20 @@
 package tchepannou.mora.insidesoccer.domain;
 
 import com.google.common.base.Preconditions;
+import org.jsoup.Jsoup;
+import tchepannou.mora.core.domain.Post;
 
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 public class NodeAttribute extends Attribute {
     //-- Attributes
+    public static final String TITLE = "title";
+    public static final String CONTENT = "content";
+
+    public static final List<String> POST_ATTRIBUTES = Arrays.asList(TITLE, CONTENT);
+
     private long nodeId;
 
     public NodeAttribute(){
@@ -15,19 +22,30 @@ public class NodeAttribute extends Attribute {
     public NodeAttribute(long id, Node node, String name, String value){
         super(id, name, value);
 
-        Preconditions.checkArgument(node != null, "party == null");
-        Preconditions.checkArgument(node.getId()>0, "party.id <= 0");
+        Preconditions.checkArgument(node != null, "node == null");
+        Preconditions.checkArgument(node.getId()>0, "node.id <= 0");
 
         this.nodeId = node.getId();
     }
 
     //-- Public
-    public static Set<Long> toNodeIdSet(Collection<NodeAttribute> attributes){
-        Set<Long> result = new HashSet<>();
-        for (NodeAttribute attribute : attributes){
-            result.add(attribute.getNodeId());
+    public static void toPost(Collection<NodeAttribute> attributes, Post post){
+        for (NodeAttribute attr : attributes){
+            if (attr.getNodeId() != post.getId()){
+                continue;
+            }
+            String name = attr.getName();
+            String value = attr.getValue();
+            if (TITLE.equalsIgnoreCase(name)){
+                post.setTitle(value);
+            } else if (CONTENT.equalsIgnoreCase(name)){
+                post.setContent(value);
+
+                String text = Jsoup.parse(value).text();
+                String summary = text.length()>255  ? text.substring(0, 255) + "..." : text;
+                post.setSummary(summary);
+            }
         }
-        return result;
     }
 
     //-- Getter/Setter

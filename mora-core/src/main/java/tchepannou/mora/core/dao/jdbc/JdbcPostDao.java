@@ -53,8 +53,8 @@ public class JdbcPostDao extends JdbcModelDao<Post> implements PostDao{
 
     //-- PostDao overrides
     @Override
-    public List<Long> findIdsByUser(long userId, int limit, int offset) {
-        String sql = "SELECT P.id FROM t_post P JOIN t_space S ON P.space_id=S.id WHERE P.user_id=? AND P.deleted=? ORDER BY P.last_update DESC LIMIT " + limit + " OFFSET " + offset;
+    public List<Long> findIdsPublishedForUser(long userId, int limit, int offset) {
+        String sql = "SELECT P.id FROM t_post P JOIN t_space S ON P.space_id=S.id JOIN t_member M ON M.space_id=S.id WHERE M.user_id=? AND P.deleted=? ORDER BY P.last_update DESC LIMIT " + limit + " OFFSET " + offset;
         return template.query(sql, new Object[] {userId, false}, new RowMapper<Long>() {
             @Override
             public Long mapRow(ResultSet rs, int i) throws SQLException {

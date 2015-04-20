@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PostDao {
     Post findById (long id);
-    List<Long> findIdsByUser (long userId, int limit, int offset);
+    List<Long> findIdsPublishedForUser(long userId, int limit, int offset);
     long create (Post post);
     void update(Post post);
     void delete(Post post);

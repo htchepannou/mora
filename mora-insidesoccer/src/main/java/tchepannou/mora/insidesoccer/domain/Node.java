@@ -1,6 +1,7 @@
 package tchepannou.mora.insidesoccer.domain;
 
 import tchepannou.mora.core.domain.Model;
+import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.domain.SoftDeleteSupport;
 
 import java.util.Date;
@@ -19,6 +20,15 @@ public class Node extends Model implements SoftDeleteSupport{
     }
     public Node(long id){
         super(id);
+    }
+
+    //-- Public
+    public void toPost(Post post) {
+        post.setId(this.getId());
+        post.setLastUpdate(this.date);
+        post.setUserId(this.ownerId);
+        post.setDeleted(this.deleted);
+        post.setSpaceId(this.channelId);
     }
 
     //-- SoftDeleteSupport overrides

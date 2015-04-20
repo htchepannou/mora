@@ -73,19 +73,19 @@ public class JdbcPostDaoIT {
 
 
     @Test
-    public void testFindIdsByUser() throws Exception {
+    public void testFindIdsPublishedForUser() throws Exception {
         // When
-        List<Long> result = postDao.findIdsByUser(300, 1000, 0);
+        List<Long> result = postDao.findIdsPublishedForUser(300, 1000, 0);
 
         // Then
-        assertThat(result, hasSize(3));
-        assertThat(result, hasItems(300L, 301L, 310L));
+        assertThat(result, hasSize(4));
+        assertThat(result, hasItems(300L, 301L, 302L, 310L));
     }
 
     @Test
-    public void testFindIdsByUser_offset() throws Exception {
+    public void testFindIdsPublishedForUser_offset() throws Exception {
         // When
-        List<Long> result = postDao.findIdsByUser(400, 5, 5);
+        List<Long> result = postDao.findIdsPublishedForUser(400, 5, 5);
 
         // Then
         assertThat(result, hasSize(5));

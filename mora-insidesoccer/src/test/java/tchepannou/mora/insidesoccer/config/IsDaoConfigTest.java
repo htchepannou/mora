@@ -48,8 +48,7 @@ public class IsDaoConfigTest {
     public void testMemberDao (){
         assertThat(config.memberDao(), instanceOf(IsMemberDao.class));
     }
-
-
+    
     @Test
     public void testNodeDao (){
         assertThat(config.nodeDao(), instanceOf(NodeDaoImpl.class));
@@ -58,6 +57,11 @@ public class IsDaoConfigTest {
     @Test
     public void testNodeAttributeDao (){
         assertThat(config.nodeAttributeDao(), instanceOf(NodeAttributeDaoImpl.class));
+    }
+
+    @Test
+    public void testPostDao (){
+        assertThat(config.postDao(), instanceOf(IsPostDao.class));
     }
 
 }
