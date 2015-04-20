@@ -52,3 +52,11 @@ insert into t_post(id, user_id, space_id, deleted, creation_date, last_update) v
 insert into t_post(id, user_id, space_id, deleted, creation_date, last_update) values(407, 499, 400, 0, '2014-01-01 10:30:55', '2014-12-01 8:30:55');
 insert into t_post(id, user_id, space_id, deleted, creation_date, last_update) values(408, 499, 400, 0, '2014-01-01 10:30:55', '2014-12-01 9:30:55');
 insert into t_post(id, user_id, space_id, deleted, creation_date, last_update) values(409, 499, 400, 0, '2014-01-01 10:30:55', '2014-12-01 10:30:55');
+
+-- findByIds
+insert into t_user(id, username, email, firstname, lastname, deleted, creation_date, last_update) values(500, 'ray.sponsible', 'ray.sponsible@gmail.com', 'Ray', 'Sponsible', 0, '2014-01-01 10:30:55', '2014-12-01 14:30:55');
+insert into t_space(id, space_type_id, user_id, name, abbreviation, description, logo_url, website_url, email, deleted, creation_date, last_update) values(500, 1, 400, 'New York Soccer Club', 'NYSC', 'Best soccer club', 'http://img.com/nysc.png', 'http://newyorksoccerclub.org', 'info@newyorksoccerclub.org', 0, '2014-01-01 10:30:55', '2014-12-01 14:30:55');
+insert into t_post(id, user_id, space_id, deleted, title, summary, content, creation_date, last_update) values(500, 500, 500, 0, 'title1', 'summary1', '<p>content1</p>', '2014-01-01 10:30:55', '2014-12-01 14:30:55');
+insert into t_post(id, user_id, space_id, deleted, title, summary, content, creation_date, last_update) values(501, 500, 500, 0, 'title2', 'summary2', '<p>content2</p>', '2014-01-01 10:30:55', '2014-12-01 14:30:55');
+insert into t_post(id, user_id, space_id, deleted, title, summary, content, creation_date, last_update) values(502, 500, 500, 1, 'title3', 'summary3', '<p>content3</p>', '2014-01-01 10:30:55', '2014-12-01 14:30:55');
+

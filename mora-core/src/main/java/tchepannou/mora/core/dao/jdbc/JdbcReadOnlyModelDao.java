@@ -30,12 +30,23 @@ public abstract class JdbcReadOnlyModelDao<T extends Model> {
     }
 
     public List<T> findByIds (Collection<Long> ids){
+        /* query */
         StringBuilder sql = new StringBuilder(String.format("SELECT * FROM %s WHERE ", getTableName()));
-
         List params = new ArrayList<>();
-        whereIn(sql, getIdColumn(), ids, params);
+        if (!ids.isEmpty()) {
+            whereIn(sql, getIdColumn(), ids, params);
+        }
 
-        return template.query(sql.toString(), params.toArray(), getRowMapper());
+        List<T> lst = template.query(sql.toString(), params.toArray(), getRowMapper());
+
+        /* filter deleted */
+        List<T> result = new ArrayList<>();
+        for (T item : lst){
+            if (!(item instanceof SoftDeleteSupport) || !((SoftDeleteSupport) item).isDeleted()){
+                result.add(item);
+            }
+        }
+        return result;
     }
 
     //-- Protected

@@ -17,10 +17,12 @@ import tchepannou.mora.core.domain.User;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
@@ -90,6 +92,33 @@ public class JdbcPostDaoIT {
         // Then
         assertThat(result, hasSize(5));
         assertThat(result, hasItems(404L, 403L, 402L, 401L, 400L));
+    }
+
+
+    @Test
+    public void testFindIds() throws Exception {
+        // When
+        List<Post> result = postDao.findByIds(Arrays.asList(500L, 501L, 502L));
+
+        // Then
+        Post expected1 = new Post(500, new Space(500), new User(500));
+        expected1.setDeleted(false);
+        expected1.setTitle("title1");
+        expected1.setSummary("summary1");
+        expected1.setContent("<p>content1</p>");
+        expected1.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        expected1.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
+        
+        Post expected2 = new Post(501, new Space(500), new User(500));
+        expected2.setDeleted(false);
+        expected2.setTitle("title2");
+        expected2.setSummary("summary2");
+        expected2.setContent("<p>content2</p>");
+        expected2.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        expected2.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
+
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(expected1, expected2));
     }
 
 
