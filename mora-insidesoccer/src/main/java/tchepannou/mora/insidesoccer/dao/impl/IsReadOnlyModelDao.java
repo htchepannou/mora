@@ -5,6 +5,7 @@ import tchepannou.mora.core.domain.Model;
 
 public abstract class IsReadOnlyModelDao<T extends Model> extends JdbcReadOnlyModelDao<T> {
     //-- Abstract
+    @Override
     protected abstract String getIdColumn();
 
 

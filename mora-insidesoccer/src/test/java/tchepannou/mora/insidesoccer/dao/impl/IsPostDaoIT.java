@@ -15,6 +15,7 @@ import tchepannou.mora.insidesoccer.config.JdbcConfig;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
@@ -73,4 +74,45 @@ public class IsPostDaoIT {
         assertThat(result, hasSize(2));
         assertThat(result, hasItems(300L, 310L));
     }
+    
+    
+    @Test
+    public void testFindByIds () throws Exception{
+        // Given
+        List<Post> result = dao.findByIds(Arrays.asList(400L, 410L));
+
+        // Then
+        Post expected1 = new Post(400, new Space(400), new User(400));
+        expected1.setTitle("title1");
+        expected1.setSummary("This is a content1");
+        expected1.setContent("This is a content1");
+        expected1.setDeleted(false);
+        expected1.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        
+        Post expected2 = new Post(410, new Space(410), new User(410));
+        expected2.setTitle("title2");
+        expected2.setSummary("This is a content2");
+        expected2.setContent("This is a content2");
+        expected2.setDeleted(false);
+        expected2.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(expected1, expected2));
+        
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testCreate() throws Exception {
+        dao.create(new Post(1));
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testUpdate() throws Exception {
+        dao.update(new Post(1));
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testDelete() throws Exception {
+        dao.delete(new Post(1));
+    }    
 }

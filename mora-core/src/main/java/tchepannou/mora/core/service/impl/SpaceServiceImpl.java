@@ -25,7 +25,7 @@ public class SpaceServiceImpl implements SpaceService {
     @Cacheable ("Space")
     public Space findById(long id) {
         return spaceDao.findById(id);
-    }         ;
+    }
 
     @Override
     @Cacheable ("Space")

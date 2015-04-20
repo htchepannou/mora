@@ -29,3 +29,15 @@ insert into nprel(nprel_id, nprel_type_fk, nprel_node_fk, nprel_party_fk) values
 insert into node(node_id, node_channel_fk, node_owner_fk, node_type_fk, node_deleted, node_date) values(320, 300, 300, 1, 1, '2014-01-01 12:30:55');
 insert into nprel(nprel_id, nprel_type_fk, nprel_node_fk, nprel_party_fk) values(320, 1, 320, 310);
 insert into nprel(nprel_id, nprel_type_fk, nprel_node_fk, nprel_party_fk) values(321, 1, 320, 320);
+
+-- testFindByIds
+insert into party(party_id, party_deleted, party_status, party_date, party_creation_date, party_type_fk) values(400, 0, 1, '2014-01-01 12:30:55', '2014-01-01 10:30:55', 1);
+insert into node(node_id, node_channel_fk, node_owner_fk, node_type_fk, node_deleted, node_date, node_status) values(400, 400, 400, 1, 0, '2014-01-01 12:30:55', 1);
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(400, 400, 'title', 'title1');
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(401, 400, 'content', 'This is a content1');
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(402, 400, 'foo', 'bar');
+
+insert into party(party_id, party_deleted, party_status, party_date, party_creation_date, party_type_fk) values(410, 0, 1, '2014-01-01 12:30:55', '2014-01-01 10:30:55', 1);
+insert into node(node_id, node_channel_fk, node_owner_fk, node_type_fk, node_deleted, node_date, node_status) values(410, 410, 410, 1, 0, '2014-01-01 12:30:55', 1);
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(410, 410, 'title', 'title2');
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(411, 410, 'content', 'This is a content2');
