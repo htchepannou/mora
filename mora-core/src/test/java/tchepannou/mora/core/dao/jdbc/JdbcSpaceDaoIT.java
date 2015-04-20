@@ -16,10 +16,14 @@ import tchepannou.mora.core.domain.User;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.nullValue;
+import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.lessThan;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
@@ -75,6 +79,41 @@ public class JdbcSpaceDaoIT {
 
         // Then
         assertThat(result, nullValue());
+    }
+
+
+    @Test
+    public void testFindByIds () throws Exception{
+        // Given
+
+        // When
+        List<Space> result = dao.findByIds(Arrays.asList(1L, 2L, 3L));
+
+        // Then
+        Space expected1 = new Space (1, new SpaceType(1), new User(1));
+        expected1.setName("New York Soccer Club");
+        expected1.setAbbreviation("NYSC");
+        expected1.setDescription("Best soccer club");
+        expected1.setEmail("info@newyorksoccerclub.org");
+        expected1.setLogoUrl("http://img.com/nysc.png");
+        expected1.setWebsiteUrl("http://newyorksoccerclub.org");
+        expected1.setDeleted(false);
+        expected1.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        expected1.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
+
+        Space expected2 = new Space (3, new SpaceType(1), new User(1));
+        expected2.setName("Canadien de Montreal");
+        expected2.setAbbreviation("CH");
+        expected2.setDescription("Best hockey club");
+        expected2.setEmail("info@canadiensdemontral.com");
+        expected2.setLogoUrl("http://canadiensdemontral.com/logo.png");
+        expected2.setWebsiteUrl("http://canadiensdemontral.com");
+        expected2.setDeleted(false);
+        expected2.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        expected2.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
+
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(expected1, expected2));
     }
 
 

@@ -11,7 +11,9 @@ import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.service.SpaceService;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.Matchers.greaterThanOrEqualTo;
@@ -40,6 +42,17 @@ public class SpaceServiceImplTest {
         assertThat(result, equalTo(space));
     }
 
+    @Test
+    public void testFindByIds () throws Exception{
+        // Given
+        Space space1 = new Space(1);
+        Space space2 = new Space(2);
+        when(spaceDao.findByIds(Arrays.asList(1L, 2L))).thenReturn(Arrays.asList(space1, space2));
+
+        List<Space> result = service.findByIds(Arrays.asList(1L, 2L));
+
+        assertThat(result, equalTo(Arrays.asList(space1, space2)));
+    }
 
 
     @Test
