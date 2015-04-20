@@ -70,12 +70,8 @@ public class PostController {
 
         for (Post post : new ArrayList<>(posts)){
             User user = findUser(post.getUserId(), users);
-            if (user == null){
-                continue;
-            }
-
             Space space = findSpace(post.getSpaceId(), spaces);
-            if (space == null){
+            if (space == null || user == null){
                 continue;
             }
             posts.add(post);
