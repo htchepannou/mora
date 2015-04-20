@@ -8,6 +8,7 @@ import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.service.PostService;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +24,12 @@ public class PostServiceImpl implements PostService {
     @Cacheable("Post")
     public Post findById(long id) {
         return postDao.findById(id);
+    }
+
+    @Override
+    @Cacheable("Post")
+    public List<Post> findByIds(Collection<Long> ids) {
+        return postDao.findByIds(ids);
     }
 
     @Override

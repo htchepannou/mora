@@ -1,5 +1,6 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
+import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.PostDao;
@@ -12,6 +13,7 @@ import tchepannou.mora.insidesoccer.domain.NodeAttribute;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
@@ -54,6 +56,20 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
         List<NodeAttribute> attributes = nodeAttributeDao.findByNodeByNames(id, NodeAttribute.POST_ATTRIBUTES.toArray(new String[]{}));
 
         return toPost(node, attributes);
+    }
+
+    @Override
+    public List<Post> findByIds (Collection<Long> ids) {
+        List<Node> nodes = nodeDao.findByIds(ids);
+        Multimap<Long, NodeAttribute> attributes = nodeAttributeDao.findByNodesByNames(ids, NodeAttribute.POST_ATTRIBUTES.toArray(new String[]{}));
+
+        List<Post> result = new LinkedList<>();
+        for (Node node : nodes){
+            Collection<NodeAttribute> attrs = attributes.get(node.getId());
+            Post post = toPost(node, attrs);
+            result.add(post);
+        }
+        return result;
     }
 
     @Override

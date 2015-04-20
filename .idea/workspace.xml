@@ -2,30 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/controller/PostControllerIT.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/resources/db/rest-post-clean.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/resources/db/rest-post-populate.sql" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDaoTest.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDaoIT.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/CorsFilterTest.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/CorsFilterTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDao.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsReadOnlyModelDao.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsReadOnlyModelDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsSpaceDao.sql" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsSpaceDao.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDao.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcReadOnlyModelDao.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcReadOnlyModelDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeAttributeDao.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeAttributeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImpl.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeDao.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/PartyAttributeDao.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/PartyAttributeDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyAttributeDaoImpl.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyAttributeDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyDaoImpl.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/PostSummaryDto.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/PostSummaryDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostSummaryDtoTest.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostSummaryDtoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/config/SecurityConfig.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/config/SecurityConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/ServiceConfig.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/ServiceConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/config/ServiceConfigTest.java" afterPath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/config/ServiceConfigTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/SpaceDtoTest.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/SpaceDtoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/TokenAuthenticationFilter.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/TokenAuthenticationFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/TokenAuthenticationProvider.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/TokenAuthenticationProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/TokenAuthenticationProviderTest.java" afterPath="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/TokenAuthenticationProviderTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/UserDto.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/UserDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/resources/config/application-is.properties" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/resources/config/application-is.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-is.properties" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-is.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/config/application.properties" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/config/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml" afterPath="$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/mora-rest-post.iml" afterPath="$PROJECT_DIR$/mora-rest-post/mora-rest-post.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/PostDao.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/PostDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/PostService.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/PostService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/PostServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/PostServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/PostServiceImplTest.java" afterPath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/PostServiceImplTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/SpaceDao.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/SpaceDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/UserDao.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
@@ -71,13 +69,77 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PostService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/PostService.java">
+      <file leaf-file-name="PostController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24048096" vertical-offset="0" max-vertical-offset="499">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.8392857" vertical-offset="1817" max-vertical-offset="2220">
+              <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#findUser#0;class#PostController#0" expanded="false" />
+                <element signature="method#findSpace#0;class#PostController#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="870">
+              <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+              <folding>
+                <element signature="e#984#985#0" expanded="true" />
+                <element signature="e#1030#1031#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpaceDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/SpaceDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsSpaceDao.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5833333" vertical-offset="693" max-vertical-offset="1125">
+              <caret line="83" column="42" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsUserDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="930">
+              <caret line="55" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding>
+                <element signature="method#findById#0;class#IsUserDao#0" expanded="false" />
+                <element signature="method#findByUsername#0;class#IsUserDao#0" expanded="false" />
+                <element signature="method#toUser#0;class#IsUserDao#0" expanded="false" />
+                <element signature="method#findByAttributeNameValue#0;class#IsUserDao#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -91,25 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDaoTest.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsPostDao.sql" />
-        <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/PostServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/config/IsDaoConfig.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/AbstractNode.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/Party.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/Node.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/LifecycleAwareModel.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Model.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/User.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Space.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Post.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/EnumModel.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Role.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/SpaceType.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/mora-rest-post/pom.xml" />
-        <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/config/Config.java" />
-        <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/Application.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/AuthorDto.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/AuthorDtoTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/UserController.java" />
@@ -127,21 +170,40 @@
         <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/config/SecurityConfig.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/TokenAuthenticationProviderTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/TokenAuthenticationProvider.java" />
-        <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/SpaceDto.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/SpaceDtoTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/PostSummaryDto.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostSummaryDtoTest.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDao.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsSpaceDao.sql" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/config/application.properties" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/PostServiceImpl.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/PostService.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDaoIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/controller/PostControllerIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/main/resources/config/application-is.properties" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application-is.properties" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsReadOnlyModelDao.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeAttributeDao.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDao.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/PostServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/PostService.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/PostServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcPostDao.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/UserDao.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/SpaceDao.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/PostDao.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/NodeDaoImpl.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeDao.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyDaoImpl.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/PartyAttributeDao.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDao.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImpl.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyAttributeDaoImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcReadOnlyModelDao.java" />
+        <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java" />
       </list>
     </option>
   </component>
@@ -153,9 +215,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="445" />
-    <option name="y" value="157" />
-    <option name="width" value="1462" />
+    <option name="x" value="25" />
+    <option name="y" value="88" />
+    <option name="width" value="1842" />
     <option name="height" value="1002" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -196,6 +258,90 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-insidesoccer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-insidesoccer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-insidesoccer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-insidesoccer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="insidesoccer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -299,7 +445,7 @@
       <recent name="tchepannou.mora.insidesoccer" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.IsSpaceDaoIT">
+  <component name="RunManager" selected="JUnit.PartyAttributeDaoImplIT">
     <configuration default="false" name="posts - is" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -322,18 +468,18 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="PostSummaryDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="NodeAttributeDaoImplIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="tchepannou.mora.rest.post.dto.*" />
+          <option name="PATTERN" value="tchepannou.mora.insidesoccer.dao.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="mora-rest-post" />
+      <module name="mora-insidesoccer" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.post.dto" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.post.dto.PostSummaryDtoTest" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.insidesoccer.dao.impl" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.insidesoccer.dao.impl.NodeAttributeDaoImplIT" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -350,41 +496,18 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="All in mora-rest-post" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="mora-rest-post" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="IsSpaceDaoIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PostServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="tchepannou.mora.insidesoccer.dao.impl.*" />
+          <option name="PATTERN" value="tchepannou.mora.core.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="mora-insidesoccer" />
+      <module name="mora-core" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tchepannou.mora.insidesoccer.dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.insidesoccer.dao.impl.IsSpaceDaoIT" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.core.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.core.service.impl.PostServiceImplTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -401,7 +524,7 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="IsSpaceDaoIT.testFindById_team" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PartyAttributeDaoImplIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
           <option name="PATTERN" value="tchepannou.mora.insidesoccer.dao.impl.*" />
@@ -412,8 +535,36 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="tchepannou.mora.insidesoccer.dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.insidesoccer.dao.impl.IsSpaceDaoIT" />
-      <option name="METHOD_NAME" value="testFindById_team" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.insidesoccer.dao.impl.PartyAttributeDaoImplIT" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="NodeAttributeDaoImplIT.testFindByNodeByNames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tchepannou.mora.insidesoccer.dao.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mora-insidesoccer" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.insidesoccer.dao.impl" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.insidesoccer.dao.impl.NodeAttributeDaoImplIT" />
+      <option name="METHOD_NAME" value="testFindByNodeByNames" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -430,9 +581,7 @@
         <option name="TRANSPORT" value="0" />
         <option name="LOCAL" value="true" />
       </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -619,18 +768,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.posts - is" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.SpaceRowMapperTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.PostSummaryDtoTest" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.All in mora-rest-post" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.IsSpaceDaoIT" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.IsSpaceDaoIT.testFindById_team" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.NodeAttributeDaoImplIT" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.PostServiceImplTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.PartyAttributeDaoImplIT" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.NodeAttributeDaoImplIT.testFindByNodeByNames" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.posts - is" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.IsSpaceDaoIT" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.IsSpaceDaoIT.testFindById_team" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.All in mora-rest-post" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.PostSummaryDtoTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.PartyAttributeDaoImplIT" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.NodeAttributeDaoImplIT" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NodeAttributeDaoImplIT.testFindByNodeByNames" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.PostServiceImplTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -715,14 +864,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="445" y="157" width="1462" height="1002" extended-state="0" />
+    <frame x="25" y="88" width="1842" height="1002" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40989012" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6571429" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32197803" sideWeight="0.49965397" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -736,9 +885,9 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2633803" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20777778" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42087913" sideWeight="0.6911085" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.46483517" sideWeight="0.6911085" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
@@ -801,13 +950,19 @@
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java</url>
-          <line>64</line>
+          <url>file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImplIT.java</url>
+          <line>37</line>
           <properties />
-          <option name="timeStamp" value="94" />
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImpl.java</url>
+          <line>59</line>
+          <properties />
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="97" />
+      <option name="time" value="100" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -816,234 +971,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/MemberController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21505377" vertical-offset="615" max-vertical-offset="1275">
-          <caret line="67" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="87" max-vertical-offset="675">
-          <caret line="39" column="35" selection-start-line="28" selection-start-column="0" selection-end-line="39" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/controller/RoleControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43010753" vertical-offset="0" max-vertical-offset="930">
-          <caret line="38" column="133" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="436" max-vertical-offset="945">
-          <caret line="153" column="0" selection-start-line="147" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
-          <folding>
-            <element signature="method#types#0;class#SpaceController#0" expanded="false" />
-            <element signature="method#type#0;class#SpaceController#0" expanded="false" />
-            <element signature="method#get#0;class#SpaceController#0" expanded="false" />
-            <element signature="method#create#0;class#SpaceController#0" expanded="false" />
-            <element signature="method#update#0;class#SpaceController#0" expanded="false" />
-            <element signature="method#delete#0;class#SpaceController#0" expanded="false" />
-            <element signature="method#getCurrentUser#0;class#SpaceController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/resources/db/rest-security-populate.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="509">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/core-clean.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.6551723" vertical-offset="0" max-vertical-offset="255">
-          <caret line="9" column="14" selection-start-line="0" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/controller/AccessTokenControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="3450">
-          <caret line="58" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.1.6.RELEASE/spring-beans-4.1.6.RELEASE.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.52" vertical-offset="6447" max-vertical-offset="7005">
-          <caret line="506" column="23" selection-start-line="506" selection-start-column="0" selection-end-line="506" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/config/ServiceConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#1514#1515#0" expanded="true" />
-            <element signature="e#1558#1559#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcPostDao.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="900">
-          <caret line="2" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/resources/db/rest-post-populate.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0344827" vertical-offset="0" max-vertical-offset="420">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/config/ServiceConfigTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38492063" vertical-offset="128" max-vertical-offset="705">
-          <caret line="25" column="12" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/guava/guava/15.0/guava-15.0.jar!/com/google/common/base/Strings.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.08" vertical-offset="63" max-vertical-offset="1845">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding>
-            <element signature="e#464#465#0" expanded="true" />
-            <element signature="e#511#512#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="303" max-vertical-offset="825">
-          <caret line="29" column="20" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/dto/UserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1095">
-          <caret line="57" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/resources/db/rest-post-clean.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5913978" vertical-offset="0" max-vertical-offset="279">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/test/java/tchepannou/mora/rest/security/dto/AccessTokenDtoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19480519" vertical-offset="0" max-vertical-offset="450">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/test/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="308">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4" vertical-offset="800" max-vertical-offset="1275">
-          <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12825651" vertical-offset="41" max-vertical-offset="540">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/AbstractRestSecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="615" max-vertical-offset="1125">
-          <caret line="67" column="76" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/CorsFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="19" column="140" selection-start-line="19" selection-start-column="106" selection-end-line="19" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/CorsFilterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="232" max-vertical-offset="540">
-          <caret line="38" column="111" selection-start-line="38" selection-start-column="111" selection-end-line="38" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/config/SecurityConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65731466" vertical-offset="2" max-vertical-offset="615">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.2.7.RELEASE/spring-security-core-3.2.7.RELEASE.jar!/org/springframework/security/authentication/AuthenticationManager.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.116504855" vertical-offset="0" max-vertical-offset="515">
-          <caret line="8" column="71" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/security/TokenAuthenticationProviderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3006012" vertical-offset="240" max-vertical-offset="1335">
@@ -1067,18 +994,6 @@
           <folding>
             <element signature="method#doFilter#0;class#TokenAuthenticationFilter#0" expanded="false" />
             <element signature="method#authenticate#0;class#TokenAuthenticationFilter#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="378" max-vertical-offset="1680">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#findUser#0;class#PostController#0" expanded="false" />
-            <element signature="method#findSpace#0;class#PostController#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1131,14 +1046,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/SpaceDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12024048" vertical-offset="0" max-vertical-offset="499">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.11/junit-4.11.jar!/org/junit/internal/runners/model/ReflectiveCallable.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.6" vertical-offset="35" max-vertical-offset="390">
@@ -1171,48 +1078,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21643287" vertical-offset="297" max-vertical-offset="915">
-          <caret line="39" column="82" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeAttributeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <caret line="9" column="115" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-space3/src/main/resources/config/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.35270542" vertical-offset="176" max-vertical-offset="675">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/PostDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/PostServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1503006" vertical-offset="0" max-vertical-offset="855">
-          <caret line="14" column="44" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
-          <folding>
-            <element signature="e#675#676#0" expanded="true" />
-            <element signature="e#718#719#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1252,25 +1122,323 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDao.java">
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/PostServiceImplTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58116233" vertical-offset="355" max-vertical-offset="1035">
-          <caret line="58" column="91" selection-start-line="58" selection-start-column="13" selection-end-line="58" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="404" max-vertical-offset="1770">
+          <caret line="52" column="71" selection-start-line="52" selection-start-column="46" selection-end-line="52" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#findById#0;class#IsPostDao#0" expanded="false" />
-            <element signature="method#findIdsPublishedForUser#0;class#IsPostDao#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/PostService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24048096" vertical-offset="0" max-vertical-offset="499">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/impl/UserServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3255">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19607843" vertical-offset="0" max-vertical-offset="1365">
+          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="method#Post#0;class#Post#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/org/springframework/cache/annotation/Cacheable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.26595744" vertical-offset="0" max-vertical-offset="564">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="870">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcModelDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+          <caret line="8" column="64" selection-start-line="8" selection-start-column="64" selection-end-line="8" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3582343" vertical-offset="44" max-vertical-offset="1425">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1208#1209#0" expanded="true" />
+            <element signature="method#findByEmail#0;class#UserServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.07640068" vertical-offset="0" max-vertical-offset="589">
+          <caret line="6" column="65" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/PostServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="915">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding>
+            <element signature="e#841#842#0" expanded="true" />
+            <element signature="e#886#887#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/PostDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcPostDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840">
+          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getPreparedStatementCreator#0;class#JdbcPostDao#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/NodeDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="9" column="9" selection-start-line="9" selection-start-column="9" selection-end-line="9" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="345">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/PartyAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+          <folding>
+            <element signature="method#toUser#0;class#PartyAttribute#0" expanded="false" />
+            <element signature="method#toSpace#0;class#PartyAttribute#0" expanded="false" />
+            <element signature="method#toPartyIdSet#0;class#PartyAttribute#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="554" max-vertical-offset="1680">
+          <caret line="72" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#toPost#0;class#IsPostDao#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/PartyAttributeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/NodeAttributeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="589" max-vertical-offset="1020">
+          <caret line="49" column="70" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImplIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="192" max-vertical-offset="810">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyAttributeDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="333" max-vertical-offset="975">
+          <caret line="52" column="38" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsReadOnlyModelDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6" max-vertical-offset="465">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/jdbc/JdbcReadOnlyModelDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="1125">
+          <caret line="44" column="189" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <folding>
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/PartyAttributeDaoImplIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23093683" vertical-offset="29" max-vertical-offset="1290">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.8392857" vertical-offset="1817" max-vertical-offset="2220">
+          <caret line="128" column="48" selection-start-line="128" selection-start-column="48" selection-end-line="128" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#findUser#0;class#PostController#0" expanded="false" />
+            <element signature="method#findSpace#0;class#PostController#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/SpaceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="870">
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding>
+            <element signature="e#984#985#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/dao/SpaceDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDaoIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29411766" vertical-offset="0" max-vertical-offset="1800">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="930">
+          <caret line="55" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="method#findById#0;class#IsUserDao#0" expanded="false" />
+            <element signature="method#findByUsername#0;class#IsUserDao#0" expanded="false" />
+            <element signature="method#toUser#0;class#IsUserDao#0" expanded="false" />
+            <element signature="method#findByAttributeNameValue#0;class#IsUserDao#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsSpaceDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5833333" vertical-offset="693" max-vertical-offset="1125">
+          <caret line="83" column="42" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="42" />
+          <folding />
         </state>
       </provider>
     </entry>

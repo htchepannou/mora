@@ -41,6 +41,19 @@ public class PostServiceImplTest {
     }
 
     @Test
+    public void testFindByIds() throws Exception {
+        // Given
+        List<Post> expected = Arrays.asList(new Post(1), new Post(2), new Post(3));
+        when(dao.findByIds(Arrays.asList(1L, 2L, 3L))).thenReturn(expected);
+
+        // Then
+        List<Post> result = service.findByIds(Arrays.asList(1L, 2L, 3L));
+
+        // Then
+        assertThat(result, equalTo(expected));
+    }
+
+    @Test
     public void testFindIdsPublishedForUser() throws Exception {
         // Given
         List<Long> expected = Arrays.asList(1L, 2L, 3L);

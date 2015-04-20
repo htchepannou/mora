@@ -10,7 +10,9 @@ import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.service.SpaceService;
 
+import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class SpaceServiceImpl implements SpaceService {
@@ -23,6 +25,12 @@ public class SpaceServiceImpl implements SpaceService {
     @Cacheable ("Space")
     public Space findById(long id) {
         return spaceDao.findById(id);
+    }         ;
+
+    @Override
+    @Cacheable ("Space")
+    public List<Space> findByIds (Collection<Long> ids){
+        return spaceDao.findByIds(ids);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
+import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
 import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.core.domain.User;
@@ -10,6 +11,7 @@ import tchepannou.mora.insidesoccer.domain.PartyAttribute;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -36,6 +38,20 @@ public class IsUserDao implements UserDao{
         List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id, PartyAttribute.USER_ATTRIBUTE_NAMES.toArray(new String[]{}));
 
         return toUser(party, attributes);
+    }
+
+    @Override
+    public List<User> findByIds(Collection<Long> ids) {
+        List<Party> partys = partyDao.findByIds(ids);
+        Multimap<Long, PartyAttribute> attributes = partyAttributeDao.findByPartiesByNames(ids, PartyAttribute.USER_ATTRIBUTE_NAMES.toArray(new String[]{}));
+
+        List<User> result = new LinkedList<>();
+        for (Party party : partys){
+            Collection<PartyAttribute> attrs = attributes.get(party.getId());
+            User user = toUser(party, attrs);
+            result.add(user);
+        }
+        return result;
     }
 
     @Override

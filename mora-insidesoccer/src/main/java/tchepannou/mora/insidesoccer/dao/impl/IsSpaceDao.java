@@ -1,6 +1,7 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
 import com.google.common.base.Strings;
+import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import tchepannou.mora.core.dao.SpaceDao;
@@ -12,6 +13,7 @@ import tchepannou.mora.insidesoccer.domain.PartyAttribute;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 
 public class IsSpaceDao implements SpaceDao {
@@ -39,6 +41,20 @@ public class IsSpaceDao implements SpaceDao {
         List<PartyAttribute> attributes = partyAttributeDao.findByPartyByNames(id, PartyAttribute.SPACE_ATTRIBUTE_NAMES.toArray(new String[]{}));
 
         return toSpace(party, attributes);
+    }
+
+    @Override
+    public List<Space> findByIds(Collection<Long> ids) {
+        List<Party> partys = partyDao.findByIds(ids);
+        Multimap<Long, PartyAttribute> attributes = partyAttributeDao.findByPartiesByNames(ids, PartyAttribute.SPACE_ATTRIBUTE_NAMES.toArray(new String[]{}));
+
+        List<Space> result = new LinkedList<>();
+        for (Party party : partys){
+            Collection<PartyAttribute> attrs = attributes.get(party.getId());
+            Space space = toSpace(party, attrs);
+            result.add(space);
+        }
+        return result;
     }
 
     @Override

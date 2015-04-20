@@ -2,6 +2,8 @@ package tchepannou.mora.rest.post.controller;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,15 +21,20 @@ import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.rest.post.dto.PostSummaryDto;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 @RestController
 @Api (value="Posts", description = "Manage Posts")
 public class PostController {
+    private static final Logger LOG = LoggerFactory.getLogger(PostController.class);
+
     //-- Attribute
     @Autowired
     private PostService postService;
@@ -40,7 +47,7 @@ public class PostController {
 
     @Autowired
     private AccessTokenService accessTokenService;
-    
+
     
     //-- REST methods
     @ApiOperation ("Retrieve all Post published to current user")
@@ -57,15 +64,11 @@ public class PostController {
     public List<PostSummaryDto> getUserPosts (@PathVariable long userId, @RequestParam int limit, @RequestParam int offset){
         /* get the posts */
         List<Long> ids = postService.findIdsPublishedForUser(userId, limit, offset);
-        List<Post> posts = new LinkedList<>();
-        Map<Long, Space> spaces = new HashMap<>();
-        Map<Long, User> users = new HashMap<>();
-        for (long id : ids){
-            Post post = postService.findById(id);
-            if (post == null){
-                continue;
-            }
-            
+        List<Post> posts = postService.findByIds(ids);
+        Map<Long, Space> spaces = toSpaceMap(posts);
+        Map<Long, User> users = toUserMap(posts);
+
+        for (Post post : new ArrayList<>(posts)){
             User user = findUser(post.getUserId(), users);
             if (user == null){
                 continue;
@@ -99,7 +102,40 @@ public class PostController {
         AccessToken accessToken = accessTokenService.findByValue(token);
         return accessToken != null ? accessToken.getUserId() : -1;
     }
+    
+    protected Map<Long, User> toUserMap(List<Post> posts){
+        Set<Long> ids = new HashSet<>();
+        for (Post post : posts){
+            ids.add(post.getUserId());
+        }
+        LOG.info("userIds: " + ids);
 
+        List<User> users = userService.findByIds(ids);
+        LOG.info("users: " + users);
+        Map<Long, User> result = new HashMap<>();
+        for (User user : users){
+            result.put(user.getId(), user);
+        }
+        return result;
+    }
+
+    protected Map<Long, Space> toSpaceMap(List<Post> posts){
+        Set<Long> ids = new HashSet<>();
+        for (Post post : posts){
+            ids.add(post.getSpaceId());
+        }
+        LOG.info("spaceIds: " + ids);
+
+        List<Space> spaces = spaceService.findByIds(ids);
+        LOG.info("spaces: " + spaces);
+
+        Map<Long, Space> result = new HashMap<>();
+        for (Space space : spaces){
+            result.put(space.getId(), space);
+        }
+        return result;
+    }
+    
     private User findUser (long userId, Map<Long, User> users){
         User result = users.get(userId);
         if (result == null){

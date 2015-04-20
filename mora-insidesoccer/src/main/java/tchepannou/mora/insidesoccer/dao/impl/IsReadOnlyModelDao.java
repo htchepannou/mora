@@ -17,6 +17,7 @@ public abstract class IsReadOnlyModelDao<T extends Model> extends JdbcReadOnlyMo
 
 
 
+
     public void update(T token) {
         throw new UnsupportedOperationException();
     }

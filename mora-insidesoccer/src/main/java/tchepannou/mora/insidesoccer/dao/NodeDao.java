@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface NodeDao {
     Node findById(long id);
+    List<Node> findByIds(Collection<Long> ids);
     List<Long> findIdsByRelationshhipTypeByParties(long relationshipType, Collection<Long> partyIds, int limit, int offset);
 }

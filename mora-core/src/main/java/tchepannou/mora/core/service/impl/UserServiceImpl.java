@@ -13,6 +13,7 @@ import tchepannou.mora.core.exception.UserException;
 import tchepannou.mora.core.exception.UsernameAlreadyAssignedException;
 import tchepannou.mora.core.service.UserService;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
@@ -28,6 +29,12 @@ public class UserServiceImpl implements UserService{
     @Cacheable ("User")
     public User findById(long id) {
         return userDao.findById(id);
+    }
+
+    @Override
+    @Cacheable ("User")
+    public List<User> findByIds (Collection<Long> ids){
+        return userDao.findByIds(ids);
     }
 
     @Override
