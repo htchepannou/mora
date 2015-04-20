@@ -39,12 +39,13 @@ public class IsDaoConfig extends DaoConfig{
         return new NodeAttributeDaoImpl();
     }
 
+    //-- DaoConfig overrides
     @Bean
+    @Override
     public PostDao postDao(){
         return new IsPostDao();
     }
 
-    //-- DaoConfig overrides
     @Bean
     @Override
     public UserDao userDao () {
