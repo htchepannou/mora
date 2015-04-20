@@ -14,6 +14,7 @@ import tchepannou.mora.insidesoccer.config.JdbcConfig;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
@@ -65,6 +66,29 @@ public class IsUserDaoIT {
 
         // Then
         assertThat(result, nullValue());
+    }
+
+    public void testFindByIds () throws Exception{
+        // When
+        List<User> result = dao.findByIds(Arrays.asList(300L, 310L));
+
+        // Then
+        User expected1 = new User(300);
+        expected1.setEmail("duplicate1@gmail.com");
+        expected1.setUsername("duplicate");
+        expected1.setDeleted(false);
+        expected1.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        expected1.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+
+        User expected2 = new User(310);
+        expected2.setEmail("duplicate2@gmail.com");
+        expected2.setUsername("duplicate");
+        expected2.setDeleted(false);
+        expected2.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        expected2.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(expected2));
     }
 
     @Test

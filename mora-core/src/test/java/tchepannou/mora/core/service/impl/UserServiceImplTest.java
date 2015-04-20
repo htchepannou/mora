@@ -64,6 +64,20 @@ public class UserServiceImplTest{
         // Then
         assertThat(result, nullValue());
     }
+    
+
+    @Test
+    public void testFindByIds () throws Exception{
+        // Given
+        User user1 = new User(1);
+        User user2 = new User(2);
+        when(userDao.findByIds(Arrays.asList(1L, 2L))).thenReturn(Arrays.asList(user1, user2));
+
+        List<User> result = service.findByIds(Arrays.asList(1L, 2L));
+
+        assertThat(result, equalTo(Arrays.asList(user1, user2)));
+    }
+    
 
 
     @Test

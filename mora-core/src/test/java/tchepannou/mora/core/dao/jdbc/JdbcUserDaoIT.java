@@ -15,12 +15,12 @@ import tchepannou.mora.core.domain.User;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.Matchers.lessThan;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.Matchers.*;
 import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import static org.springframework.test.util.MatcherAssertionErrors.assertThat;
 
@@ -137,6 +137,33 @@ public class JdbcUserDaoIT {
         assertThat(result, hasSize(1));
         assertThat(result, hasItems(user1));
 
+    }
+
+    public void testFindByIds () throws Exception{
+        // When
+        List<User> result = userDao.findByIds(Arrays.asList(1L, 11L));
+
+        // Then
+        User user1 = new User (1);
+        user1.setUsername("ray.sponsible");
+        user1.setEmail("ray.sponsible@gmail.com");
+        user1.setLastName("Sponsible");
+        user1.setFirstName("Ray");
+        user1.setDeleted(false);
+        user1.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        user1.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
+
+        User user2 = new User (11);
+        user2.setUsername("##ray.sponsible");
+        user2.setEmail("ray.sponsible@gmail.com");
+        user2.setLastName("Sponsible");
+        user2.setFirstName("Ray");
+        user2.setDeleted(false);
+        user2.setCreationDate(new Timestamp(fmt.parse("2011-01-01 10:30:55").getTime()));
+        user2.setLastUpdate(new Timestamp(fmt.parse("2012-12-01 14:30:55").getTime()));
+
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(user1, user2));
     }
 
 
