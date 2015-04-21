@@ -21,6 +21,7 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
     public static final long NODE_TYPE_ID = 1L;
     public static final long REL_TYPE_ID = 1L;
     public static final long MEMBER_TYPE_ID = 10L;
+    public static final long PARTY_TEAM_ID=3;
 
     @Autowired
     private NodeDao nodeDao;
@@ -78,7 +79,7 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
                 " JOIN node N  ON R.nprel_node_fk=N.node_id\n" +
                 " JOIN party P ON R.nprel_party_fk=P.party_id\n" +
                 " JOIN prel PR ON R.nprel_party_fk=PR.prel_dest_fk\n" +
-                " WHERE N.node_type_fk=? AND R.nprel_type_fk=? AND N.node_deleted=? AND P.party_deleted=? AND PR.prel_type_fk=? AND PR.prel_source_fk=?\n" +
+                " WHERE N.node_type_fk=? AND R.nprel_type_fk=? AND N.node_deleted=? AND P.party_deleted=? AND P.party_type_fk=? AND PR.prel_type_fk=? AND PR.prel_source_fk=?\n" +
                 " ORDER BY N.node_date DESC\n" +
                 " LIMIT " + limit + " OFFSET " + offset;
 
@@ -87,6 +88,7 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
                 REL_TYPE_ID,
                 false,
                 false,
+                PARTY_TEAM_ID,
                 MEMBER_TYPE_ID,
                 userId
         };

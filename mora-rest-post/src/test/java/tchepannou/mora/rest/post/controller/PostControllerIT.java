@@ -1,7 +1,6 @@
 package tchepannou.mora.rest.post.controller;
 
 import com.jayway.restassured.RestAssured;
-import org.apache.http.HttpStatus;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -15,6 +14,7 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.rest.post.Application;
+import tchepannou.mora.rest.post.dto.PostSummaryDto;
 
 import static com.jayway.restassured.RestAssured.when;
 
@@ -42,11 +42,6 @@ public class PostControllerIT {
     @Test
     @Ignore
     public void getUserPosts() throws Exception {
-        when()
-            .get("/users/300/posts?limit=100&offset=0")
-        .then()
-            .statusCode(HttpStatus.SC_OK)
-                .log().all();
-
+        PostSummaryDto[] result = when().get("/users/300/posts?limit=100&offset=0").as(PostSummaryDto[].class);
     }
 }
