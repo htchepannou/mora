@@ -68,6 +68,33 @@ public class NodeDaoImplTest {
         assertThat(result, nullValue());
     }
 
+    @Test
+    public void testFindByIds () throws Exception{
+        // When
+        List<Node> result = dao.findByIds(Arrays.asList(100L, 200L, 300L));
+
+        // Then
+        Node expected1 = new Node();
+        expected1.setId(100L);
+        expected1.setTypeId(1);
+        expected1.setOwnerId(100);
+        expected1.setChannelId(100);
+        expected1.setDeleted(false);
+        expected1.setStatus(1);
+        expected1.setDate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+
+        Node expected2 = new Node();
+        expected2.setId(300L);
+        expected2.setTypeId(1);
+        expected2.setOwnerId(300);
+        expected2.setChannelId(300);
+        expected2.setDeleted(false);
+        expected2.setStatus(1);
+        expected2.setDate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(expected1, expected2));
+    }
 
     @Test
     public void testFindIdsByRelationshhipTypeByParties() throws Exception {

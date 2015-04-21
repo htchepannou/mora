@@ -22,10 +22,10 @@ public class NodeRowMapperTest {
     public void testMapRow() throws Exception {
         // Given
         Timestamp now = new Timestamp(System.currentTimeMillis());
-        when(rs.getLong("node_id")).thenReturn(1L);
+        when(rs.getLong("nprel_id")).thenReturn(1L);
         when(rs.getLong("node_type_fk")).thenReturn(10L);
         when(rs.getLong("node_owner_fk")).thenReturn(100L);
-        when(rs.getLong("node_channel_fk")).thenReturn(1000L);
+        when(rs.getLong("nprel_party_fk")).thenReturn(1000L);
         when(rs.getBoolean("node_deleted")).thenReturn(true);
         when(rs.getInt("node_status")).thenReturn(3);
         when(rs.getTimestamp("node_date")).thenReturn(now);
