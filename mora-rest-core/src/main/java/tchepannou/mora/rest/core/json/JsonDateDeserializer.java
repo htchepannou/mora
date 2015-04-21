@@ -1,7 +1,6 @@
 package tchepannou.mora.rest.core.json;
 
 import com.fasterxml.jackson.core.JsonParser;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.exc.InvalidFormatException;
@@ -14,7 +13,7 @@ import java.util.Date;
 
 public class JsonDateDeserializer extends JsonDeserializer<Date> {
     @Override
-    public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException, JsonProcessingException {
+    public Date deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
         String text = jsonParser.getText();
         if (Strings.isNullOrEmpty(text)){
             return null;
