@@ -34,13 +34,13 @@ public class NodeDaoImpl extends IsReadOnlyModelDao<Node> implements NodeDao {
 
     //-- NodeDao overrides
     public Node findById (long id){
-        String sql = String.format("SELECT N.*, NP.* FROM %s N JOIN nprel NP ON %s=NP.nprel_id WHERE nprel_id=?", getTableName(), getIdColumn());
+        String sql = String.format("SELECT N.*, R.* FROM %s N JOIN nprel R ON %s=R.nprel_node_fk WHERE R.nprel_id=?", getTableName(), getIdColumn());
         return findSingle(sql, new Object[]{id});
     }
 
     @Override
     public List<Node> findByIds(Collection<Long> ids) {
-        StringBuilder sql = new StringBuilder(String.format("SELECT N.*, R.* FROM %s N JOIN nprel R ON %s=R.nprel_id WHERE N.node_deleted=?", getTableName(), getIdColumn()));
+        StringBuilder sql = new StringBuilder(String.format("SELECT N.*, R.* FROM %s N JOIN nprel R ON %s=R.nprel_node_fk WHERE N.node_deleted=?", getTableName(), getIdColumn()));
         List params = new LinkedList<>();
         params.add(false);
         if (!ids.isEmpty()) {

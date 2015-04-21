@@ -43,14 +43,19 @@ public class NodeAttributeDaoImpl extends IsReadOnlyModelDao<NodeAttribute> impl
 
     @Override
     public Multimap<Long, NodeAttribute> findByNodesByNames(Collection<Long> nodeIds, String... names) {
-        StringBuilder sql = new StringBuilder("SELECT A.* FROM nattr A JOIN node P ON A.nattr_node_fk=P.node_id WHERE P.node_deleted=?");
+        StringBuilder sql = new StringBuilder("SELECT A.*, R.nprel_id" +
+                " FROM nattr A" +
+                "   JOIN node N ON A.nattr_node_fk=N.node_id" +
+                "   JOIN nprel R ON A.nattr_node_fk=R.nprel_node_fk" +
+                " WHERE N.node_deleted=?");
 
         List params = new ArrayList();
         params.add(false);
 
+
         if (!nodeIds.isEmpty()) {
             sql.append(" AND ");
-            whereIn(sql, "nattr_node_fk", nodeIds, params);
+            whereIn(sql, "R.nprel_id", nodeIds, params);
         }
         if (names.length>0){
             sql.append(" AND ");

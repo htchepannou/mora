@@ -140,6 +140,7 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
         Post result = new Post ();
         node.toPost(result);
         NodeAttribute.toPost(attributes, result);
+
         return result;
     }
 

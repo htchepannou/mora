@@ -36,11 +36,11 @@ public class NodeDaoImplTest {
     @Test
     public void testFindById () throws Exception{
         // When
-        Node result = dao.findById(100);
+        Node result = dao.findById(101);
 
         // Then
         Node expected = new Node();
-        expected.setId(100L);
+        expected.setId(101L);
         expected.setTypeId(1);
         expected.setOwnerId(100);
         expected.setChannelId(100);
@@ -71,11 +71,11 @@ public class NodeDaoImplTest {
     @Test
     public void testFindByIds () throws Exception{
         // When
-        List<Node> result = dao.findByIds(Arrays.asList(100L, 200L, 300L));
+        List<Node> result = dao.findByIds(Arrays.asList(101L, 200L, 300L));
 
         // Then
         Node expected1 = new Node();
-        expected1.setId(100L);
+        expected1.setId(101L);
         expected1.setTypeId(1);
         expected1.setOwnerId(100);
         expected1.setChannelId(100);

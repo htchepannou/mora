@@ -22,6 +22,7 @@ public class NodeAttributeRowMapperTest {
         // Given
         when(rs.getLong("nattr_id")).thenReturn(1L);
         when(rs.getLong("nattr_node_fk")).thenReturn(11L);
+        when(rs.getLong("nprel_id")).thenReturn(12L);
         when(rs.getString("nattr_name")).thenReturn("title");
         when(rs.getString("nattr_value")).thenReturn("Hello world");
 
@@ -31,7 +32,7 @@ public class NodeAttributeRowMapperTest {
         // Then
         NodeAttribute expected = new NodeAttribute();
         expected.setId(1);
-        expected.setNodeId(11);
+        expected.setNodeId(12);
         expected.setName("title");
         expected.setValue("Hello world");
         assertThat(result, equalTo(expected));

@@ -32,10 +32,10 @@ public class NodeAttributeDaoImplIT {
     @Test
     public void testFindByNodeByNames() throws Exception {
         // Given
-        Node party = new Node(100);
+        Node party = new Node(101);
 
         // When
-        List<NodeAttribute> result = dao.findByNodeByNames(100, "title", "description");
+        List<NodeAttribute> result = dao.findByNodeByNames(101, "title", "description");
 
         // Then
         assertThat(result, hasSize(2));
@@ -48,7 +48,7 @@ public class NodeAttributeDaoImplIT {
     @Test
     public void testFindByNodeByNames_deletedNode_returnsEmpty() throws Exception {
         // When
-        List<NodeAttribute> result = dao.findByNodeByNames(200, "title", "description");
+        List<NodeAttribute> result = dao.findByNodeByNames(201, "title", "description");
 
         // Then
         assertThat(result, hasSize(0));

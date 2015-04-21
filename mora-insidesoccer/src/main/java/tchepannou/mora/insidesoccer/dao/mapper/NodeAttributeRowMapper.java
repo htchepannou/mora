@@ -11,7 +11,7 @@ public class NodeAttributeRowMapper implements RowMapper<NodeAttribute> {
     public NodeAttribute mapRow(ResultSet rs, int i) throws SQLException {
         NodeAttribute result = new NodeAttribute();
         result.setId(rs.getLong("nattr_id"));
-        result.setNodeId(rs.getLong("nattr_node_fk"));
+        result.setNodeId(rs.getLong("nprel_id"));
         result.setName(rs.getString("nattr_name"));
         result.setValue(rs.getString("nattr_value"));
         return result;
