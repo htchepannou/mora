@@ -12,9 +12,9 @@ public class PostDto extends BasePostDto{
 
 
     //-- Builder
-    public static class Builder extends BasePostDtoBuilder{
+    public static class Builder extends BasePostDtoBuilder<PostDto>{
         @Override
-        protected BasePostDto createDto() {
+        protected PostDto createDto() {
             return new PostDto();
         }
 

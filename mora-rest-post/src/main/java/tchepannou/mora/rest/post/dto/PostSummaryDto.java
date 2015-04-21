@@ -2,9 +2,9 @@ package tchepannou.mora.rest.post.dto;
 
 public class PostSummaryDto extends BasePostDto{
     //-- Builder
-    public static class Builder extends BasePostDtoBuilder{
+    public static class Builder extends BasePostDtoBuilder<PostSummaryDto>{
         @Override
-        protected BasePostDto createDto() {
+        protected PostSummaryDto createDto() {
             return new PostSummaryDto();
         }
     }

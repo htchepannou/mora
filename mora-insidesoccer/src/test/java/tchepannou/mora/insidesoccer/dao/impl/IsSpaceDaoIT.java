@@ -72,6 +72,25 @@ public class IsSpaceDaoIT {
     }
 
     @Test
+    public void testFindById_noLogo() throws Exception {
+        // When
+        Space result = dao.findById(600);
+
+        // Then
+        Space expected = new Space (600, new SpaceType(4), new User(1));
+        expected.setDescription("description1");
+        expected.setName("name1");
+        expected.setLogoUrl("http://google.ca/logo.png");
+        expected.setWebsiteUrl("http://google.ca");
+        expected.setEmail("info@google.ca");
+        expected.setAddress("Montreal, CA");
+        expected.setDeleted(false);
+        expected.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
+        expected.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        assertThat(result, equalTo(expected));
+    }
+
+    @Test
     public void testFindById_badId_returnsNull() throws Exception {
         // When
         Space result = dao.findById(9999);

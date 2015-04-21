@@ -6,14 +6,14 @@ import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 
 //-- Builder
-public abstract class BasePostDtoBuilder {
+public abstract class BasePostDtoBuilder<T extends BasePostDto> {
     protected Post post;
     protected User user;
     protected Space space;
 
-    protected abstract BasePostDto createDto();
+    protected abstract T createDto();
 
-    public BasePostDto build (){
+    public T build (){
         Preconditions.checkState(post != null, "post == null");
 
         Preconditions.checkState(space != null, "space == null");
@@ -22,7 +22,7 @@ public abstract class BasePostDtoBuilder {
         Preconditions.checkState(user != null, "user == null");
         Preconditions.checkState(user.getId() == post.getUserId(), "post.userId != user.id");
 
-        BasePostDto result = createDto();
+        T result = createDto();
 
         result.id = post.getId();
         result.title = post.getTitle();

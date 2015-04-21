@@ -66,7 +66,7 @@ public class PostController extends BaseRestController{
                 continue;
             }
 
-            PostSummaryDto dto = new PostSummaryDto.Builder()
+            PostSummaryDto dto = (PostSummaryDto)new PostSummaryDto.Builder()
                     .withPost(post)
                     .withSpace(space)
                     .withUser(user)
@@ -88,7 +88,7 @@ public class PostController extends BaseRestController{
         Space space = spaceService.findById(post.getSpaceId());
         User user = userService.findById(post.getUserId());
 
-        return new PostDto.Builder()
+        return (PostDto)new PostDto.Builder()
                 .withPost(post)
                 .withSpace(space)
                 .withUser(user)

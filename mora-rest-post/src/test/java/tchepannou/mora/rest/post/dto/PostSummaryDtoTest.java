@@ -40,7 +40,7 @@ public class PostSummaryDtoTest {
         post.setCreationDate(yesterday);
 
         // When
-        PostSummaryDto result = new PostSummaryDto.Builder()
+        PostSummaryDto result = (PostSummaryDto)new PostSummaryDto.Builder()
                 .withSpace(space)
                 .withUser(user)
                 .withPost(post)

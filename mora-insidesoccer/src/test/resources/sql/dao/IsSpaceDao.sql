@@ -21,6 +21,15 @@ insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(504,
 insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(505, 500, 'city', 'Montreal');
 insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(506, 500, 'country', 'CA');
 
+-- testFindById_no_logo
+insert into party(party_id, party_deleted, party_status, party_date, party_creation_date, party_type_fk, party_owner_fk) values(600, 0, 1, '2014-01-01 12:30:55', '2014-01-01 10:30:55', 4, 1);
+insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(600, 600, 'name', 'name1');
+insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(601, 600, 'description', 'description1');
+insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(603, 600, 'website_url', 'http://google.ca');
+insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(604, 600, 'email', 'info@google.ca');
+insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(605, 600, 'city', 'Montreal');
+insert into pattr(pattr_id, pattr_party_fk, pattr_name, pattr_value) values(606, 600, 'country', 'CA');
+
 -- testFindById_deleted
 insert into party(party_id, party_deleted, party_status, party_date, party_creation_date, party_type_fk, party_owner_fk) values(200, 1, 1, '2014-01-01 12:30:55', '2014-01-01 10:30:55', 3, 1);
 

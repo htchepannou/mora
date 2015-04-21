@@ -41,7 +41,7 @@ public class PostDtoTest {
         post.setCreationDate(yesterday);
 
         // When
-        PostDto result = new PostDto.Builder()
+        PostDto result = (PostDto)new PostDto.Builder()
                 .withSpace(space)
                 .withUser(user)
                 .withPost(post)

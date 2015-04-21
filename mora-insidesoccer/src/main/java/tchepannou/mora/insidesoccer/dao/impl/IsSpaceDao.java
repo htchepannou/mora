@@ -29,6 +29,9 @@ public class IsSpaceDao implements SpaceDao {
     @Value ("${insidesoccer.asset.url}")
     private String assetUrl;
 
+    @Value("${insidesoccer.logo.default}")
+    private String defaultLogoUrl;
+
 
     //-- SpaceDao overrides
     @Override
@@ -78,12 +81,15 @@ public class IsSpaceDao implements SpaceDao {
         party.toSpace(result);
         PartyAttribute.toSpace(attributes, result);
 
-        if (!Strings.isNullOrEmpty(assetUrl)) {
+        if (Strings.isNullOrEmpty(result.getLogoUrl())){
+            result.setLogoUrl(defaultLogoUrl);
+        } else if (!Strings.isNullOrEmpty(assetUrl)){
             String logoUrl = result.getLogoUrl();
             if (!Strings.isNullOrEmpty(logoUrl) && !logoUrl.startsWith("http://") && !logoUrl.startsWith("https://")) {
                 result.setLogoUrl(assetUrl + logoUrl);
             }
         }
+
         return result;
     }
 }
