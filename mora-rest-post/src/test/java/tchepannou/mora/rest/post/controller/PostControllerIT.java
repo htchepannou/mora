@@ -15,11 +15,9 @@ import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.rest.core.security.SecurityContants;
 import tchepannou.mora.rest.post.Application;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-
 import static com.jayway.restassured.RestAssured.given;
 import static com.jayway.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 
@@ -36,7 +34,6 @@ public class PostControllerIT {
     @Autowired
     private PostDao dao;
 
-    private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     
     @Before
@@ -45,10 +42,13 @@ public class PostControllerIT {
     }
 
     @Test
-    public void getUserPosts() throws Exception {
-        when()
-            .get("/users/300/posts?limit=100&offset=0")
+    public void getCurrentUserPosts() throws Exception {
+        given()
+            .header(SecurityContants.X_AUTH_TOKEN.name(), "bc9a50e1e0085b13c4bba866f6dfe57c")
+        .when()
+            .get("/posts?limit=100&offset=0")
         .then()
+                .statusCode(200)
                 .log().all()
                 .body("id", hasSize(2))
                 .body("id", hasItems(300, 301))
@@ -58,18 +58,40 @@ public class PostControllerIT {
     }
 
     @Test
-    public void getCurrentUserPosts() throws Exception {
-        given()
-            .header(SecurityContants.X_AUTH_TOKEN.name(), "bc9a50e1e0085b13c4bba866f6dfe57c")
-        .when()
-            .get("/users/300/posts?limit=100&offset=0")
+    public void getCurrentUserPosts_unauthenticated_returns404() throws Exception {
+        when()
+            .get("/posts?limit=100&offset=0")
         .then()
+                .statusCode(401)
                 .log().all()
-                .body("id", hasSize(2))
-                .body("id", hasItems(300, 301))
-                .body("title", hasItems("title1", "title2"))
-                .body("summary", hasItems("summary1", "summary2"))
         ;
+    }
 
+    @Test
+    public void getPost() throws Exception {
+        when()
+            .get("/posts/{postId}", 300)
+        .then()
+            .statusCode(200)
+            .log().all()
+            .body("id", equalTo(300))
+            .body("title", equalTo("title1"))
+            .body("summary", equalTo("summary1"))
+            .body("content", equalTo("<p>content1</p>"))
+            .body("user.id", equalTo(300))
+            .body("user.name", equalTo("Ray Sponsible"))
+            .body("space.id", equalTo(300))
+            .body("space.name", equalTo("space1"))
+            .body("space.logoUrl", equalTo("http://space1.com/logo.png"))
+        ;
+    }
+
+    @Test
+    public void getPost_badId_returns404() throws Exception {
+        when()
+            .get("/posts/{postId}", 999)
+        .then()
+            .statusCode(404)
+        ;
     }
 }

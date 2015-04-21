@@ -2,8 +2,6 @@ package tchepannou.mora.rest.post.controller;
 
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,10 +16,12 @@ import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.PostService;
 import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.UserService;
+import tchepannou.mora.rest.core.controller.BaseRestController;
+import tchepannou.mora.rest.core.exception.NotFoundException;
+import tchepannou.mora.rest.post.dto.PostDto;
 import tchepannou.mora.rest.post.dto.PostSummaryDto;
 
 import java.security.Principal;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -30,10 +30,8 @@ import java.util.Map;
 import java.util.Set;
 
 @RestController
-@Api (value="Posts", description = "Manage Posts")
-public class PostController {
-    private static final Logger LOG = LoggerFactory.getLogger(PostController.class);
-
+@Api (value="Users", description = "Manage Users' Posts")
+public class PostController extends BaseRestController{
     //-- Attribute
     @Autowired
     private PostService postService;
@@ -49,19 +47,11 @@ public class PostController {
 
     
     //-- REST methods
-    @ApiOperation ("Retrieve all Post published to current user")
-    @RequestMapping("/users/me/posts")
+    @ApiOperation ("Retrieve all Posts published to current user")
+    @RequestMapping("/posts")
     public List<PostSummaryDto> getCurrentUserPosts (@AuthenticationPrincipal Principal currentToken, @RequestParam int limit, @RequestParam int offset) {
-        long userId = getCurrentUserId(currentToken);
-        return userId > 0
-                ? getUserPosts(userId, limit, offset)
-                : Collections.emptyList();
-    }
-
-    @ApiOperation ("Retrieve all Post published to a User")
-    @RequestMapping("/users/{userId}/posts")
-    public List<PostSummaryDto> getUserPosts (@PathVariable long userId, @RequestParam int limit, @RequestParam int offset){
         /* get the posts */
+        long userId = getCurrentUserId(currentToken);
         List<Long> ids = postService.findIdsPublishedForUser(userId, limit, offset);
         List<Post> posts = postService.findByIds(ids);
         Map<Long, Space> spaces = toSpaceMap(posts);
@@ -86,8 +76,25 @@ public class PostController {
         }
         return result;
     }
-    
-    
+
+    @ApiOperation ("Retrieve a Post")
+    @RequestMapping("/posts/{postId}")
+    public PostDto getPost (@PathVariable long postId){
+        Post post = postService.findById(postId);
+        if (post == null){
+            throw new NotFoundException(postId);
+        }
+
+        Space space = spaceService.findById(post.getSpaceId());
+        User user = userService.findById(post.getUserId());
+
+        return new PostDto.Builder()
+                .withPost(post)
+                .withSpace(space)
+                .withUser(user)
+                .build();
+    }
+
     //-- Private
     protected long getCurrentUserId (Principal currentToken) {
         String token = currentToken.getName();
@@ -100,10 +107,8 @@ public class PostController {
         for (Post post : posts){
             ids.add(post.getUserId());
         }
-        LOG.info("userIds: " + ids);
 
         List<User> users = userService.findByIds(ids);
-        LOG.info("users: " + users);
         Map<Long, User> result = new HashMap<>();
         for (User user : users){
             result.put(user.getId(), user);
@@ -116,36 +121,11 @@ public class PostController {
         for (Post post : posts){
             ids.add(post.getSpaceId());
         }
-        LOG.info("spaceIds: " + ids);
 
         List<Space> spaces = spaceService.findByIds(ids);
-        LOG.info("spaces: " + spaces);
-
         Map<Long, Space> result = new HashMap<>();
         for (Space space : spaces){
             result.put(space.getId(), space);
-        }
-        return result;
-    }
-    
-    private User findUser (long userId, Map<Long, User> users){
-        User result = users.get(userId);
-        if (result == null){
-            result = userService.findById(userId);
-            if (result != null){
-                users.put(userId, result);
-            }
-        }
-        return result;
-    }
-
-    private Space findSpace (long spaceId, Map<Long, Space> spaces){
-        Space result = spaces.get(spaceId);
-        if (result == null){
-            result = spaceService.findById(spaceId);
-            if (result != null){
-                spaces.put(spaceId, result);
-            }
         }
         return result;
     }

@@ -19,8 +19,8 @@ public class SecurityConfig extends AbstractRestSecurityConfig {
             // @formatter:off
             http
                 .authorizeRequests()
-                    .antMatchers(HttpMethod.GET, "/users/**").permitAll()
-                    .antMatchers(HttpMethod.GET, "/users/me/**").authenticated()
+                    .antMatchers(HttpMethod.GET, "/posts").authenticated()
+                    .antMatchers(HttpMethod.GET, "/posts/**").permitAll()
                     .anyRequest()
                         .authenticated()
                     .and()

@@ -9,6 +9,6 @@ import tchepannou.mora.insidesoccer.config.IsConfig;
 import tchepannou.mora.swagger.config.SwaggerConfig;
 
 @Configuration
-@Import ({ExtConfig.class, IsConfig.class, ServiceConfig.class, CacheConfig.class, SwaggerConfig.class})
+@Import ({ExtConfig.class, IsConfig.class, ServiceConfig.class, CacheConfig.class})
 public class Config {   // NOSONAR - Empty class
 }
