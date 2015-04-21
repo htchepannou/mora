@@ -18,6 +18,7 @@ public class PostDto extends BasePostDto{
             return new PostDto();
         }
 
+        @Override
         public PostDto build (){
             PostDto result = (PostDto)super.build();
             result.content = post.getContent();

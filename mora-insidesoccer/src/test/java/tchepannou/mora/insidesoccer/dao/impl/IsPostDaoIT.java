@@ -37,10 +37,10 @@ public class IsPostDaoIT {
     @Test
     public void testFindById() throws Exception {
         // Given
-        Post result = dao.findById(100);
+        Post result = dao.findById(101);
 
         // Then
-        Post expected = new Post(100, new Space(100), new User(100));
+        Post expected = new Post(101, new Space(100), new User(100));
         expected.setTitle("title1");
         expected.setSummary("This is a content1");
         expected.setContent("This is a content1");
@@ -79,17 +79,17 @@ public class IsPostDaoIT {
     @Test
     public void testFindByIds () throws Exception{
         // Given
-        List<Post> result = dao.findByIds(Arrays.asList(400L, 410L));
+        List<Post> result = dao.findByIds(Arrays.asList(401L, 411L));
 
         // Then
-        Post expected1 = new Post(400, new Space(400), new User(400));
+        Post expected1 = new Post(401, new Space(400), new User(400));
         expected1.setTitle("title1");
         expected1.setSummary("This is a content1");
         expected1.setContent("This is a content1");
         expected1.setDeleted(false);
         expected1.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
         
-        Post expected2 = new Post(410, new Space(410), new User(410));
+        Post expected2 = new Post(411, new Space(410), new User(410));
         expected2.setTitle("title2");
         expected2.setSummary("This is a content2");
         expected2.setContent("This is a content2");
