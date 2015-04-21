@@ -48,7 +48,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    @CachePut("Member")
+    @CachePut(value="Member", key="#member.id")
     public Member create(Member member)  throws MemberException {
         try {
             member.setCreationDate(new Date());
@@ -61,7 +61,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    @CacheEvict("Member")
+    @CacheEvict(value="Member", key="#member.id")
     public Member update(Member member) throws MemberException {
         try {
             memberDao.update(member);
@@ -72,7 +72,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    @CacheEvict("Member")
+    @CacheEvict(value="Member", key="#member.id")
     public Member delete(Member member){
         memberDao.delete(member);
         return member;

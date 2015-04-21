@@ -52,7 +52,7 @@ public class AccessTokenServiceImpl implements AccessTokenService {
 
     @Override
     @Transactional
-    @CachePut ("AccessToken")
+    @CachePut (value="AccessToken", key="#result.value")
     public AccessToken authenticate(String usernameOrEmail, String clearPassword) throws AccessTokenException {
         Preconditions.checkArgument(usernameOrEmail != null, "usernameOrEmail == null");
         Preconditions.checkArgument(clearPassword != null, "password == null");
@@ -76,7 +76,7 @@ public class AccessTokenServiceImpl implements AccessTokenService {
 
     @Override
     @Transactional
-    @CacheEvict ("AccessToken")
+    @CacheEvict (value="AccessToken", key="#token.value")
     public AccessToken expire(AccessToken token) {
         token.expire();
         accessTokenDao.update(token);

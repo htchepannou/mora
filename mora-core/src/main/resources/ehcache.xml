@@ -18,7 +18,7 @@
 
     <cache name="Space"
         maxEntriesLocalHeap="100"
-        maxEntriesLocalDisk="10"
+        maxEntriesLocalDisk="10000"
         eternal="false"
         diskSpoolBufferSizeMB="20"
         timeToIdleSeconds="300"
@@ -30,7 +30,7 @@
 
     <cache name="User"
         maxEntriesLocalHeap="1000"
-        maxEntriesLocalDisk="100"
+        maxEntriesLocalDisk="100000"
         eternal="false"
         diskSpoolBufferSizeMB="20"
         timeToIdleSeconds="300"
@@ -42,7 +42,7 @@
 
     <cache name="Member"
         maxEntriesLocalHeap="1000"
-        maxEntriesLocalDisk="100"
+        maxEntriesLocalDisk="100000"
         eternal="false"
         diskSpoolBufferSizeMB="20"
         timeToIdleSeconds="300"
@@ -54,7 +54,7 @@
 
     <cache name="AccessToken"
         maxEntriesLocalHeap="1000"
-        maxEntriesLocalDisk="100"
+        maxEntriesLocalDisk="100000"
         eternal="false"
         diskSpoolBufferSizeMB="20"
         timeToIdleSeconds="300"
@@ -65,8 +65,8 @@
     </cache>
 
     <cache name="Post"
-        maxEntriesLocalHeap="100000"
-        maxEntriesLocalDisk="1000"
+        maxEntriesLocalHeap="1000"
+        maxEntriesLocalDisk="100000"
         eternal="false"
         diskSpoolBufferSizeMB="100"
         timeToIdleSeconds="300"

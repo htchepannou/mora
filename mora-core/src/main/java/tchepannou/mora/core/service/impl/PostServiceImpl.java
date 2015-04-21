@@ -2,8 +2,10 @@ package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.service.PostService;
@@ -27,7 +29,6 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    @Cacheable("Post")
     public List<Post> findByIds(Collection<Long> ids) {
         return postDao.findByIds(ids);
     }
@@ -38,7 +39,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    @Cacheable("Post")
+    @Transactional
+    @CachePut(value="Post", key="#post.id")
     public Post create(Post post) {
         Date now = new Date ();
         post.setLastUpdate(now);
@@ -49,7 +51,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    @CacheEvict("Post")
+    @Transactional
+    @CacheEvict(value="Post", key="#post.id")
     public Post update(Post post) {
         Date now = new Date ();
         post.setLastUpdate(now);
@@ -59,7 +62,8 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    @CacheEvict("Post")
+    @Transactional
+    @CacheEvict(value="Post", key="#post.id")
     public Post delete(Post post) {
         postDao.delete(post);
         return post;

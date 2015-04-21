@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    @Cacheable ("User")
     public List<User> findByIds (Collection<Long> ids){
         return userDao.findByIds(ids);
     }
@@ -51,7 +50,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    @Cacheable ("User")
+    @Cacheable (value="User", key="#user.id")
     public User create(User user) throws UserException {
         ensureEmailNotAssigned(user);
         ensureUsernameNotAssigned(user);
@@ -67,7 +66,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    @CacheEvict ("User")
+    @CacheEvict (value="User", key="#user.id")
     public User update(User user) throws UserException {
         ensureEmailNotAssigned(user);
         ensureUsernameNotAssigned(user);
@@ -81,7 +80,7 @@ public class UserServiceImpl implements UserService{
 
     @Override
     @Transactional
-    @CacheEvict ("User")
+    @CacheEvict (value="User", key="#user.id")
     public User delete(User user) {
         userDao.delete(user);
         return user;

@@ -28,14 +28,13 @@ public class SpaceServiceImpl implements SpaceService {
     }
 
     @Override
-    @Cacheable ("Space")
     public List<Space> findByIds (Collection<Long> ids){
         return spaceDao.findByIds(ids);
     }
 
     @Override
     @Transactional
-    @CachePut ("Space")
+    @CachePut (value="Space", key="#space.id")
     public Space create(Space space) {
         Date now = new Date();
         space.setCreationDate(now);
@@ -48,7 +47,7 @@ public class SpaceServiceImpl implements SpaceService {
 
     @Override
     @Transactional
-    @CacheEvict ("Space")
+    @CacheEvict (value="Space", key="#space.id")
     public Space update(Space space) {
         Date now = new Date();
         space.setLastUpdate(now);
@@ -58,7 +57,7 @@ public class SpaceServiceImpl implements SpaceService {
 
     @Override
     @Transactional
-    @CacheEvict ("Space")
+    @CacheEvict (value="Space", key="#space.id")
     public Space delete(Space space) {
         spaceDao.delete(space);
         return space;
