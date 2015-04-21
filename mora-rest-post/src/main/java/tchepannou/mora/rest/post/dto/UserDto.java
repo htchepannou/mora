@@ -16,10 +16,6 @@ public class UserDto extends ModelDto {
     public UserDto(){
 
     }
-    public UserDto (long id, String name){
-        this.id = id;
-        this.name = name;
-    }
 
     //-- Builder
     public static class Builder{

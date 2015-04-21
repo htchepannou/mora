@@ -84,28 +84,4 @@ public class PostSummaryDto extends ModelDto{
     public SpaceDto getSpace() {
         return space;
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public void setLastUpdate(Date lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
-
-    public void setSpace(SpaceDto space) {
-        this.space = space;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setUser(UserDto user) {
-        this.user = user;
-    }
 }
