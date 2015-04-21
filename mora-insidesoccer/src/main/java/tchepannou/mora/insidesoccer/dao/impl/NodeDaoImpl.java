@@ -33,6 +33,7 @@ public class NodeDaoImpl extends IsReadOnlyModelDao<Node> implements NodeDao {
     }
 
     //-- NodeDao overrides
+    @Override
     public Node findById (long id){
         String sql = String.format("SELECT N.*, R.* FROM %s N JOIN nprel R ON %s=R.nprel_node_fk WHERE R.nprel_id=?", getTableName(), getIdColumn());
         return findSingle(sql, new Object[]{id});
