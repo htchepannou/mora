@@ -20,7 +20,5 @@ public class UserDtoTest {
         // Then
         assertThat(result.getId(), equalTo(user.getId()));
         assertThat(result.getName(), equalTo("Ray Sponsible"));
-        assertThat(result.getFirstName(), equalTo(user.getFirstName()));
-        assertThat(result.getLastName(), equalTo(user.getLastName()));
     }
 }

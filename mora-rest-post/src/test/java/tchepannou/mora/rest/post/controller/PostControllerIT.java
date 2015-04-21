@@ -2,7 +2,6 @@ package tchepannou.mora.rest.post.controller;
 
 import com.jayway.restassured.RestAssured;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +13,13 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.rest.post.Application;
-import tchepannou.mora.rest.post.dto.PostSummaryDto;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import static com.jayway.restassured.RestAssured.when;
+import static org.hamcrest.Matchers.hasItems;
+import static org.hamcrest.Matchers.hasSize;
 
 @RunWith (SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration (classes = Application.class)
@@ -31,7 +34,9 @@ public class PostControllerIT {
     @Autowired
     private PostDao dao;
 
+    private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+    
     @Before
     public void setUp (){
         RestAssured.port = this.port;
@@ -40,8 +45,17 @@ public class PostControllerIT {
 
 
     @Test
-    @Ignore
     public void getUserPosts() throws Exception {
-        PostSummaryDto[] result = when().get("/users/300/posts?limit=100&offset=0").as(PostSummaryDto[].class);
+        // When
+        when()
+            .get("/users/300/posts?limit=100&offset=0")
+        .then()
+                .log().all()
+                .body("id", hasSize(2))
+                .body("id", hasItems(300, 301))
+                .body("title", hasItems("title1", "title2"))
+                .body("summary", hasItems("summary1", "summary2"))
+        ;
+
     }
 }

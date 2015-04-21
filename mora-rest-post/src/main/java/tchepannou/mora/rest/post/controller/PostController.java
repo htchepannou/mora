@@ -21,7 +21,6 @@ import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.rest.post.dto.PostSummaryDto;
 
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -68,22 +67,19 @@ public class PostController {
         Map<Long, Space> spaces = toSpaceMap(posts);
         Map<Long, User> users = toUserMap(posts);
 
-        for (Post post : new ArrayList<>(posts)){
-            User user = findUser(post.getUserId(), users);
-            Space space = findSpace(post.getSpaceId(), spaces);
-            if (space == null || user == null){
-                continue;
-            }
-            posts.add(post);
-        }
-
         /* convert to DTO */
         List<PostSummaryDto> result = new LinkedList<>();
         for (Post post : posts){
+            Space space = spaces.get(post.getSpaceId());
+            User user = users.get(post.getUserId());
+            if (space == null || user == null){
+                continue;
+            }
+
             PostSummaryDto dto = new PostSummaryDto.Builder()
                     .withPost(post)
-                    .withSpace(spaces.get(post.getSpaceId()))
-                    .withUser(users.get(post.getUserId()))
+                    .withSpace(space)
+                    .withUser(user)
                     .build();
 
             result.add(dto);

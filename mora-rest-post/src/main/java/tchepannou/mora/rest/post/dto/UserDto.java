@@ -10,9 +10,16 @@ public class UserDto extends ModelDto {
     //-- Private
     private long id;
     private String name;
-    private String firstName;
-    private String lastName;
 
+
+    //-- Public
+    public UserDto(){
+
+    }
+    public UserDto (long id, String name){
+        this.id = id;
+        this.name = name;
+    }
 
     //-- Builder
     public static class Builder{
@@ -23,8 +30,6 @@ public class UserDto extends ModelDto {
 
             UserDto dto = new UserDto();
             dto.id = user.getId();
-            dto.firstName = user.getFirstName();
-            dto.lastName = user.getLastName();
             dto.name = Joiner.on(' ').join(
                     Strings.nullToEmpty(user.getFirstName())
                     , Strings.nullToEmpty(user.getLastName()));
@@ -39,16 +44,8 @@ public class UserDto extends ModelDto {
     }
 
     //-- Getter
-    public String getFirstName() {
-        return firstName;
-    }
-
     public long getId() {
         return id;
-    }
-
-    public String getLastName() {
-        return lastName;
     }
 
     public String getName() {

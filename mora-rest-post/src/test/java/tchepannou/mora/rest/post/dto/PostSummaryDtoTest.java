@@ -58,8 +58,5 @@ public class PostSummaryDtoTest {
 
         assertThat(result.getUser().getId(), equalTo(user.getId()));
         assertThat(result.getUser().getName(), equalTo("Ray Sponsible"));
-        assertThat(result.getUser().getFirstName(), equalTo(user.getFirstName()));
-        assertThat(result.getUser().getLastName(), equalTo(user.getLastName()));
-
     }
 }
