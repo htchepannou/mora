@@ -1,15 +1,7 @@
 package tchepannou.mora.core.config;
 
 import org.junit.Test;
-import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
-import tchepannou.mora.core.dao.jdbc.JdbcMediaTypeDao;
-import tchepannou.mora.core.dao.jdbc.JdbcMemberDao;
-import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
-import tchepannou.mora.core.dao.jdbc.JdbcPostDao;
-import tchepannou.mora.core.dao.jdbc.JdbcRoleDao;
-import tchepannou.mora.core.dao.jdbc.JdbcSpaceDao;
-import tchepannou.mora.core.dao.jdbc.JdbcSpaceTypeDao;
-import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
+import tchepannou.mora.core.dao.jdbc.*;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
@@ -60,5 +52,10 @@ public class DaoConfigTest {
     @Test
     public void testMediaTypeDao (){
         assertThat(config.mediaTypeDao(), instanceOf(JdbcMediaTypeDao.class));
+    }
+
+    @Test
+    public void testMediaDao (){
+        assertThat(config.mediaDao(), instanceOf(JdbcMediaDao.class));
     }
 }

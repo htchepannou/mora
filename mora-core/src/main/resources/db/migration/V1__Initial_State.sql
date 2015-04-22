@@ -122,13 +122,27 @@ create table t_media_type(
     unique(name)
 ) engine=InnoDB;
 
-create table t_media_provider(
+create table t_media(
     id int not null primary key auto_increment,
+    space_id int not null,
+    user_id int not null,
 
-    name varchar(32) not null,
+    title varchar(100) not null,
+    description varchar(255) not null,
+    content_type varchar(100),
+    size int,
+    oembed bit(1),
+    url varchar(255),
+    thumbnail_url varchar(255),
+    image_url varchar(255),
+    deleted bit(1),
+    creation_date timestamp null,
+    last_update timestamp null,
 
-    unique(name)
+    foreign key (space_id) references t_space(id),
+    foreign key (user_id) references t_user(id)
 ) engine=InnoDB;
+
 
 
 -- ====================

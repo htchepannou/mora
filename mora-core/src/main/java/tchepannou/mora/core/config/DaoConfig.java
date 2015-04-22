@@ -6,24 +6,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import tchepannou.mora.core.dao.AccessTokenDao;
-import tchepannou.mora.core.dao.MediaTypeDao;
-import tchepannou.mora.core.dao.MemberDao;
-import tchepannou.mora.core.dao.PasswordDao;
-import tchepannou.mora.core.dao.PostDao;
-import tchepannou.mora.core.dao.RoleDao;
-import tchepannou.mora.core.dao.SpaceDao;
-import tchepannou.mora.core.dao.SpaceTypeDao;
-import tchepannou.mora.core.dao.UserDao;
-import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
-import tchepannou.mora.core.dao.jdbc.JdbcMediaTypeDao;
-import tchepannou.mora.core.dao.jdbc.JdbcMemberDao;
-import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
-import tchepannou.mora.core.dao.jdbc.JdbcPostDao;
-import tchepannou.mora.core.dao.jdbc.JdbcRoleDao;
-import tchepannou.mora.core.dao.jdbc.JdbcSpaceDao;
-import tchepannou.mora.core.dao.jdbc.JdbcSpaceTypeDao;
-import tchepannou.mora.core.dao.jdbc.JdbcUserDao;
+import tchepannou.mora.core.dao.*;
+import tchepannou.mora.core.dao.jdbc.*;
 
 import javax.sql.DataSource;
 
@@ -107,5 +91,10 @@ public class DaoConfig {
     @Bean
     public MediaTypeDao mediaTypeDao (){
         return new JdbcMediaTypeDao();
+    }
+
+    @Bean
+    public MediaDao mediaDao (){
+        return new JdbcMediaDao();
     }
 }
