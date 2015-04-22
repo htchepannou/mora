@@ -8,4 +8,5 @@ import java.util.List;
 public interface MediaDao {
     Media findById (long id);
     List<Media> findByIds (Collection<Long> ids);
+    List<Media> findByOwnerByAttachmentType(long ownerId, long typeId);
 }

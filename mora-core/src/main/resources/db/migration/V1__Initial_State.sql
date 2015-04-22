@@ -144,6 +144,35 @@ create table t_media(
 ) engine=InnoDB;
 
 
+-- ====================
+-- attachment_type
+-- ====================
+create table t_attachment_type(
+    id int not null primary key auto_increment,
+
+    name varchar(32) not null,
+
+    unique(name)
+) engine=InnoDB;
+
+
+-- ====================
+-- attachment
+-- ====================
+create table t_attachment(
+    id int not null primary key auto_increment,
+    owner_id int not null,
+    media_id int not null,
+    type_id int not null,
+
+    rank int,
+
+    foreign key (media_id) references t_media(id),
+    foreign key (type_id)  references t_attachment_type(id),
+    unique(owner_id, media_id, type_id)
+) engine=InnoDB;
+
+
 
 -- ====================
 -- posts

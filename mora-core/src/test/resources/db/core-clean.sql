@@ -1,3 +1,5 @@
+delete from t_attachment;
+
 delete from t_member;
 delete from t_post;
 delete from t_media;
@@ -9,5 +11,6 @@ delete from t_access_token;
 delete from t_password;
 delete from t_user;
 
-delete from t_role;
+delete from t_attachment_type;
 delete from t_media_type;
+delete from t_role;

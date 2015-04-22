@@ -58,4 +58,10 @@ public class DaoConfigTest {
     public void testMediaDao (){
         assertThat(config.mediaDao(), instanceOf(JdbcMediaDao.class));
     }
+
+    @Test
+    public void testAttachmentTypeDao (){
+        assertThat(config.attachmentTypeDao(), instanceOf(JdbcAttachmentTypeDao.class));
+    }
+
 }

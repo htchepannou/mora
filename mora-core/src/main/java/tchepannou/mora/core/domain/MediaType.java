@@ -12,7 +12,7 @@ public class MediaType extends EnumModel{
         super(id, name);
     }
 
-    public MediaType(EnumModel model) {
+    public MediaType(MediaType model) {
         super(model);
     }
 }

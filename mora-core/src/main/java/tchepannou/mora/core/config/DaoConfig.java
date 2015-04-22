@@ -97,4 +97,10 @@ public class DaoConfig {
     public MediaDao mediaDao (){
         return new JdbcMediaDao();
     }
+
+    @Bean
+    public AttachmentTypeDao attachmentTypeDao (){
+        return new JdbcAttachmentTypeDao();
+    }
+
 }
