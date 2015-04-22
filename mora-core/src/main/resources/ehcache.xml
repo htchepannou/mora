@@ -7,14 +7,9 @@
 >
 	<diskStore path="java.io.tmpdir"/>
 
-	<cache name="SpaceType"
-	      maxBytesLocalHeap="1M"
+	<cache name="SpaceType" maxEntriesLocalHeap="100"
 	      eternal="true"
     />
-    <cache name="Role"
-   	      maxBytesLocalHeap="1M"
-   	      eternal="true"
-       />
 
     <cache name="Space"
         maxEntriesLocalHeap="100"
