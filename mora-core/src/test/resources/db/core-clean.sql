@@ -9,3 +9,4 @@ delete from t_password;
 delete from t_user;
 
 delete from t_role;
+delete from t_media_type;

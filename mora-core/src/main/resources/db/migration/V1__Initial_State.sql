@@ -112,6 +112,26 @@ create table t_member(
 
 
 -- ====================
+-- media
+-- ====================
+create table t_media_type(
+    id int not null primary key auto_increment,
+
+    name varchar(32) not null,
+
+    unique(name)
+) engine=InnoDB;
+
+create table t_media_provider(
+    id int not null primary key auto_increment,
+
+    name varchar(32) not null,
+
+    unique(name)
+) engine=InnoDB;
+
+
+-- ====================
 -- posts
 -- ====================
 create table t_post(

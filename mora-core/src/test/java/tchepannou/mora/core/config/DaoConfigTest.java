@@ -2,6 +2,7 @@ package tchepannou.mora.core.config;
 
 import org.junit.Test;
 import tchepannou.mora.core.dao.jdbc.JdbcAccessTokenDao;
+import tchepannou.mora.core.dao.jdbc.JdbcMediaTypeDao;
 import tchepannou.mora.core.dao.jdbc.JdbcMemberDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPasswordDao;
 import tchepannou.mora.core.dao.jdbc.JdbcPostDao;
@@ -54,5 +55,10 @@ public class DaoConfigTest {
     @Test
     public void testPostDao (){
         assertThat(config.postDao(), instanceOf(JdbcPostDao.class));
+    }
+
+    @Test
+    public void testMediaTypeDao (){
+        assertThat(config.mediaTypeDao(), instanceOf(JdbcMediaTypeDao.class));
     }
 }
