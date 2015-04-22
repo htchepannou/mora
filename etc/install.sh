@@ -18,4 +18,4 @@ if test ! -f "/etc/init.d/$APP"; then
     chmod +x /etc/init.d/$APP
 fi
 
-#/etc/init.d/$APP restart
+/etc/init.d/$APP restart
