@@ -16,7 +16,7 @@
     <version>1.0</version>
 
     <properties>
-        <start-class>tchepannou.mora.rest.tchepannou.mora.rest.space.Application</start-class>
+        <start-class>tchepannou.mora.rest.space.Application</start-class>
         <java.version>1.8</java.version>
     </properties>
 
