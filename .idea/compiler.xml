@@ -36,7 +36,6 @@
         <module name="mora-rest-space" />
         <module name="mora-rest-space2" />
         <module name="mora-rest-space3" />
-        <module name="mora-swagger" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

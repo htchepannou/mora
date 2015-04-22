@@ -1337,3 +1337,7 @@ Using default security password: 112e9ece-0bf6-4760-80ac-b9b81209a41d
 2015-04-21 22:19:56.377  INFO 38072 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase 0
 2015-04-21 22:19:56.546  INFO 38072 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 18082 (http)
 2015-04-21 22:19:56.549  INFO 38072 --- [main] tchepannou.mora.rest.post.Application    : Started Application in 13.235 seconds (JVM running for 15.317)
+2015-04-21 22:36:54.378  INFO 38072 --- [Thread-1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6dde5c8c: startup date [Tue Apr 21 22:19:45 EDT 2015]; root of context hierarchy
+2015-04-21 22:36:54.384  INFO 38072 --- [Thread-1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2015-04-21 22:36:54.394  INFO 38072 --- [Thread-1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2015-04-21 22:36:54.400  INFO 38072 --- [Thread-1] o.s.c.ehcache.EhCacheManagerFactoryBean  : Shutting down EhCache CacheManager

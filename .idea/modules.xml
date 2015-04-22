@@ -9,7 +9,6 @@
       <module fileurl="file://$PROJECT_DIR$/mora-rest-post/mora-rest-post.iml" filepath="$PROJECT_DIR$/mora-rest-post/mora-rest-post.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-security/mora-rest-security.iml" filepath="$PROJECT_DIR$/mora-rest-security/mora-rest-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-space3/mora-rest-space3.iml" filepath="$PROJECT_DIR$/mora-rest-space3/mora-rest-space3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/mora-swagger/mora-swagger.iml" filepath="$PROJECT_DIR$/mora-swagger/mora-swagger.iml" />
     </modules>
   </component>
 </project>
