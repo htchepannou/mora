@@ -120,21 +120,6 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
         return result;
     }
 
-    @Override
-    public long create(Post post) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void update(Post post) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void delete(Post post) {
-        throw new UnsupportedOperationException();
-    }
-
     //-- Private
     private Post toPost (Node node, Collection<NodeAttribute> attributes){
         Post result = new Post ();

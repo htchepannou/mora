@@ -23,6 +23,7 @@ public class JdbcMediaDao extends JdbcReadOnlyModelDao<Media> implements MediaDa
 
 
     //-- MediaDao overrides
+    @Override
     public List<Media> findByOwnerByAttachmentType(long ownerId, long typeId){
         String sql = "SELECT M.* FROM t_media M JOIN t_attachment A ON M.id=A.media_id WHERE A.owner_id=? AND A.type_id=? AND M.deleted=? ORDER BY A.rank";
 
