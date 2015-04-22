@@ -1,12 +1,17 @@
 #!/bin/sh
 
 APP=$1
-JAR="$APP-1.0-exec.jar"
+USER=mora
+GROUP=mora
 
 if test ! -d "/opt/$APP"; then
   mkdir /opt/$APP
 fi
-cp ~/repo/mora/$APP/target/$JAR /opt/$APP/$JAR
+if test ! -d "/opt/$APP/log"; then
+  mkdir /opt/$APP/log
+fi
+cp ~/repo/mora/$APP/target/$APP-1.0-exec.jar /opt/$APP/$APP.jar
+chown -R $USER:$GROUP /opt/$APP
 
 if test ! -f "/etc/init.d/$APP"; then
     ln -s ~/repo/mora/$APP/etc/initd.sh /etc/init.d/$APP

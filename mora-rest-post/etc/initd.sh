@@ -21,7 +21,11 @@ SPRINGBOOTAPP_HOME=/opt/$PROJECT_NAME
 export SPRINGBOOTAPP_HOME
 
 # java executable for spring boot app, change if you have multiple jdks installed
-SPRINGBOOTAPP_JAVA=$JAVA_HOME/bin/java
+SPRINGBOOTAPP_JAVA=java
+
+# Jar file
+SPRINGBOOTAPP_WAR=/opt/$PROJECT_NAME/$PROJECT_NAME.jar
+
 
 # spring boot log-file
 LOG="/opt/$PROJECT_NAME/log/$PROJECT_NAME.log"
