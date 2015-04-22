@@ -3,14 +3,12 @@ package tchepannou.mora.rest.security.dto;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
-import com.wordnik.swagger.annotations.ApiModel;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.rest.core.dto.ModelDto;
 import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
 import java.util.Date;
 
-@ApiModel ("User")
 public class UserDto extends ModelDto {
     //-- Attributes
     private long id;

@@ -29,11 +29,6 @@
         </dependency>
         <dependency>
             <groupId>tchepannou.mora</groupId>
-            <artifactId>mora-swagger</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>tchepannou.mora</groupId>
             <artifactId>mora-insidesoccer</artifactId>
             <version>1.0</version>
         </dependency>
@@ -64,30 +59,6 @@
                     <source>${java.version}</source>
                     <target>${java.version}</target>
                 </configuration>
-            </plugin>
-
-            <!-- ======== Swagger ========== -->
-            <plugin>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>swagger</id>
-                        <phase>process-classes</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <tasks>
-                                <copy todir="${basedir}/target/classes" overwrite="true">
-                                    <fileset
-                                        dir="${basedir}/../mora-swagger/src/main/resources"
-                                        includes="public/docs/**/*"
-                                    />
-                                </copy>
-                            </tasks>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
 
 

@@ -1,13 +1,11 @@
 package tchepannou.mora.rest.security.dto;
 
-import com.wordnik.swagger.annotations.ApiModel;
 import org.hibernate.validator.constraints.Email;
 import tchepannou.mora.core.domain.User;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@ApiModel ()
 public class CreateUserDto extends SaveUserDto {
     //-- Attributes
     @NotNull

@@ -1,7 +1,5 @@
 package tchepannou.mora.rest.space.controller;
 
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,6 @@ import tchepannou.mora.rest.space.dto.SaveMemberDto;
 
 
 @RestController
-@Api (value="Members", description = "Manage members")
 public class MemberController extends BaseRestController{
     //-- Attributes
     private static final Logger LOG = LoggerFactory.getLogger(MemberController.class);
@@ -32,7 +29,6 @@ public class MemberController extends BaseRestController{
 
     
     //-- Public
-    @ApiOperation ("Retrieve a Member")
     @RequestMapping(value="/members/{memberId}", method= RequestMethod.GET)
     public MemberDto get (@PathVariable long memberId) throws MemberException{
         Member member = memberService.findById(memberId);
@@ -45,7 +41,6 @@ public class MemberController extends BaseRestController{
                 .build();
     }
 
-    @ApiOperation("Add new Member")
     @RequestMapping(value="/members", method= RequestMethod.PUT)
     public MemberDto create (@RequestBody CreateMemberDto request) throws MemberException{
         Member member = new Member ();
@@ -64,7 +59,6 @@ public class MemberController extends BaseRestController{
                 .build();
     }
     
-    @ApiOperation("Update a Member")
     @RequestMapping(value="/members/{memberId}", method= RequestMethod.POST)
     public MemberDto update (@PathVariable long memberId, @RequestBody SaveMemberDto request) throws MemberException{
         Member member = memberService.findById(memberId);
@@ -86,7 +80,6 @@ public class MemberController extends BaseRestController{
                 .build();
     }
     
-    @ApiOperation("Delete a Member")
     @RequestMapping(value="/members/{memberId}", method= RequestMethod.DELETE)
     public void delete(@PathVariable long memberId) {
         Member member = memberService.findById(memberId);

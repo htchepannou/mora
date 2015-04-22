@@ -1,7 +1,5 @@
 package tchepannou.mora.rest.post.controller;
 
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -30,7 +28,6 @@ import java.util.Map;
 import java.util.Set;
 
 @RestController
-@Api (value="Users", description = "Manage Users' Posts")
 public class PostController extends BaseRestController{
     //-- Attribute
     @Autowired
@@ -47,7 +44,6 @@ public class PostController extends BaseRestController{
 
     
     //-- REST methods
-    @ApiOperation ("Retrieve all Posts published to current user")
     @RequestMapping("/posts")
     public List<PostSummaryDto> getCurrentUserPosts (@AuthenticationPrincipal Principal currentToken, @RequestParam int limit, @RequestParam int offset) {
         /* get the posts */
@@ -77,7 +73,6 @@ public class PostController extends BaseRestController{
         return result;
     }
 
-    @ApiOperation ("Retrieve a Post")
     @RequestMapping("/posts/{postId}")
     public PostDto getPost (@PathVariable long postId){
         Post post = postService.findById(postId);

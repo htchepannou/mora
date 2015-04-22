@@ -1,7 +1,5 @@
 package tchepannou.mora.rest.space.controller;
 
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@Api (value="Spaces", description = "Manage the spaces")
 public class SpaceController extends BaseRestController{
     //-- Attributes
     @Autowired
@@ -49,7 +46,6 @@ public class SpaceController extends BaseRestController{
 
     //-- REST methods
     @RequestMapping (value = "/spaces/types", method = RequestMethod.GET)
-    @ApiOperation (value="Retrieve all SpaceTypes")
     public List<SpaceTypeDto> types (){
         List<SpaceType> types = spaceTypeService.findAll();
 
@@ -62,7 +58,6 @@ public class SpaceController extends BaseRestController{
     }
 
     @RequestMapping (value = "/spaces/types/{typeId}", method = RequestMethod.GET)
-    @ApiOperation (value="Retrieve a SpaceType")
     public SpaceTypeDto type (@PathVariable long typeId) {
         SpaceType type = spaceTypeService.findById(typeId);
         if (type == null){
@@ -73,7 +68,6 @@ public class SpaceController extends BaseRestController{
 
 
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.GET)
-    @ApiOperation (value="Retrieve a Space")
     public SpaceDto get (@PathVariable long spaceId){
         Space space = spaceService.findById(spaceId);
         if (space == null){
@@ -89,7 +83,6 @@ public class SpaceController extends BaseRestController{
     }
 
     @RequestMapping (value = "/spaces", method = RequestMethod.PUT)
-    @ApiOperation (value="Create New Spaces")
     public SpaceDto create (@AuthenticationPrincipal Principal currentToken, @Valid  @RequestBody CreateSpaceDto request){
         User user = getCurrentUser(currentToken);
 
@@ -114,7 +107,6 @@ public class SpaceController extends BaseRestController{
      * TODO Should be restricted to ADMIN
      */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.POST)
-    @ApiOperation (value="Update Space")
     public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) {
         Space space = spaceService.findById(spaceId);
         if (space == null){
@@ -136,7 +128,6 @@ public class SpaceController extends BaseRestController{
      * TODO Should be restricted to OWNER
      */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.DELETE)
-    @ApiOperation (value="Delete a Space")
     public void delete (@PathVariable long spaceId) {
         Space space = spaceService.findById(spaceId);
         if (space != null){

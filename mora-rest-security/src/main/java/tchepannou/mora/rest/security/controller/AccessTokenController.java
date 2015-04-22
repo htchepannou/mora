@@ -1,7 +1,5 @@
 package tchepannou.mora.rest.security.controller;
 
-import com.wordnik.swagger.annotations.Api;
-import com.wordnik.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,7 +19,6 @@ import javax.validation.Valid;
 import java.security.Principal;
 
 @RestController
-@Api (value="AccessToken", description = "Manages access token")
 public class AccessTokenController extends BaseRestController{
     //-- Attributes
     public static final String ERROR_AUTH_FAILED = "auth_failed";
@@ -31,7 +28,6 @@ public class AccessTokenController extends BaseRestController{
 
     //-- REST methods
     @RequestMapping(value="/access_token", method = RequestMethod.GET)
-    @ApiOperation (value="Retrieve an AccessToken")
     public AccessTokenDto get(@AuthenticationPrincipal Principal currentToken) {
         AccessToken token = getCurrentAccessToken(currentToken);
 
@@ -41,7 +37,6 @@ public class AccessTokenController extends BaseRestController{
     }
 
     @RequestMapping(value="/access_token", method = RequestMethod.PUT)
-    @ApiOperation (value="Create New AccessToken")
     public AccessTokenDto create (@Valid @RequestBody AuthRequest request) throws AccessTokenException{
         try {
             AccessToken token = accessTokenService.authenticate(request.getUsernameOrEmail(), request.getPassword());
@@ -53,7 +48,6 @@ public class AccessTokenController extends BaseRestController{
     }
 
     @RequestMapping(value="/access_token", method = RequestMethod.DELETE)
-    @ApiOperation (value="Release an AccessToken")
     public void delete(@AuthenticationPrincipal Principal currentToken) throws AccessTokenException{
         AccessToken token = getCurrentAccessToken(currentToken);
         accessTokenService.expire(token);
