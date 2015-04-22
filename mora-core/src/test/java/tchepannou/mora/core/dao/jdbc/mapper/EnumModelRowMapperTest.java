@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import tchepannou.mora.core.domain.SpaceType;
+import tchepannou.mora.core.domain.Role;
 
 import java.sql.ResultSet;
 
@@ -12,11 +12,10 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.when;
 
-@RunWith (MockitoJUnitRunner.class)
-public class SpaceTypeRowMapperTest {
+@RunWith(MockitoJUnitRunner.class)
+public class EnumModelRowMapperTest {
     @Mock
     private ResultSet rs;
-
 
     @Test
     public void testMapRow() throws Exception {
@@ -25,10 +24,11 @@ public class SpaceTypeRowMapperTest {
         when(rs.getString("name")).thenReturn("foo");
 
         // When
-        SpaceType result = new SpaceTypeRowMapper().mapRow(rs, 0);
+        Role result = new EnumModelRowMapper<>(Role.class).mapRow(rs, 0);
 
         // Then
-        SpaceType expected = new SpaceType(1, "foo");
+        Role expected = new Role(1, "foo");
         assertThat (result, equalTo(expected));
+
     }
 }
