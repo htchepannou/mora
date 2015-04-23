@@ -2,7 +2,7 @@ package tchepannou.mora.core.domain;
 
 public class AttachmentType extends EnumModel{
     //-- Static
-    public static long POST = 1;
+    public static final long POST = 1;
 
     //-- Constructor
     public AttachmentType() {

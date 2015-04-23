@@ -9,6 +9,7 @@ import tchepannou.mora.insidesoccer.domain.Node;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class IsMediaDao implements MediaDao{
@@ -39,9 +40,8 @@ public class IsMediaDao implements MediaDao{
 
     @Override
     public List<Media> findByOwnerByAttachmentType(long ownerId, long typeId) {
-        return null;
+        return Collections.emptyList();
     }
-
 
     //-- Private
     private Media toMedia (Node node, Collection<NodeAttribute> attributes){

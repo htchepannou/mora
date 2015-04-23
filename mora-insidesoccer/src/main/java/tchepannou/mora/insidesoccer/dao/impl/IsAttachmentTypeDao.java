@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class IsAttachmentTypeDao implements AttachmentTypeDao{
-    private List<AttachmentType> ALL = Arrays.asList(
+    private static final List<AttachmentType> ALL = Arrays.asList(
             new AttachmentType(AttachmentType.POST, "post")
     );
 

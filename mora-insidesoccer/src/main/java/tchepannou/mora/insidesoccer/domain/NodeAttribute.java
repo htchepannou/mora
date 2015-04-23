@@ -82,34 +82,18 @@ public class NodeAttribute extends Attribute {
 
             String name = attr.getName();
             String value = attr.getValue();
-            if (NAME.equalsIgnoreCase(name) || TITLE.equalsIgnoreCase(name)) {
-                media.setTitle(value);
-            } else if (DESCRIPTION.equalsIgnoreCase(name)) {
-                media.setDescription(value);
-            } else if (SIZE.equalsIgnoreCase(name)) {
-                try {
-                    media.setSize(Long.parseLong(value));
-                } catch (Exception e) {
-                    LOG.warn("Invalid size: " + value, e);
-                }
-            } else if (URL.equalsIgnoreCase(name)) {
-                media.setUrl(value);
-            } else if (IMAGE_URL.equals(name)) {
-                media.setImageUrl(value);
-            } else if (THUMBNAIL_URL.equals(name)) {
-                media.setThumbnailUrl(value);
-            } else if (OEMBED.equals(name)) {
-                media.setOembed(!Strings.isNullOrEmpty(value));
-            } else if (INSIDESOCCER_TYPE.equals(name)) {
+            if (INSIDESOCCER_TYPE.equals(name)) {
                 isType = value;
             } else if (INSIDESOCCER_ID.equals(name)) {
                 isId = value;
+            } else {
+                mediaSetter(name, value, media);
             }
         }
 
         if (media.isOembed()) {
             media.setTypeId(IsMediaTypeDao.VIDEO);
-        } if (!Strings.isNullOrEmpty(isId)){
+        } else if (!Strings.isNullOrEmpty(isId)){
             if ("asb".equalsIgnoreCase(isType)){
                 media.setTypeId(IsMediaTypeDao.ASB);
             } else if ("video".equalsIgnoreCase(isType)){
@@ -117,15 +101,12 @@ public class NodeAttribute extends Attribute {
             }
 
             media.setOembed(true);
-        } else{
-            String filename = media.getUrl();
-            if (filename != null) {
-                MimetypesFileTypeMap mm = new MimetypesFileTypeMap();
-                String contentType = mm.getContentType(filename);
-                if (contentType != null && contentType.startsWith("image/")) {
-                    media.setContentType(contentType);
-                    media.setTypeId(IsMediaTypeDao.IMAGE);
-                }
+        } else {
+            MimetypesFileTypeMap mm = new MimetypesFileTypeMap();
+            String contentType = mm.getContentType(media.getUrl());
+            if (contentType != null && contentType.startsWith("image/")) {
+                media.setContentType(contentType);
+                media.setTypeId(IsMediaTypeDao.IMAGE);
             }
         }
     }
@@ -137,5 +118,28 @@ public class NodeAttribute extends Attribute {
 
     public void setNodeId(long nodeId) {
         this.nodeId = nodeId;
+    }
+
+    //-- Private
+    private static void mediaSetter(String name, String value, Media media){
+        if (NAME.equalsIgnoreCase(name) || TITLE.equalsIgnoreCase(name)) {
+            media.setTitle(value);
+        } else if (DESCRIPTION.equalsIgnoreCase(name)) {
+            media.setDescription(value);
+        } else if (SIZE.equalsIgnoreCase(name)) {
+            try {
+                media.setSize(Long.parseLong(value));
+            } catch (Exception e) {
+                LOG.warn("Invalid size: " + value, e);
+            }
+        } else if (URL.equalsIgnoreCase(name)) {
+            media.setUrl(value);
+        } else if (IMAGE_URL.equals(name)) {
+            media.setImageUrl(value);
+        } else if (THUMBNAIL_URL.equals(name)) {
+            media.setThumbnailUrl(value);
+        } else if (OEMBED.equals(name)) {
+            media.setOembed(!Strings.isNullOrEmpty(value));
+        }
     }
 }

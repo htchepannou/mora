@@ -9,3 +9,5 @@ insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(104, 
 insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(105, 100, 'foo', 'bar');
 
 insert into nprel(nprel_id, nprel_node_fk, nprel_party_fk, nprel_type_fk) values(101, 100, 100, 1);
+
+
