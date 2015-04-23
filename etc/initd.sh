@@ -5,17 +5,19 @@
 # chkconfig: - 84 16
 # description: spring boot project
 
-SERVICE_NAME=mora-rest-post
-PATH_TO_JAR=/opt/mora-rest-post/mora-rest-post.jar
-PID_PATH_NAME=/opt/mora-rest-post/mora-rest-post.pid
-USER_ID=mora
+USER_ID=__USER_ID__
+SERVICE_NAME=__SERVICE_NAME__
+ACTIVE_PROFILE=__ACTIVE_PROFILE__
+SERVICE_DIR=/opt/$SERVICE_NAME
+PATH_TO_JAR=$SERVICE_DIR/$SERVICE_NAME.jar
+PID_PATH_NAME=$SERVICE_DIR/$SERVICE_NAME.pid
+LOG_FILE=$SERVICE_DIR/log/$SERVICE_NAME.log
 
 case $1 in
     start)
         echo "Starting $SERVICE_NAME ..."
         if [ ! -f $PID_PATH_NAME ]; then
-            su - USER_ID -c "java -jar $PATH_TO_JAR > /dev/null 2>&1  &"
-            echo $! > $PID_PATH_NAME
+            su - $USER_ID -c "java -jar $PATH_TO_JAR --spring.profiles.active=$ACTIVE_PROFILE --logging.file=$LOG_FILE --spring.pidfile=$PID_PATH_NAME > /dev/null 2>&1  &"
             echo "$SERVICE_NAME started ..."
         else
             echo "$SERVICE_NAME is already running ..."
