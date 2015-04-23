@@ -69,6 +69,11 @@ public class IsDaoConfigTest {
         assertThat(config.mediaTypeDao(), instanceOf(IsMediaTypeDao.class));
     }
 
+    @Test
+    public void testMediaDao (){
+        assertThat(config.mediaDao(), instanceOf(IsMediaDao.class));
+    }
+
 
     @Test
     public void testAttachmentTypeDao (){

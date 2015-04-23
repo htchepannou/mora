@@ -1,5 +1,6 @@
 package tchepannou.mora.insidesoccer.domain;
 
+import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.Post;
 
 public class Node extends AbstractNode{
@@ -20,6 +21,14 @@ public class Node extends AbstractNode{
         post.setUserId(this.ownerId);
         post.setDeleted(this.deleted);
         post.setSpaceId(this.channelId);
+    }
+
+    public void toMedia(Media media) {
+        media.setId(this.getId());
+        media.setLastUpdate(this.date);
+        media.setUserId(this.ownerId);
+        media.setDeleted(this.deleted);
+        media.setSpaceId(this.channelId);
     }
 
     //-- Getter/Setter

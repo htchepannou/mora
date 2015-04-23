@@ -8,10 +8,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class IsMediaTypeDao implements MediaTypeDao{
+    public static final long IMAGE  = MediaType.IMAGE;
+    public static final long VIDEO  = MediaType.VIDEO;
+    public static final long ASB = 100;
+    public static final long UNKNOWN  = MediaType.UNKNOWN;
+
+
     private List<MediaType> ALL = Arrays.asList(
-            new MediaType(1, "image"),
-            new MediaType(2, "video"),
-            new MediaType(3, "oembed")
+            new MediaType(IMAGE, "image"),
+            new MediaType(VIDEO, "video"),
+            new MediaType(ASB, "asb")
     );
 
     @Override

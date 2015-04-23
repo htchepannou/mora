@@ -13,6 +13,8 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.UserService;
 
+import javax.servlet.Filter;
+
 public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAdapter{
     //-- Attributes
     private static final String[] ACTUATOR_ENDPOINTS = new String[]{
@@ -57,7 +59,6 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
         configureAuthorization(http);
 
         http.addFilterBefore(new TokenAuthenticationFilter(authenticationManager()), BasicAuthenticationFilter.class)
-            .addFilterAfter(new CorsFilter(), TokenAuthenticationFilter.class)
         ;
     }
 
@@ -67,7 +68,14 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
     }
 
 
+
+
     //-- Beans
+    @Bean
+    public Filter corsFilter (){
+        return new CorsFilter();
+    }
+
     @Bean
     public AuthenticationEntryPoint authenticationEntryPoint() {
         return new AuthenticationEntryPointImpl();

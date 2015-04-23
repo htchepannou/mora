@@ -29,7 +29,7 @@ public class IsMediaTypeDaoIT {
         assertThat(result, hasSize(3));
         assertThat(result, hasItems(new MediaType(1, "image"),
                     new MediaType(2, "video"),
-                    new MediaType(3, "oembed"))
+                    new MediaType(100, "asb"))
         );
     }
 

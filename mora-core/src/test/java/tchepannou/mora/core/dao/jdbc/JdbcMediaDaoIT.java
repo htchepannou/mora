@@ -16,13 +16,10 @@ import tchepannou.mora.core.domain.User;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.Matchers.hasItems;
-import static org.hamcrest.Matchers.hasSize;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 @RunWith (SpringJUnit4ClassRunner.class)
@@ -76,43 +73,6 @@ public class JdbcMediaDaoIT {
         assertThat(result, nullValue());
     }
 
-
-
-    @Test
-    public void testFindIds() throws Exception {
-        // When
-        List<Media> result = mediaDao.findByIds(Arrays.asList(100L, 200L, 300L));
-
-        // Then
-        Media expected1 = new Media(100, new Space(1), new User(1));
-        expected1.setDeleted(false);
-        expected1.setTitle("title1");
-        expected1.setDescription("description1");
-        expected1.setContentType("image/png");
-        expected1.setOembed(true);
-        expected1.setSize(1024);
-        expected1.setUrl("http://t.com/foo.png");
-        expected1.setThumbnailUrl("http://t.com/foo_small.png");
-        expected1.setImageUrl("http://t.com/foo_large.png");
-        expected1.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
-        expected1.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
-
-        Media expected2 = new Media(300, new Space(1), new User(1));
-        expected2.setDeleted(false);
-        expected2.setTitle("title2");
-        expected2.setDescription("description2");
-        expected2.setContentType("image/png");
-        expected2.setOembed(true);
-        expected2.setSize(2048);
-        expected2.setUrl("http://t.com/foo.png");
-        expected2.setThumbnailUrl("http://t.com/foo_small.png");
-        expected2.setImageUrl("http://t.com/foo_large.png");
-        expected2.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
-        expected2.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
-
-        assertThat(result, hasSize(2));
-        assertThat(result, hasItems(expected1, expected2));
-    }
 
     @Test
     public void testFindByOwnerByAttachmentType() throws Exception{
