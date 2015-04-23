@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/etc/initd.sh" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/exception" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/HttpRequest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/HttpResponse.java" charset="UTF-8" />
@@ -18,8 +19,8 @@
     <file url="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/json/JsonDateSerializerTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-post" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-security" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mora-rest-space3" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mora-rest-space3/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mora-rest-space" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/ApiPathProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/SwaggerConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/resources/public/docs" charset="UTF-8" />

@@ -12,7 +12,7 @@
         <module>mora-core</module>
         <module>mora-rest-core</module>
         <module>mora-rest-security</module>
-        <module>mora-rest-space3</module>
+        <module>mora-rest-space</module>
         <module>mora-rest-post</module>
         <module>mora-insidesoccer</module>
     </modules>
