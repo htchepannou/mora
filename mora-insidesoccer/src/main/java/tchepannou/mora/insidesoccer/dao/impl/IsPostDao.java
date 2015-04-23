@@ -90,7 +90,7 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
                 "   AND P.party_type_fk=?" +
                 "   AND PR.prel_type_fk=?" +
                 "   AND PR.prel_source_fk=?\n" +
-                " ORDER BY N.node_date DESC\n" +
+                " ORDER BY R.nprel_rank DESC\n" +
                 " LIMIT " + limit + " OFFSET " + offset;
 
         Object[] params = new Object[]{
