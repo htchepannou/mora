@@ -1,0 +1,4 @@
+**/log/*
+**/target/**/*
+**/application.port
+**/application.pid
