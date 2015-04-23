@@ -88,4 +88,9 @@ public class IsDaoConfig extends DaoConfig{
         return new IsMediaTypeDao();
     }
 
+    @Override
+    @Bean
+    public IsAttachmentTypeDao attachmentTypeDao() {
+        return new IsAttachmentTypeDao();
+    }
 }
