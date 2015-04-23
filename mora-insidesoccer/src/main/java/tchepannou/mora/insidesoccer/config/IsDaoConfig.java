@@ -81,4 +81,11 @@ public class IsDaoConfig extends DaoConfig{
     public MemberDao memberDao() {
         return new IsMemberDao();
     }
+
+    @Override
+    @Bean
+    public IsMediaTypeDao mediaTypeDao() {
+        return new IsMediaTypeDao();
+    }
+
 }
