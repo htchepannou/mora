@@ -91,36 +91,9 @@ public class NodeAttribute extends Attribute {
             }
         }
 
-        if (media.isOembed()) {
-            media.setTypeId(IsMediaTypeDao.VIDEO);
-        } else if (!Strings.isNullOrEmpty(isId)){
-            if ("asb".equalsIgnoreCase(isType)){
-                media.setTypeId(IsMediaTypeDao.ASB);
-            } else if ("video".equalsIgnoreCase(isType)){
-                media.setTypeId(IsMediaTypeDao.VIDEO);
-            }
-
-            media.setOembed(true);
-        } else {
-            MimetypesFileTypeMap mm = new MimetypesFileTypeMap();
-            String contentType = mm.getContentType(media.getUrl());
-            if (contentType != null && contentType.startsWith("image/")) {
-                media.setContentType(contentType);
-                media.setTypeId(IsMediaTypeDao.IMAGE);
-            }
-        }
+        mediaISAttributes(isType, isId, media);
     }
 
-    //-- Getter/Setter
-    public long getNodeId() {
-        return nodeId;
-    }
-
-    public void setNodeId(long nodeId) {
-        this.nodeId = nodeId;
-    }
-
-    //-- Private
     private static void mediaSetter(String name, String value, Media media){
         if (NAME.equalsIgnoreCase(name) || TITLE.equalsIgnoreCase(name)) {
             media.setTitle(value);
@@ -142,4 +115,36 @@ public class NodeAttribute extends Attribute {
             media.setOembed(!Strings.isNullOrEmpty(value));
         }
     }
+    private static void mediaISAttributes(String isType, String isId, Media media){
+        if (media.isOembed()) {
+            media.setTypeId(IsMediaTypeDao.VIDEO);
+        } else if (!Strings.isNullOrEmpty(isId)){
+            if ("asb".equalsIgnoreCase(isType)){
+                media.setTypeId(IsMediaTypeDao.ASB);
+            } else if ("video".equalsIgnoreCase(isType)){
+                media.setTypeId(IsMediaTypeDao.VIDEO);
+            }
+
+            media.setOembed(true);
+        } else {
+            MimetypesFileTypeMap mm = new MimetypesFileTypeMap();
+            String contentType = mm.getContentType(media.getUrl());
+            if (contentType != null && contentType.startsWith("image/")) {
+                media.setContentType(contentType);
+                media.setTypeId(IsMediaTypeDao.IMAGE);
+            }
+        }
+
+    }
+
+    //-- Getter/Setter
+    public long getNodeId() {
+        return nodeId;
+    }
+
+    public void setNodeId(long nodeId) {
+        this.nodeId = nodeId;
+    }
+
+    //-- Private
 }
