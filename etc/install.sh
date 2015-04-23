@@ -33,4 +33,4 @@ chown -R $APP_USER:$APP_GROUP /opt/$APP
 cat initd.sh | sed -e "s/__USER_ID__/$APP_USER/" | sed -e "s/__SERVICE_NAME__/${APP}/" | sed -e "s/__ACTIVE_PROFILE__/${PROFILE}/" > /etc/init.d/$APP
 chmod +x /etc/init.d/$APP
 
-#/etc/init.d/$APP restart
+/etc/init.d/$APP restart
