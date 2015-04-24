@@ -9,18 +9,10 @@ public class IsRole extends Role {
     public IsRole(){
 
     }
-    public IsRole(long id) {
-        super(id);
-    }
 
     public IsRole(long id, String name, boolean accessAllTeams) {
         super(id, name);
         this.accessAllTeams = accessAllTeams;
-    }
-
-    public IsRole(IsRole role) {
-        super(role);
-        this.accessAllTeams = role.accessAllTeams;
     }
 
     //-- Getter/Setter
