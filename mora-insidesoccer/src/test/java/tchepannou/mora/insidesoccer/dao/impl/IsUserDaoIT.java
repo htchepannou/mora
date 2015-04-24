@@ -68,6 +68,7 @@ public class IsUserDaoIT {
         assertThat(result, nullValue());
     }
 
+    @Test
     public void testFindByIds () throws Exception{
         // When
         List<User> result = dao.findByIds(Arrays.asList(300L, 310L));
