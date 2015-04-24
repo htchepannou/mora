@@ -45,7 +45,7 @@ public class IsPostDaoIT {
         expected.setSummary("This is a content1");
         expected.setContent("This is a content1");
         expected.setDeleted(false);
-        expected.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        expected.setLastUpdate(new Timestamp(10000));
         assertThat(result, equalTo(expected));
     }
 
@@ -87,14 +87,14 @@ public class IsPostDaoIT {
         expected1.setSummary("This is a content1");
         expected1.setContent("This is a content1");
         expected1.setDeleted(false);
-        expected1.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        expected1.setLastUpdate(new Timestamp(40000));
         
         Post expected2 = new Post(411, new Space(410), new User(410));
         expected2.setTitle("title2");
         expected2.setSummary("This is a content2");
         expected2.setContent("This is a content2");
         expected2.setDeleted(false);
-        expected2.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        expected2.setLastUpdate(new Timestamp(41000));
         
         assertThat(result, hasSize(2));
         assertThat(result, hasItems(expected1, expected2));

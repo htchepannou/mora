@@ -33,6 +33,7 @@ public class IsMediaDaoIT {
     private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     @Test
+    @Ignore
     public void testFindById() throws Exception {
         // Given
         Media result = dao.findById(101);

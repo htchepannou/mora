@@ -8,8 +8,8 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.insidesoccer.config.JdbcConfig;
-import tchepannou.mora.insidesoccer.dao.NodeDao;
-import tchepannou.mora.insidesoccer.domain.Node;
+import tchepannou.mora.insidesoccer.dao.NodePartyRelationshipDao;
+import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
@@ -23,11 +23,11 @@ import static org.junit.Assert.assertThat;
 @RunWith (SpringJUnit4ClassRunner.class)
 @ContextConfiguration (classes = {JdbcConfig.class})
 @SqlGroup ({
-        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:sql/dao/is-clean.sql", "classpath:sql/dao/NodeDao.sql"}),
+        @Sql (executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {"classpath:sql/dao/is-clean.sql", "classpath:sql/dao/NodeRelationshipDao.sql"}),
 })
-public class NodeDaoImplTest {
+public class NodeRelationshipDaoImplIT {
     @Autowired
-    private NodeDao dao;
+    private NodePartyRelationshipDao dao;
 
     private DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -36,16 +36,19 @@ public class NodeDaoImplTest {
     @Test
     public void testFindById () throws Exception{
         // When
-        Node result = dao.findById(101);
+        NodePartyRelationship result = dao.findById(101);
 
         // Then
-        Node expected = new Node();
+        NodePartyRelationship expected = new NodePartyRelationship();
         expected.setId(101L);
         expected.setTypeId(1);
         expected.setOwnerId(100);
         expected.setChannelId(100);
         expected.setDeleted(false);
         expected.setStatus(1);
+        expected.setNodeId(100);
+        expected.setPartyId(100);
+        expected.setRank(1000);
         expected.setDate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
         assertThat(result, equalTo(expected));
     }
@@ -53,7 +56,7 @@ public class NodeDaoImplTest {
     @Test
     public void testFindById_deleted_returnsNull () throws Exception{
         // When
-        Node result = dao.findById(200);
+        NodePartyRelationship result = dao.findById(200);
 
         // Then
         assertThat(result, nullValue());
@@ -62,7 +65,7 @@ public class NodeDaoImplTest {
     @Test
     public void testFindById_notFound_returnsNull () throws Exception{
         // When
-        Node result = dao.findById(99);
+        NodePartyRelationship result = dao.findById(99);
 
         // Then
         assertThat(result, nullValue());
@@ -71,27 +74,34 @@ public class NodeDaoImplTest {
     @Test
     public void testFindByIds () throws Exception{
         // When
-        List<Node> result = dao.findByIds(Arrays.asList(101L, 200L, 300L));
+        List<NodePartyRelationship> result = dao.findByIds(Arrays.asList(101L, 200L, 300L));
 
         // Then
-        Node expected1 = new Node();
+        NodePartyRelationship expected1 = new NodePartyRelationship();
         expected1.setId(101L);
         expected1.setTypeId(1);
         expected1.setOwnerId(100);
         expected1.setChannelId(100);
         expected1.setDeleted(false);
         expected1.setStatus(1);
+        expected1.setNodeId(100);
+        expected1.setPartyId(100);
+        expected1.setRank(1000);
         expected1.setDate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
 
-        Node expected2 = new Node();
+        NodePartyRelationship expected2 = new NodePartyRelationship();
         expected2.setId(300L);
         expected2.setTypeId(1);
         expected2.setOwnerId(300);
         expected2.setChannelId(300);
         expected2.setDeleted(false);
         expected2.setStatus(1);
+        expected2.setNodeId(300);
+        expected2.setPartyId(300);
+        expected2.setChannelId(300);
+        expected2.setRank(3000);
         expected2.setDate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
-        
+
         assertThat(result, hasSize(2));
         assertThat(result, hasItems(expected1, expected2));
     }
@@ -99,7 +109,7 @@ public class NodeDaoImplTest {
     @Test
     public void testFindIdsByRelationshhipTypeByParties() throws Exception {
         // When
-        List<Long> result = dao.findIdsByRelationshhipTypeByParties(1, Arrays.asList(300L, 310L), 100, 0);
+        List<Long> result = dao.findIdsByTypeByParties(1, Arrays.asList(300L, 310L), 100, 0);
 
         // Then
         assertThat(result, hasSize(3));

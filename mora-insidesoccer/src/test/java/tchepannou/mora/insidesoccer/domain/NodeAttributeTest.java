@@ -15,10 +15,10 @@ public class NodeAttributeTest {
     @Test
     public void testToPost() throws Exception {
         // Given
-        Node node = new Node (1);
+        NodePartyRelationship node = new NodePartyRelationship(1);
         NodeAttribute attr11 = new NodeAttribute(1, node, NodeAttribute.TITLE, "title1");
         NodeAttribute attr12 = new NodeAttribute(2, node, NodeAttribute.CONTENT, "<p>This is the content of<p>");
-        NodeAttribute attr21 = new NodeAttribute(3, new Node(2), NodeAttribute.TITLE, "title2");
+        NodeAttribute attr21 = new NodeAttribute(3, new NodePartyRelationship(2), NodeAttribute.TITLE, "title2");
 
         Post post = new Post(1);
 
@@ -36,7 +36,7 @@ public class NodeAttributeTest {
     @Test
     public void testToMedia_Image() throws Exception {
         // Given
-        Node node = new Node (1);
+        NodePartyRelationship node = new NodePartyRelationship(1);
         Media media = new Media(1);
 
         // When
@@ -59,7 +59,7 @@ public class NodeAttributeTest {
     @Test
     public void testToMedia_Oembed_YouTube() throws Exception {
         // Given
-        Node node = new Node (1);
+        NodePartyRelationship node = new NodePartyRelationship(1);
         Media media = new Media(1);
 
         // When
@@ -86,7 +86,7 @@ public class NodeAttributeTest {
     @Test
     public void testToMedia_IsVideo() throws Exception {
         // Given
-        Node node = new Node (1);
+        NodePartyRelationship node = new NodePartyRelationship(1);
         Media media = new Media(1);
 
         // When
@@ -113,7 +113,7 @@ public class NodeAttributeTest {
     @Test
     public void testToMedia_IsAsb() throws Exception {
         // Given
-        Node node = new Node (1);
+        NodePartyRelationship node = new NodePartyRelationship(1);
         Media media = new Media(1);
 
         // When
@@ -141,7 +141,7 @@ public class NodeAttributeTest {
     @Test
     public void testToMedia_Unknown() throws Exception {
         // Given
-        Node node = new Node (1);
+        NodePartyRelationship node = new NodePartyRelationship(1);
         Media media = new Media(1);
 
         // When

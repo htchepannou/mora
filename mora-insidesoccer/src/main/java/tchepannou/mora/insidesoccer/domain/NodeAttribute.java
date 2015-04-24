@@ -39,7 +39,7 @@ public class NodeAttribute extends Attribute {
     //-- Public
     public NodeAttribute(){
     }
-    public NodeAttribute(long id, Node node, String name, String value){
+    public NodeAttribute(long id, NodePartyRelationship node, String name, String value){
         super(id, name, value);
 
         Preconditions.checkArgument(node != null, "node == null");

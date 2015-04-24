@@ -2,6 +2,7 @@ package tchepannou.mora.insidesoccer.config;
 
 import org.junit.Test;
 import tchepannou.mora.insidesoccer.dao.impl.*;
+import tchepannou.mora.insidesoccer.service.impl.TeamResolverImpl;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
@@ -50,8 +51,8 @@ public class IsDaoConfigTest {
     }
     
     @Test
-    public void testNodeDao (){
-        assertThat(config.nodeDao(), instanceOf(NodeDaoImpl.class));
+    public void testNodePartyRelationshipDao (){
+        assertThat(config.nodePartyRelationshipDao(), instanceOf(NodeRelationshipDaoImpl.class));
     }
 
     @Test
@@ -85,4 +86,8 @@ public class IsDaoConfigTest {
         assertThat(config.partyRelationshipDao(), instanceOf(PartyRelationshipDaoImpl.class));
     }
 
+    @Test
+    public void testTeamResolver(){
+        assertThat(config.teamResolver(), instanceOf(TeamResolverImpl.class));
+    }
 }

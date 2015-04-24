@@ -11,7 +11,7 @@ import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.dao.SpaceTypeDao;
 import tchepannou.mora.core.dao.UserDao;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
-import tchepannou.mora.insidesoccer.dao.NodeDao;
+import tchepannou.mora.insidesoccer.dao.NodePartyRelationshipDao;
 import tchepannou.mora.insidesoccer.dao.PartyAttributeDao;
 import tchepannou.mora.insidesoccer.dao.PartyDao;
 import tchepannou.mora.insidesoccer.dao.PartyRelationshipDao;
@@ -33,8 +33,8 @@ public class IsDaoConfig extends DaoConfig{
     }
 
     @Bean
-    public NodeDao nodeDao(){
-        return new NodeDaoImpl();
+    public NodePartyRelationshipDao nodePartyRelationshipDao(){
+        return new NodeRelationshipDaoImpl();
     }
 
     @Bean

@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import tchepannou.mora.core.dao.MediaDao;
 import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
-import tchepannou.mora.insidesoccer.dao.NodeDao;
-import tchepannou.mora.insidesoccer.domain.Node;
+import tchepannou.mora.insidesoccer.dao.NodePartyRelationshipDao;
+import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
 
 import java.util.Collection;
@@ -14,13 +14,8 @@ import java.util.List;
 
 public class IsMediaDao implements MediaDao{
     //-- Attributes
-    public static final long NODE_TYPE_ID = 100L;
-    public static final long REL_TYPE_ID = 100L;
-    public static final long MEMBER_TYPE_ID = 10L;
-    public static final long PARTY_TEAM_ID=3;
-
     @Autowired
-    private NodeDao nodeDao;
+    private NodePartyRelationshipDao nodePartyRelationshipDao;
 
     @Autowired
     private NodeAttributeDao nodeAttributeDao;
@@ -28,8 +23,8 @@ public class IsMediaDao implements MediaDao{
     //-- MediaDao overrides
     @Override
     public Media findById(long id) {
-        Node node = nodeDao.findById(id);
-        if (node == null || node.getTypeId() != NODE_TYPE_ID){
+        NodePartyRelationship node = nodePartyRelationshipDao.findById(id);
+        if (node == null || node.getTypeId() != NodePartyRelationship.TYPE_BLOG){
             return null;
         }
 
@@ -44,12 +39,11 @@ public class IsMediaDao implements MediaDao{
     }
 
     //-- Private
-    private Media toMedia (Node node, Collection<NodeAttribute> attributes){
+    private Media toMedia (NodePartyRelationship node, Collection<NodeAttribute> attributes){
         Media result = new Media ();
         node.toMedia(result);
         NodeAttribute.toMedia(attributes, result);
 
         return result;
     }
-
 }

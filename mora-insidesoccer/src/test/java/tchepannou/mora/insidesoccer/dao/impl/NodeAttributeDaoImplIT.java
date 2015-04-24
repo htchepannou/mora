@@ -9,7 +9,7 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.insidesoccer.config.JdbcConfig;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
-import tchepannou.mora.insidesoccer.domain.Node;
+import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
 
 import java.util.List;
@@ -32,7 +32,7 @@ public class NodeAttributeDaoImplIT {
     @Test
     public void testFindByNodeByNames() throws Exception {
         // Given
-        Node party = new Node(101);
+        NodePartyRelationship party = new NodePartyRelationship(101);
 
         // When
         List<NodeAttribute> result = dao.findByNodeByNames(101, "title", "description");

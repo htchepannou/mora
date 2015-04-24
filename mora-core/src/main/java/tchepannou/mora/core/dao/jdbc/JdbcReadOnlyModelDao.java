@@ -1,22 +1,15 @@
 package tchepannou.mora.core.dao.jdbc;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import tchepannou.mora.core.dao.jdbc.mapper.JdbcDao;
 import tchepannou.mora.core.domain.Model;
 import tchepannou.mora.core.domain.SoftDeleteSupport;
 
-import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public abstract class JdbcReadOnlyModelDao<T extends Model> {
-    //-- Attributes
-    protected JdbcTemplate template;
-
-
+public abstract class JdbcReadOnlyModelDao<T extends Model> extends JdbcDao{
     //-- Abstract
     protected abstract String getTableName ();
 
@@ -65,28 +58,4 @@ public abstract class JdbcReadOnlyModelDao<T extends Model> {
             return null;
         }
     }
-
-    protected StringBuilder whereIn(StringBuilder sql, String name, Collection values, List params){
-        int i=0;
-        sql.append(name).append(" IN (");
-        for (Object value : values){
-            if (i++ > 0){
-                sql.append(',');
-            }
-            sql.append('?');
-            params.add(value);
-        }
-        sql.append(")");
-        return sql;
-    }
-
-    //-- Setter
-    @Autowired
-    @Required
-    public void setDatasource(DataSource ds){
-        this.template = new JdbcTemplate(ds);
-    }
-
-
-
 }
