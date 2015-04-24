@@ -4,7 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import tchepannou.mora.core.domain.Role;
+import tchepannou.mora.insidesoccer.domain.IsRole;
 
 import java.sql.ResultSet;
 
@@ -22,12 +22,12 @@ public class IsRoleRowMapperTest {
         // Given
         when(rs.getLong("role_id")).thenReturn(1L);
         when(rs.getString("role_name")).thenReturn("foo");
+        when(rs.getBoolean("role_access_all_teams")).thenReturn(true);
 
         // When
-        Role result = new IsRoleRowMapper().mapRow(rs, 0);
+        IsRole result = new IsRoleRowMapper().mapRow(rs, 0);
 
         // Then
-        Role expected = new Role(1, "foo");
-        assertThat (result, equalTo(expected));
-
+        IsRole expected = new IsRole(1, "foo", true);
+        assertThat(result, equalTo(expected));
     }}

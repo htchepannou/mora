@@ -14,6 +14,7 @@ import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
 import tchepannou.mora.insidesoccer.dao.NodeDao;
 import tchepannou.mora.insidesoccer.dao.PartyAttributeDao;
 import tchepannou.mora.insidesoccer.dao.PartyDao;
+import tchepannou.mora.insidesoccer.dao.PartyRelationshipDao;
 import tchepannou.mora.insidesoccer.dao.impl.*;
 
 @Configuration
@@ -37,6 +38,11 @@ public class IsDaoConfig extends DaoConfig{
     @Bean
     public NodeAttributeDao nodeAttributeDao (){
         return new NodeAttributeDaoImpl();
+    }
+
+    @Bean
+    public PartyRelationshipDao partyRelationshipDao(){
+        return new PartyRelationshipDaoImpl();
     }
 
     //-- DaoConfig overrides

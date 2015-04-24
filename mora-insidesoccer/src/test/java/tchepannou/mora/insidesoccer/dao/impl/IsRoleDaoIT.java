@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.dao.RoleDao;
 import tchepannou.mora.core.domain.Role;
 import tchepannou.mora.insidesoccer.config.JdbcConfig;
+import tchepannou.mora.insidesoccer.domain.IsRole;
 
 import java.util.List;
 
@@ -34,7 +35,7 @@ public class IsRoleDaoIT {
         Role result = roleDao.findById(1);
 
         // Then
-        assertThat(result, equalTo(new Role(1, "admin")));
+        assertThat(result, equalTo(new IsRole(1, "admin", true)));
     }
     @Test
     public void testFindById_notFound_returnsNull (){
@@ -58,15 +59,15 @@ public class IsRoleDaoIT {
         // Then
         assertThat(result, hasSize(9));
         assertThat(result, hasItems(
-                new Role(1, "admin")
-                , new Role(2, "coach")
-                , new Role(3, "player")
-                , new Role(6, "member")
-                , new Role(7, "technical_director")
-                , new Role(8, "team_manager")
-                , new Role(9, "treasurer")
-                , new Role(11, "head_coach")
-                , new Role(12, "volunteer_coach")
+                new IsRole(1, "admin", true)
+                , new IsRole(2, "coach", false)
+                , new IsRole(3, "player", false)
+                , new IsRole(6, "member", false)
+                , new IsRole(7, "technical_director", true)
+                , new IsRole(8, "team_manager", false)
+                , new IsRole(9, "treasurer", false)
+                , new IsRole(11, "head_coach", false)
+                , new IsRole(12, "volunteer_coach", false)
         ));
     }
 

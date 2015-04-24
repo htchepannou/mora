@@ -79,4 +79,10 @@ public class IsDaoConfigTest {
     public void testAttachmentTypeDao (){
         assertThat(config.attachmentTypeDao(), instanceOf(IsAttachmentTypeDao.class));
     }
+
+    @Test
+    public void testPartyRelationshipDao(){
+        assertThat(config.partyRelationshipDao(), instanceOf(PartyRelationshipDaoImpl.class));
+    }
+
 }
