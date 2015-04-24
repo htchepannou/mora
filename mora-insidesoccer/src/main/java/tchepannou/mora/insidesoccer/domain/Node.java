@@ -5,6 +5,9 @@ import tchepannou.mora.core.domain.Post;
 
 public class Node extends AbstractNode{
     //-- Attribute
+    public static final long TYPE_BLOG = 1;
+    public static final long RELATION_BLOG = 1;
+
     private long channelId;
 
     // Public

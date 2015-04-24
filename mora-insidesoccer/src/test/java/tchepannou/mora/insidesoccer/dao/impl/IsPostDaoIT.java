@@ -72,7 +72,7 @@ public class IsPostDaoIT {
         List<Long> result = dao.findIdsPublishedForUser(300, 100, 0);
 
         assertThat(result, hasSize(2));
-        assertThat(result, hasItems(300L, 311L));
+        assertThat(result, hasItems(301L, 311L));
     }
     
     
