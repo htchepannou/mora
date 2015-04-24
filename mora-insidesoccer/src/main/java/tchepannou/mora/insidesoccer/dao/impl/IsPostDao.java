@@ -95,7 +95,7 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
             params.add(false);
             whereIn(sql, "nprel_party_fk", teamIds, params);
 
-            sql.append(String.format(" ORDER BY nprel_id DESC LIMIT %d OFFSET %d", limit, offset));
+            sql.append(String.format(" ORDER BY nprel_rank DESC, nprel_id DESC LIMIT %d OFFSET %d", limit, offset));
 
             List<Entry> entries = template.query(sql.toString(), params.toArray(), new RowMapper<Entry>() {
                 @Override

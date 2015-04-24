@@ -63,13 +63,12 @@ public class TeamResolverImpl implements TeamResolver {
 
             List<PartyRelationship> rels = teamsForClub(club);
             Set<Long> teamIds = PartyRelationship.destinationIds(rels);
-            if (role.isAccessAllTeams()){
-                result.addAll(teamIds);
-            } else {
-                List<PartyRelationship> teams = partyRelationshipDao.findBySourceByDestinationsByType(userId, teamIds, PartyRelationship.TYPE_MEMBER);
-                result.addAll(PartyRelationship.destinationIds(teams));
-            }
 
+            if (!role.isAccessAllTeams()){
+                List<PartyRelationship> teams = partyRelationshipDao.findBySourceByDestinationsByType(userId, teamIds, PartyRelationship.TYPE_MEMBER);
+                teamIds = PartyRelationship.destinationIds(teams);
+            }
+            result.addAll(teamIds);
             return result;
         }
     }
