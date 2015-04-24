@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.core.domain.Post;
+import tchepannou.mora.core.util.ComparatorById;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
 import tchepannou.mora.insidesoccer.dao.NodeDao;
 import tchepannou.mora.insidesoccer.domain.Node;
@@ -76,6 +77,11 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
             Collection<NodeAttribute> attrs = attributes.get(node.getId());
             Post post = toPost(node, attrs);
             result.add(post);
+        }
+
+        /* make sure the result is in the same order than the IDs */
+        if (ids instanceof List){
+            Collections.sort(result, new ComparatorById<Post>((List)ids));
         }
         return result;
     }
