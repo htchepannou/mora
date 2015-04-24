@@ -1,19 +1,29 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
+import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
 import tchepannou.mora.core.dao.MediaDao;
+import tchepannou.mora.core.dao.jdbc.mapper.JdbcDao;
 import tchepannou.mora.core.domain.Media;
+import tchepannou.mora.core.domain.Model;
+import tchepannou.mora.core.util.ComparatorById;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
+import tchepannou.mora.insidesoccer.dao.NodeDao;
 import tchepannou.mora.insidesoccer.dao.NodePartyRelationshipDao;
-import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
+import tchepannou.mora.insidesoccer.domain.Node;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
+import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class IsMediaDao implements MediaDao{
+public class IsMediaDao extends JdbcDao implements MediaDao{
     //-- Attributes
+    @Autowired
+    private NodeDao nodeDao;
+
     @Autowired
     private NodePartyRelationshipDao nodePartyRelationshipDao;
 
@@ -22,24 +32,49 @@ public class IsMediaDao implements MediaDao{
 
     //-- MediaDao overrides
     @Override
-    public Media findById(long id) {
-        NodePartyRelationship node = nodePartyRelationshipDao.findById(id);
-        if (node == null || node.getTypeId() != NodePartyRelationship.TYPE_BLOG){
+    public Media findById(long nodeId) {
+        Node node = nodeDao.findById(nodeId);
+        if (node == null || node.getTypeId() != NodePartyRelationship.TYPE_ATTACHMENT){
             return null;
         }
 
-        List<NodeAttribute> attributes = nodeAttributeDao.findByNodePartyRelationshipByNames(id, NodeAttribute.MEDIA_ATTRIBUTES.toArray(new String[]{}));
+        List<NodeAttribute> attributes = nodeAttributeDao.findByNodeByNames(nodeId, NodeAttribute.MEDIA_ATTRIBUTES.toArray(new String[]{}));
 
         return toMedia(node, attributes);
     }
 
     @Override
-    public List<Media> findByOwnerByAttachmentType(long ownerId, long typeId) {
-        return Collections.emptyList();
+    public List<Media> findByOwnerByAttachmentType(long nodePartyRelationshipId, long typeId) {
+        /* get the attachment nodes */
+        NodePartyRelationship rel = nodePartyRelationshipDao.findById(nodePartyRelationshipId);
+        if (rel == null){
+            return Collections.emptyList();
+        }
+
+        List<Node> nodes = nodeDao.findInNodes(rel.getNodeId(), Node.TYPE_ATTACHMENT);
+        List<Long> nodeIds = Model.idList(nodes);
+
+        /* Get the attributes */
+        Multimap<Long, NodeAttribute> attributes = nodeAttributeDao.findByNodesByNames(nodeIds, NodeAttribute.MEDIA_ATTRIBUTES.toArray(new String[]{}));
+
+        /* merge nodes + attributes */
+        List<Media> result = new ArrayList<>();
+        for (Node node : nodes){
+            Collection<NodeAttribute> attrs = attributes.get(node.getId());
+            if (attrs != null) {
+                Media media = toMedia(node, attrs);
+                result.add(media);
+            }
+        }
+
+        /* sort */
+        Collections.sort(result, new ComparatorById<Media>(nodeIds));
+
+        return result;
     }
 
     //-- Private
-    private Media toMedia (NodePartyRelationship node, Collection<NodeAttribute> attributes){
+    private Media toMedia (Node node, Collection<NodeAttribute> attributes){
         Media result = new Media ();
         node.toMedia(result);
         NodeAttribute.toMedia(attributes, result);

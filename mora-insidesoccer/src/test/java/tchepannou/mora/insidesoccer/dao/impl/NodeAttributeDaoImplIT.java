@@ -62,4 +62,43 @@ public class NodeAttributeDaoImplIT {
         // Then
         assertThat(result, hasSize(0));
     }
+
+
+
+    @Test
+    public void testFindByNodeByNames() throws Exception {
+        // Given
+        NodePartyRelationship party = new NodePartyRelationship(100);
+
+        // When
+        List<NodeAttribute> result = dao.findByNodeByNames(100, "title", "description");
+
+        // Then
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(
+                new NodeAttribute(100, party, "title", "title1")
+                ,new NodeAttribute(101, party, "description", "description1")
+        ));
+    }
+
+
+
+    @Test
+    public void testFindByNodeByNames_deletedNode_returnsEmpty() throws Exception {
+        // When
+        List<NodeAttribute> result = dao.findByNodeByNames(200, "title", "description");
+
+        // Then
+        assertThat(result, hasSize(0));
+    }
+
+    @Test
+    public void testFindByNodeByNames_badNode_returnsEmpty() throws Exception {
+        // When
+        List<NodeAttribute> result = dao.findByNodeByNames(999, "title", "description");
+
+        // Then
+        assertThat(result, hasSize(0));
+    }
+
 }

@@ -6,6 +6,9 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 import org.apache.commons.lang.builder.ToStringBuilder;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public abstract class Model implements Serializable {
     //-- Attriubtes
@@ -22,6 +25,16 @@ public abstract class Model implements Serializable {
         Preconditions.checkArgument(model != null, "model==null");
 
         this.id = model.getId();
+    }
+
+
+    //-- Public
+    public static List<Long> idList(Collection<? extends Model> models){
+        List<Long> result = new ArrayList<>();
+        for (Model model : models){
+            result.add(model.getId());
+        }
+        return result;
     }
 
     //-- Getter/Setter

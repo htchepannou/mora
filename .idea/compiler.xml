@@ -33,11 +33,11 @@
         <module name="mora-rest-member" />
         <module name="mora-rest-post" />
         <module name="mora-rest-security" />
-        <module name="mora-rest-space2" />
+        <module name="mora-rest-space" />
       </profile>
       <profile default="false" name="Annotation profile for mora-rest-space" enabled="true">
-        <sourceOutputDir name="../mora-rest-space3/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../mora-rest-space3/target/generated-test-sources/test-annotations" />
+        <sourceOutputDir name="../mora-rest-space/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../mora-rest-space/target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="mora-rest-space" />
@@ -54,8 +54,6 @@
       <module name="mora-rest-post" target="1.8" />
       <module name="mora-rest-security" target="1.8" />
       <module name="mora-rest-space" target="1.8" />
-      <module name="mora-rest-space2" target="1.8" />
-      <module name="mora-rest-space3" target="1.8" />
       <module name="mora-rest-user" target="1.8" />
       <module name="mora-swagger" target="1.8" />
     </bytecodeTargetLevel>

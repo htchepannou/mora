@@ -14,9 +14,9 @@ import tchepannou.mora.insidesoccer.domain.Node;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.nullValue;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 @RunWith (SpringJUnit4ClassRunner.class)
@@ -58,5 +58,29 @@ public class NodeDaoImplIT {
         Node result = dao.findById(9999);
 
         assertThat(result, nullValue());
+    }
+
+    @Test
+    public void testFindInNodes () throws Exception {
+        List<Node> result = dao.findInNodes(300, 100);
+
+        Node expected1 = new Node(311);
+        expected1.setChannelId(301);
+        expected1.setOwnerId(302);
+        expected1.setTypeId(1);
+        expected1.setDeleted(false);
+        expected1.setDate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        expected1.setStatus(3);
+
+        Node expected2 = new Node(312);
+        expected2.setChannelId(301);
+        expected2.setOwnerId(302);
+        expected2.setTypeId(1);
+        expected2.setDeleted(false);
+        expected2.setDate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        expected2.setStatus(3);
+
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(expected1, expected2));
     }
 }

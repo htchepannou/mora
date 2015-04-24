@@ -1,5 +1,6 @@
 delete from login;
 
+delete from nrel;
 delete from nprel;
 delete from prel;
 
