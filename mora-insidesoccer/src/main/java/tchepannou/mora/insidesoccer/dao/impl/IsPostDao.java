@@ -1,6 +1,8 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
 import com.google.common.collect.Multimap;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.PostDao;
@@ -23,6 +25,8 @@ import java.util.Set;
 
 public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
     //-- Attributes
+    private static final Logger LOG = LoggerFactory.getLogger(IsPostDao.class);
+
     @Autowired
     private NodeDao nodeDao;
 
@@ -82,6 +86,8 @@ public class IsPostDao extends IsReadOnlyModelDao<Post> implements PostDao{
         if (teamIds.isEmpty()){
             return Collections.emptyList();
         } else {
+            LOG.info("Teams of " + userId + ": " + teamIds);
+
             StringBuilder sql = new StringBuilder("SELECT * FROM nprel JOIN node ON nprel_node_fk=node_id WHERE nprel_type_fk=? AND node_deleted=? AND ");
 
             List params = new ArrayList<>();
