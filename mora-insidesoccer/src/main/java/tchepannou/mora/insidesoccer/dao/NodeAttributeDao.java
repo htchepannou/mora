@@ -7,6 +7,6 @@ import java.util.Collection;
 import java.util.List;
 
 public interface NodeAttributeDao {
-    List<NodeAttribute> findByNodeByNames(long nodeId, String... names);
-    Multimap<Long, NodeAttribute> findByNodesByNames(Collection<Long> nodeIds, String... names);
+    List<NodeAttribute> findByNodePartyRelationshipByNames(long nodePartyRelationshipId, String... names);
+    Multimap<Long, NodeAttribute> findByNodePartyRelationshipsByNames(Collection<Long> nodePartyRelationshipId, String... names);
 }

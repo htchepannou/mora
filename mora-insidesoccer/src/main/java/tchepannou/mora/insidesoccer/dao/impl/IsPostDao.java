@@ -47,7 +47,7 @@ public class IsPostDao extends JdbcDao implements PostDao{
             return null;
         }
 
-        List<NodeAttribute> attributes = nodeAttributeDao.findByNodeByNames(id, NodeAttribute.POST_ATTRIBUTES.toArray(new String[]{}));
+        List<NodeAttribute> attributes = nodeAttributeDao.findByNodePartyRelationshipByNames(id, NodeAttribute.POST_ATTRIBUTES.toArray(new String[]{}));
 
         return toPost(node, attributes);
     }
@@ -55,7 +55,7 @@ public class IsPostDao extends JdbcDao implements PostDao{
     @Override
     public List<Post> findByIds (Collection<Long> ids) {
         List<NodePartyRelationship> nodes = nodePartyRelationshipDao.findByIds(ids);
-        Multimap<Long, NodeAttribute> attributes = nodeAttributeDao.findByNodesByNames(ids, NodeAttribute.POST_ATTRIBUTES.toArray(new String[]{}));
+        Multimap<Long, NodeAttribute> attributes = nodeAttributeDao.findByNodePartyRelationshipsByNames(ids, NodeAttribute.POST_ATTRIBUTES.toArray(new String[]{}));
 
         List<Post> result = new LinkedList<>();
         for (NodePartyRelationship node : nodes){

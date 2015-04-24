@@ -3,6 +3,7 @@ package tchepannou.mora.insidesoccer.dao.impl;
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Multimap;
 import org.springframework.jdbc.core.RowMapper;
+import tchepannou.mora.core.dao.jdbc.mapper.JdbcDao;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
 import tchepannou.mora.insidesoccer.dao.mapper.NodeAttributeRowMapper;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
@@ -13,37 +14,22 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class NodeAttributeDaoImpl extends IsReadOnlyModelDao<NodeAttribute> implements NodeAttributeDao {
+public class NodeAttributeDaoImpl extends JdbcDao implements NodeAttributeDao {
     //-- Attributes
     private static final RowMapper<NodeAttribute> MAPPER = new NodeAttributeRowMapper();
 
-    //-- IsReadOnlyModelDao overrides
+    //-- NodeAttributeDao overrides
     @Override
-    protected String getIdColumn() {
-        return "nattr_id";
-    }
-
-    @Override
-    protected String getTableName() {
-        return "nattr";
-    }
-
-    @Override
-    protected RowMapper<NodeAttribute> getRowMapper() {
-        return MAPPER;
-    }
-
-    @Override
-    public List<NodeAttribute> findByNodeByNames(long nodeId, String... names) {
-        Multimap<Long, NodeAttribute> result = findByNodesByNames(Collections.singletonList(nodeId), names);
+    public List<NodeAttribute> findByNodePartyRelationshipByNames(long nodePartyRelationshipId, String... names) {
+        Multimap<Long, NodeAttribute> result = findByNodePartyRelationshipsByNames(Collections.singletonList(nodePartyRelationshipId), names);
         return !result.isEmpty()
-                ? new ArrayList(result.get(nodeId))
+                ? new ArrayList(result.get(nodePartyRelationshipId))
                 : Collections.emptyList();
     }
 
     @Override
-    public Multimap<Long, NodeAttribute> findByNodesByNames(Collection<Long> nodeIds, String... names) {
-        StringBuilder sql = new StringBuilder("SELECT A.*, R.nprel_id" +
+    public Multimap<Long, NodeAttribute> findByNodePartyRelationshipsByNames(Collection<Long> nodePartyRelationshipId, String... names) {
+        StringBuilder sql = new StringBuilder("SELECT R.nprel_id AS node_id, A.*" +
                 " FROM nattr A" +
                 "   JOIN node N ON A.nattr_node_fk=N.node_id" +
                 "   JOIN nprel R ON A.nattr_node_fk=R.nprel_node_fk" +
@@ -53,16 +39,16 @@ public class NodeAttributeDaoImpl extends IsReadOnlyModelDao<NodeAttribute> impl
         params.add(false);
 
 
-        if (!nodeIds.isEmpty()) {
+        if (!nodePartyRelationshipId.isEmpty()) {
             sql.append(" AND ");
-            whereIn(sql, "R.nprel_id", nodeIds, params);
+            whereIn(sql, "R.nprel_id", nodePartyRelationshipId, params);
         }
         if (names.length>0){
             sql.append(" AND ");
             whereIn(sql, "nattr_name", Arrays.asList(names), params);
         }
 
-        List<NodeAttribute> attributes = template.query(sql.toString(), params.toArray(), getRowMapper());
+        List<NodeAttribute> attributes = template.query(sql.toString(), params.toArray(), MAPPER);
 
         Multimap<Long, NodeAttribute> result = ArrayListMultimap.create();
         for (NodeAttribute attr : attributes){

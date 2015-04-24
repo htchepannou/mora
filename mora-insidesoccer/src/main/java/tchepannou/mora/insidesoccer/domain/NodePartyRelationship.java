@@ -1,18 +1,15 @@
 package tchepannou.mora.insidesoccer.domain;
 
-import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.Post;
 
 import java.sql.Timestamp;
 
-public class NodePartyRelationship extends AbstractNode{
+public class NodePartyRelationship extends Node{
     //-- Attribute
     public static final long TYPE_BLOG = 1;
-    public static final long TYPE_ATTACHMENT = 100;
 
     private long nodeId;
     private long partyId;
-    private long channelId;
     private long rank;
     private String qualifier;
     private boolean primary;
@@ -27,29 +24,13 @@ public class NodePartyRelationship extends AbstractNode{
     //-- Public
     public void toPost(Post post) {
         post.setId(this.getId());
-        post.setLastUpdate(new Timestamp(this.rank));
-        post.setUserId(this.ownerId);
-        post.setDeleted(this.deleted);
-        post.setSpaceId(this.channelId);
-    }
-
-    public void toMedia(Media media) {
-        media.setId(this.getId());
-        media.setLastUpdate(new Timestamp(this.rank));
-        media.setUserId(this.ownerId);
-        media.setDeleted(this.deleted);
-        media.setSpaceId(this.channelId);
+        post.setLastUpdate(new Timestamp(this.getRank()));
+        post.setUserId(this.getOwnerId());
+        post.setDeleted(this.isDeleted());
+        post.setSpaceId(this.getChannelId());
     }
 
     //-- Getter/Setter
-    public long getChannelId() {
-        return channelId;
-    }
-
-    public void setChannelId(long channelId) {
-        this.channelId = channelId;
-    }
-
     public long getNodeId() {
         return nodeId;
     }

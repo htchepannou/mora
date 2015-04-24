@@ -22,7 +22,7 @@ public class NodeAttributeRowMapperTest {
         // Given
         when(rs.getLong("nattr_id")).thenReturn(1L);
         when(rs.getLong("nattr_node_fk")).thenReturn(11L);
-        when(rs.getLong("nprel_id")).thenReturn(12L);
+        when(rs.getLong("node_id")).thenReturn(12L);
         when(rs.getString("nattr_name")).thenReturn("title");
         when(rs.getString("nattr_value")).thenReturn("Hello world");
 

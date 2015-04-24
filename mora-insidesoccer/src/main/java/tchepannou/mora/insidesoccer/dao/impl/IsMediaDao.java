@@ -28,7 +28,7 @@ public class IsMediaDao implements MediaDao{
             return null;
         }
 
-        List<NodeAttribute> attributes = nodeAttributeDao.findByNodeByNames(id, NodeAttribute.MEDIA_ATTRIBUTES.toArray(new String[]{}));
+        List<NodeAttribute> attributes = nodeAttributeDao.findByNodePartyRelationshipByNames(id, NodeAttribute.MEDIA_ATTRIBUTES.toArray(new String[]{}));
 
         return toMedia(node, attributes);
     }
