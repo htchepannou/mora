@@ -18,6 +18,9 @@ public class Party extends AbstractNode{
     public Party(long id){
         super(id);
     }
+    public Party(long id, long typeId){
+        super(id, typeId);
+    }
 
     //-- Public
     public void toUser (User user){

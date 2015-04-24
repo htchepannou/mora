@@ -19,6 +19,10 @@ public abstract class AbstractNode extends Model implements SoftDeleteSupport{
     public AbstractNode(long id){
         super(id);
     }
+    public AbstractNode(long id, long typeId){
+        super(id);
+        this.typeId = typeId;
+    }
 
     //-- SoftDeleteSupport overrides
     @Override

@@ -19,6 +19,21 @@ public class PartyRelationship extends Model {
     private long rank;
     private String qualifier;
 
+    //-- Constructor
+    public PartyRelationship(){
+
+    }
+    public PartyRelationship(long sourceId, long destinationId, long typeId){
+        this.sourceId = sourceId;
+        this.destinationId = destinationId;
+        this.typeId = typeId;
+    }
+    public PartyRelationship(long sourceId, long destinationId, long typeId, String qualifier){
+        this.sourceId = sourceId;
+        this.destinationId = destinationId;
+        this.typeId = typeId;
+        this.qualifier = qualifier;
+    }
 
     //-- Public
     public static Set<Long> destinationIds (Collection<PartyRelationship> rels){
