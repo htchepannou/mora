@@ -1,6 +1,8 @@
 package tchepannou.mora.core.config;
 
 import org.junit.Test;
+import tchepannou.mora.core.service.impl.MediaServiceImpl;
+import tchepannou.mora.core.service.impl.MediaTypeServiceImpl;
 import tchepannou.mora.core.service.impl.MemberServiceImpl;
 import tchepannou.mora.core.service.impl.PostServiceImpl;
 import tchepannou.mora.core.service.impl.RoleServiceImpl;
@@ -48,5 +50,14 @@ public class ServiceConfigTest {
     @Test
     public void testUrlFetchService() throws Exception {
         assertThat(config.urlFetchService(), instanceOf(UrlFetchServiceImpl.class));
+    }
+
+    @Test
+    public void testMediaService() throws Exception {
+        assertThat(config.mediaService(), instanceOf(MediaServiceImpl.class));
+    }
+    @Test
+    public void testMediaTypeService() throws Exception {
+        assertThat(config.mediaTypeService(), instanceOf(MediaTypeServiceImpl.class));
     }
 }

@@ -38,7 +38,7 @@ public class IsMediaDaoIT {
         Media result = dao.findById(100);
 
         // Then
-        Media expected = new Media(100, new Space(100), new User(100));
+        Media expected = new Media(100, new Space(100), new User(100), new MediaType(1, "foo"));
         expected.setTitle("title1");
         expected.setDescription("This is a content1");
         expected.setUrl("http://www.google.ca/logo.jpg");

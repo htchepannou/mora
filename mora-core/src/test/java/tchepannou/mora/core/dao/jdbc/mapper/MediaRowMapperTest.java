@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import tchepannou.mora.core.domain.Media;
+import tchepannou.mora.core.domain.MediaType;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 
@@ -28,6 +29,7 @@ public class MediaRowMapperTest {
         when(rs.getLong("id")).thenReturn(1L);
         when(rs.getLong("user_id")).thenReturn(11L);
         when(rs.getLong("space_id")).thenReturn(12L);
+        when(rs.getLong("type_id")).thenReturn(13L);
         when(rs.getBoolean("deleted")).thenReturn(true);
         when(rs.getString("title")).thenReturn("title1");
         when(rs.getString("description")).thenReturn("description1");
@@ -44,7 +46,7 @@ public class MediaRowMapperTest {
         Media result = new MediaRowMapper().mapRow(rs, 0);
 
         // Then
-        Media expected = new Media(1, new Space(12), new User(11));
+        Media expected = new Media(1, new Space(12), new User(11), new MediaType(13, "foo"));
         expected.setDeleted(true);
         expected.setTitle("title1");
         expected.setDescription("description1");

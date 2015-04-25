@@ -1,7 +1,9 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
+import com.google.common.base.Strings;
 import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import tchepannou.mora.core.dao.MediaDao;
 import tchepannou.mora.core.dao.jdbc.mapper.JdbcDao;
 import tchepannou.mora.core.domain.Media;
@@ -29,6 +31,10 @@ public class IsMediaDao extends JdbcDao implements MediaDao{
 
     @Autowired
     private NodeAttributeDao nodeAttributeDao;
+
+    @Value ("${insidesoccer.asset.url}")
+    private String assetUrl;
+
 
     //-- MediaDao overrides
     @Override
@@ -79,6 +85,17 @@ public class IsMediaDao extends JdbcDao implements MediaDao{
         node.toMedia(result);
         NodeAttribute.toMedia(attributes, result);
 
+        result.setUrl(prefixUrl(result.getUrl()));
+        result.setImageUrl(prefixUrl(result.getImageUrl()));
+        result.setThumbnailUrl(prefixUrl(result.getThumbnailUrl()));
+
         return result;
+    }
+
+    private String prefixUrl(String url){
+        if (!Strings.isNullOrEmpty(url) && !url.startsWith("http://") && !url.startsWith("https://")) {
+            return assetUrl + url;
+        }
+        return url;
     }
 }

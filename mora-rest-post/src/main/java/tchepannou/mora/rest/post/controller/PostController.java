@@ -7,15 +7,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.AccessToken;
+import tchepannou.mora.core.domain.AttachmentType;
+import tchepannou.mora.core.domain.Media;
+import tchepannou.mora.core.domain.MediaType;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.service.AccessTokenService;
+import tchepannou.mora.core.service.MediaService;
+import tchepannou.mora.core.service.MediaTypeService;
 import tchepannou.mora.core.service.PostService;
 import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.rest.core.controller.BaseRestController;
 import tchepannou.mora.rest.core.exception.NotFoundException;
+import tchepannou.mora.rest.post.dto.MediaDto;
 import tchepannou.mora.rest.post.dto.PostDto;
 import tchepannou.mora.rest.post.dto.PostSummaryDto;
 
@@ -41,6 +47,12 @@ public class PostController extends BaseRestController{
 
     @Autowired
     private AccessTokenService accessTokenService;
+
+    @Autowired
+    private MediaService mediaService;
+
+    @Autowired
+    private MediaTypeService mediaTypeService;
 
     
     //-- REST methods
@@ -83,11 +95,23 @@ public class PostController extends BaseRestController{
         Space space = spaceService.findById(post.getSpaceId());
         User user = userService.findById(post.getUserId());
 
-        return (PostDto)new PostDto.Builder()
+        PostDto result = (PostDto)new PostDto.Builder()
                 .withPost(post)
                 .withSpace(space)
                 .withUser(user)
                 .build();
+
+        List<Media> medias = mediaService.findByOwnerByAttachmentType(postId, AttachmentType.POST);
+        for (Media media : medias){
+            MediaType type = mediaTypeService.findById(media.getTypeId());
+            MediaDto mediaDto = new MediaDto.Builder()
+                    .withMedia(media)
+                    .withMediaType(type)
+                    .build();
+
+            result.addMedia(mediaDto);
+        }
+        return result;
     }
 
     //-- Private

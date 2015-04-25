@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.config.JdbcConfig;
 import tchepannou.mora.core.dao.MediaDao;
 import tchepannou.mora.core.domain.Media;
+import tchepannou.mora.core.domain.MediaType;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 
@@ -40,7 +41,7 @@ public class JdbcMediaDaoIT {
         Media result = mediaDao.findById(100);
 
         // Then
-        Media expected = new Media(100, new Space(1), new User(1));
+        Media expected = new Media(100, new Space(1), new User(1), new MediaType(1, "image"));
         expected.setDeleted(false);
         expected.setTitle("title1");
         expected.setDescription("description1");
@@ -80,7 +81,7 @@ public class JdbcMediaDaoIT {
         List<Media> result = mediaDao.findByOwnerByAttachmentType(400, 400);
 
         // Then
-        Media expected1 = new Media(410, new Space(1), new User(1));
+        Media expected1 = new Media(410, new Space(1), new User(1), new MediaType(1, "image"));
         expected1.setDeleted(false);
         expected1.setTitle("title1");
         expected1.setDescription("description1");
@@ -93,7 +94,7 @@ public class JdbcMediaDaoIT {
         expected1.setCreationDate(new Timestamp(fmt.parse("2014-01-01 10:30:55").getTime()));
         expected1.setLastUpdate(new Timestamp(fmt.parse("2014-12-01 14:30:55").getTime()));
 
-        Media expected2 = new Media(411, new Space(1), new User(1));
+        Media expected2 = new Media(411, new Space(1), new User(1), new MediaType(1, "image"));
         expected2.setDeleted(false);
         expected2.setTitle("title2");
         expected2.setDescription("description2");

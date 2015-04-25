@@ -129,12 +129,15 @@ public class NodeAttribute extends Attribute {
         } else {
             MimetypesFileTypeMap mm = new MimetypesFileTypeMap();
             String contentType = mm.getContentType(media.getUrl());
-            if (contentType != null && contentType.startsWith("image/")) {
+            if (contentType != null){
                 media.setContentType(contentType);
-                media.setTypeId(IsMediaTypeDao.IMAGE);
+                if (contentType.startsWith("image/")) {
+                    media.setTypeId(IsMediaTypeDao.IMAGE);
+                } else if (contentType.startsWith("video/")) {
+                    media.setTypeId(IsMediaTypeDao.VIDEO);
+                }
             }
         }
-
     }
 
     //-- Getter/Setter

@@ -1,5 +1,7 @@
 package tchepannou.mora.core.domain;
 
+import com.google.common.base.Preconditions;
+
 public class Media extends LifecycleAwareModel{
     //-- Attributes
     private long userId;
@@ -21,10 +23,21 @@ public class Media extends LifecycleAwareModel{
     public Media (long id){
         super(id);
     }
-    public Media (long id, Space space, User userId){
+    public Media (long id, Space space, User user, MediaType type) {
         super(id);
+        
+        Preconditions.checkArgument(space != null, "space==null");
+        Preconditions.checkArgument(space.getId()>0, "space.id <=0");
+        
+        Preconditions.checkArgument(user != null, "user==null");
+        Preconditions.checkArgument(user.getId() > 0, "user.id <=0");
+        
+        Preconditions.checkArgument(type != null, "type==null");
+        Preconditions.checkArgument(type.getId() > 0, "type.id <=0");
+        
         this.spaceId = space.getId();
-        this.userId = userId.getId();
+        this.userId = user.getId();
+        this.typeId = type.getId();
     }
     public Media (Media media){
         super(media);

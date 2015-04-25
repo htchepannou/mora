@@ -83,6 +83,10 @@ public class PostControllerIT {
             .body("space.id", equalTo(300))
             .body("space.name", equalTo("space1"))
             .body("space.logoUrl", equalTo("http://space1.com/logo.png"))
+            .body("medias.typeId", hasItems(1, 1))
+            .body("medias.title", hasItems("title1", "title2"))
+            .body("medias.description", hasItems("description1", "description2"))
+            .body("medias.contentType", hasItems("image/png", "image/png"))
         ;
     }
 

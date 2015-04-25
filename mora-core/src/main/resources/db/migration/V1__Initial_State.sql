@@ -126,6 +126,7 @@ create table t_media(
     id int not null primary key auto_increment,
     space_id int not null,
     user_id int not null,
+    type_id int not null,
 
     title varchar(100) not null,
     description varchar(255) not null,
@@ -140,7 +141,8 @@ create table t_media(
     last_update timestamp null,
 
     foreign key (space_id) references t_space(id),
-    foreign key (user_id) references t_user(id)
+    foreign key (user_id) references t_user(id),
+    foreign key (type_id) references t_media_type(id)
 ) engine=InnoDB;
 
 

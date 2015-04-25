@@ -35,13 +35,6 @@
         <module name="mora-rest-security" />
         <module name="mora-rest-space" />
       </profile>
-      <profile default="false" name="Annotation profile for mora-rest-space" enabled="true">
-        <sourceOutputDir name="../mora-rest-space/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../mora-rest-space/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true" />
-        <module name="mora-rest-space" />
-      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mora" target="1.8" />

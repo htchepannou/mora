@@ -14,6 +14,7 @@ public class MediaRowMapper implements RowMapper<Media> {
         result.setId(rs.getLong("id"));
         result.setUserId(rs.getLong("user_id"));
         result.setSpaceId(rs.getLong("space_id"));
+        result.setTypeId(rs.getLong("type_id"));
         result.setDeleted(rs.getBoolean("deleted"));
         result.setTitle(rs.getString("title"));
         result.setDescription(rs.getString("description"));

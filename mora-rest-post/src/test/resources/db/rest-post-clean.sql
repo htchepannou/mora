@@ -1,3 +1,9 @@
+delete from t_attachment;
+delete from t_attachment_type;
+
+delete from t_media;
+delete from t_media_type;
+
 delete from t_member;
 delete from t_post;
 

@@ -57,6 +57,29 @@ public class NodeAttributeTest {
     }
 
     @Test
+    public void testToMedia_Video() throws Exception {
+        // Given
+        NodePartyRelationship node = new NodePartyRelationship(1);
+        Media media = new Media(1);
+
+        // When
+        NodeAttribute.toMedia(Arrays.asList(
+                new NodeAttribute(1, node, NodeAttribute.TITLE, "sundaylunch01.jpg"),
+                new NodeAttribute(2, node, NodeAttribute.THUMBNAIL_URL, "/3/43/20243/sundaylunch01.jpg"),
+                new NodeAttribute(3, node, NodeAttribute.URL, "/3/43/20243/sundaylunch01_IMG.mov")
+        ), media);
+
+        // Then
+        Media expected = new Media(1);
+        expected.setTitle("sundaylunch01.jpg");
+        expected.setUrl("/3/43/20243/sundaylunch01_IMG.mov");
+        expected.setThumbnailUrl("/3/43/20243/sundaylunch01.jpg");
+        expected.setTypeId(IsMediaTypeDao.VIDEO);
+        expected.setContentType("video/quicktime");
+        assertThat(media, equalTo(expected));
+    }
+
+    @Test
     public void testToMedia_Oembed_YouTube() throws Exception {
         // Given
         NodePartyRelationship node = new NodePartyRelationship(1);
