@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.AttachmentType;
 import tchepannou.mora.core.domain.Media;
-import tchepannou.mora.core.domain.MediaType;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.MediaService;
 import tchepannou.mora.core.service.MediaTypeService;
+import tchepannou.mora.core.service.OembedService;
 import tchepannou.mora.core.service.PostService;
 import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.UserService;
@@ -53,6 +53,9 @@ public class PostController extends BaseRestController{
 
     @Autowired
     private MediaTypeService mediaTypeService;
+
+    @Autowired
+    private OembedService oembedService;
 
     
     //-- REST methods
@@ -103,10 +106,10 @@ public class PostController extends BaseRestController{
 
         List<Media> medias = mediaService.findByOwnerByAttachmentType(postId, AttachmentType.POST);
         for (Media media : medias){
-            MediaType type = mediaTypeService.findById(media.getTypeId());
             MediaDto mediaDto = new MediaDto.Builder()
                     .withMedia(media)
-                    .withMediaType(type)
+                    .withOembedService(oembedService)
+                    .withMediaTypeService(mediaTypeService)
                     .build();
 
             result.addMedia(mediaDto);

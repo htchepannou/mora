@@ -3,11 +3,12 @@ package tchepannou.mora.rest.post.dto;
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.MediaType;
+import tchepannou.mora.core.service.MediaTypeService;
+import tchepannou.mora.core.service.OembedService;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
 public class MediaDto extends ModelDto{
     //-- Attributes
-    private long typeId;
     private String title;
     private String description;
     private String contentType;
@@ -16,6 +17,8 @@ public class MediaDto extends ModelDto{
     private String thumbnailUrl;
     private String imageUrl;
     private boolean oembed;
+    private String embedUrl;
+    private MediaTypeDto type;
 
     //-- Public
     private MediaDto (){
@@ -24,12 +27,13 @@ public class MediaDto extends ModelDto{
     //-- Builder
     public static class Builder {
         private Media media;
-        private MediaType type;
+        private OembedService oembedService;
+        private MediaTypeService mediaTypeService;
 
         public MediaDto build (){
             Preconditions.checkState(media != null, "media == null");
-            Preconditions.checkState(type != null, "type == null");
-            Preconditions.checkState(media.getTypeId() == type.getId(), "media.typeId != type.id");
+            Preconditions.checkState(oembedService != null, "oembedService == null");
+            Preconditions.checkState(mediaTypeService != null, "mediaTypeService == null");
 
             MediaDto result = new MediaDto();
             result.title = media.getTitle();
@@ -40,7 +44,19 @@ public class MediaDto extends ModelDto{
             result.thumbnailUrl = media.getThumbnailUrl();
             result.imageUrl = media.getImageUrl();
             result.oembed = media.isOembed();
-            result.typeId = type.getId();
+
+            MediaType type = mediaTypeService.findById(media.getTypeId());
+            if (type == null){
+                throw new IllegalStateException("Invalid MediaType: " + media.getTypeId());
+            }
+            result.type = new MediaTypeDto(type.getId(), type.getName());
+
+            if (media.isOembed()){
+                result.embedUrl = oembedService.getEmbedUrl(media.getUrl());
+            } else {
+                result.embedUrl = null;
+            }
+
             return result;
         }
 
@@ -48,8 +64,12 @@ public class MediaDto extends ModelDto{
             this.media = media;
             return this;
         }
-        public Builder withMediaType (MediaType type){
-            this.type = type;
+        public Builder withOembedService (OembedService oembedService){
+            this.oembedService = oembedService;
+            return this;
+        }
+        public Builder withMediaTypeService (MediaTypeService mediaTypeService){
+            this.mediaTypeService = mediaTypeService;
             return this;
         }
     }
@@ -87,7 +107,11 @@ public class MediaDto extends ModelDto{
         return url;
     }
 
-    public long getTypeId() {
-        return typeId;
+    public MediaTypeDto getType() {
+        return type;
+    }
+
+    public String getEmbedUrl() {
+        return embedUrl;
     }
 }
