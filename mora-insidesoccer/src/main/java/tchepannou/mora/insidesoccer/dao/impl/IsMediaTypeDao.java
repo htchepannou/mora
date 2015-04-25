@@ -17,7 +17,8 @@ public class IsMediaTypeDao implements MediaTypeDao{
     private static final List<MediaType> ALL = Arrays.asList(
             new MediaType(IMAGE, "image"),
             new MediaType(VIDEO, "video"),
-            new MediaType(ASB, "asb")
+            new MediaType(ASB, "asb"),
+            new MediaType(UNKNOWN, "unknown")
     );
 
     @Override

@@ -26,10 +26,11 @@ public class IsMediaTypeDaoIT {
     public void testFindAll() throws Exception {
         List<MediaType> result = new IsMediaTypeDao().findAll();
 
-        assertThat(result, hasSize(3));
-        assertThat(result, hasItems(new MediaType(1, "image"),
-                    new MediaType(2, "video"),
-                    new MediaType(100, "asb"))
+        assertThat(result, hasSize(4));
+        assertThat(result, hasItems(new MediaType(IsMediaTypeDao.IMAGE, "image"),
+                    new MediaType(IsMediaTypeDao.VIDEO, "video"),
+                    new MediaType(IsMediaTypeDao.ASB, "asb"),
+                    new MediaType(IsMediaTypeDao.UNKNOWN, "unknown"))
         );
     }
 
