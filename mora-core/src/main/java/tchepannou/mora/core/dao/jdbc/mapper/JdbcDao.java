@@ -14,6 +14,9 @@ public abstract class JdbcDao {
 
 
     //-- Protected
+    protected StringBuilder whereAnd(StringBuilder sql){
+        return sql.append(" AND ");
+    }
 
     protected StringBuilder whereIn(StringBuilder sql, String name, Collection values, List params){
         int i=0;

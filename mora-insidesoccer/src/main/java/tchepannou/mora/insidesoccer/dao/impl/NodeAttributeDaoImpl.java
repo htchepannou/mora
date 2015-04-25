@@ -40,11 +40,11 @@ public class NodeAttributeDaoImpl extends JdbcDao implements NodeAttributeDao {
 
 
         if (!nodePartyRelationshipId.isEmpty()) {
-            sql.append(" AND ");
+            whereAnd(sql);
             whereIn(sql, "R.nprel_id", nodePartyRelationshipId, params);
         }
         if (names.length>0){
-            sql.append(" AND ");
+            whereAnd(sql);
             whereIn(sql, "nattr_name", Arrays.asList(names), params);
         }
 
