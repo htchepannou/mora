@@ -11,7 +11,7 @@ public class PostDto extends BasePostDto{
     //-- Attributes
     private String content;
     private Date creationDate;
-    private List<MediaDto> medias = new ArrayList<>();
+    private List<MediaDto> medias = new ArrayList<>();  // NOSONAR - This field is serializable
 
 
     //-- Builder

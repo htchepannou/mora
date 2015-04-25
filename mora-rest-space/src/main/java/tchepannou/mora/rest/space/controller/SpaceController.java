@@ -103,9 +103,6 @@ public class SpaceController extends BaseRestController{
                 .build();
     }
 
-    /**
-     * TODO Should be restricted to ADMIN
-     */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.POST)
     public SpaceDto update (@PathVariable long spaceId, @Valid  @RequestBody SaveSpaceDto request) {
         Space space = spaceService.findById(spaceId);
@@ -124,9 +121,6 @@ public class SpaceController extends BaseRestController{
                 .build();
     }
 
-    /**
-     * TODO Should be restricted to OWNER
-     */
     @RequestMapping (value = "/spaces/{spaceId}", method = RequestMethod.DELETE)
     public void delete (@PathVariable long spaceId) {
         Space space = spaceService.findById(spaceId);

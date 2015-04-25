@@ -78,11 +78,11 @@ public class NodeAttributeDaoImpl extends JdbcDao implements NodeAttributeDao {
 
 
         if (!nodeIds.isEmpty()) {
-            sql.append(" AND ");
+            whereAnd(sql);
             whereIn(sql, "A.nattr_node_fk", nodeIds, params);
         }
         if (names.length>0){
-            sql.append(" AND ");
+            whereAnd(sql);
             whereIn(sql, "nattr_name", Arrays.asList(names), params);
         }
 
