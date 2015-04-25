@@ -8,6 +8,7 @@
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/UrlFetchService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/VideoProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/video/DailymotionProvider.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/video/DefaultVideoProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/video/VimeoProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/video/YouTubeProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/service/video/DailymotionProviderTest.java" charset="UTF-8" />

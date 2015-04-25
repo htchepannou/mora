@@ -45,11 +45,11 @@ public class MediaDto extends ModelDto{
             result.imageUrl = media.getImageUrl();
             result.oembed = media.isOembed();
 
-            MediaType type = mediaTypeService.findById(media.getTypeId());
-            if (type == null){
+            MediaType mediaType = mediaTypeService.findById(media.getTypeId());
+            if (mediaType == null){
                 throw new IllegalStateException("Invalid MediaType: " + media.getTypeId());
             }
-            result.type = new MediaTypeDto(type.getId(), type.getName());
+            result.type = new MediaTypeDto(mediaType.getId(), mediaType.getName());
 
             if (media.isOembed()){
                 result.embedUrl = oembedService.getEmbedUrl(media.getUrl());
