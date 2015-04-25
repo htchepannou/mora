@@ -7,8 +7,9 @@
 >
 	<diskStore path="java.io.tmpdir"/>
 
-	<cache name="SpaceType" maxEntriesLocalHeap="100"
-	      eternal="true"
+	<cache name="Enum"
+       maxEntriesLocalHeap="100"
+       eternal="true"
     />
 
     <cache name="Space"
