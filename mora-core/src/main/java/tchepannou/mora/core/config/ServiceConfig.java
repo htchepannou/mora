@@ -2,24 +2,14 @@ package tchepannou.mora.core.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import tchepannou.mora.core.service.MediaService;
-import tchepannou.mora.core.service.MediaTypeService;
-import tchepannou.mora.core.service.MemberService;
-import tchepannou.mora.core.service.PostService;
-import tchepannou.mora.core.service.RoleService;
-import tchepannou.mora.core.service.SpaceService;
-import tchepannou.mora.core.service.SpaceTypeService;
-import tchepannou.mora.core.service.UrlFetchService;
-import tchepannou.mora.core.service.UserService;
-import tchepannou.mora.core.service.impl.MediaServiceImpl;
-import tchepannou.mora.core.service.impl.MediaTypeServiceImpl;
-import tchepannou.mora.core.service.impl.MemberServiceImpl;
-import tchepannou.mora.core.service.impl.PostServiceImpl;
-import tchepannou.mora.core.service.impl.RoleServiceImpl;
-import tchepannou.mora.core.service.impl.SpaceServiceImpl;
-import tchepannou.mora.core.service.impl.SpaceTypeServiceImpl;
-import tchepannou.mora.core.service.impl.UrlFetchServiceImpl;
-import tchepannou.mora.core.service.impl.UserServiceImpl;
+import tchepannou.mora.core.service.*;
+import tchepannou.mora.core.service.impl.*;
+import tchepannou.mora.core.service.video.DailymotionProvider;
+import tchepannou.mora.core.service.video.VimeoProvider;
+import tchepannou.mora.core.service.video.YouTubeProvider;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Configuration
 public class ServiceConfig {
@@ -66,5 +56,18 @@ public class ServiceConfig {
     @Bean
     public MediaTypeService mediaTypeService (){
         return new MediaTypeServiceImpl();
+    }
+
+    @Bean
+    public OembedService oembedService(){
+        OembedServiceImpl result = new OembedServiceImpl();
+        for (VideoProvider provider : videoProviders()){
+            result.register(provider);
+        }
+        return result;
+    }
+
+    public List<VideoProvider> videoProviders(){
+        return Arrays.asList(new YouTubeProvider(), new DailymotionProvider(), new VimeoProvider());
     }
 }

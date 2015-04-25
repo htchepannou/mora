@@ -1,15 +1,7 @@
 package tchepannou.mora.core.config;
 
 import org.junit.Test;
-import tchepannou.mora.core.service.impl.MediaServiceImpl;
-import tchepannou.mora.core.service.impl.MediaTypeServiceImpl;
-import tchepannou.mora.core.service.impl.MemberServiceImpl;
-import tchepannou.mora.core.service.impl.PostServiceImpl;
-import tchepannou.mora.core.service.impl.RoleServiceImpl;
-import tchepannou.mora.core.service.impl.SpaceServiceImpl;
-import tchepannou.mora.core.service.impl.SpaceTypeServiceImpl;
-import tchepannou.mora.core.service.impl.UrlFetchServiceImpl;
-import tchepannou.mora.core.service.impl.UserServiceImpl;
+import tchepannou.mora.core.service.impl.*;
 
 import static org.hamcrest.core.IsInstanceOf.instanceOf;
 import static org.junit.Assert.assertThat;
@@ -59,5 +51,10 @@ public class ServiceConfigTest {
     @Test
     public void testMediaTypeService() throws Exception {
         assertThat(config.mediaTypeService(), instanceOf(MediaTypeServiceImpl.class));
+    }
+
+    @Test
+    public void testOembedService() throws Exception {
+        assertThat(config.oembedService(), instanceOf(OembedServiceImpl.class));
     }
 }
