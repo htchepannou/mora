@@ -9,10 +9,12 @@ public class VimeoProvider extends DefaultVideoProvider implements VideoProvider
 
 
     //-- DefaultVideoProvider overrides
+    @Override
     protected String getEmbedUrlFormat(){
         return EMBED_URL_FORMAT;
     }
 
+    @Override
     protected String getVideoUrlPattern(){
         return VIDEO_URL_PATTERN;
     }
