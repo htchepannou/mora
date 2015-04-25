@@ -1,6 +1,5 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,9 @@ import tchepannou.mora.insidesoccer.config.JdbcConfig;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 @RunWith (SpringJUnit4ClassRunner.class)
@@ -51,8 +51,50 @@ public class IsMediaDaoIT {
     }
 
     @Test
-    @Ignore
-    public void testFindByOwnerByAttachmentType() throws Exception {
+    public void testFindById_badType_shouldReturnNull() throws Exception {
+        // Given
+        Media result = dao.findById(200);
 
+        // Then
+        assertThat(result, nullValue());
+    }
+
+    @Test
+    public void testFindById_notFound_shouldReturnNull() throws Exception {
+        // Given
+        Media result = dao.findById(9999);
+
+        // Then
+        assertThat(result, nullValue());
+    }
+
+    @Test
+    public void testFindByOwnerByAttachmentType() throws Exception {
+        // Given
+        List<Media> result = dao.findByOwnerByAttachmentType(399, 100);
+
+        // Then
+        Media expected1 = new Media(300, new Space(300), new User(300), new MediaType(1, "foo"));
+        expected1.setTitle("title1");
+        expected1.setDescription("This is a content1");
+        expected1.setUrl("http://www.google.ca/logo.jpg");
+        expected1.setImageUrl("http://www.google.ca/logo.jpg");
+        expected1.setDeleted(false);
+        expected1.setContentType("image/jpeg");
+        expected1.setTypeId(MediaType.IMAGE);
+        expected1.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+
+        Media expected2 = new Media(310, new Space(300), new User(300), new MediaType(1, "foo"));
+        expected2.setTitle("title1");
+        expected2.setDescription("This is a content1");
+        expected2.setUrl("http://www.google.ca/logo.jpg");
+        expected2.setImageUrl("http://www.google.ca/logo.jpg");
+        expected2.setDeleted(false);
+        expected2.setContentType("image/jpeg");
+        expected2.setTypeId(MediaType.IMAGE);
+        expected2.setLastUpdate(new Timestamp(fmt.parse("2014-01-01 12:30:55").getTime()));
+        
+        assertThat(result, hasSize(2));
+        assertThat(result, hasItems(expected1));
     }
 }
