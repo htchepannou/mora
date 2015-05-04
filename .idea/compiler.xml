@@ -34,6 +34,7 @@
         <module name="mora-rest-post" />
         <module name="mora-rest-security" />
         <module name="mora-rest-space" />
+        <module name="mora-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -49,6 +50,7 @@
       <module name="mora-rest-space" target="1.8" />
       <module name="mora-rest-user" target="1.8" />
       <module name="mora-swagger" target="1.8" />
+      <module name="mora-web" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

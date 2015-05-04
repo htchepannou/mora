@@ -86,6 +86,10 @@ public class IsDaoConfigTest {
         assertThat(config.partyRelationshipDao(), instanceOf(PartyRelationshipDaoImpl.class));
     }
 
+    public void testEventTypeDao(){
+        assertThat(config.eventTypeDao(), instanceOf(IsEventTypeDao.class));
+    }
+
     @Test
     public void testTeamResolver(){
         assertThat(config.teamResolver(), instanceOf(TeamResolverImpl.class));

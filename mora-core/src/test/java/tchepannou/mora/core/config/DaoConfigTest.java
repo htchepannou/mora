@@ -64,4 +64,8 @@ public class DaoConfigTest {
         assertThat(config.attachmentTypeDao(), instanceOf(JdbcAttachmentTypeDao.class));
     }
 
+    @Test
+    public void testEventTypeDao (){
+        assertThat(config.eventTypeDao(), instanceOf(JdbcEventTypeDao.class));
+    }
 }

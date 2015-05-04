@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import tchepannou.mora.core.config.DaoConfig;
 import tchepannou.mora.core.dao.AccessTokenDao;
+import tchepannou.mora.core.dao.EventTypeDao;
 import tchepannou.mora.core.dao.MemberDao;
 import tchepannou.mora.core.dao.PostDao;
 import tchepannou.mora.core.dao.RoleDao;
@@ -117,5 +118,10 @@ public class IsDaoConfig extends DaoConfig{
     @Bean
     public IsAttachmentTypeDao attachmentTypeDao() {
         return new IsAttachmentTypeDao();
+    }
+
+    @Override
+    public EventTypeDao eventTypeDao() {
+        return new IsEventTypeDao();
     }
 }

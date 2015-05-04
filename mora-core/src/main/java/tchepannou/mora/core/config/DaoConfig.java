@@ -103,4 +103,9 @@ public class DaoConfig {
         return new JdbcAttachmentTypeDao();
     }
 
+    @Bean
+    public EventTypeDao eventTypeDao (){
+        return new JdbcEventTypeDao();
+    }
+
 }

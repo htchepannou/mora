@@ -195,3 +195,14 @@ create table t_post(
     foreign key (user_id) references t_user(id),
     index (last_update)
 ) engine=InnoDB;
+
+-- ====================
+-- event_type
+-- ====================
+create table t_event_type(
+    id int not null primary key auto_increment,
+
+    name varchar(32) not null,
+
+    unique(name)
+) engine=InnoDB;

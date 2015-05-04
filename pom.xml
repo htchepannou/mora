@@ -10,11 +10,11 @@
     <version>1.0</version>
     <modules>
         <module>mora-core</module>
+        <module>mora-insidesoccer</module>
         <module>mora-rest-core</module>
         <module>mora-rest-security</module>
         <module>mora-rest-space</module>
         <module>mora-rest-post</module>
-        <module>mora-insidesoccer</module>
     </modules>
 
     <properties>
@@ -29,8 +29,10 @@
         <com.fasterxml.jackson.version>2.4.5</com.fasterxml.jackson.version>
 
         <junit.version>4.11</junit.version>
-        <org.mockito.version>1.9.5</org.mockito.version>
+        <junit.version>4.11</junit.version>
+        <org.assertj.version>3.0.0</org.assertj.version>
         <org.hamcrest.version>1.3</org.hamcrest.version>
+        <org.mockito.version>1.9.5</org.mockito.version>
     </properties>
 
     <dependencies>
@@ -46,6 +48,11 @@
             <artifactId>mockito-all</artifactId>
             <version>${org.mockito.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+        	<groupId>org.assertj</groupId>
+        	<artifactId>assertj-core</artifactId>
+        	<version>${org.assertj.version}</version>
         </dependency>
         <dependency>
             <groupId>org.hamcrest</groupId>

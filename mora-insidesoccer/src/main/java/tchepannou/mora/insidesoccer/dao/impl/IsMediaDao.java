@@ -16,10 +16,10 @@ import tchepannou.mora.insidesoccer.domain.Node;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
 import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class IsMediaDao extends JdbcDao implements MediaDao{
     //-- Attributes
@@ -63,20 +63,11 @@ public class IsMediaDao extends JdbcDao implements MediaDao{
         /* Get the attributes */
         Multimap<Long, NodeAttribute> attributes = nodeAttributeDao.findByNodesByNames(nodeIds, NodeAttribute.MEDIA_ATTRIBUTES.toArray(new String[]{}));
 
-        /* merge nodes + attributes */
-        List<Media> result = new ArrayList<>();
-        for (Node node : nodes){
-            Collection<NodeAttribute> attrs = attributes.get(node.getId());
-            if (attrs != null) {
-                Media media = toMedia(node, attrs);
-                result.add(media);
-            }
-        }
+        return nodes.stream()
+                .map(f -> toMedia(f, attributes.get(f.getId())))
+                .sorted(new ComparatorById<>(nodeIds))
+                .collect(Collectors.toList());
 
-        /* sort */
-        Collections.sort(result, new ComparatorById<Media>(nodeIds));
-
-        return result;
     }
 
     //-- Private

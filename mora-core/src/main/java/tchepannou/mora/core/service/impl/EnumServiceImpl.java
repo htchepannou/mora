@@ -9,7 +9,6 @@ import java.util.List;
 public abstract class EnumServiceImpl<T extends EnumModel> {
     protected abstract EnumModelDao<T> getDao ();
 
-    //-- RoleService overrides  ---
     @Cacheable("Enum")
     public T findById(long id) {
         return getDao().findById(id);

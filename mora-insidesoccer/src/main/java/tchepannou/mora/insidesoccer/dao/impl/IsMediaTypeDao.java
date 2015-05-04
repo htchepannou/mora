@@ -5,7 +5,7 @@ import tchepannou.mora.core.domain.MediaType;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.Optional;
 
 public class IsMediaTypeDao implements MediaTypeDao{
     public static final long IMAGE  = MediaType.IMAGE;
@@ -28,9 +28,9 @@ public class IsMediaTypeDao implements MediaTypeDao{
 
     @Override
     public MediaType findById(long id) {
-        List<MediaType> result = findAll().stream()
+        Optional<MediaType> result = findAll().stream()
                 .filter(f -> f.getId() == id)
-                .collect(Collectors.toList());
-        return result.isEmpty() ? null : result.get(0);
+                .findFirst();
+        return result.isPresent() ? result.get() : null;
     }
 }

@@ -13,8 +13,6 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import tchepannou.mora.core.service.AccessTokenService;
 import tchepannou.mora.core.service.UserService;
 
-import javax.servlet.Filter;
-
 public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAdapter{
     //-- Attributes
     private static final String[] ACTUATOR_ENDPOINTS = new String[]{
@@ -58,9 +56,12 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
 
         configureAuthorization(http);
 
-        http.addFilterBefore(new TokenAuthenticationFilter(authenticationManager()), BasicAuthenticationFilter.class)
+        http
+                .addFilterBefore(new CorsFilter(), BasicAuthenticationFilter.class)
+                .addFilterBefore(new TokenAuthenticationFilter(authenticationManager()), BasicAuthenticationFilter.class)
         ;
     }
+
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -69,13 +70,7 @@ public abstract class AbstractRestSecurityConfig extends WebSecurityConfigurerAd
 
 
 
-
     //-- Beans
-    @Bean
-    public Filter corsFilter (){
-        return new CorsFilter();
-    }
-
     @Bean
     public AuthenticationEntryPoint authenticationEntryPoint() {
         return new AuthenticationEntryPointImpl();
