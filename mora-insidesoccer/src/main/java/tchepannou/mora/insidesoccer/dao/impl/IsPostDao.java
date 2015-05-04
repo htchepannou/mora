@@ -1,8 +1,6 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
 import com.google.common.collect.Multimap;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.PostDao;
@@ -11,8 +9,8 @@ import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.util.ComparatorById;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
 import tchepannou.mora.insidesoccer.dao.NodePartyRelationshipDao;
-import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
+import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 import tchepannou.mora.insidesoccer.service.TeamResolver;
 
 import java.sql.ResultSet;
@@ -27,8 +25,6 @@ import java.util.Set;
 
 public class IsPostDao extends JdbcDao implements PostDao{
     //-- Attributes
-    private static final Logger LOG = LoggerFactory.getLogger(IsPostDao.class);
-
     @Autowired
     private NodePartyRelationshipDao nodePartyRelationshipDao;
 
@@ -77,8 +73,6 @@ public class IsPostDao extends JdbcDao implements PostDao{
         if (teamIds.isEmpty()){
             return Collections.emptyList();
         } else {
-            LOG.info("Teams of " + userId + ": " + teamIds);
-
             StringBuilder sql = new StringBuilder("SELECT * FROM nprel JOIN node ON nprel_node_fk=node_id WHERE nprel_type_fk=? AND node_deleted=? AND ");
 
             List params = new ArrayList<>();
