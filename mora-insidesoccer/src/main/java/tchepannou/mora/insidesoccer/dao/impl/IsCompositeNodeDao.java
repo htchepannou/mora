@@ -76,11 +76,11 @@ public abstract class IsCompositeNodeDao<T extends Model> extends JdbcDao {
         if (teamIds.isEmpty()){
             return Collections.emptyList();
         } else {
-            return findIdsPublishedForUserSince(userId, null, limit, offset);
+            return findIdsPublishedForUserSince(userId, null, false, limit, offset);
         }
     }
 
-    public List<Long> findIdsPublishedForUserSince(long userId, Date since, int limit, int offset) {
+    public List<Long> findIdsPublishedForUserSince(long userId, Date since, boolean orderAscending, int limit, int offset) {
         Set<Long> teamIds = teamResolver.getTeamIdsForUser(userId);
         if (teamIds.isEmpty()){
             return Collections.emptyList();
@@ -97,7 +97,8 @@ public abstract class IsCompositeNodeDao<T extends Model> extends JdbcDao {
             }
             whereIn(sql, "nprel_party_fk", teamIds, params);
 
-            sql.append(String.format(" ORDER BY nprel_rank DESC, nprel_id DESC LIMIT %d OFFSET %d", limit, offset));
+            String order = orderAscending ? "ASC" : "DESC";
+            sql.append(String.format(" ORDER BY nprel_rank %s, nprel_id %s LIMIT %d OFFSET %d", order, order, limit, offset));
 
             List<NodeRelationshipEntry> entries = template.query(sql.toString(), params.toArray(), new RowMapper<NodeRelationshipEntry>() {
                 @Override

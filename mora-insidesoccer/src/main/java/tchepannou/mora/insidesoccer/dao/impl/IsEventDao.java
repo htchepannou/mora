@@ -38,6 +38,6 @@ public class IsEventDao extends IsCompositeNodeDao<Event> implements EventDao {
         today.set(Calendar.MINUTE, 0);
         today.set(Calendar.SECOND, 0);
 
-        return findIdsPublishedForUserSince(userId, today.getTime(), limit, offset);
+        return findIdsPublishedForUserSince(userId, today.getTime(), true, limit, offset);
     }
 }
