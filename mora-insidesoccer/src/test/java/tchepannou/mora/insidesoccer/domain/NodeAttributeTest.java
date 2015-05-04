@@ -1,10 +1,13 @@
 package tchepannou.mora.insidesoccer.domain;
 
 import org.junit.Test;
+import tchepannou.mora.core.domain.Event;
+import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.insidesoccer.dao.impl.IsMediaTypeDao;
 
+import java.time.LocalTime;
 import java.util.Arrays;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -32,6 +35,43 @@ public class NodeAttributeTest {
         expected.setSummary("This is the content of");
         assertThat(post, equalTo(expected));
     }
+
+    @Test
+    public void testToEvent() throws Exception {
+        // Given
+        NodePartyRelationship node = new NodePartyRelationship(1);
+        NodeAttribute attr11 = new NodeAttribute(1, node, NodeAttribute.TITLE, "title1");
+        NodeAttribute attr12 = new NodeAttribute(2, node, NodeAttribute.NOTES, "<p>This is the content of<p>");
+        NodeAttribute attr13 = new NodeAttribute(2, node, NodeAttribute.LOCATION, "location");
+        NodeAttribute attr14 = new NodeAttribute(2, node, NodeAttribute.URL, "http://www.google.ca");
+        NodeAttribute attr15 = new NodeAttribute(2, node, NodeAttribute.OPPONENT, "Chelsea FC");
+        NodeAttribute attr16 = new NodeAttribute(2, node, NodeAttribute.RSVP, "1");
+        NodeAttribute attr17 = new NodeAttribute(2, node, NodeAttribute.HOUR, "12");
+        NodeAttribute attr18 = new NodeAttribute(2, node, NodeAttribute.MINUTE, "30");
+        NodeAttribute attr19 = new NodeAttribute(2, node, NodeAttribute.END_HOUR, "14");
+        NodeAttribute attr20 = new NodeAttribute(2, node, NodeAttribute.END_TIME, "00");
+        NodeAttribute attr21 = new NodeAttribute(2, node, NodeAttribute.EVENT_TYPE, "game");
+
+
+        Event post = new Event(1);
+
+        // When
+        NodeAttribute.toEvent(Arrays.asList(attr11, attr12, attr13, attr14, attr15, attr16, attr17, attr18, attr19, attr20, attr21), post);
+
+        // Then
+        Event expected = new Event(1);
+        expected.setTitle("title1");
+        expected.setNotes("<p>This is the content of<p>");
+        expected.setLocation("location");
+        expected.setUrl("http://www.google.ca");
+        expected.setOpponent("Chelsea FC");
+        expected.setRequiresRSVP(true);
+        expected.setStartTime(LocalTime.of(12, 30));
+        expected.setEndTime(LocalTime.of(14, 0));
+        expected.setTypeId(EventType.GAME);
+        assertThat(post, equalTo(expected));
+    }
+
 
     @Test
     public void testToMedia_Image() throws Exception {

@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 public class NodePartyRelationship extends Node{
     //-- Attribute
     public static final long TYPE_BLOG = 1;
+    public static final long TYPE_EVENT = 4;
 
     private long nodeId;
     private long partyId;

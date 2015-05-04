@@ -68,4 +68,9 @@ public class DaoConfigTest {
     public void testEventTypeDao (){
         assertThat(config.eventTypeDao(), instanceOf(JdbcEventTypeDao.class));
     }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testEventDao (){
+        config.eventDao();
+    }
 }

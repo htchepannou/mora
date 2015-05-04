@@ -2,7 +2,9 @@ package tchepannou.mora.core.domain;
 
 import com.google.common.base.Preconditions;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
 
 public class Event extends LifecycleAwareModel{
     //-- Attributes
@@ -10,20 +12,25 @@ public class Event extends LifecycleAwareModel{
     private long userId;
     private long typeId;
     private String title;
-    private Date startDate;
-    private Date startTime;
-    private Date endTime;
+    private LocalDate startDate;
+    private LocalTime startTime;
+    private LocalTime endTime;
     private boolean requiresRSVP;
     private String location;
     private String address;
     private String url;
     private String notes;
-    
+    private String opponent;
+    private ZoneId timezone;
+
     //-- Constructor
     public Event(){
         
     }
-    public Event (long id, EventType type, Space space, User user){
+    public Event (long id) {
+        super(id);
+    }
+    public Event(long id, EventType type, Space space, User user){
         super(id);
         
         Preconditions.checkArgument(type != null, "type==null");
@@ -81,12 +88,20 @@ public class Event extends LifecycleAwareModel{
         this.spaceId = spaceId;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
+    }
+
+    public ZoneId getTimezone() {
+        return timezone;
+    }
+
+    public void setTimezone(ZoneId timezone) {
+        this.timezone = timezone;
     }
 
     public String getTitle() {
@@ -120,4 +135,29 @@ public class Event extends LifecycleAwareModel{
     public void setUserId(long userId) {
         this.userId = userId;
     }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(LocalTime endTime) {
+        this.endTime = endTime;
+    }
+
+    public String getOpponent() {
+        return opponent;
+    }
+
+    public void setOpponent(String opponent) {
+        this.opponent = opponent;
+    }
+
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
+    }
 }
+

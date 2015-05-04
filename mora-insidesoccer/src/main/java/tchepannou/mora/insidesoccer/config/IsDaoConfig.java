@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import tchepannou.mora.core.config.DaoConfig;
 import tchepannou.mora.core.dao.AccessTokenDao;
+import tchepannou.mora.core.dao.EventDao;
 import tchepannou.mora.core.dao.EventTypeDao;
 import tchepannou.mora.core.dao.MemberDao;
 import tchepannou.mora.core.dao.PostDao;
@@ -123,5 +124,10 @@ public class IsDaoConfig extends DaoConfig{
     @Override
     public EventTypeDao eventTypeDao() {
         return new IsEventTypeDao();
+    }
+
+    @Override
+    public EventDao eventDao() {
+        return new IsEventDao();
     }
 }

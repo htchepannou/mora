@@ -108,4 +108,8 @@ public class DaoConfig {
         return new JdbcEventTypeDao();
     }
 
+    @Bean
+    public EventDao eventDao (){
+        throw new UnsupportedOperationException();
+    }
 }
