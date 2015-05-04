@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -75,11 +76,25 @@ public abstract class IsCompositeNodeDao<T extends Model> extends JdbcDao {
         if (teamIds.isEmpty()){
             return Collections.emptyList();
         } else {
+            return findIdsPublishedForUserSince(userId, null, limit, offset);
+        }
+    }
+
+    public List<Long> findIdsPublishedForUserSince(long userId, Date since, int limit, int offset) {
+        Set<Long> teamIds = teamResolver.getTeamIdsForUser(userId);
+        if (teamIds.isEmpty()){
+            return Collections.emptyList();
+        } else {
             StringBuilder sql = new StringBuilder("SELECT * FROM nprel JOIN node ON nprel_node_fk=node_id WHERE nprel_type_fk=? AND node_deleted=? AND ");
 
             List params = new ArrayList<>();
             params.add(getNodeTypeId());
             params.add(false);
+
+            if (since != null){
+                sql.append(" node_date>? AND");
+                params.add(since);
+            }
             whereIn(sql, "nprel_party_fk", teamIds, params);
 
             sql.append(String.format(" ORDER BY nprel_rank DESC, nprel_id DESC LIMIT %d OFFSET %d", limit, offset));

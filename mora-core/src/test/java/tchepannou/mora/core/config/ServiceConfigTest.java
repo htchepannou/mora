@@ -57,4 +57,9 @@ public class ServiceConfigTest {
     public void testOembedService() throws Exception {
         assertThat(config.oembedService(), instanceOf(OembedServiceImpl.class));
     }
+
+    @Test
+    public void testEventService() throws Exception {
+        assertThat(config.eventService(), instanceOf(EventServiceImpl.class));
+    }
 }

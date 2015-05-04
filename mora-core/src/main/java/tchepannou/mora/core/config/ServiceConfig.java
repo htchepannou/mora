@@ -70,4 +70,9 @@ public class ServiceConfig {
     public List<VideoProvider> videoProviders(){
         return Arrays.asList(new YouTubeProvider(), new DailymotionProvider(), new VimeoProvider());
     }
+
+    @Bean
+    public EventService eventService (){
+        return new EventServiceImpl();
+    }
 }
