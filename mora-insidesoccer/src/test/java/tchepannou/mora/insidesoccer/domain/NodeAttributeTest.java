@@ -7,7 +7,7 @@ import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.insidesoccer.dao.impl.IsMediaTypeDao;
 
-import java.time.LocalTime;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 
 import static org.hamcrest.Matchers.equalTo;
@@ -54,6 +54,7 @@ public class NodeAttributeTest {
 
 
         Event post = new Event(1);
+        post.setStartDateTime(new SimpleDateFormat("yyyy-mm-dd").parse("2010-12-01"));
 
         // When
         NodeAttribute.toEvent(Arrays.asList(attr11, attr12, attr13, attr14, attr15, attr16, attr17, attr18, attr19, attr20, attr21), post);
@@ -66,8 +67,8 @@ public class NodeAttributeTest {
         expected.setUrl("http://www.google.ca");
         expected.setOpponent("Chelsea FC");
         expected.setRequiresRSVP(true);
-        expected.setStartTime(LocalTime.of(12, 30));
-        expected.setEndTime(LocalTime.of(14, 0));
+        expected.setStartDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 12:30"));
+        expected.setEndDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 14:00"));
         expected.setTypeId(EventType.GAME);
         assertThat(post, equalTo(expected));
     }

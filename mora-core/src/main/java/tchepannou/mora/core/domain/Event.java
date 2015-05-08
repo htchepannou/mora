@@ -2,9 +2,8 @@ package tchepannou.mora.core.domain;
 
 import com.google.common.base.Preconditions;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.ZoneId;
+import java.util.Date;
 
 public class Event extends LifecycleAwareModel{
     //-- Attributes
@@ -12,9 +11,8 @@ public class Event extends LifecycleAwareModel{
     private long userId;
     private long typeId;
     private String title;
-    private LocalDate startDate;
-    private LocalTime startTime;
-    private LocalTime endTime;
+    private Date startDateTime;
+    private Date endDateTime;
     private boolean requiresRSVP;
     private String location;
     private String address;
@@ -25,7 +23,6 @@ public class Event extends LifecycleAwareModel{
 
     //-- Constructor
     public Event(){
-        
     }
     public Event (long id) {
         super(id);
@@ -88,14 +85,6 @@ public class Event extends LifecycleAwareModel{
         this.spaceId = spaceId;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
     public ZoneId getTimezone() {
         return timezone;
     }
@@ -136,14 +125,6 @@ public class Event extends LifecycleAwareModel{
         this.userId = userId;
     }
 
-    public LocalTime getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(LocalTime endTime) {
-        this.endTime = endTime;
-    }
-
     public String getOpponent() {
         return opponent;
     }
@@ -152,12 +133,20 @@ public class Event extends LifecycleAwareModel{
         this.opponent = opponent;
     }
 
-    public LocalTime getStartTime() {
-        return startTime;
+    public Date getEndDateTime() {
+        return endDateTime;
     }
 
-    public void setStartTime(LocalTime startTime) {
-        this.startTime = startTime;
+    public void setEndDateTime(Date endDateTime) {
+        this.endDateTime = endDateTime;
+    }
+
+    public Date getStartDateTime() {
+        return startDateTime;
+    }
+
+    public void setStartDateTime(Date startDateTime) {
+        this.startDateTime = startDateTime;
     }
 }
 

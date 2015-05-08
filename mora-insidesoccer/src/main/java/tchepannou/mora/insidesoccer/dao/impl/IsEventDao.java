@@ -30,7 +30,6 @@ public class IsEventDao extends IsCompositeNodeDao<Event> implements EventDao {
     }
 
     //-- EventDao overrides
-
     @Override
     public List<Long> findIdsUpcomingForUser(long userId, int limit, int offset) {
         Calendar today = Calendar.getInstance();

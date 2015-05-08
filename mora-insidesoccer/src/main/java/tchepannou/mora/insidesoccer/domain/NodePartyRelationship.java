@@ -1,8 +1,10 @@
 package tchepannou.mora.insidesoccer.domain;
 
+import tchepannou.mora.core.domain.Event;
 import tchepannou.mora.core.domain.Post;
 
 import java.sql.Timestamp;
+import java.util.Calendar;
 
 public class NodePartyRelationship extends Node{
     //-- Attribute
@@ -30,6 +32,26 @@ public class NodePartyRelationship extends Node{
         post.setDeleted(this.isDeleted());
         post.setSpaceId(this.getChannelId());
     }
+
+    public void toEvent(Event event){
+        event.setId(getId());
+        event.setLastUpdate(new Timestamp(this.getRank()));
+        event.setUserId(this.getOwnerId());
+        event.setDeleted(this.isDeleted());
+        event.setSpaceId(this.getChannelId());
+
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(this.getDate());
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+
+        event.setStartDateTime(cal.getTime());
+        event.setEndDateTime(cal.getTime());
+        event.setTimezone(null);
+    }
+
 
     //-- Getter/Setter
     public long getNodeId() {

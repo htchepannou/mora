@@ -5,6 +5,10 @@ public class EventType extends EnumModel{
     public static final long PRACTICE = 101;
     public static final long OTHER = 999;
 
+    public EventType(long id){
+        super(id);
+    }
+
     public EventType(long id, String name) {
         super(id, name);
     }

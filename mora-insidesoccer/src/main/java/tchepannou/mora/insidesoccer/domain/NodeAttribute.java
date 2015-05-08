@@ -14,7 +14,9 @@ import tchepannou.mora.insidesoccer.dao.impl.IsMediaTypeDao;
 import javax.activation.MimetypesFileTypeMap;
 import java.time.LocalTime;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 public class NodeAttribute extends Attribute {
@@ -154,8 +156,21 @@ public class NodeAttribute extends Attribute {
             }
         }
 
-        event.setStartTime(toLocalTime(startHour, startMinute));
-        event.setEndTime(toLocalTime(endHour, endMinute));
+        event.setStartDateTime(toDateTime(event.getStartDateTime(), startHour, startMinute));
+        event.setEndDateTime(toDateTime(event.getEndDateTime(), endHour, endMinute));
+    }
+
+    private static Date toDateTime(Date date, int hour, int minute){
+        if (date != null) {
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(date);
+            cal.set(Calendar.HOUR_OF_DAY, hour);
+            cal.set(Calendar.MINUTE, minute);
+            cal.set(Calendar.SECOND, 0);
+            return cal.getTime();
+        } else {
+            return null;
+        }
     }
 
     //-- Getter/Setter
