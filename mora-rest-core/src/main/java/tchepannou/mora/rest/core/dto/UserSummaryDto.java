@@ -1,30 +1,32 @@
-package tchepannou.mora.rest.post.dto;
+package tchepannou.mora.rest.core.dto;
 
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import tchepannou.mora.core.domain.User;
-import tchepannou.mora.rest.core.dto.ModelDto;
 
-public class UserDto extends ModelDto {
+public class UserSummaryDto extends ModelDto {
     //-- Private
     private long id;
     private String name;
 
 
     //-- Public
-    public UserDto(){
-
+    public UserSummaryDto(){
+    }
+    public UserSummaryDto (long id, String name){
+        this.id = id;
+        this.name = name;
     }
 
     //-- Builder
     public static class Builder{
         private User user ;
 
-        public UserDto build (){
+        public UserSummaryDto build (){
             Preconditions.checkState(this.user != null, "this.user==null");
 
-            UserDto dto = new UserDto();
+            UserSummaryDto dto = new UserSummaryDto();
             dto.id = user.getId();
             dto.name = Joiner.on(' ').join(
                     Strings.nullToEmpty(user.getFirstName())

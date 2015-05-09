@@ -4,6 +4,8 @@ import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
+import tchepannou.mora.rest.core.dto.SpaceSummaryDto;
+import tchepannou.mora.rest.core.dto.UserSummaryDto;
 
 //-- Builder
 public abstract class BasePostDtoBuilder<T extends BasePostDto> {
@@ -28,8 +30,8 @@ public abstract class BasePostDtoBuilder<T extends BasePostDto> {
         result.title = post.getTitle();
         result.summary = post.getSummary();
         result.lastUpdate = post.getLastUpdate();
-        result.space = new SpaceDto.Builder().withSpace(space).build();
-        result.user = new UserDto.Builder().withUser(user).build();
+        result.space = new SpaceSummaryDto.Builder().withSpace(space).build();
+        result.user = new UserSummaryDto.Builder().withUser(user).build();
         return result;
     }
 

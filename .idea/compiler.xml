@@ -30,6 +30,7 @@
         <module name="mora-rest" />
         <module name="mora-rest-auth" />
         <module name="mora-rest-core" />
+        <module name="mora-rest-event" />
         <module name="mora-rest-member" />
         <module name="mora-rest-post" />
         <module name="mora-rest-security" />
@@ -44,6 +45,7 @@
       <module name="mora-insidesoccer" target="1.8" />
       <module name="mora-rest-auth" target="1.8" />
       <module name="mora-rest-core" target="1.8" />
+      <module name="mora-rest-event" target="1.8" />
       <module name="mora-rest-member" target="1.8" />
       <module name="mora-rest-post" target="1.8" />
       <module name="mora-rest-security" target="1.8" />

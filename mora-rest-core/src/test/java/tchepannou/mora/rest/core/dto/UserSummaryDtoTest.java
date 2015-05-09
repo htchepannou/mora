@@ -1,4 +1,4 @@
-package tchepannou.mora.rest.post.dto;
+package tchepannou.mora.rest.core.dto;
 
 import org.junit.Test;
 import tchepannou.mora.core.domain.User;
@@ -6,7 +6,7 @@ import tchepannou.mora.core.domain.User;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-public class UserDtoTest {
+public class UserSummaryDtoTest {
     @Test
     public void testBuilder (){
         // Given
@@ -15,7 +15,7 @@ public class UserDtoTest {
         user.setLastName("Sponsible");
 
         // When
-        UserDto result = new UserDto.Builder().withUser(user).build();
+        UserSummaryDto result = new UserSummaryDto.Builder().withUser(user).build();
 
         // Then
         assertThat(result.getId(), equalTo(user.getId()));

@@ -1,4 +1,4 @@
-package tchepannou.mora.rest.post.dto;
+package tchepannou.mora.rest.core.dto;
 
 import org.junit.Test;
 import tchepannou.mora.core.domain.Space;
@@ -6,7 +6,7 @@ import tchepannou.mora.core.domain.Space;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertThat;
 
-public class SpaceDtoTest {
+public class SpaceSummaryDtoTest {
     @Test
     public void testBuilder (){
         // Given
@@ -20,7 +20,7 @@ public class SpaceDtoTest {
         space.setName("New York Soccer Club");
 
         // When
-        SpaceDto result = new SpaceDto.Builder()
+        SpaceSummaryDto result = new SpaceSummaryDto.Builder()
                 .withSpace(space)
                 .build();
 

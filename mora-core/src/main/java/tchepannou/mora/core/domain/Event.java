@@ -18,7 +18,6 @@ public class Event extends LifecycleAwareModel{
     private String address;
     private String url;
     private String notes;
-    private String opponent;
     private ZoneId timezone;
 
     //-- Constructor
@@ -123,14 +122,6 @@ public class Event extends LifecycleAwareModel{
 
     public void setUserId(long userId) {
         this.userId = userId;
-    }
-
-    public String getOpponent() {
-        return opponent;
-    }
-
-    public void setOpponent(String opponent) {
-        this.opponent = opponent;
     }
 
     public Date getEndDateTime() {

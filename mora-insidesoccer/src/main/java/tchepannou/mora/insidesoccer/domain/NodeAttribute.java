@@ -12,7 +12,6 @@ import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.insidesoccer.dao.impl.IsMediaTypeDao;
 
 import javax.activation.MimetypesFileTypeMap;
-import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collection;
@@ -60,7 +59,6 @@ public class NodeAttribute extends Attribute {
             ZIP_CODE,
             STATE,
             URL,
-            OPPONENT,
             HOUR,
             MINUTE,
             RSVP,
@@ -248,11 +246,6 @@ public class NodeAttribute extends Attribute {
             } else {
                 event.setTypeId(EventType.OTHER);
             }
-        } else if (OPPONENT.equals(name)){
-            event.setOpponent(value);
         }
-    }
-    private static LocalTime toLocalTime(int hour, int minutes){
-        return hour>0 && minutes>=0 ? LocalTime.of(hour, minutes) : null;
     }
 }

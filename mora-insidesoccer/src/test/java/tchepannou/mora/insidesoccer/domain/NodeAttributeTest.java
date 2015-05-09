@@ -65,7 +65,6 @@ public class NodeAttributeTest {
         expected.setNotes("<p>This is the content of<p>");
         expected.setLocation("location");
         expected.setUrl("http://www.google.ca");
-        expected.setOpponent("Chelsea FC");
         expected.setRequiresRSVP(true);
         expected.setStartDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 12:30"));
         expected.setEndDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 14:00"));

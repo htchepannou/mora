@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/mora-core/mora-core.iml" filepath="$PROJECT_DIR$/mora-core/mora-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-insidesoccer/mora-insidesoccer.iml" filepath="$PROJECT_DIR$/mora-insidesoccer/mora-insidesoccer.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" filepath="$PROJECT_DIR$/mora-rest-core/mora-rest-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mora-rest-event/mora-rest-event.iml" filepath="$PROJECT_DIR$/mora-rest-event/mora-rest-event.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-post/mora-rest-post.iml" filepath="$PROJECT_DIR$/mora-rest-post/mora-rest-post.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-security/mora-rest-security.iml" filepath="$PROJECT_DIR$/mora-rest-security/mora-rest-security.iml" />
       <module fileurl="file://$PROJECT_DIR$/mora-rest-space/mora-rest-space.iml" filepath="$PROJECT_DIR$/mora-rest-space/mora-rest-space.iml" />

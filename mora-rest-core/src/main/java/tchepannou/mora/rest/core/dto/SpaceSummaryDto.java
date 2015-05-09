@@ -1,23 +1,32 @@
-package tchepannou.mora.rest.post.dto;
+package tchepannou.mora.rest.core.dto;
 
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Space;
-import tchepannou.mora.rest.core.dto.ModelDto;
 
-public class SpaceDto extends ModelDto {
+public class SpaceSummaryDto extends ModelDto {
     //-- Attributes
     private long id;
     private String name;
     private String logoUrl;
 
+    //-- Constructor
+    public SpaceSummaryDto(){
+
+    }
+    public SpaceSummaryDto(long id, String name, String logoUrl){
+        this.id = id;
+        this.name = name;
+        this.logoUrl = logoUrl;
+    }
+
     //-- Builder
     public static class Builder {
         private Space space;
 
-        public SpaceDto build (){
+        public SpaceSummaryDto build (){
             Preconditions.checkState(space != null, "space != null");
 
-            SpaceDto result = new SpaceDto();
+            SpaceSummaryDto result = new SpaceSummaryDto();
             result.id = space.getId();
             result.name = space.getName();
             result.logoUrl = space.getLogoUrl();

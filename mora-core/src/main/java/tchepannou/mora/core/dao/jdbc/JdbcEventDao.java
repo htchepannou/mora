@@ -4,6 +4,7 @@ import tchepannou.mora.core.dao.EventDao;
 import tchepannou.mora.core.domain.Event;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class JdbcEventDao implements EventDao {
@@ -14,11 +15,11 @@ public class JdbcEventDao implements EventDao {
 
     @Override
     public List<Event> findByIds(Collection<Long> ids) {
-        return null;
+        return Collections.emptyList();
     }
 
     @Override
     public List<Long> findIdsUpcomingForUser(long userId, int limit, int offset) {
-        return null;
+        return Collections.emptyList();
     }
 }

@@ -1,4 +1,4 @@
-package tchepannou.mora.rest.post.dto;
+package tchepannou.mora.rest.event.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import tchepannou.mora.rest.core.dto.ModelDto;
@@ -8,32 +8,43 @@ import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
 import java.util.Date;
 
-public class BasePostDto extends ModelDto{
+public class BaseEventDto extends ModelDto{
     //-- Attributes
     protected long id;
     protected String title;
-    protected String summary;
-    protected Date lastUpdate;
+    protected Date startDateTime;
+    protected Date endDateTime;
+    protected String location;
+    protected EventTypeDto type;
     protected SpaceSummaryDto space;
     protected UserSummaryDto user;
 
 
     //-- Getter
+    @JsonSerialize (using=JsonDateSerializer.class)
+    public Date getEndDateTime() {
+        return endDateTime;
+    }
+
+    @JsonSerialize (using=JsonDateSerializer.class)
+    public Date getStartDateTime() {
+        return startDateTime;
+    }
+
     public UserSummaryDto getUser() {
         return user;
+    }
+
+    public EventTypeDto getType() {
+        return type;
     }
 
     public long getId() {
         return id;
     }
 
-    @JsonSerialize (using=JsonDateSerializer.class)
-    public Date getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public String getSummary() {
-        return summary;
+    public String getLocation() {
+        return location;
     }
 
     public String getTitle() {
