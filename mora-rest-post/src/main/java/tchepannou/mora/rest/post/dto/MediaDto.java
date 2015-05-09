@@ -5,6 +5,7 @@ import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.MediaType;
 import tchepannou.mora.core.service.MediaTypeService;
 import tchepannou.mora.core.service.OembedService;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
 public class MediaDto extends ModelDto{
@@ -18,7 +19,7 @@ public class MediaDto extends ModelDto{
     private String imageUrl;
     private boolean oembed;
     private String embedUrl;
-    private MediaTypeDto type;
+    private EnumDto type;
 
     //-- Public
     private MediaDto (){
@@ -49,7 +50,7 @@ public class MediaDto extends ModelDto{
             if (mediaType == null){
                 throw new IllegalStateException("Invalid MediaType: " + media.getTypeId());
             }
-            result.type = new MediaTypeDto.Builder().withMediaType(mediaType).build();
+            result.type = new EnumDto.Builder().withEnum(mediaType).build();
 
             if (media.isOembed()){
                 result.embedUrl = oembedService.getEmbedUrl(media.getUrl());
@@ -107,7 +108,7 @@ public class MediaDto extends ModelDto{
         return url;
     }
 
-    public MediaTypeDto getType() {
+    public EnumDto getType() {
         return type;
     }
 

@@ -2,10 +2,6 @@ package tchepannou.mora.core.domain;
 
 import com.google.common.base.Preconditions;
 
-import java.util.Collection;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 public class Space extends LifecycleAwareModel{
     //-- Attributes
     private long typeId;

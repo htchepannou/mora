@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
+@Deprecated
 public class SpaceTypeDto extends ModelDto {
     //-- Attributes
     private long id;

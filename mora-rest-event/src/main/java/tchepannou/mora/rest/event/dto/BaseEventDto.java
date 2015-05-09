@@ -2,6 +2,7 @@ package tchepannou.mora.rest.event.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import tchepannou.mora.core.domain.Event;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.dto.ModelDto;
 import tchepannou.mora.rest.core.dto.SpaceSummaryDto;
 import tchepannou.mora.rest.core.dto.UserSummaryDto;
@@ -18,7 +19,7 @@ public class BaseEventDto extends ModelDto {
     private final Date endDateTime;
     private final String timezone;
     private final String location;
-    private final EventTypeDto type;
+    private final EnumDto type;
     private final SpaceSummaryDto space;
     private final UserSummaryDto user;
 
@@ -34,7 +35,7 @@ public class BaseEventDto extends ModelDto {
         this.endDateTime = evt.getEndDateTime();
         this.location = evt.getLocation();
         this.timezone = zoneId != null ? zoneId.getId() : null;
-        this.type = new EventTypeDto(builder.type.getId(), builder.type.getName());
+        this.type = new EnumDto.Builder().withEnum(builder.type).build();
         this.space = new SpaceSummaryDto.Builder().withSpace(builder.space).build();
         this.user = new UserSummaryDto.Builder().withUser(builder.user).build();
     }
@@ -54,7 +55,7 @@ public class BaseEventDto extends ModelDto {
         return user;
     }
 
-    public EventTypeDto getType() {
+    public EnumDto getType() {
         return type;
     }
 

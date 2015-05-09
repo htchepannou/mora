@@ -6,6 +6,7 @@ import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.dto.SpaceSummaryDto;
 import tchepannou.mora.rest.core.dto.UserSummaryDto;
 
@@ -49,6 +50,7 @@ public class EventSummaryDtoTest {
         // Then
         UserSummaryDto expectedUser = new UserSummaryDto.Builder().withUser(user).build();
         SpaceSummaryDto expectedSpace = new SpaceSummaryDto.Builder().withSpace(space).build();
+        EnumDto expectedType = new EnumDto.Builder().withEnum(type).build();
 
         assertThat(result.getId(), equalTo(event.getId()));
         assertThat(result.getTitle(), equalTo(event.getTitle()));
@@ -56,7 +58,7 @@ public class EventSummaryDtoTest {
         assertThat(result.getEndDateTime(), equalTo(event.getEndDateTime()));
         assertThat(result.getTimezone(), equalTo("America/Montreal"));
         assertThat(result.getLocation(), equalTo(event.getLocation()));
-        assertThat(result.getType(), equalTo(new EventTypeDto(type.getId(), type.getName())));
+        assertThat(result.getType(), equalTo(expectedType));
         assertThat(result.getUser(), equalTo(expectedUser));
         assertThat(result.getSpace(), equalTo(expectedSpace));
 

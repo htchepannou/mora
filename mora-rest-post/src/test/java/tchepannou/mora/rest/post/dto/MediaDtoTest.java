@@ -11,6 +11,7 @@ import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.core.service.MediaTypeService;
 import tchepannou.mora.core.service.OembedService;
+import tchepannou.mora.rest.core.dto.EnumDto;
 
 import java.util.Date;
 
@@ -58,7 +59,7 @@ public class MediaDtoTest {
                 .build();
 
         // Then
-        MediaTypeDto mediaTypeDto = new MediaTypeDto.Builder().withMediaType(mediaType).build();
+        EnumDto mediaTypeDto = new EnumDto.Builder().withEnum(mediaType).build();
 
         assertThat(result.getTitle(), equalTo(media.getTitle()));
         assertThat(result.getDescription(), equalTo(media.getDescription()));
@@ -102,7 +103,7 @@ public class MediaDtoTest {
                 .build();
 
         // Then
-        MediaTypeDto mediaTypeDto = new MediaTypeDto.Builder().withMediaType(mediaType).build();
+        EnumDto mediaTypeDto = new EnumDto.Builder().withEnum(mediaType).build();
 
         assertThat(result.getTitle(), equalTo(media.getTitle()));
         assertThat(result.getDescription(), equalTo(media.getDescription()));

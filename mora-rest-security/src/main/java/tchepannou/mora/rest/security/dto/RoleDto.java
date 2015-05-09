@@ -2,6 +2,7 @@ package tchepannou.mora.rest.security.dto;
 
 import tchepannou.mora.rest.core.dto.ModelDto;
 
+@Deprecated
 public class RoleDto extends ModelDto {
     //-- Public
     private long id;
