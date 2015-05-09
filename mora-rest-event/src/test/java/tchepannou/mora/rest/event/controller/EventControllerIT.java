@@ -4,14 +4,12 @@ import com.jayway.restassured.RestAssured;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import tchepannou.mora.core.dao.EventDao;
 import tchepannou.mora.rest.core.security.SecurityContants;
 import tchepannou.mora.rest.event.Application;
 
@@ -29,9 +27,6 @@ import static org.hamcrest.Matchers.equalTo;
 public class EventControllerIT {
     @Value ("${server.port}")
     private int port;
-
-    @Autowired
-    private EventDao dao;
 
 
 
