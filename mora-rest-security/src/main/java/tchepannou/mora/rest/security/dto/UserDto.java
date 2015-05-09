@@ -11,37 +11,36 @@ import java.util.Date;
 
 public class UserDto extends ModelDto {
     //-- Attributes
-    private long id;
-    private String username;
-    private String firstName;
-    private String lastName;
-    private String name;
-    private String email;
-    private Date creationDate;
-    private Date lastUpdate;
+    private final long id;
+    private final String username;
+    private final String firstName;
+    private final String lastName;
+    private final String name;
+    private final String email;
+    private final Date creationDate;
+    private final Date lastUpdate;
 
     //-- Constructor
-    private UserDto(){
+    private UserDto(Builder builder){
+        User user = builder.user;
+        id = user.getId();
+        username = user.getUsername();
+        firstName = user.getFirstName();
+        lastName = user.getLastName();
+        email = user.getEmail();
+        creationDate = user.getCreationDate();
+        lastUpdate = user.getLastUpdate();
+        name = Joiner.on(' ').join(user.getFirstName(), user.getLastName());
     }
 
     //-- Builder
     public static class Builder{
-        private User user ;
+        private User user;
 
         public UserDto build (){
             Preconditions.checkState(this.user != null, "this.user==null");
 
-            UserDto dto = new UserDto();
-            dto.id = user.getId();
-            dto.username = user.getUsername();
-            dto.firstName = user.getFirstName();
-            dto.lastName = user.getLastName();
-            dto.email = user.getEmail();
-            dto.creationDate = user.getCreationDate();
-            dto.lastUpdate = user.getLastUpdate();
-            dto.name = Joiner.on(' ').join(user.getFirstName(), user.getLastName());
-
-            return dto;
+            return new UserDto(this);
         }
 
         public Builder withUser (User user){

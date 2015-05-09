@@ -114,7 +114,7 @@ public class PostController extends BaseRestController{
     protected long getCurrentUserId (Principal currentToken) {
         String token = currentToken.getName();
         AccessToken accessToken = accessTokenService.findByValue(token);
-        return accessToken != null ? accessToken.getUserId() : -1;
+        return accessToken.getUserId();
     }
     
     protected Map<Long, User> toUserMap(List<Post> posts){

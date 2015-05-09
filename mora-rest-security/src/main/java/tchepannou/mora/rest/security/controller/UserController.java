@@ -83,8 +83,6 @@ public class UserController extends BaseRestController{
             return new UserDto.Builder()
                     .withUser(user)
                     .build();
-        } catch (UsernameAlreadyAssignedException e){
-            throw new OperationFailedException(ERROR_USERNAME_ALREADY_ASSIGNED, e);
         } catch (EmailAlreadyAssignedException e){
             throw new OperationFailedException(ERROR_EMAIL_ALREADY_ASSIGNED, e);
         }

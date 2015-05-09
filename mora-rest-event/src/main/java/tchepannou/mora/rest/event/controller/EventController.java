@@ -96,7 +96,7 @@ public class EventController extends BaseRestController {
     private long getCurrentUserId (Principal currentToken) {
         String token = currentToken.getName();
         AccessToken accessToken = accessTokenService.findByValue(token);
-        return accessToken != null ? accessToken.getUserId() : -1;
+        return accessToken.getUserId();
     }
 
     private Map<Long, EventType> toEventTypeMap (){
