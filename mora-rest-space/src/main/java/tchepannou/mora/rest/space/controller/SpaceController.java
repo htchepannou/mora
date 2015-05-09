@@ -129,6 +129,6 @@ public class SpaceController extends BaseRestController{
     protected User getCurrentUser (Principal currentToken) {
         String token = currentToken.getName();
         AccessToken accessToken = accessTokenService.findByValue(token);
-        return accessToken != null ? userService.findById(accessToken.getUserId()) : null;
+        return userService.findById(accessToken.getUserId());
     }
 }

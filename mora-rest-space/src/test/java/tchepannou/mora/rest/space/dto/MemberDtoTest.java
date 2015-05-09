@@ -27,4 +27,9 @@ public class MemberDtoTest {
         assertThat(result.getSpaceId(), equalTo(member.getSpaceId()));
         assertThat(result.getCreationDate(), equalTo(member.getCreationDate()));
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void testBuilder_noMember_throwsIllegalStateException (){
+        new MemberDto.Builder().build();
+    }
 }

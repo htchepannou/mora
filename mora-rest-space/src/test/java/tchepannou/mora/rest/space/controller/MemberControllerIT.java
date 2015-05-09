@@ -186,6 +186,26 @@ public class MemberControllerIT {
     }
 
     @Test
+    public void testUpdate_notFound_retuns404 () throws Exception {
+        // Given
+        SaveMemberDto dto = new SaveMemberDto();
+        dto.setRoleId(2);
+        String json = new ObjectMapper().writeValueAsString(dto);
+
+        // When
+        given()
+            .contentType("application/json")
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+            .body(json)
+        .when()
+            .post("/members/{memberId}", 999)
+        .then()
+            .statusCode(404)
+            .log().all()
+        ;
+    }
+
+    @Test
     public void testDelete() throws Exception {
         given()
             .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
@@ -198,5 +218,17 @@ public class MemberControllerIT {
         Member result = dao.findById(10);
 
         assertThat(result, nullValue());
+    }
+
+    @Test
+    public void testDelete_notFound_ok() throws Exception {
+        given()
+            .header(new Header(SecurityContants.X_AUTH_TOKEN.name(), ACCESS_TOKEN))
+        .when()
+            .delete("/members/{memberId}", 999)
+        .then()
+            .statusCode(HttpStatus.SC_OK)
+            .log().all()
+        ;
     }
 }

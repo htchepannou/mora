@@ -10,14 +10,20 @@ import java.util.Date;
 
 public class MemberDto extends ModelDto{
     //-- Attributes
-    private long id;
-    private long spaceId;
-    private long userId;
-    private long roleId;
-    private Date creationDate;
+    private final long id;
+    private final long spaceId;
+    private final long userId;
+    private final long roleId;
+    private final Date creationDate;
 
     //-- Attribute
-    private MemberDto(){
+    private MemberDto(Builder builder){
+        Member member = builder.member;
+        id = member.getId();
+        spaceId = member.getSpaceId();
+        userId = member.getUserId();
+        roleId = member.getRoleId();
+        creationDate = member.getCreationDate();
     }
 
     //-- Builder
@@ -27,13 +33,7 @@ public class MemberDto extends ModelDto{
         public MemberDto build(){
             Preconditions.checkState(member != null, "member != null");
 
-            MemberDto result = new MemberDto();
-            result.id = member.getId();
-            result.spaceId = member.getSpaceId();
-            result.userId = member.getUserId();
-            result.roleId = member.getRoleId();
-            result. creationDate = member.getCreationDate();
-            return result;
+            return new MemberDto(this);
         }
 
         public Builder withMember (Member member){
