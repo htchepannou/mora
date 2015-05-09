@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.AccessToken;
 import tchepannou.mora.core.domain.AttachmentType;
 import tchepannou.mora.core.domain.Media;
+import tchepannou.mora.core.domain.MediaType;
+import tchepannou.mora.core.domain.Model;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
@@ -26,7 +28,6 @@ import tchepannou.mora.rest.post.dto.PostDto;
 import tchepannou.mora.rest.post.dto.PostSummaryDto;
 
 import java.security.Principal;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -68,23 +69,14 @@ public class PostController extends BaseRestController{
         Map<Long, User> users = toUserMap(posts);
 
         /* convert to DTO */
-        List<PostSummaryDto> result = new LinkedList<>();
-        for (Post post : posts){
-            Space space = spaces.get(post.getSpaceId());
-            User user = users.get(post.getUserId());
-            if (space == null || user == null){
-                continue;
-            }
-
-            PostSummaryDto dto = (PostSummaryDto)new PostSummaryDto.Builder()
-                    .withPost(post)
-                    .withSpace(space)
-                    .withUser(user)
-                    .build();
-
-            result.add(dto);
-        }
-        return result;
+        return posts.stream()
+                .map(post ->
+                        (PostSummaryDto) new PostSummaryDto.Builder()
+                                .withPost(post)
+                                .withSpace(spaces.get(post.getSpaceId()))
+                                .withUser(users.get(post.getUserId()))
+                                .build())
+                .collect(Collectors.toList());
     }
 
     @RequestMapping("/posts/{postId}")
@@ -103,16 +95,18 @@ public class PostController extends BaseRestController{
                 .withUser(user)
                 .build();
 
+        Map<Long, MediaType> mediaTypeMap = toMediaTypeMap();
         List<Media> medias = mediaService.findByOwnerByAttachmentType(postId, AttachmentType.POST);
-        for (Media media : medias){
-            MediaDto mediaDto = new MediaDto.Builder()
-                    .withMedia(media)
-                    .withOembedService(oembedService)
-                    .withMediaTypeService(mediaTypeService)
-                    .build();
 
-            result.addMedia(mediaDto);
-        }
+        medias.stream().forEach(media ->
+                result.addMedia(
+                    new MediaDto.Builder()
+                        .withMedia(media)
+                        .withEmbedUrl(media.isOembed() ? oembedService.getEmbedUrl(media.getUrl()) : null)
+                        .withMediaType(mediaTypeMap.get(media.getTypeId()))
+                        .build()
+                )
+        );
         return result;
     }
 
@@ -139,5 +133,9 @@ public class PostController extends BaseRestController{
 
         List<Space> spaces = spaceService.findByIds(ids);
         return Space.map(spaces);
+    }
+
+    protected Map<Long, MediaType> toMediaTypeMap (){
+        return Model.map(mediaTypeService.findAll());
     }
 }

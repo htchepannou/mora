@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="fix">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/config/Config.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/config/SecurityConfig.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/config/Config.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java" afterPath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/MediaDto.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/MediaDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostDtoTest.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostDtoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostSummaryDtoTest.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostSummaryDtoTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
@@ -61,12 +60,60 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java">
+      <file leaf-file-name="MediaDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/MediaDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7474227" vertical-offset="0" max-vertical-offset="585">
+            <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1470">
+              <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1485">
+              <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+              <folding>
+                <element signature="method#getCurrentUserPosts#0;class#PostController#0" expanded="false" />
+                <element signature="e#5096#5097#0" expanded="true" />
+                <element signature="e#5156#5157#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MediaDtoTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="1220" max-vertical-offset="1590">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TeamResolverImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/TeamResolverImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="1260">
               <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EventController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/controller/EventController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="1920">
+              <caret line="82" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,9 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/dto/EventSummaryDto.java" />
-        <option value="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/dto/EventDto.java" />
-        <option value="$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-event/pom.xml" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/dto/UserSummaryDtoTest.java" />
@@ -99,8 +143,6 @@
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/Space.java" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/dto/RoleDto.java" />
         <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/MediaTypeDto.java" />
-        <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/MediaDto.java" />
-        <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/dto/EnumDtoTest.java" />
         <option value="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java" />
         <option value="$PROJECT_DIR$/mora-rest-space/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java" />
@@ -130,6 +172,11 @@
         <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/controller/PostControllerIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" />
         <option value="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java" />
+        <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostDtoTest.java" />
+        <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostSummaryDtoTest.java" />
+        <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java" />
+        <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java" />
+        <option value="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/MediaDto.java" />
       </list>
     </option>
   </component>
@@ -237,77 +284,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="moe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="moe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="moe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora-rest-space" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="space" />
+              <option name="myItemId" value=".idea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -409,81 +386,7 @@
       <recent name="tchepannou.mora.core.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EventControllerIT">
-    <configuration default="false" name="EventRowMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="tchepannou.mora.core.dao.jdbc.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="mora-core" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tchepannou.mora.core.dao.jdbc.mapper" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.core.dao.jdbc.mapper.EventRowMapperTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="All in mora-rest-space" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="mora-rest-space" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="All in mora-insidesoccer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="mora-insidesoccer" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.MediaDtoTest">
     <configuration default="false" name="IsEventDaoIT.testFindIdsPublishedForUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -518,18 +421,18 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="IsEventDaoIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="PostDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="tchepannou.mora.insidesoccer.dao.impl.*" />
+          <option name="PATTERN" value="tchepannou.mora.rest.post.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <module name="mora-insidesoccer" />
+      <module name="mora-rest-post" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="tchepannou.mora.insidesoccer.dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.insidesoccer.dao.impl.IsEventDaoIT" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.post.dto" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.post.dto.PostDtoTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -544,6 +447,94 @@
       <patterns />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="PostSummaryDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tchepannou.mora.rest.post.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mora-rest-post" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.post.dto" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.post.dto.PostSummaryDtoTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MediaDtoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tchepannou.mora.rest.post.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mora-rest-post" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.post.dto" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.post.dto.MediaDtoTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="MediaDtoTest.testBuilder_noMediaType_throwsIllegalStateException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tchepannou.mora.rest.post.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mora-rest-post" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.rest.post.dto" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.rest.post.dto.MediaDtoTest" />
+      <option name="METHOD_NAME" value="testBuilder_noMediaType_throwsIllegalStateException" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <ConfigurationWrapper RunnerId="Debug" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -827,19 +818,19 @@
       <item index="2" class="java.lang.String" itemvalue="Application.post (is)" />
       <item index="3" class="java.lang.String" itemvalue="Application.Application" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.SpaceRowMapperTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.EventRowMapperTest" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.All in mora-rest-space" />
-      <item index="7" class="java.lang.String" itemvalue="JUnit.All in mora-insidesoccer" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT.testFindIdsPublishedForUser" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT.testFindIdsPublishedForUser" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.PostDtoTest" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.PostSummaryDtoTest" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.MediaDtoTest" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.MediaDtoTest.testBuilder_noMediaType_throwsIllegalStateException" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT.testFindIdsPublishedForUser" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.All in mora-insidesoccer" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.All in mora-rest-space" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.EventRowMapperTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MediaDtoTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.MediaDtoTest.testBuilder_noMediaType_throwsIllegalStateException" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.PostSummaryDtoTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PostDtoTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT.testFindIdsPublishedForUser" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -972,17 +963,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="636" y="212" width="1269" height="966" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2806604" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2806604" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31957546" sideWeight="0.49965397" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5601415" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5601415" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49492672" sideWeight="0.5004299" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32665095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1112,6 +1103,12 @@
           <properties />
           <option name="timeStamp" value="155" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java</url>
+          <line>104</line>
+          <properties />
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/rt.jar!/javax/activation/MimetypesFileTypeMap.class</url>
           <line>223</line>
@@ -1119,7 +1116,7 @@
           <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="156" />
+      <option name="time" value="157" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1128,36 +1125,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21465969" vertical-offset="631" max-vertical-offset="2100">
-          <caret line="53" column="12" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/dto/EventDtoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48969072" vertical-offset="630" max-vertical-offset="2265">
-          <caret line="61" column="52" selection-start-line="61" selection-start-column="52" selection-end-line="61" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-space/src/test/java/tchepannou/mora/rest/space/controller/SpaceControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.28326997" vertical-offset="2341" max-vertical-offset="6465">
-          <caret line="168" column="84" selection-start-line="168" selection-start-column="39" selection-end-line="168" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1098" max-vertical-offset="1680">
@@ -1416,14 +1383,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/TeamResolverImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="275" max-vertical-offset="1260">
-          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/PartyDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
@@ -1480,26 +1439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1154599" vertical-offset="330" max-vertical-offset="1785">
-          <caret line="90" column="41" selection-start-line="90" selection-start-column="29" selection-end-line="90" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/controller/EventController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="1950">
-          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3865#3866#0" expanded="true" />
-            <element signature="e#3929#3930#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerIT.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7646048" vertical-offset="650" max-vertical-offset="1470">
@@ -1544,8 +1483,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7474227" vertical-offset="0" max-vertical-offset="585">
+        <state vertical-scroll-proportion="0.28350514" vertical-offset="0" max-vertical-offset="585">
+          <caret line="23" column="94" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostSummaryDtoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82637364" vertical-offset="734" max-vertical-offset="1605">
+          <caret line="85" column="70" selection-start-line="85" selection-start-column="15" selection-end-line="85" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/PostDtoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79452056" vertical-offset="1124" max-vertical-offset="1635">
+          <caret line="113" column="6" selection-start-line="68" selection-start-column="0" selection-end-line="113" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45652175" vertical-offset="0" max-vertical-offset="460">
+          <caret line="14" column="63" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/controller/EventController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="890" max-vertical-offset="1920">
+          <caret line="82" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/TeamResolverImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="1260">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1485">
+          <caret line="114" column="8" selection-start-line="114" selection-start-column="8" selection-end-line="114" selection-end-column="8" />
+          <folding>
+            <element signature="method#getCurrentUserPosts#0;class#PostController#0" expanded="false" />
+            <element signature="e#5096#5097#0" expanded="true" />
+            <element signature="e#5156#5157#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/dto/MediaDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="380" max-vertical-offset="1470">
+          <caret line="36" column="37" selection-start-line="36" selection-start-column="37" selection-end-line="36" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1220" max-vertical-offset="1590">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
         </state>
       </provider>

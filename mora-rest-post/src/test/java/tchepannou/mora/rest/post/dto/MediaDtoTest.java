@@ -1,16 +1,14 @@
 package tchepannou.mora.rest.post.dto;
 
 import org.apache.commons.lang.time.DateUtils;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.MediaType;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
-import tchepannou.mora.core.service.MediaTypeService;
-import tchepannou.mora.core.service.OembedService;
 import tchepannou.mora.rest.core.dto.EnumDto;
 
 import java.util.Date;
@@ -18,28 +16,16 @@ import java.util.Date;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
-import static org.mockito.Mockito.when;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MediaDtoTest {
-    @Mock
-    private OembedService oembedService;
+    Date now = new Date ();
+    Date yesterday = DateUtils.addDays(now, -1);
+    MediaType mediaType = new MediaType(MediaType.IMAGE, "image");
+    Media media = new Media (100, new Space(1), new User(10), mediaType);
 
-    @Mock
-    private MediaTypeService mediaTypeService;
-
-    @Test
-    public void testBuilder(){
-        // Given
-        Date now = new Date ();
-        Date yesterday = DateUtils.addDays(now, -1);
-
-        MediaType mediaType = new MediaType(MediaType.IMAGE, "image");
-
-        when(oembedService.getEmbedUrl("http://www.google.ca/url.png")).thenReturn("http://www.google.ca/embed/url.png");
-        when(mediaTypeService.findById(mediaType.getId())).thenReturn(mediaType);
-
-        Media media = new Media (100, new Space(1), new User(10), mediaType);
+    @Before
+    public void setUp (){
         media.setTitle( "title1");
         media.setDescription("bar");;
         media.setUrl("http://www.google.ca/url.png");
@@ -50,12 +36,14 @@ public class MediaDtoTest {
         media.setSize(1000);
         media.setLastUpdate(now);
         media.setCreationDate(yesterday);
+    }
 
+    @Test
+    public void testBuilder(){
         // When
         MediaDto result = new MediaDto.Builder()
                 .withMedia(media)
-                .withOembedService(oembedService)
-                .withMediaTypeService(mediaTypeService)
+                .withMediaType(mediaType)
                 .build();
 
         // Then
@@ -75,31 +63,13 @@ public class MediaDtoTest {
     @Test
     public void testBuilder_Oembed (){
         // Given
-        Date now = new Date ();
-        Date yesterday = DateUtils.addDays(now, -1);
-
-        MediaType mediaType = new MediaType(MediaType.IMAGE, "image");
-
-        when(oembedService.getEmbedUrl("http://www.google.ca/url.png")).thenReturn("http://www.google.ca/embed/url.png");
-        when(mediaTypeService.findById(mediaType.getId())).thenReturn(mediaType);
-
-        Media media = new Media (100, new Space(1), new User(10), mediaType);
-        media.setTitle( "title1");
-        media.setDescription("bar");;
-        media.setUrl("http://www.google.ca/url.png");
-        media.setImageUrl("http://www.google.ca/img.png");
-        media.setThumbnailUrl("http://www.google.ca/thumb.png");
-        media.setContentType("image/png");
         media.setOembed(true);
-        media.setSize(1000);
-        media.setLastUpdate(now);
-        media.setCreationDate(yesterday);
 
         // When
         MediaDto result = new MediaDto.Builder()
                 .withMedia(media)
-                .withOembedService(oembedService)
-                .withMediaTypeService(mediaTypeService)
+                .withMediaType(mediaType)
+                .withEmbedUrl("http://www.google.ca/embed/url.png")
                 .build();
 
         // Then
@@ -117,5 +87,30 @@ public class MediaDtoTest {
         assertThat(result.getEmbedUrl(), equalTo("http://www.google.ca/embed/url.png"));
     }
 
+    @Test(expected = IllegalStateException.class)
+    public void testBuilder_noMedia_throwsIllegalStateException() {
+        // When
+        new MediaDto.Builder()
+                .withMedia(null)
+                .withMediaType(mediaType)
+                .build();
+    }
 
+    @Test(expected = IllegalStateException.class)
+    public void testBuilder_noMediaType_throwsIllegalStateException() {
+        // When
+        new MediaDto.Builder()
+                .withMedia(media)
+                .withMediaType(null)
+                .build();
+    }
+
+    @Test(expected = IllegalStateException.class)
+    public void testBuilder_badMediaType_throwsIllegalStateException() {
+        // When
+        new MediaDto.Builder()
+                .withMedia(media)
+                .withMediaType(new MediaType(999, "foo"))
+                .build();
+    }
 }

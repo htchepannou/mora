@@ -3,8 +3,6 @@ package tchepannou.mora.rest.post.dto;
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.MediaType;
-import tchepannou.mora.core.service.MediaTypeService;
-import tchepannou.mora.core.service.OembedService;
 import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
@@ -28,13 +26,15 @@ public class MediaDto extends ModelDto{
     //-- Builder
     public static class Builder {
         private Media media;
-        private OembedService oembedService;
-        private MediaTypeService mediaTypeService;
+        private MediaType mediaType;
+        private String embedUrl;
+
 
         public MediaDto build (){
             Preconditions.checkState(media != null, "media == null");
-            Preconditions.checkState(oembedService != null, "oembedService == null");
-            Preconditions.checkState(mediaTypeService != null, "mediaTypeService == null");
+
+            Preconditions.checkState(mediaType != null, "mediaType == null");
+            Preconditions.checkState(mediaType.getId() == media.getTypeId(), "mediaType.id != media.typeId");
 
             MediaDto result = new MediaDto();
             result.title = media.getTitle();
@@ -46,16 +46,10 @@ public class MediaDto extends ModelDto{
             result.imageUrl = media.getImageUrl();
             result.oembed = media.isOembed();
 
-            MediaType mediaType = mediaTypeService.findById(media.getTypeId());
-            if (mediaType == null){
-                throw new IllegalStateException("Invalid MediaType: " + media.getTypeId());
-            }
             result.type = new EnumDto.Builder().withEnum(mediaType).build();
 
-            if (media.isOembed()){
-                result.embedUrl = oembedService.getEmbedUrl(media.getUrl());
-            } else {
-                result.embedUrl = null;
+            if (media.isOembed()) {
+                result.embedUrl = embedUrl;
             }
 
             return result;
@@ -65,12 +59,12 @@ public class MediaDto extends ModelDto{
             this.media = media;
             return this;
         }
-        public Builder withOembedService (OembedService oembedService){
-            this.oembedService = oembedService;
+        public Builder withEmbedUrl (String embedUrl){
+            this.embedUrl = embedUrl;
             return this;
         }
-        public Builder withMediaTypeService (MediaTypeService mediaTypeService){
-            this.mediaTypeService = mediaTypeService;
+        public Builder withMediaType (MediaType mediaType){
+            this.mediaType = mediaType;
             return this;
         }
     }
