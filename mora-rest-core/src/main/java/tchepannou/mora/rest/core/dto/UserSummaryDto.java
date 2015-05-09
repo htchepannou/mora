@@ -7,16 +7,17 @@ import tchepannou.mora.core.domain.User;
 
 public class UserSummaryDto extends ModelDto {
     //-- Private
-    private long id;
-    private String name;
+    private final long id;
+    private final String name;
 
 
     //-- Public
-    public UserSummaryDto(){
-    }
-    public UserSummaryDto (long id, String name){
-        this.id = id;
-        this.name = name;
+    private UserSummaryDto (Builder builder){
+        User user = builder.user;
+
+        this.id = user.getId();
+        this.name = Joiner.on(' ').join(Strings.nullToEmpty(user.getFirstName()), Strings.nullToEmpty(user.getLastName()));
+        ;
     }
 
     //-- Builder
@@ -26,13 +27,7 @@ public class UserSummaryDto extends ModelDto {
         public UserSummaryDto build (){
             Preconditions.checkState(this.user != null, "this.user==null");
 
-            UserSummaryDto dto = new UserSummaryDto();
-            dto.id = user.getId();
-            dto.name = Joiner.on(' ').join(
-                    Strings.nullToEmpty(user.getFirstName())
-                    , Strings.nullToEmpty(user.getLastName()));
-
-            return dto;
+            return new UserSummaryDto(this);
         }
 
         public Builder withUser (User user){

@@ -14,8 +14,7 @@ import java.time.ZoneId;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-
-public class EventSummaryDtoTest {
+public class EventDtoTest {
     @Test
     public void testBuilder (){
         // Given
@@ -39,7 +38,7 @@ public class EventSummaryDtoTest {
         event.setAddress("This is the address");
 
         // When
-        EventSummaryDto result = (EventSummaryDto)new EventSummaryDto.Builder()
+        EventDto result = (EventDto)new EventDto.Builder()
                 .withUser(user)
                 .withSpace(space)
                 .withEvent(event)
@@ -56,9 +55,11 @@ public class EventSummaryDtoTest {
         assertThat(result.getEndDateTime(), equalTo(event.getEndDateTime()));
         assertThat(result.getTimezone(), equalTo("America/Montreal"));
         assertThat(result.getLocation(), equalTo(event.getLocation()));
+        assertThat(result.isRequiresRSVP(), equalTo(event.isRequiresRSVP()));
+        assertThat(result.getUrl(), equalTo(event.getUrl()));
+        assertThat(result.getNotes(), equalTo(event.getNotes()));
         assertThat(result.getType(), equalTo(new EventTypeDto(type.getId(), type.getName())));
         assertThat(result.getUser(), equalTo(expectedUser));
         assertThat(result.getSpace(), equalTo(expectedSpace));
-
     }
 }

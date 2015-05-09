@@ -8,6 +8,7 @@ import org.apache.commons.lang.builder.ToStringBuilder;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public abstract class Model implements Serializable {
@@ -34,6 +35,12 @@ public abstract class Model implements Serializable {
                 .map(Model::getId)
                 .collect(Collectors.toList());
     }
+
+    public static <T extends Model> Map<Long, T> map(Collection<T> spaces){
+        return spaces.stream()
+                .collect(Collectors.toMap(space -> space.getId(), space -> space));
+    }
+
 
     //-- Getter/Setter
     public final long getId() {

@@ -1,25 +1,49 @@
 package tchepannou.mora.core.dao.jdbc;
 
+import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.EventDao;
+import tchepannou.mora.core.dao.jdbc.mapper.EventRowMapper;
 import tchepannou.mora.core.domain.Event;
 
-import java.util.Collection;
-import java.util.Collections;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.List;
 
-public class JdbcEventDao implements EventDao {
+public class JdbcEventDao extends JdbcReadOnlyModelDao<Event> implements EventDao {
+    private static final RowMapper<Event> MAPPER = new EventRowMapper();
+
     @Override
-    public Event findById(long id) {
-        return null;
+    protected RowMapper<Event> getRowMapper() {
+        return MAPPER;
     }
 
     @Override
-    public List<Event> findByIds(Collection<Long> ids) {
-        return Collections.emptyList();
+    protected String getTableName() {
+        return "t_event";
     }
 
     @Override
     public List<Long> findIdsUpcomingForUser(long userId, int limit, int offset) {
-        return Collections.emptyList();
+        String sql = "SELECT DISTINCT R.id" +
+                " FROM t_event E JOIN t_space S ON E.space_id=S.id" +
+                "   JOIN t_member M ON M.space_id=S.id" +
+                " WHERE M.user_id=?" +
+                "   AND R.start_datetime>=?" +
+                "   AND R.deleted=?" +
+                " ORDER BY R.start_datetime" +
+                " LIMIT " + limit + " OFFSET " + offset;
+
+        Calendar today = Calendar.getInstance();
+        today.set(Calendar.HOUR_OF_DAY, 0);
+        today.set(Calendar.MINUTE, 0);
+        today.set(Calendar.SECOND, 0);
+
+        return template.query(sql, new Object[] {userId, today, false}, new RowMapper<Long>() {
+            @Override
+            public Long mapRow(ResultSet rs, int i) throws SQLException {
+                return rs.getLong("id");
+            }
+        });
     }
 }

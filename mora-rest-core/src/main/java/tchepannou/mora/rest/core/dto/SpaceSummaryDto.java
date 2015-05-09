@@ -5,18 +5,15 @@ import tchepannou.mora.core.domain.Space;
 
 public class SpaceSummaryDto extends ModelDto {
     //-- Attributes
-    private long id;
-    private String name;
-    private String logoUrl;
+    private final long id;
+    private final String name;
+    private final String logoUrl;
 
     //-- Constructor
-    public SpaceSummaryDto(){
-
-    }
-    public SpaceSummaryDto(long id, String name, String logoUrl){
-        this.id = id;
-        this.name = name;
-        this.logoUrl = logoUrl;
+    private SpaceSummaryDto(Builder builder){
+        this.id = builder.space.getId();
+        this.name = builder.space.getName();
+        this.logoUrl = builder.space.getLogoUrl();
     }
 
     //-- Builder
@@ -26,12 +23,7 @@ public class SpaceSummaryDto extends ModelDto {
         public SpaceSummaryDto build (){
             Preconditions.checkState(space != null, "space != null");
 
-            SpaceSummaryDto result = new SpaceSummaryDto();
-            result.id = space.getId();
-            result.name = space.getName();
-            result.logoUrl = space.getLogoUrl();
-
-            return result;
+            return new SpaceSummaryDto(this);
         }
 
         public Builder withSpace (Space space){

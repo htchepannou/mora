@@ -26,12 +26,11 @@ import tchepannou.mora.rest.post.dto.PostDto;
 import tchepannou.mora.rest.post.dto.PostSummaryDto;
 
 import java.security.Principal;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 public class PostController extends BaseRestController{
@@ -125,30 +124,20 @@ public class PostController extends BaseRestController{
     }
     
     protected Map<Long, User> toUserMap(List<Post> posts){
-        Set<Long> ids = new HashSet<>();
-        for (Post post : posts){
-            ids.add(post.getUserId());
-        }
+        Set<Long> ids = posts.stream()
+                .map(event -> event.getUserId())
+                .collect(Collectors.toSet());
 
         List<User> users = userService.findByIds(ids);
-        Map<Long, User> result = new HashMap<>();
-        for (User user : users){
-            result.put(user.getId(), user);
-        }
-        return result;
+        return User.map(users);
     }
 
     protected Map<Long, Space> toSpaceMap(List<Post> posts){
-        Set<Long> ids = new HashSet<>();
-        for (Post post : posts){
-            ids.add(post.getSpaceId());
-        }
+        Set<Long> ids = posts.stream()
+                .map(event -> event.getSpaceId())
+                .collect(Collectors.toSet());
 
         List<Space> spaces = spaceService.findByIds(ids);
-        Map<Long, Space> result = new HashMap<>();
-        for (Space space : spaces){
-            result.put(space.getId(), space);
-        }
-        return result;
+        return Space.map(spaces);
     }
 }

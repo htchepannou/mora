@@ -206,3 +206,32 @@ create table t_event_type(
 
     unique(name)
 ) engine=InnoDB;
+
+-- ====================
+-- event
+-- ====================
+create table t_event(
+    id int not null primary key auto_increment,
+    space_id int not null,
+    user_id int not null,
+    type_id int not null,
+
+    title varchar(255),
+    notes text,
+    start_datetime timestamp null,
+    end_datetime timestamp null,
+    location varchar(255),
+    address varchar(255),
+    url varchar(255),
+    timezone varchar(50),
+    require_rsvp bit(1),
+    deleted bit(1),
+    creation_date timestamp null,
+    last_update timestamp null,
+
+    foreign key (space_id) references t_space(id),
+    foreign key (user_id) references t_user(id),
+    foreign key (type_id) references t_user(id),
+    index (start_datetime)
+) engine=InnoDB;
+

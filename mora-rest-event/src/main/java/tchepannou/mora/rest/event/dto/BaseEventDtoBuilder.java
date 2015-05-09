@@ -5,8 +5,6 @@ import tchepannou.mora.core.domain.Event;
 import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
-import tchepannou.mora.rest.core.dto.SpaceSummaryDto;
-import tchepannou.mora.rest.core.dto.UserSummaryDto;
 
 //-- Builder
 public abstract class BaseEventDtoBuilder<T extends BaseEventDto> {
@@ -29,17 +27,7 @@ public abstract class BaseEventDtoBuilder<T extends BaseEventDto> {
         Preconditions.checkState(user != null, "user == null");
         Preconditions.checkState(user.getId() == event.getUserId(), "event.userId != user.id");
 
-        T result = createDto();
-
-        result.id = event.getId();
-        result.title = event.getTitle();
-        result.startDateTime = event.getStartDateTime();
-        result.endDateTime = event.getEndDateTime();
-        result.location = event.getLocation();
-        result.space = new SpaceSummaryDto.Builder().withSpace(space).build();
-        result.user = new UserSummaryDto.Builder().withUser(user).build();
-        result.type = new EventTypeDto(type.getId(), type.getName());
-        return result;
+        return createDto ();
     }
 
 
