@@ -16,17 +16,17 @@ import tchepannou.mora.core.service.SpaceService;
 import tchepannou.mora.core.service.SpaceTypeService;
 import tchepannou.mora.core.service.UserService;
 import tchepannou.mora.rest.core.controller.BaseRestController;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.exception.BadRequestException;
 import tchepannou.mora.rest.core.exception.NotFoundException;
 import tchepannou.mora.rest.space.dto.CreateSpaceDto;
 import tchepannou.mora.rest.space.dto.SaveSpaceDto;
 import tchepannou.mora.rest.space.dto.SpaceDto;
-import tchepannou.mora.rest.space.dto.SpaceTypeDto;
 
 import javax.validation.Valid;
 import java.security.Principal;
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class SpaceController extends BaseRestController{
@@ -46,24 +46,19 @@ public class SpaceController extends BaseRestController{
 
     //-- REST methods
     @RequestMapping (value = "/spaces/types", method = RequestMethod.GET)
-    public List<SpaceTypeDto> types (){
-        List<SpaceType> types = spaceTypeService.findAll();
-
-        List<SpaceTypeDto> result = new ArrayList<SpaceTypeDto>();
-        for (SpaceType type : types){
-            SpaceTypeDto dto = new SpaceTypeDto.Builder().withSpaceType(type).build();
-            result.add(dto);
-        }
-        return result;
+    public List<EnumDto> types (){
+        return spaceTypeService.findAll().stream()
+                .map(type -> new EnumDto.Builder().withEnum(type).build())
+                .collect(Collectors.toList());
     }
 
     @RequestMapping (value = "/spaces/types/{typeId}", method = RequestMethod.GET)
-    public SpaceTypeDto type (@PathVariable long typeId) {
+    public EnumDto type (@PathVariable long typeId) {
         SpaceType type = spaceTypeService.findById(typeId);
         if (type == null){
             throw new NotFoundException(typeId);
         }
-        return new SpaceTypeDto.Builder().withSpaceType(type).build();
+        return new EnumDto.Builder().withEnum(type).build();
     }
 
 

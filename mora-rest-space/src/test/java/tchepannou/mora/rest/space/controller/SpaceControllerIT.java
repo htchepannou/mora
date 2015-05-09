@@ -16,11 +16,12 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.dao.SpaceDao;
 import tchepannou.mora.core.domain.Space;
+import tchepannou.mora.core.domain.SpaceType;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.security.SecurityContants;
 import tchepannou.mora.rest.space.Application;
 import tchepannou.mora.rest.space.dto.CreateSpaceDto;
 import tchepannou.mora.rest.space.dto.SaveSpaceDto;
-import tchepannou.mora.rest.space.dto.SpaceTypeDto;
 
 import java.util.Arrays;
 import java.util.List;
@@ -53,14 +54,18 @@ public class SpaceControllerIT {
 
     @Test
     public void testTypes() throws Exception {
-        SpaceTypeDto[] aresult = given()
+        EnumDto[] aresult = given()
                 .when()
                     .get("/spaces/types")
-                    .as(SpaceTypeDto[].class);
-        List<SpaceTypeDto> result = Arrays.asList(aresult);
+                    .as(EnumDto[].class);
+        List<EnumDto> result = Arrays.asList(aresult);
+
+
+        EnumDto expected1 = new EnumDto.Builder().withEnum(new SpaceType(1, "club")).build();
+        EnumDto expected2 = new EnumDto.Builder().withEnum(new SpaceType(2, "team")).build();
 
         assertThat(result, hasSize(2));
-        assertThat(result, hasItems(new SpaceTypeDto(1, "club"), new SpaceTypeDto(2, "team")));
+        assertThat(result, hasItems(expected1, expected2));
     }
 
     @Test

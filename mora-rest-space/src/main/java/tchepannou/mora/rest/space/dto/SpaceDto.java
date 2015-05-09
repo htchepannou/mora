@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.google.common.base.Preconditions;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.dto.ModelDto;
 import tchepannou.mora.rest.core.json.JsonDateSerializer;
 
@@ -12,7 +13,7 @@ import java.util.Date;
 public class SpaceDto extends ModelDto{
     //-- Attributes
     private long id;
-    private SpaceTypeDto type;
+    private EnumDto type;
     private String name;
     private String abbreviation;
     private String description;
@@ -49,7 +50,7 @@ public class SpaceDto extends ModelDto{
             result.address = space.getAddress();
             result.creationDate = space.getCreationDate();
             result.lastUpdate = space.getLastUpdate();
-            result.type = new SpaceTypeDto.Builder().withSpaceType(this.spaceType).build();
+            result.type = new EnumDto.Builder().withEnum(this.spaceType).build();
 
             return result;
         }
@@ -105,7 +106,7 @@ public class SpaceDto extends ModelDto{
         return name;
     }
 
-    public SpaceTypeDto getType() {
+    public EnumDto getType() {
         return type;
     }
 

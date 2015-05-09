@@ -59,6 +59,7 @@ public class EventDtoTest {
         EnumDto expectedType = new EnumDto.Builder().withEnum(type).build();
 
         assertThat(result.getId(), equalTo(event.getId()));
+        assertThat(result.getAddress(), equalTo(event.getAddress()));
         assertThat(result.getTitle(), equalTo(event.getTitle()));
         assertThat(result.getStartDateTime(), equalTo(event.getStartDateTime()));
         assertThat(result.getEndDateTime(), equalTo(event.getEndDateTime()));
