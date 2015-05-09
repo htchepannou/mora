@@ -11,6 +11,7 @@ import tchepannou.mora.core.domain.User;
 
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.time.ZoneId;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
@@ -40,6 +41,7 @@ public class EventRowMapperTest {
         when(rs.getTimestamp("end_datetime")).thenReturn(now);
         when(rs.getTimestamp("creation_date")).thenReturn(now);
         when(rs.getTimestamp("last_update")).thenReturn(now);
+        when(rs.getString("timezone")).thenReturn("America/Montreal");
 
         // When
         Event result = new EventRowMapper().mapRow(rs, 0);
@@ -56,6 +58,7 @@ public class EventRowMapperTest {
         expected.setEndDateTime(now);
         expected.setCreationDate(now);
         expected.setLastUpdate(now);
+        expected.setTimezone(ZoneId.of("America/Montreal"));
         assertThat(result, equalTo(expected));
 
     }

@@ -2,6 +2,7 @@ package tchepannou.mora.rest.event.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.bind.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,6 @@ import tchepannou.mora.rest.core.exception.NotFoundException;
 import tchepannou.mora.rest.event.dto.EventDto;
 import tchepannou.mora.rest.event.dto.EventSummaryDto;
 
-import javax.websocket.server.PathParam;
 import java.security.Principal;
 import java.util.List;
 import java.util.Map;
@@ -47,7 +47,8 @@ public class EventController extends BaseRestController {
     
     //-- Public
     @RequestMapping ("/events/{eventId}")
-    public EventDto get (@PathParam("eventId") long eventId){
+    public EventDto get (@PathVariable
+                             long eventId){
         Event event = eventService.findById(eventId);
         if (event == null){
             throw new NotFoundException(eventId);

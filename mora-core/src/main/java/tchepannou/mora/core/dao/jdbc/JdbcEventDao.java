@@ -25,13 +25,13 @@ public class JdbcEventDao extends JdbcReadOnlyModelDao<Event> implements EventDa
 
     @Override
     public List<Long> findIdsUpcomingForUser(long userId, int limit, int offset) {
-        String sql = "SELECT DISTINCT R.id" +
+        String sql = "SELECT DISTINCT E.id" +
                 " FROM t_event E JOIN t_space S ON E.space_id=S.id" +
                 "   JOIN t_member M ON M.space_id=S.id" +
                 " WHERE M.user_id=?" +
-                "   AND R.start_datetime>=?" +
-                "   AND R.deleted=?" +
-                " ORDER BY R.start_datetime" +
+                "   AND E.start_datetime>=?" +
+                "   AND E.deleted=?" +
+                " ORDER BY E.start_datetime" +
                 " LIMIT " + limit + " OFFSET " + offset;
 
         Calendar today = Calendar.getInstance();

@@ -5,6 +5,7 @@ import tchepannou.mora.core.domain.Event;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.ZoneId;
 
 public class EventRowMapper implements RowMapper<Event>{
     @Override
@@ -24,6 +25,12 @@ public class EventRowMapper implements RowMapper<Event>{
         result.setEndDateTime(rs.getTimestamp("end_datetime"));
         result.setCreationDate(rs.getTimestamp("creation_date"));
         result.setLastUpdate(rs.getTimestamp("last_update"));
+
+        String tzid = rs.getString("timezone");
+        if (tzid != null){
+            result.setTimezone(ZoneId.of(tzid));
+        }
+
         return result;
     }
 }
