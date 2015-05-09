@@ -7,6 +7,7 @@ import tchepannou.mora.core.domain.SoftDeleteSupport;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class JdbcReadOnlyModelDao<T extends Model> extends JdbcDao{
@@ -23,6 +24,10 @@ public abstract class JdbcReadOnlyModelDao<T extends Model> extends JdbcDao{
     }
 
     public List<T> findByIds (Collection<Long> ids){
+        if (ids.isEmpty()){
+            return Collections.emptyList();
+        }
+
         /* query */
         StringBuilder sql = new StringBuilder(String.format("SELECT * FROM %s WHERE ", getTableName()));
         List params = new ArrayList<>();

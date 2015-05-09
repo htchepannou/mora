@@ -4,6 +4,9 @@ delete from t_member;
 delete from t_post;
 delete from t_media;
 
+delete from t_event;
+delete from t_event_type;
+
 delete from t_space;
 delete from t_space_type;
 

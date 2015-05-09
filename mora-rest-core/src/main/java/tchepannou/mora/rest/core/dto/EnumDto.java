@@ -10,6 +10,8 @@ public class EnumDto extends ModelDto {
 
 
     //-- Constructor
+    public EnumDto (){
+    }
     private EnumDto(Builder builder){
         this.id = builder.enumModel.getId();
         this.name = builder.enumModel.getName();
