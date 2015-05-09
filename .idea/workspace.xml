@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="fix">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/config/Config.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/config/SecurityConfig.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/Application.java" afterPath="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/Application.java" afterPath="$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerIT.java" afterPath="$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerIT.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/config/Config.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/config/SecurityConfig.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/config/Config.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" afterPath="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java" afterPath="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
@@ -60,48 +61,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-              <caret line="14" column="81" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/Application.java">
+        <entry file="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38356164" vertical-offset="59" max-vertical-offset="585">
-              <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.7474227" vertical-offset="0" max-vertical-offset="585">
+              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventControllerIT.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerIT.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="944" max-vertical-offset="1470">
-              <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/controller/EventController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="1950">
-              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3865#3866#0" expanded="true" />
-                <element signature="e#3929#3930#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -114,9 +79,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/User.java" />
-        <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/dto/SpaceSummaryDto.java" />
-        <option value="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/dto/BaseEventDtoBuilder.java" />
         <option value="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/dto/EventSummaryDto.java" />
         <option value="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/dto/EventDto.java" />
         <option value="$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerTest.java" />
@@ -165,6 +127,9 @@
         <option value="$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/controller/EventController.java" />
         <option value="$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/Application.java" />
+        <option value="$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/controller/PostControllerIT.java" />
+        <option value="$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java" />
+        <option value="$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java" />
       </list>
     </option>
   </component>
@@ -259,6 +224,90 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-rest-space" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="space" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -923,13 +972,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="636" y="212" width="1269" height="966" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2806604" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2806604" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31957546" sideWeight="0.49965397" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -945,7 +994,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3390383" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3643868" sideWeight="0.6911085" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3643868" sideWeight="0.6911085" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32912987" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
     </layout>
@@ -1079,26 +1128,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/dto/MediaDtoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="897" max-vertical-offset="1620">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-core/src/test/java/tchepannou/mora/rest/core/dto/EnumDtoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51428574" vertical-offset="0" max-vertical-offset="525">
-          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#627#628#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/controller/SpaceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.21465969" vertical-offset="631" max-vertical-offset="2100">
@@ -1459,24 +1488,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/controller/PostControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.09001957" vertical-offset="524" max-vertical-offset="1290">
-          <caret line="59" column="44" selection-start-line="59" selection-start-column="9" selection-end-line="59" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="944" max-vertical-offset="1470">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/controller/EventController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1315" max-vertical-offset="1950">
@@ -1489,18 +1500,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/Application.java">
+    <entry file="file://$PROJECT_DIR$/mora-rest-event/src/test/java/tchepannou/mora/rest/event/controller/EventControllerIT.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="14" column="81" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
-          <folding />
+        <state vertical-scroll-proportion="0.7646048" vertical-offset="650" max-vertical-offset="1470">
+          <caret line="75" column="22" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/java/tchepannou/mora/rest/event/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38356164" vertical-offset="59" max-vertical-offset="585">
+        <state vertical-scroll-proportion="0.4329897" vertical-offset="3" max-vertical-offset="585">
           <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.05154639" vertical-offset="0" max-vertical-offset="582">
+          <caret line="14" column="81" selection-start-line="14" selection-start-column="69" selection-end-line="14" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/test/java/tchepannou/mora/rest/post/controller/PostControllerIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1290">
+          <caret line="51" column="80" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7474227" vertical-offset="0" max-vertical-offset="585">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7474227" vertical-offset="0" max-vertical-offset="585">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
           <folding />
         </state>
       </provider>
