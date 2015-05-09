@@ -27,7 +27,8 @@ public class Application extends AbstractRestSecurityConfig {
             // @formatter:off
             http
                 .authorizeRequests()
-                    .antMatchers(HttpMethod.GET, "/events/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/events/upcoming").authenticated()
+                .antMatchers(HttpMethod.GET, "/events/**").permitAll()
                     .anyRequest()
                         .authenticated()
                     .and()

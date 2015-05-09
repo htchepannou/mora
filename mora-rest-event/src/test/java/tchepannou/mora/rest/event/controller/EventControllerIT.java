@@ -59,6 +59,16 @@ public class EventControllerIT {
     }
 
     @Test
+    public void testGetEvent_notFound_returns404(){
+        when()
+            .get("/events/{eventId}", 999)
+        .then()
+            .statusCode(404)
+            .log().all()
+        ;
+    }
+
+    @Test
     public void testGetUpcoming(){
         given()
             .header(SecurityContants.X_AUTH_TOKEN.name(), "bc9a50e1e0085b13c4bba866f6dfe57c")
@@ -69,6 +79,16 @@ public class EventControllerIT {
             .log().all()
             .body("id", contains(300, 301))
             .body("title", contains("title1", "title2"))
+        ;
+    }
+
+    @Test
+    public void testGetUpcoming_unauthicated_returns401(){
+        when()
+            .get("/events/upcoming?limit=100&offset=0")
+        .then()
+            .statusCode(401)
+            .log().all()
         ;
     }
 }
