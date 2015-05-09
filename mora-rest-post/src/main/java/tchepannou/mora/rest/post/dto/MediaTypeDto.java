@@ -1,15 +1,17 @@
 package tchepannou.mora.rest.post.dto;
 
+import com.google.common.base.Preconditions;
+import tchepannou.mora.core.domain.MediaType;
 import tchepannou.mora.rest.core.dto.ModelDto;
 
 public class MediaTypeDto extends ModelDto{
-    private long id;
-    private String name;
+    private final long id;
+    private final String name;
 
     //-- Constructor
-    public MediaTypeDto(long id, String name){
-        this.id = id;
-        this.name = name;
+    private MediaTypeDto(Builder builder){
+        this.id = builder.type.getId();
+        this.name = builder.type.getName();
     }
 
     //-- Getter
@@ -17,15 +19,23 @@ public class MediaTypeDto extends ModelDto{
         return id;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    //-- Builder
+    public static class Builder{
+        MediaType type;
+
+        public MediaTypeDto build (){
+            Preconditions.checkState(type != null, "type == null");
+
+            return new MediaTypeDto(this);
+        }
+
+        public Builder withMediaType(MediaType type){
+            this.type = type;
+            return this;
+        }
     }
 }

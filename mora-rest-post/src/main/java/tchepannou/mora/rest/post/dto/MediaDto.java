@@ -49,7 +49,7 @@ public class MediaDto extends ModelDto{
             if (mediaType == null){
                 throw new IllegalStateException("Invalid MediaType: " + media.getTypeId());
             }
-            result.type = new MediaTypeDto(mediaType.getId(), mediaType.getName());
+            result.type = new MediaTypeDto.Builder().withMediaType(mediaType).build();
 
             if (media.isOembed()){
                 result.embedUrl = oembedService.getEmbedUrl(media.getUrl());

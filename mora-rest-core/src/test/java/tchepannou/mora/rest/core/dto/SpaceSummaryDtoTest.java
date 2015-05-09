@@ -29,4 +29,12 @@ public class SpaceSummaryDtoTest {
         assertThat(result.getLogoUrl(), equalTo(space.getLogoUrl()));
         assertThat(result.getName(), equalTo(space.getName()));
     }
+
+
+    @Test(expected = IllegalStateException.class)
+    public void testBuilder_noSpace_throwsIllegalStateException (){
+        new SpaceSummaryDto.Builder().build();
+
+    }
+
 }

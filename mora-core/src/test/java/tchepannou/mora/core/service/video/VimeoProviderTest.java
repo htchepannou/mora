@@ -4,6 +4,7 @@ import org.junit.Test;
 import tchepannou.mora.core.service.VideoProvider;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class VimeoProviderTest {
     private VideoProvider service = new VimeoProvider();
@@ -23,5 +24,6 @@ public class VimeoProviderTest {
 
         assertEquals(expected, service.getVideoId("http://Vimeo.com/100949626"));
         assertEquals(expected, service.getVideoId("https://Vimeo.com/channels/112171/100949626"));
+        assertNull(service.getVideoId("https://unknown.com/video/XOcCOBe8PTc?syndication=131181"));
     }
 }

@@ -21,4 +21,10 @@ public class UserSummaryDtoTest {
         assertThat(result.getId(), equalTo(user.getId()));
         assertThat(result.getName(), equalTo("Ray Sponsible"));
     }
+
+    @Test(expected = IllegalStateException.class)
+    public void testBuilder_noUser_throwsIllegalStateException (){
+        new UserSummaryDto.Builder().build();
+
+    }
 }

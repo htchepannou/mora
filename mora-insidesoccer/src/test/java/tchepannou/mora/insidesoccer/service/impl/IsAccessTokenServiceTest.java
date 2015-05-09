@@ -22,6 +22,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.nullValue;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
@@ -55,6 +56,10 @@ public class IsAccessTokenServiceTest {
     }
 
     @Test
+    public void testFindByValue_null_returnsNull() throws Exception {
+        assertThat(service.findByValue(null), nullValue());
+    }
+
     public void testFindByValue() throws Exception {
         // Given
         AccessToken token = new AccessToken();

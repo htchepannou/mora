@@ -55,6 +55,7 @@ public class NodeAttributeTest {
 
         Event post = new Event(1);
         post.setStartDateTime(new SimpleDateFormat("yyyy-mm-dd").parse("2010-12-01"));
+        post.setEndDateTime(new SimpleDateFormat("yyyy-mm-dd").parse("2010-12-01"));
 
         // When
         NodeAttribute.toEvent(Arrays.asList(attr11, attr12, attr13, attr14, attr15, attr16, attr17, attr18, attr19, attr20, attr21), post);

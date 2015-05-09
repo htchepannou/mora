@@ -58,6 +58,8 @@ public class MediaDtoTest {
                 .build();
 
         // Then
+        MediaTypeDto mediaTypeDto = new MediaTypeDto.Builder().withMediaType(mediaType).build();
+
         assertThat(result.getTitle(), equalTo(media.getTitle()));
         assertThat(result.getDescription(), equalTo(media.getDescription()));
         assertThat(result.getThumbnailUrl(), equalTo(media.getThumbnailUrl()));
@@ -66,7 +68,7 @@ public class MediaDtoTest {
         assertThat(result.getSize(), equalTo(media.getSize()));
         assertThat(result.getContentType(), equalTo(media.getContentType()));
         assertThat(result.isOembed(), equalTo(media.isOembed()));
-        assertThat(result.getType(), equalTo(new MediaTypeDto(MediaType.IMAGE, "image")));
+        assertThat(result.getType(), equalTo(mediaTypeDto));
         assertThat(result.getEmbedUrl(), nullValue());
     }
     @Test
@@ -100,6 +102,8 @@ public class MediaDtoTest {
                 .build();
 
         // Then
+        MediaTypeDto mediaTypeDto = new MediaTypeDto.Builder().withMediaType(mediaType).build();
+
         assertThat(result.getTitle(), equalTo(media.getTitle()));
         assertThat(result.getDescription(), equalTo(media.getDescription()));
         assertThat(result.getThumbnailUrl(), equalTo(media.getThumbnailUrl()));
@@ -108,7 +112,7 @@ public class MediaDtoTest {
         assertThat(result.getSize(), equalTo(media.getSize()));
         assertThat(result.getContentType(), equalTo(media.getContentType()));
         assertThat(result.isOembed(), equalTo(media.isOembed()));
-        assertThat(result.getType(), equalTo(new MediaTypeDto(MediaType.IMAGE, "image")));
+        assertThat(result.getType(), equalTo(mediaTypeDto));
         assertThat(result.getEmbedUrl(), equalTo("http://www.google.ca/embed/url.png"));
     }
 
