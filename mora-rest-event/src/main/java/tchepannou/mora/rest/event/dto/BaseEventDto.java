@@ -2,9 +2,6 @@ package tchepannou.mora.rest.event.dto;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import tchepannou.mora.core.domain.Event;
-import tchepannou.mora.core.domain.EventType;
-import tchepannou.mora.core.domain.Space;
-import tchepannou.mora.core.domain.User;
 import tchepannou.mora.rest.core.dto.ModelDto;
 import tchepannou.mora.rest.core.dto.SpaceSummaryDto;
 import tchepannou.mora.rest.core.dto.UserSummaryDto;
@@ -28,21 +25,18 @@ public class BaseEventDto extends ModelDto {
 
     //-- Constructor
     protected BaseEventDto(BaseEventDtoBuilder builder) {
-        Event event = builder.event;
-        EventType type = builder.type;
-        Space space = builder.space;
-        User user = builder.user;
-        ZoneId timezone = event.getTimezone();
+        Event evt = builder.event;
+        ZoneId zoneId = evt.getTimezone();
 
-        this.id = event.getId();
-        this.title = event.getTitle();
-        this.startDateTime = event.getStartDateTime();
-        this.endDateTime = event.getEndDateTime();
-        this.location = event.getLocation();
-        this.timezone = timezone != null ? timezone.getId() : null;
-        this.type = new EventTypeDto(type.getId(), type.getName());
-        this.space = new SpaceSummaryDto.Builder().withSpace(space).build();
-        this.user = new UserSummaryDto.Builder().withUser(user).build();
+        this.id = evt.getId();
+        this.title = evt.getTitle();
+        this.startDateTime = evt.getStartDateTime();
+        this.endDateTime = evt.getEndDateTime();
+        this.location = evt.getLocation();
+        this.timezone = zoneId != null ? zoneId.getId() : null;
+        this.type = new EventTypeDto(builder.type.getId(), builder.type.getName());
+        this.space = new SpaceSummaryDto.Builder().withSpace(builder.space).build();
+        this.user = new UserSummaryDto.Builder().withUser(builder.user).build();
     }
 
     //-- Getter

@@ -17,7 +17,6 @@ public class UserSummaryDto extends ModelDto {
 
         this.id = user.getId();
         this.name = Joiner.on(' ').join(Strings.nullToEmpty(user.getFirstName()), Strings.nullToEmpty(user.getLastName()));
-        ;
     }
 
     //-- Builder

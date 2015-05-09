@@ -18,9 +18,9 @@ import static org.mockito.Mockito.when;
 public class BaseRestControllerTest {
     @Test
     public void testNotFoundException() throws Exception {
-        RestException ex = new NotFoundException("foo");
+        NotFoundException ex = new NotFoundException("foo");
 
-        Map result = new BaseRestController().handleRestException(ex);
+        Map result = new BaseRestController().handleNotFoundException(ex);
 
         Map expected = new HashMap();
         expected.put("statusCode", 404);
@@ -30,9 +30,9 @@ public class BaseRestControllerTest {
 
     @Test
     public void testBadRequestException() throws Exception {
-        RestException ex = new BadRequestException("foo");
+        BadRequestException ex = new BadRequestException("foo");
 
-        Map result = new BaseRestController().handleRestException(ex);
+        Map result = new BaseRestController().handleBadRequestException(ex);
 
         Map expected = new HashMap();
         expected.put("statusCode", 400);
@@ -42,9 +42,9 @@ public class BaseRestControllerTest {
 
     @Test
     public void testOperationFailedException() throws Exception {
-        RestException ex = new OperationFailedException("foo");
+        OperationFailedException ex = new OperationFailedException("foo");
 
-        Map result = new BaseRestController().handleRestException(ex);
+        Map result = new BaseRestController().handleOperationFailedException(ex);
 
         Map expected = new HashMap();
         expected.put("statusCode", 409);
