@@ -62,4 +62,9 @@ public class ServiceConfigTest {
     public void testEventService() throws Exception {
         assertThat(config.eventService(), instanceOf(EventServiceImpl.class));
     }
+
+    @Test
+    public void testEventTypeService() throws Exception {
+        assertThat(config.eventTypeService(), instanceOf(EventTypeServiceImpl.class));
+    }
 }

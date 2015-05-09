@@ -231,7 +231,7 @@ create table t_event(
 
     foreign key (space_id) references t_space(id),
     foreign key (user_id) references t_user(id),
-    foreign key (type_id) references t_user(id),
+    foreign key (type_id) references t_event_type(id),
     index (start_datetime)
 ) engine=InnoDB;
 

@@ -75,4 +75,9 @@ public class ServiceConfig {
     public EventService eventService (){
         return new EventServiceImpl();
     }
+
+    @Bean
+    public EventTypeService eventTypeService () {
+        return new EventTypeServiceImpl();
+    }
 }

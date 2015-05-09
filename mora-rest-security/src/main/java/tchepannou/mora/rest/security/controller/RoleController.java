@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RestController;
 import tchepannou.mora.core.domain.Role;
 import tchepannou.mora.core.service.RoleService;
 import tchepannou.mora.rest.core.controller.BaseRestController;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.exception.NotFoundException;
-import tchepannou.mora.rest.security.dto.RoleDto;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class RoleController extends BaseRestController{
@@ -22,24 +22,20 @@ public class RoleController extends BaseRestController{
 
     //-- Public
     @RequestMapping(value="/roles", method = RequestMethod.GET)
-    public List<RoleDto> all (){
-        List<Role> roles = roleService.findAll();
-
-        List<RoleDto> result = new ArrayList<>();
-        for (Role role : roles){
-            result.add(new RoleDto(role.getId(), role.getName()));
-        }
-        return result;
+    public List<EnumDto> all (){
+        return roleService.findAll().stream()
+                .map(role -> new EnumDto.Builder().withEnum(role).build())
+                .collect(Collectors.toList());
     }
 
 
     @RequestMapping(value="/roles/{roleId}", method = RequestMethod.GET)
-    public RoleDto get (@PathVariable long roleId) {
+    public EnumDto get (@PathVariable long roleId) {
         Role role = roleService.findById(roleId);
         if (role == null){
             throw new NotFoundException(roleId);
         }
-        return new RoleDto(role.getId(), role.getName());
+        return new EnumDto.Builder().withEnum(role).build();
     }
 }
 

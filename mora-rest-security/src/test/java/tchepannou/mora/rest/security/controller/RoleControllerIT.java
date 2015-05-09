@@ -13,8 +13,9 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.dao.RoleDao;
+import tchepannou.mora.core.domain.Role;
+import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.security.Application;
-import tchepannou.mora.rest.security.dto.RoleDto;
 
 import java.util.Arrays;
 import java.util.List;
@@ -48,14 +49,16 @@ public class RoleControllerIT {
 
     @Test
     public void testAll() throws Exception {
-        RoleDto[] aresult = given()
+        EnumDto[] aresult = given()
                 .when()
                 .get("/roles")
-                    .as(RoleDto[].class);
-        List<RoleDto> result = Arrays.asList(aresult);
+                    .as(EnumDto[].class);
+        List<EnumDto> result = Arrays.asList(aresult);
 
+        EnumDto expected1 = new EnumDto.Builder().withEnum(new Role(1, "admin")).build();
+        EnumDto expected2 = new EnumDto.Builder().withEnum(new Role(2, "member")).build();
         assertThat(result, hasSize(2));
-        assertThat(result, hasItems(new RoleDto(1, "admin"), new RoleDto(2, "member")));
+        assertThat(result, hasItems(expected1, expected2));
     }
 
     @Test
