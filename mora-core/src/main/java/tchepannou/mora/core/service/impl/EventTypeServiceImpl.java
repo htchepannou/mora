@@ -1,11 +1,11 @@
-package tchepannou.mora.core.service;
+package tchepannou.mora.core.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tchepannou.mora.core.dao.EnumModelDao;
 import tchepannou.mora.core.dao.EventTypeDao;
 import tchepannou.mora.core.domain.EventType;
-import tchepannou.mora.core.service.impl.EnumServiceImpl;
+import tchepannou.mora.core.service.EventTypeService;
 
 @Service
 public class EventTypeServiceImpl extends EnumServiceImpl<EventType> implements EventTypeService {
