@@ -48,6 +48,7 @@ public class SpaceDto extends ModelDto{
 
         public SpaceDto build (){
             Preconditions.checkState(space != null, "space != null");
+
             Preconditions.checkState(spaceType != null, "spaceType != null");
             Preconditions.checkState(spaceType.getId() == space.getTypeId(), "spaceType.id != space.typeId");
 

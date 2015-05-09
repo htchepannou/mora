@@ -53,7 +53,7 @@ public class SpaceDtoTest {
         assertThat(result.getName(), equalTo(space.getName()));
     }
 
-    @Test
+    @Test (expected = IllegalStateException.class)
     public void testBuilder_noSpace_throwsIllegalStateException (){
         new SpaceDto.Builder()
                 .withSpaceType(type)
@@ -62,7 +62,7 @@ public class SpaceDtoTest {
     }
 
 
-    @Test
+    @Test (expected = IllegalStateException.class)
     public void testBuilder_noType_throwsIllegalStateException (){
         new SpaceDto.Builder()
                 .withSpaceType(null)
@@ -71,7 +71,7 @@ public class SpaceDtoTest {
     }
 
 
-    @Test
+    @Test (expected = IllegalStateException.class)
     public void testBuilder_badType_throwsIllegalStateException (){
         new SpaceDto.Builder()
                 .withSpaceType(new SpaceType(999))
