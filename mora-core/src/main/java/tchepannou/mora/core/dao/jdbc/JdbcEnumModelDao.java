@@ -1,6 +1,5 @@
 package tchepannou.mora.core.dao.jdbc;
 
-import com.google.common.base.Preconditions;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.core.dao.EnumModelDao;
 import tchepannou.mora.core.dao.jdbc.mapper.EnumModelRowMapper;
@@ -13,9 +12,7 @@ public abstract class JdbcEnumModelDao<T extends EnumModel> extends JdbcReadOnly
     private Class<T> type;
 
     //-- Constructor
-    public JdbcEnumModelDao (Class type){
-        Preconditions.checkArgument(type != null, "type == null");
-
+    protected JdbcEnumModelDao (Class type){
         this.type = type;
     }
 

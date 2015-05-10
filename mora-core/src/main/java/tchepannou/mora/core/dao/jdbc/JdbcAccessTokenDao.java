@@ -51,7 +51,7 @@ public class JdbcAccessTokenDao extends JdbcModelDao<AccessToken> implements Acc
     @Override
     public AccessToken findByValue(String value) {
         try {
-            return template.queryForObject("SELECT * FROM t_access_token WHERE value=?", new Object[] {value}, MAPPER);
+            return template.queryForObject("SELECT * FROM t_access_token WHERE value=?", new Object[] {value}, getRowMapper());
         } catch (org.springframework.dao.EmptyResultDataAccessException e){ // NOSONAR - Each exception intentionally
             return null;
         }
@@ -63,18 +63,18 @@ public class JdbcAccessTokenDao extends JdbcModelDao<AccessToken> implements Acc
                 ? "SELECT * FROM t_access_token WHERE user_id=? AND expiry_date<=?"
                 : "SELECT * FROM t_access_token WHERE user_id=? AND expiry_date>?";
         
-        return template.query(sql, new Object[]{userId, new Date ()}, MAPPER);
+        return template.query(sql, new Object[]{userId, new Date ()}, getRowMapper());
     }
 
     @Override
     public void update(AccessToken token) {
-        String sql = "UPDATE t_access_token SET expiry_date=? WHERE id=?";
+        String sql = String.format("UPDATE %s SET expiry_date=? WHERE id=?", getTableName());
         template.update(sql, token.getExpiryDate(), token.getId());
     }
 
     @Override
     public void update(List<AccessToken> tokens) {
-        String sql = "UPDATE t_access_token SET expiry_date=? WHERE id=?";
+        String sql = String.format("UPDATE %s SET expiry_date=? WHERE id=?", getTableName());
         List<Object[]> args = new ArrayList<Object[]>();
         for (AccessToken token : tokens){
             args.add(new Object[] {token.getExpiryDate(), token.getId()});

@@ -31,9 +31,7 @@ public abstract class JdbcReadOnlyModelDao<T extends Model> extends JdbcDao{
         /* query */
         StringBuilder sql = new StringBuilder(String.format("SELECT * FROM %s WHERE ", getTableName()));
         List params = new ArrayList<>();
-        if (!ids.isEmpty()) {
-            whereIn(sql, getIdColumn(), ids, params);
-        }
+        whereIn(sql, getIdColumn(), ids, params);
 
         List<T> lst = template.query(sql.toString(), params.toArray(), getRowMapper());
 
