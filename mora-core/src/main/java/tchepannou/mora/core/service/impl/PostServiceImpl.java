@@ -1,5 +1,7 @@
 package tchepannou.mora.core.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
@@ -17,6 +19,8 @@ import java.util.List;
 @Service
 public class PostServiceImpl implements PostService {
     //-- Attributes
+    private static final Logger LOG = LoggerFactory.getLogger(PostServiceImpl.class);
+
     @Autowired
     private PostDao postDao;
 
@@ -25,16 +29,22 @@ public class PostServiceImpl implements PostService {
     @Override
     @Cacheable("Post")
     public Post findById(long id) {
+        LOG.debug("findById({})", id);
+
         return postDao.findById(id);
     }
 
     @Override
     public List<Post> findByIds(Collection<Long> ids) {
+        LOG.debug("findByIds({})", ids);
+
         return postDao.findByIds(ids);
     }
 
     @Override
     public List<Long> findIdsPublishedForUser(long userId, int limit, int offset) {
+        LOG.debug("findIdsPublishedForUser({})", userId, limit, offset);
+
         return postDao.findIdsPublishedForUser(userId, limit, offset);
     }
 
@@ -42,6 +52,8 @@ public class PostServiceImpl implements PostService {
     @Transactional
     @CachePut(value="Post", key="#post.id")
     public Post create(Post post) {
+        LOG.debug("create({})", post);
+
         Date now = new Date ();
         post.setLastUpdate(now);
         post.setCreationDate(now);
@@ -54,6 +66,8 @@ public class PostServiceImpl implements PostService {
     @Transactional
     @CacheEvict(value="Post", key="#post.id")
     public Post update(Post post) {
+        LOG.debug("update({})", post);
+
         Date now = new Date ();
         post.setLastUpdate(now);
         postDao.update(post);
@@ -65,6 +79,8 @@ public class PostServiceImpl implements PostService {
     @Transactional
     @CacheEvict(value="Post", key="#post.id")
     public Post delete(Post post) {
+        LOG.debug("delete({})", post);
+
         postDao.delete(post);
         return post;
     }

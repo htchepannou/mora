@@ -20,13 +20,18 @@ public abstract class JdbcDao {
 
     protected StringBuilder whereIn(StringBuilder sql, String name, Collection values, List params){
         int i=0;
-        sql.append(name).append(" IN (");
-        for (Object value : values){
-            if (i++ > 0){
-                sql.append(',');
+        if (values.size() == 1){
+            sql.append(name).append("=?");
+            params.add(values.iterator().next());
+        } else {
+            sql.append(name).append(" IN (");
+            for (Object value : values) {
+                if (i++ > 0) {
+                    sql.append(',');
+                }
+                sql.append('?');
+                params.add(value);
             }
-            sql.append('?');
-            params.add(value);
         }
         sql.append(")");
         return sql;

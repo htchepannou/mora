@@ -1,6 +1,8 @@
 package tchepannou.mora.insidesoccer.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
@@ -22,6 +24,8 @@ import java.net.URLEncoder;
 
 public class IsAccessTokenService implements AccessTokenService{
     //-- Attributes
+    private static final Logger LOG = LoggerFactory.getLogger(IsAccessTokenService.class);
+
     @Value ("${insidesoccer.api.url}")
     private String apiUrl;
 
@@ -36,12 +40,16 @@ public class IsAccessTokenService implements AccessTokenService{
     @Override
     @Cacheable("AccessToken")
     public AccessToken findByValue(String value) {
+        LOG.debug("findByValue({})", value);
+
         return value != null ? accessTokenDao.findByValue(value) : null;
     }
 
     @Override
     @CachePut("AccessToken")
     public AccessToken authenticate(String usernameOrEmail, String clearPassword) throws AccessTokenException {
+        LOG.debug("authenticate({}, '*********')", usernameOrEmail);
+
         try {
             String path = String.format("/login/signin.json?name=%s&password=%s", encode(usernameOrEmail), encode(clearPassword));
             URL url = buildUrl(path);
@@ -68,6 +76,8 @@ public class IsAccessTokenService implements AccessTokenService{
     @Override
     @CacheEvict("AccessToken")
     public AccessToken expire(AccessToken token) throws AccessTokenException {
+        LOG.debug("expire({})", token);
+
         try {
             URL url = buildUrl("/login/signout.json?id=" + token.getId());
             urlService.fetch(new HttpRequest.Builder().withUrl(url).build());

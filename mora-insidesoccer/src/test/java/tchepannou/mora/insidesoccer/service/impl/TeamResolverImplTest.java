@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
-import tchepannou.mora.core.dao.RoleDao;
+import tchepannou.mora.core.service.RoleService;
 import tchepannou.mora.insidesoccer.dao.PartyDao;
 import tchepannou.mora.insidesoccer.dao.PartyRelationshipDao;
 import tchepannou.mora.insidesoccer.domain.IsRole;
@@ -34,7 +34,7 @@ public class TeamResolverImplTest {
     private PartyDao partyDao;
 
     @Mock
-    private RoleDao roleDao;
+    private RoleService roleService;
 
     @InjectMocks
     private TeamResolver resolver = new TeamResolverImpl();
@@ -74,7 +74,7 @@ public class TeamResolverImplTest {
         when(partyDao.findByIds(any(Collection.class))).thenReturn(Arrays.asList(party1));
 
         IsRole role = new IsRole(1, "admin", true);
-        when(roleDao.findById(1)).thenReturn(role);
+        when(roleService.findById(1)).thenReturn(role);
 
         PartyRelationship team1 = new PartyRelationship(userId, 20, PartyRelationship.TYPE_MEMBER);
         PartyRelationship team2 = new PartyRelationship(userId, 30, PartyRelationship.TYPE_MEMBER);
@@ -103,7 +103,7 @@ public class TeamResolverImplTest {
         when(partyDao.findByIds(any(Collection.class))).thenReturn(Arrays.asList(party1));
 
         IsRole role = new IsRole(1, "coach", false);
-        when(roleDao.findById(1)).thenReturn(role);
+        when(roleService.findById(1)).thenReturn(role);
 
         PartyRelationship team1 = new PartyRelationship(userId, 20, PartyRelationship.TYPE_MEMBER);
         PartyRelationship team2 = new PartyRelationship(userId, 30, PartyRelationship.TYPE_MEMBER);
@@ -134,7 +134,7 @@ public class TeamResolverImplTest {
         Party party1 = new Party(10, Party.TYPE_CLUB);
         when(partyDao.findByIds(any(Collection.class))).thenReturn(Arrays.asList(party1));
 
-        when(roleDao.findById(1)).thenReturn(null);
+        when(roleService.findById(1)).thenReturn(null);
 
         // When
         Set<Long> result = resolver.getTeamIdsForUser(userId);

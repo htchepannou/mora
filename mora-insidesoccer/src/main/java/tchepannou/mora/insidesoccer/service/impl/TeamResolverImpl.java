@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tchepannou.mora.core.dao.RoleDao;
+import tchepannou.mora.core.service.RoleService;
 import tchepannou.mora.insidesoccer.dao.PartyDao;
 import tchepannou.mora.insidesoccer.dao.PartyRelationshipDao;
 import tchepannou.mora.insidesoccer.domain.IsRole;
@@ -29,7 +29,7 @@ public class TeamResolverImpl implements TeamResolver {
     private PartyDao partyDao;
 
     @Autowired
-    private RoleDao roleDao;
+    private RoleService roleService;
 
 
     //-- TeamResolver overrides
@@ -83,7 +83,7 @@ public class TeamResolverImpl implements TeamResolver {
         } else {
             try {
                 long id = Long.parseLong(member.getQualifier());
-                return (IsRole)roleDao.findById(id);
+                return (IsRole)roleService.findById(id);
             } catch (Exception e){
                 LOG.warn("Invalid roleId: " + member.getQualifier(), e);
                 return null;

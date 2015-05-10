@@ -72,5 +72,17 @@
         <persistence strategy="localTempSwap" />
     </cache>
 
+    <cache name="Event"
+        maxEntriesLocalHeap="1000"
+        maxEntriesLocalDisk="100000"
+        eternal="false"
+        diskSpoolBufferSizeMB="100"
+        timeToIdleSeconds="300"
+        timeToLiveSeconds="600"
+        memoryStoreEvictionPolicy="LRU"
+        transactionalMode="off">
+        <persistence strategy="localTempSwap" />
+    </cache>
+
 
 </ehcache>

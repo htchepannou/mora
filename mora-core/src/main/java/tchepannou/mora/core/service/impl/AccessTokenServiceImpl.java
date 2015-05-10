@@ -2,6 +2,8 @@ package tchepannou.mora.core.service.impl;
 
 import com.google.common.base.Preconditions;
 import org.apache.commons.lang.time.DateUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CacheEvict;
@@ -28,6 +30,8 @@ import java.util.List;
 @Service
 public class AccessTokenServiceImpl implements AccessTokenService {
     //-- Attributes
+    private static final Logger LOG = LoggerFactory.getLogger(AccessTokenServiceImpl.class);
+
     @Autowired
     private AccessTokenDao accessTokenDao;
 
@@ -47,6 +51,8 @@ public class AccessTokenServiceImpl implements AccessTokenService {
     @Override
     @Cacheable("AccessToken")
     public AccessToken findByValue(String key) {
+        LOG.debug("findByValue({})", key);
+
         return key != null ? accessTokenDao.findByValue(key) : null;
     }
 
@@ -54,6 +60,8 @@ public class AccessTokenServiceImpl implements AccessTokenService {
     @Transactional
     @CachePut (value="AccessToken", key="#result.value")
     public AccessToken authenticate(String usernameOrEmail, String clearPassword) throws AccessTokenException {
+        LOG.debug("authenticate({}, '*********')", usernameOrEmail);
+
         Preconditions.checkArgument(usernameOrEmail != null, "usernameOrEmail == null");
         Preconditions.checkArgument(clearPassword != null, "password == null");
 
@@ -78,6 +86,8 @@ public class AccessTokenServiceImpl implements AccessTokenService {
     @Transactional
     @CacheEvict (value="AccessToken", key="#token.value")
     public AccessToken expire(AccessToken token) {
+        LOG.debug("expire({})", token);
+
         token.expire();
         accessTokenDao.update(token);
 
