@@ -31,7 +31,6 @@ public class NodeRelationshipRowMapper implements RowMapper<NodePartyRelationshi
             result.setDate(rs.getTimestamp("node_date"));   // Id node_date==0000-00-00 00:00:00
         } catch (SQLException e){
             LOG.warn("Unable to resolve the node_date as timestamp", e);
-            result.setDate(rs.getDate("node_date"));
         }
         return result;
     }
