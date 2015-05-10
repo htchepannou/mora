@@ -22,7 +22,12 @@ public class NodeRelationshipRowMapper implements RowMapper<NodePartyRelationshi
         result.setTypeId(rs.getLong("node_type_fk"));
         result.setStatus(rs.getInt("node_status"));
         result.setDeleted(rs.getBoolean("node_deleted"));
-        result.setDate(rs.getTimestamp("node_date"));
+
+        try{
+            result.setDate(rs.getTimestamp("node_date"));   // Id node_date==0000-00-00 00:00:00
+        } catch (SQLException e){
+            result.setDate(rs.getDate("node_date"));
+        }
         return result;
     }
 }
