@@ -1,5 +1,6 @@
 package tchepannou.mora.insidesoccer.dao.impl;
 
+import com.google.common.collect.Multimap;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +10,13 @@ import org.springframework.test.context.jdbc.SqlGroup;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.insidesoccer.config.JdbcConfig;
 import tchepannou.mora.insidesoccer.dao.NodeAttributeDao;
-import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 import tchepannou.mora.insidesoccer.domain.NodeAttribute;
+import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertThat;
@@ -101,4 +104,13 @@ public class NodeAttributeDaoImplIT {
         assertThat(result, hasSize(0));
     }
 
+
+    @Test
+    public void testFindByNodesByNames_emptyNodes_returnsEmpty() throws Exception {
+        // When
+        Multimap<Long, NodeAttribute> result = dao.findByNodesByNames(new ArrayList<Long>(), "title", "description");
+
+        // Then
+        assertThat(result.size(), equalTo(0));
+    }
 }

@@ -43,7 +43,7 @@ public class PostServiceImpl implements PostService {
 
     @Override
     public List<Long> findIdsPublishedForUser(long userId, int limit, int offset) {
-        LOG.debug("findIdsPublishedForUser({})", userId, limit, offset);
+        LOG.debug("findIdsPublishedForUser({}, {}, {})", userId, limit, offset);
 
         return postDao.findIdsPublishedForUser(userId, limit, offset);
     }

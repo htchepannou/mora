@@ -71,6 +71,10 @@ public class NodeAttributeDaoImpl extends JdbcDao implements NodeAttributeDao {
 
     @Override
     public Multimap<Long, NodeAttribute> findByNodesByNames(Collection<Long> nodeIds, String... names) {
+        if (nodeIds.isEmpty()){
+            return ArrayListMultimap.create();
+        }
+
         StringBuilder sql = new StringBuilder("SELECT A.*, A.nattr_node_fk AS node_id" +
                 " FROM nattr A" +
                 "   JOIN node N ON A.nattr_node_fk=N.node_id" +
@@ -80,10 +84,8 @@ public class NodeAttributeDaoImpl extends JdbcDao implements NodeAttributeDao {
         params.add(false);
 
 
-        if (!nodeIds.isEmpty()) {
-            whereAnd(sql);
-            whereIn(sql, "A.nattr_node_fk", nodeIds, params);
-        }
+        whereAnd(sql);
+        whereIn(sql, "A.nattr_node_fk", nodeIds, params);
         if (names.length>0){
             whereAnd(sql);
             whereIn(sql, "nattr_name", Arrays.asList(names), params);
