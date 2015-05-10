@@ -32,8 +32,9 @@ public abstract class JdbcDao {
                 sql.append('?');
                 params.add(value);
             }
+            sql.append(")");
         }
-        sql.append(")");
+
         return sql;
     }
 
