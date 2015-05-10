@@ -31,10 +31,17 @@ public class IsAttachmentTypeDaoIT {
     }
 
 
-
     @Test
     public void testFindById() throws Exception {
         AttachmentType result = new IsAttachmentTypeDao().findById(1);
 
         assertThat(result, equalTo(new AttachmentType(1, "post")));
-    }}
+    }
+
+    @Test
+    public void testFindById_badId_returnsNull() throws Exception {
+        AttachmentType result = new IsAttachmentTypeDao().findById(999);
+
+        assertThat(result, equalTo(new AttachmentType(1, "post")));
+    }
+}

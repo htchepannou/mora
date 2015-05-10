@@ -7,6 +7,7 @@ import java.util.Date;
 
 public class Party extends AbstractNode{
     //-- Attribute
+    public static final long TYPE_USER = 1;
     public static final long TYPE_TEAM = 3;
     public static final long TYPE_CLUB = 4;
     private Date creationDate;

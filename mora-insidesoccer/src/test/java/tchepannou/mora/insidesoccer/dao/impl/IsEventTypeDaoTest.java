@@ -36,5 +36,6 @@ public class IsEventTypeDaoTest {
         assertThat(dao.findById(EventType.GAME)).isEqualTo(new EventType(EventType.GAME, "game"));
         assertThat(dao.findById(EventType.PRACTICE)).isEqualTo(new EventType(EventType.PRACTICE, "practice"));
         assertThat(dao.findById(EventType.OTHER)).isEqualTo(new EventType(EventType.OTHER, "other"));
+        assertThat(dao.findById(999)).isNull();
     }
 }

@@ -60,6 +60,15 @@ public class IsUserDaoIT {
     }
 
     @Test
+    public void testFindById_badType_returnNull() throws Exception {
+        // When
+        User result = dao.findById(500);
+
+        // Then
+        assertThat(result, nullValue());
+    }
+
+    @Test
     public void testFindById_deletedParty_returnNull() throws Exception {
         // When
         User result = dao.findById(200);

@@ -5,9 +5,8 @@ import tchepannou.mora.core.domain.MediaType;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
-public class IsMediaTypeDao implements MediaTypeDao{
+public class IsMediaTypeDao extends IsMemoryEnumDao<MediaType> implements MediaTypeDao{
     public static final long IMAGE  = MediaType.IMAGE;
     public static final long VIDEO  = MediaType.VIDEO;
     public static final long ASB = 100;
@@ -24,13 +23,5 @@ public class IsMediaTypeDao implements MediaTypeDao{
     @Override
     public List<MediaType> findAll() {
         return ALL;
-    }
-
-    @Override
-    public MediaType findById(long id) {
-        Optional<MediaType> result = findAll().stream()
-                .filter(f -> f.getId() == id)
-                .findFirst();
-        return result.isPresent() ? result.get() : null;
     }
 }
