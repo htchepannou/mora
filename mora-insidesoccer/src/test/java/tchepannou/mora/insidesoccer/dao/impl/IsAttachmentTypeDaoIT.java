@@ -11,9 +11,7 @@ import tchepannou.mora.insidesoccer.config.JdbcConfig;
 
 import java.util.List;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasItems;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 @RunWith (SpringJUnit4ClassRunner.class)
@@ -42,6 +40,6 @@ public class IsAttachmentTypeDaoIT {
     public void testFindById_badId_returnsNull() throws Exception {
         AttachmentType result = new IsAttachmentTypeDao().findById(999);
 
-        assertThat(result, equalTo(new AttachmentType(1, "post")));
+        assertThat(result, nullValue());
     }
 }
