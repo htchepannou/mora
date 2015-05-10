@@ -1,5 +1,7 @@
 package tchepannou.mora.insidesoccer.dao.mapper;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.RowMapper;
 import tchepannou.mora.insidesoccer.domain.NodePartyRelationship;
 
@@ -7,6 +9,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class NodeRelationshipRowMapper implements RowMapper<NodePartyRelationship> {
+    private static final Logger LOG = LoggerFactory.getLogger(NodeRelationshipRowMapper.class);
+
     @Override
     public NodePartyRelationship mapRow(ResultSet rs, int i) throws SQLException {
         NodePartyRelationship result = new NodePartyRelationship();
@@ -26,6 +30,7 @@ public class NodeRelationshipRowMapper implements RowMapper<NodePartyRelationshi
         try{
             result.setDate(rs.getTimestamp("node_date"));   // Id node_date==0000-00-00 00:00:00
         } catch (SQLException e){
+            LOG.warn("Unable to resolve the node_date as timestamp", e);
             result.setDate(rs.getDate("node_date"));
         }
         return result;
