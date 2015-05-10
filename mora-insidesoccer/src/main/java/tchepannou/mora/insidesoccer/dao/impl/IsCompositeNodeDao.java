@@ -92,7 +92,7 @@ public abstract class IsCompositeNodeDao<T extends Model> extends JdbcDao {
             params.add(false);
 
             if (since != null){
-                sql.append(" node_date>? AND");
+                sql.append(" node_date>=? AND ");
                 params.add(since);
             }
             whereIn(sql, "nprel_party_fk", teamIds, params);

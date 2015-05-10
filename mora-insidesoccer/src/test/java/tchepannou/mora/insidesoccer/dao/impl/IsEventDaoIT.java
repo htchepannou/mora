@@ -66,8 +66,8 @@ public class IsEventDaoIT {
     }
 
     @Test
-    public void testFindIdsPublishedForUser() throws Exception {
-        List<Long> result = dao.findIdsPublishedForUser(300, 100, 0);
+    public void testFindIdsUpcomingForUser() throws Exception {
+        List<Long> result = dao.findIdsUpcomingForUser(300, 100, 0);
 
         assertThat(result, hasSize(2));
         assertThat(result, hasItems(301L, 311L));
