@@ -16,6 +16,7 @@ import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.hamcrest.Matchers.*;
@@ -100,6 +101,16 @@ public class IsPostDaoIT {
         assertThat(result, hasItems(expected1, expected2));
         
     }
+
+    @Test
+    public void testFindByIds_emptyIds_returnsEmpty () throws Exception{
+        // Given
+        List<Post> result = dao.findByIds(Collections.emptyList());
+
+        // Then
+        assertThat(result, hasSize(0));
+    }
+
 
     @Test(expected = UnsupportedOperationException.class)
     public void testCreate() throws Exception {

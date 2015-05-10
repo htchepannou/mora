@@ -54,6 +54,10 @@ public abstract class IsCompositeNodeDao<T extends Model> extends JdbcDao {
     }
 
     public List<T> findByIds(Collection<Long> ids) {
+        if (ids.isEmpty()){
+            return Collections.emptyList();
+        }
+
         List<NodePartyRelationship> nodes = nodePartyRelationshipDao.findByIds(ids);
         Multimap<Long, NodeAttribute> attributes = nodeAttributeDao.findByNodePartyRelationshipsByNames(ids, getAttributeNames());
 
