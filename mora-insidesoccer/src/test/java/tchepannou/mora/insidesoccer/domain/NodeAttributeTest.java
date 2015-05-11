@@ -13,6 +13,15 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertThat;
 
 public class NodeAttributeTest {
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructor_nullNode_throwsIllegalArgumentExpcetion() throws Exception {
+        new NodeAttribute(1, null, "foo", "bar");
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void testConstructor_transientNode_throwsIllegalArgumentExpcetion() throws Exception {
+        new NodeAttribute(1, new NodePartyRelationship(0), "foo", "bar");
+    }
 
     @Test
     public void testToPost() throws Exception {
