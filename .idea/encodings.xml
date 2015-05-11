@@ -34,7 +34,6 @@
     <file url="file://$PROJECT_DIR$/mora-rest-post" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-security" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-rest-space" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/mora-rest-space/src/main/java/tchepannou/mora/rest/space/config/SecurityConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/ApiPathProvider.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/java/tchepannou/mora/swagger/config/SwaggerConfig.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/mora-swagger/src/main/resources/public/docs" charset="UTF-8" />

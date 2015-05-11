@@ -58,7 +58,7 @@ public class NodeAttributeTest {
         // Given
         NodePartyRelationship node = new NodePartyRelationship(1);
         NodeAttribute attr11 = new NodeAttribute(1, node, NodeAttribute.TITLE, "title1");
-        NodeAttribute attr12 = new NodeAttribute(2, node, NodeAttribute.NOTES, "<p>This is the content of<p>");
+        NodeAttribute attr12 = new NodeAttribute(2, node, NodeAttribute.NOTES, "This is the content of");
         NodeAttribute attr13 = new NodeAttribute(2, node, NodeAttribute.LOCATION, "location");
         NodeAttribute attr14 = new NodeAttribute(2, node, NodeAttribute.URL, "http://www.google.ca");
         NodeAttribute attr15 = new NodeAttribute(2, node, NodeAttribute.OPPONENT, "Chelsea FC");
@@ -85,7 +85,7 @@ public class NodeAttributeTest {
         // Then
         Event expected = new Event(1);
         expected.setTitle("title1");
-        expected.setNotes("<p>This is the content of<p>");
+        expected.setNotes("This is the content of");
         expected.setLocation("location");
         expected.setUrl("http://www.google.ca");
         expected.setRequiresRSVP(true);
