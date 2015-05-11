@@ -13,7 +13,6 @@ import java.util.List;
 
 public class EventServiceImpl implements EventService {
     //-- Attributes
-    //-- Attributes
     private static final Logger LOG = LoggerFactory.getLogger(EventServiceImpl.class);
 
     @Autowired
