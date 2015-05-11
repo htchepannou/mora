@@ -3,6 +3,7 @@ package tchepannou.mora.insidesoccer.domain;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
+import com.google.common.html.HtmlEscapers;
 import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -183,7 +184,7 @@ public class NodeAttribute extends Attribute {
             } else if (TITLE.equals(name)){
                 event.setTitle(value);
             } else if (NOTES.equals(name)){
-                event.setNotes(value);
+                event.setNotes(toHtml(value));
             } else if (URL.equals(name)){
                 event.setUrl(value);
             } else if (LOCATION.equals(name)){
@@ -200,7 +201,12 @@ public class NodeAttribute extends Attribute {
         event.setAddress(toAddress(street, city, state, zipCode, country));
     }
 
-    private static Date toDateTime(Date date, int hour, int minute){
+    protected static String toHtml (String value){
+        String html = HtmlEscapers.htmlEscaper().escape(value);
+        return html.replaceAll("[\n\r]", "<br/>");
+    }
+
+    protected static Date toDateTime(Date date, int hour, int minute){
         if (date != null) {
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);

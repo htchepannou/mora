@@ -25,6 +25,14 @@ public class NodeAttributeTest {
     }
 
     @Test
+    public void testToHtml(){
+        String text = "1<2\nHello world";
+        String expected = "1&lt;2<br/>Hello world";
+
+        assertThat(NodeAttribute.toHtml(text), equalTo(expected));
+    }
+
+    @Test
     public void testToPost() throws Exception {
         // Given
         NodePartyRelationship node = new NodePartyRelationship(1);
