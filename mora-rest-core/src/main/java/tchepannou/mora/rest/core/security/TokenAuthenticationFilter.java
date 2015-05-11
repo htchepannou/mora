@@ -36,11 +36,13 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
     //-- GenericFilterBean overrides
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
+        LOG.debug("Authenticating...");
+
         HttpServletRequest req = (HttpServletRequest)servletRequest;
         HttpServletResponse resp = (HttpServletResponse)servletResponse;
         try {
             String token = req.getHeader(SecurityContants.X_AUTH_TOKEN.name());
-            LOG.info("token=" + token);
+            LOG.info("token={}", token);
 
             authenticate(token);
 
@@ -60,11 +62,12 @@ public class TokenAuthenticationFilter extends GenericFilterBean {
         } else {
             auth = authenticationManager.authenticate(new TokenAuthentication(token, AuthorityUtils.createAuthorityList(tchepannou.mora.core.domain.Role.AUTHORITY_ROLE_USER)));
             if (auth == null || !auth.isAuthenticated()) {
+                LOG.debug("Authentication failed! {}", auth);
                 throw new InternalAuthenticationServiceException("Authentication failed: " + token);
             }
         }
 
-        LOG.info("Authenticated: " + auth);
+        LOG.debug("Authenticated: {}", auth);
         SecurityContextHolder.getContext().setAuthentication(auth);
     }
 }
