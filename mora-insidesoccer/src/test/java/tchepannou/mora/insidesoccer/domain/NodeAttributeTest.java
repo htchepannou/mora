@@ -1,5 +1,6 @@
 package tchepannou.mora.insidesoccer.domain;
 
+import com.google.common.base.Strings;
 import org.junit.Test;
 import tchepannou.mora.core.domain.Event;
 import tchepannou.mora.core.domain.Media;
@@ -28,7 +29,7 @@ public class NodeAttributeTest {
         // Given
         NodePartyRelationship node = new NodePartyRelationship(1);
         NodeAttribute attr11 = new NodeAttribute(1, node, NodeAttribute.TITLE, "title1");
-        NodeAttribute attr12 = new NodeAttribute(2, node, NodeAttribute.CONTENT, "<p>This is the content of<p>");
+        NodeAttribute attr12 = new NodeAttribute(2, node, NodeAttribute.CONTENT, "<p>" + Strings.repeat("a", 1000) + "<p>");
         NodeAttribute attr21 = new NodeAttribute(3, new NodePartyRelationship(2), NodeAttribute.TITLE, "title2");
 
         Post post = new Post(1);
@@ -39,8 +40,8 @@ public class NodeAttributeTest {
         // Then
         Post expected = new Post(1);
         expected.setTitle("title1");
-        expected.setContent("<p>This is the content of<p>");
-        expected.setSummary("This is the content of");
+        expected.setContent("<p>" + Strings.repeat("a", 1000) + "<p>");
+        expected.setSummary(Strings.repeat("a", 255) + "...");
         assertThat(post, equalTo(expected));
     }
 

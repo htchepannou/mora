@@ -70,21 +70,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NodeAttributeTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="NodeAttributeTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2070" max-vertical-offset="3600">
-              <caret line="33" column="99" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.6958763" vertical-offset="150" max-vertical-offset="3600">
+              <caret line="48" column="120" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NodePartyRelationship.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="NodePartyRelationship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodePartyRelationship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.5463917" vertical-offset="30" max-vertical-offset="1260">
-              <caret line="68" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1260">
+              <caret line="33" column="99" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding>
                 <element signature="e#1577#1578#0" expanded="true" />
                 <element signature="e#1606#1607#0" expanded="true" />
@@ -94,6 +94,28 @@
                 <element signature="e#1752#1753#0" expanded="true" />
                 <element signature="e#2151#2152#0" expanded="true" />
                 <element signature="e#2181#2182#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsAccessTokenService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsAccessTokenService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="1650">
+              <caret line="53" column="101" selection-start-line="53" selection-start-column="101" selection-end-line="53" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IsAccessTokenDaoIT.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsAccessTokenDaoIT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1290">
+              <caret line="61" column="92" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+              <folding>
+                <element signature="method#testFindByValue#0;class#IsAccessTokenDaoIT#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -156,8 +178,8 @@
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsEventDao.sql" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsEventTypeDaoTest.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodeAttribute.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodePartyRelationship.java" />
+        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java" />
       </list>
     </option>
   </component>
@@ -1163,14 +1185,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsAccessTokenService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1650">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/AccessTokenServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.6752577" vertical-offset="0" max-vertical-offset="1965">
@@ -1192,16 +1206,6 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
           <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsAccessTokenDaoIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1290">
-          <caret line="110" column="16" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
-          <folding>
-            <element signature="method#testFindByValue#0;class#IsAccessTokenDaoIT#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1458,6 +1462,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsAccessTokenService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="1650">
+          <caret line="53" column="101" selection-start-line="53" selection-start-column="101" selection-end-line="53" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsAccessTokenDaoIT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1290">
+          <caret line="61" column="92" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+          <folding>
+            <element signature="method#testFindByValue#0;class#IsAccessTokenDaoIT#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodeAttribute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.446429" vertical-offset="2789" max-vertical-offset="3345">
@@ -1470,18 +1492,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2070" max-vertical-offset="3600">
-          <caret line="33" column="99" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodePartyRelationship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.5463917" vertical-offset="30" max-vertical-offset="1260">
-          <caret line="68" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1260">
+          <caret line="33" column="99" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding>
             <element signature="e#1577#1578#0" expanded="true" />
             <element signature="e#1606#1607#0" expanded="true" />
@@ -1492,6 +1506,14 @@
             <element signature="e#2151#2152#0" expanded="true" />
             <element signature="e#2181#2182#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6958763" vertical-offset="150" max-vertical-offset="3600">
+          <caret line="48" column="120" selection-start-line="48" selection-start-column="48" selection-end-line="48" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
