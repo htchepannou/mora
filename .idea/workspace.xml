@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d6b3538-aa73-4038-9eb5-1ee5544d91e0" name="Default" comment="fix">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodeAttribute.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodeAttribute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java" afterPath="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKey.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKeyGenerator.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/util/EnumKeyGeneratorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EnumServiceImpl.java" afterPath="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EnumServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="moe.iws" />
@@ -57,87 +59,117 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="NodeAttribute.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodeAttribute.java">
+      <file leaf-file-name="ehcache.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.303571" vertical-offset="2024" max-vertical-offset="3420">
-              <caret line="194" column="99" selection-start-line="194" selection-start-column="54" selection-end-line="194" selection-end-column="54" />
+            <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="1395">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnumKeyGenerator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKeyGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <caret line="12" column="32" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <element signature="method#NodeAttribute#1;class#NodeAttribute#0" expanded="false" />
-                <element signature="method#toPost#0;class#NodeAttribute#0" expanded="false" />
-                <element signature="method#toDateTime#0;class#NodeAttribute#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#271#272#0" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NodeAttributeTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java">
+      <file leaf-file-name="EnumKeyGeneratorTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/util/EnumKeyGeneratorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33505154" vertical-offset="45" max-vertical-offset="3720">
-              <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IsEventDaoIT.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsEventDaoIT.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="960">
-              <caret line="47" column="53" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="IsEventDao.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsEventDao.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.172414" vertical-offset="0" max-vertical-offset="660">
-              <caret line="10" column="100" selection-start-line="10" selection-start-column="100" selection-end-line="10" selection-end-column="100" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NodePartyRelationship.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodePartyRelationship.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1260">
-              <caret line="33" column="99" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="375">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding>
-                <element signature="e#1577#1578#0" expanded="true" />
-                <element signature="e#1606#1607#0" expanded="true" />
-                <element signature="e#1648#1649#0" expanded="true" />
-                <element signature="e#1684#1685#0" expanded="true" />
-                <element signature="e#1720#1721#0" expanded="true" />
-                <element signature="e#1752#1753#0" expanded="true" />
-                <element signature="e#2151#2152#0" expanded="true" />
-                <element signature="e#2181#2182#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IsAccessTokenService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/IsAccessTokenService.java">
+      <file leaf-file-name="RoleService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/RoleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="168" max-vertical-offset="1650">
-              <caret line="53" column="101" selection-start-line="53" selection-start-column="101" selection-end-line="53" selection-end-column="101" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IsAccessTokenDaoIT.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsAccessTokenDaoIT.java">
+      <file leaf-file-name="EnumService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/EnumService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1290">
-              <caret line="61" column="92" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+              <caret line="7" column="14" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="KeyGenerator.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/org/springframework/cache/interceptor/KeyGenerator.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="225">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnumKey.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKey.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5217391" vertical-offset="0" max-vertical-offset="570">
+              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
               <folding>
-                <element signature="method#testFindByValue#0;class#IsAccessTokenDaoIT#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#475#476#0" expanded="true" />
+                <element signature="e#538#539#0" expanded="true" />
+                <element signature="e#744#745#0" expanded="true" />
+                <element signature="e#808#809#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RoleServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/RoleServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+              <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+              <folding>
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#556#557#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnumServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EnumServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+              <caret line="24" column="101" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnumModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/EnumModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+              <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -150,12 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/Party.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDao.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsUserDaoIT.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsUserDao.sql" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsEnumDao.java" />
-        <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsMediaTypeDao.java" />
         <option value="$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcEventTypeDao.sql" />
         <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/dao/jdbc/JdbcEventTypeDaoIT.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/IsAttachmentTypeDaoIT.java" />
@@ -169,7 +195,6 @@
         <option value="$PROJECT_DIR$/mora-rest-event/src/test/resources/db/rest-event-populate.sql" />
         <option value="$PROJECT_DIR$/mora-core/src/test/resources/db/JdbcEventDao.sql" />
         <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/dao/jdbc/JdbcEventDaoIT.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/TeamResolverImpl.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/TeamResolverImplTest.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsCompositeNodeDao.java" />
@@ -188,8 +213,6 @@
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/dao/impl/NodeAttributeDaoImplIT.java" />
         <option value="$PROJECT_DIR$/mora-rest-core/src/main/java/tchepannou/mora/rest/core/security/TokenAuthenticationFilter.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EventServiceImpl.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EventTypeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EnumServiceImpl.java" />
         <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/EventType.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsEventTypeDao.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/IsEventType.java" />
@@ -201,6 +224,15 @@
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/resources/sql/dao/IsEventDao.sql" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/domain/NodeAttribute.java" />
         <option value="$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EventTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/MediaTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/RoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EnumServiceImpl.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/util/EnumKeyGeneratorTest.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKey.java" />
+        <option value="$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKeyGenerator.java" />
       </list>
     </option>
   </component>
@@ -359,10 +391,6 @@
               <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="insidesoccer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -381,8 +409,80 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="moe" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mora-core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -390,11 +490,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="insidesoccer" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -408,7 +508,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mora-insidesoccer" />
+              <option name="myItemId" value="mora-core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -416,7 +516,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -424,33 +524,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="insidesoccer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dao" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="moe" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mora-insidesoccer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -507,11 +581,11 @@
       <recent name="junit.framework.TestCase" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="tchepannou.mora.core.util" />
       <recent name="tchepannou.mora.core.dao.jdbc" />
       <recent name="tchepannou.mora.rest.security.dto" />
       <recent name="tchepannou.mora.rest.core.dto" />
       <recent name="tchepannou.mora.rest.event.controller" />
-      <recent name="tchepannou.mora.rest.event.dto" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="tchepannou.mora.core.dao.jdbc" />
@@ -552,30 +626,7 @@
       <recent name="tchepannou.mora.core.service" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.NodeAttributeTest.testToHtml">
-    <configuration default="false" name="All in mora-insidesoccer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="mora-insidesoccer" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.EnumKeyGeneratorTest">
     <configuration default="false" name="IsEventTypeDaoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -691,6 +742,40 @@
       <envs />
       <patterns />
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="EnumKeyGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="tchepannou.mora.core.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="mora-core" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="tchepannou.mora.core.util" />
+      <option name="MAIN_CLASS_NAME" value="tchepannou.mora.core.util.EnumKeyGeneratorTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -975,19 +1060,19 @@
       <item index="2" class="java.lang.String" itemvalue="Application.post (is)" />
       <item index="3" class="java.lang.String" itemvalue="Application.Application" />
       <item index="4" class="java.lang.String" itemvalue="JUnit.SpaceRowMapperTest" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.All in mora-insidesoccer" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.IsEventTypeDaoTest" />
-      <item index="7" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest.testToHtml" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.IsEventTypeDaoTest" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest.testToHtml" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.EnumKeyGeneratorTest" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest.testToHtml" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.IsEventTypeDaoTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.All in mora-insidesoccer" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.EnumKeyGeneratorTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest.testToHtml" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.IsEventDaoIT" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.NodeAttributeTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.IsEventTypeDaoTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -1120,17 +1205,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="633" y="150" width="1269" height="966" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2806604" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2806604" sideWeight="0.30889145" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31957546" sideWeight="0.49965397" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5601415" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5601415" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49492672" sideWeight="0.5004299" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32665095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1242,6 +1327,12 @@
           <properties />
           <option name="timeStamp" value="122" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/util/EnumKeyGeneratorTest.java</url>
+          <line>15</line>
+          <properties />
+          <option name="timeStamp" value="169" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/jre/lib/rt.jar!/javax/activation/MimetypesFileTypeMap.class</url>
           <line>223</line>
@@ -1249,7 +1340,7 @@
           <option name="timeStamp" value="119" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="169" />
+      <option name="time" value="170" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1258,136 +1349,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/service/impl/TeamResolverImplTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="33" max-vertical-offset="1935">
-          <caret line="35" column="55" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsPostDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsCompositeNodeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="1650">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/MediaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/OembedServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.77319586" vertical-offset="0" max-vertical-offset="600">
-          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/OembedService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.05154639" vertical-offset="0" max-vertical-offset="582">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/java/tchepannou/mora/rest/post/controller/PostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1455">
-          <caret line="81" column="23" selection-start-line="81" selection-start-column="23" selection-end-line="81" selection-end-column="23" />
-          <folding>
-            <element signature="method#getCurrentUserPosts#0;class#PostController#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-post/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5412371" vertical-offset="0" max-vertical-offset="582">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-security/src/main/java/tchepannou/mora/rest/security/controller/AccessTokenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="750">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-rest-event/src/main/resources/config/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/AccessTokenServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.6752577" vertical-offset="0" max-vertical-offset="1965">
-          <caret line="90" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/AccessTokenService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="10" column="108" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/config/JdbcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/PartyAttributeDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="975">
-          <caret line="15" column="95" selection-start-line="15" selection-start-column="95" selection-end-line="15" selection-end-column="95" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/PartyAttributeDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
@@ -1480,22 +1441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="301" max-vertical-offset="1185">
           <caret line="52" column="23" selection-start-line="52" selection-start-column="23" selection-end-line="52" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EnumServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="20" column="63" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EventTypeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1690,9 +1635,176 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/test/java/tchepannou/mora/insidesoccer/domain/NodeAttributeTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33505154" vertical-offset="45" max-vertical-offset="3720">
-          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="3720">
+          <caret line="23" column="119" selection-start-line="23" selection-start-column="73" selection-end-line="23" selection-end-column="73" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/dao/impl/IsRoleDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_31.jdk/Contents/Home/src.zip!/java/lang/Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="8761" max-vertical-offset="23340">
+          <caret line="629" column="23" selection-start-line="629" selection-start-column="23" selection-end-line="629" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/TeamResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="195">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-insidesoccer/src/main/java/tchepannou/mora/insidesoccer/service/impl/TeamResolverImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="46" max-vertical-offset="1260">
+          <caret line="31" column="19" selection-start-line="30" selection-start-column="14" selection-end-line="31" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/domain/EnumModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EventTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5670103" vertical-offset="0" max-vertical-offset="582">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#562#563#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/MediaTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5154639" vertical-offset="0" max-vertical-offset="582">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#571#572#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/SpaceTypeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="375">
+          <caret line="15" column="107" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding>
+            <element signature="e#641#642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/resources/ehcache.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.0" vertical-offset="0" max-vertical-offset="1395">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/org/springframework/cache/interceptor/SimpleKey.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.6" vertical-offset="0" max-vertical-offset="510">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/RoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+          <folding>
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/impl/EnumServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
+          <caret line="24" column="101" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.1.6.RELEASE/spring-context-4.1.6.RELEASE.jar!/org/springframework/cache/interceptor/KeyGenerator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.2" vertical-offset="0" max-vertical-offset="225">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/RoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="180">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/service/EnumService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
+          <caret line="7" column="14" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/test/java/tchepannou/mora/core/util/EnumKeyGeneratorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="375">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKeyGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mora-core/src/main/java/tchepannou/mora/core/util/EnumKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5217391" vertical-offset="0" max-vertical-offset="570">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+            <element signature="e#538#539#0" expanded="true" />
+            <element signature="e#744#745#0" expanded="true" />
+            <element signature="e#808#809#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

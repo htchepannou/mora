@@ -10,13 +10,13 @@ import java.util.List;
 public abstract class EnumServiceImpl<T extends EnumModel> {
     protected abstract EnumModelDao<T> getDao ();
 
-    @Cacheable("Enum")
+    @Cacheable(value = "Enum", keyGenerator = "enumKeyGenerator")
     public T findById(long id) {
         LoggerFactory.getLogger(getClass()).debug("findById({})", id);
         return getDao().findById(id);
     }
 
-    @Cacheable ("Enum")
+    @Cacheable (value="Enum", keyGenerator = "enumKeyGenerator")
     public List<T> findAll() {
         LoggerFactory.getLogger(getClass()).debug("findByAll()");
         return getDao().findAll();

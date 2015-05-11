@@ -7,6 +7,7 @@ import tchepannou.mora.core.service.impl.*;
 import tchepannou.mora.core.service.video.DailymotionProvider;
 import tchepannou.mora.core.service.video.VimeoProvider;
 import tchepannou.mora.core.service.video.YouTubeProvider;
+import tchepannou.mora.core.util.EnumKeyGenerator;
 
 import java.util.Arrays;
 import java.util.List;
@@ -79,5 +80,10 @@ public class ServiceConfig {
     @Bean
     public EventTypeService eventTypeService () {
         return new EventTypeServiceImpl();
+    }
+
+    @Bean
+    public EnumKeyGenerator enumKeyGenerator(){
+        return new EnumKeyGenerator();
     }
 }
