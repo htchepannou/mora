@@ -45,6 +45,7 @@ public class IsEventDaoIT {
         expected.setLastUpdate(new Timestamp(10000));
         expected.setStartDateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm").parse("2014-01-01 10:30"));
         expected.setEndDateTime(new SimpleDateFormat("yyyy-MM-dd HH:mm").parse("2014-01-01 15:30"));
+        expected.setAddress("3030 Linton\nMontreal,QC");
         assertThat(result, equalTo(expected));
     }
 

@@ -8,6 +8,9 @@ insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(103, 
 insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(104, 100, 'end_hour', '15');
 insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(105, 100, 'end_time', '30');
 insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(106, 100, 'event_type', 'match');
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(107, 100, 'street', '3030 Linton');
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(108, 100, 'city', 'Montreal');
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(109, 100, 'state', 'QC');
 insert into nprel(nprel_id, nprel_node_fk, nprel_party_fk, nprel_type_fk, nprel_rank) values(101, 100, 100, 4, 10000);
 
 -- findById_invalid_type
