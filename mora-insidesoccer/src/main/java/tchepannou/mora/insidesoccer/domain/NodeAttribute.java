@@ -1,5 +1,6 @@
 package tchepannou.mora.insidesoccer.domain;
 
+import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Strings;
 import org.jsoup.Jsoup;
@@ -16,6 +17,7 @@ import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 public class NodeAttribute extends Attribute {
     //-- Attributes
@@ -119,8 +121,24 @@ public class NodeAttribute extends Attribute {
                 isType = value;
             } else if (INSIDESOCCER_ID.equals(name)) {
                 isId = value;
-            } else {
-                mediaSetter(name, value, media);
+            } else if (NAME.equalsIgnoreCase(name) || TITLE.equalsIgnoreCase(name)) {
+                media.setTitle(value);
+            } else if (DESCRIPTION.equalsIgnoreCase(name)) {
+                media.setDescription(value);
+            } else if (SIZE.equalsIgnoreCase(name)) {
+                try {
+                    media.setSize(Long.parseLong(value));
+                } catch (Exception e) {
+                    LOG.warn("Invalid size: " + value, e);
+                }
+            } else if (URL.equalsIgnoreCase(name)) {
+                media.setUrl(value);
+            } else if (IMAGE_URL.equals(name)) {
+                media.setImageUrl(value);
+            } else if (THUMBNAIL_URL.equals(name)) {
+                media.setThumbnailUrl(value);
+            } else if (OEMBED.equals(name)) {
+                media.setOembed(!Strings.isNullOrEmpty(value));
             }
         }
 
@@ -132,6 +150,11 @@ public class NodeAttribute extends Attribute {
         int endHour = 0;
         int startMinute = 0;
         int endMinute = 0;
+        String street = null;
+        String city = null;
+        String state = null;
+        String zipCode = null;
+        String country = null;
 
         for (NodeAttribute attr : attributes) {
             if (attr.getNodeId() != event.getId()) {
@@ -140,7 +163,17 @@ public class NodeAttribute extends Attribute {
 
             String name = attr.getName();
             String value = attr.getValue();
-            if (HOUR.equals(name)){
+            if (STREET.equals(name)) {
+                street = value;
+            } else if (CITY.equals(name)){
+                city = value;
+            } else if (COUNTRY.equals(name)){
+                country = value;
+            } else if (ZIP_CODE.equals(name)){
+                zipCode = value;
+            } else if (STATE.equals(name)){
+                state = value;
+            } else if (HOUR.equals(name)){
                 startHour = Integer.valueOf(value);
             } else if (MINUTE.equals(name)){
                 startMinute = Integer.valueOf(value);
@@ -148,13 +181,24 @@ public class NodeAttribute extends Attribute {
                 endHour = Integer.valueOf(value);
             } else if (END_TIME.equals(name)){
                 endMinute = Integer.valueOf(value);
-            } else{
-                eventSetter(name, value, event);
+            } else if (TITLE.equals(name)){
+                event.setTitle(value);
+            } else if (NOTES.equals(name)){
+                event.setNotes(value);
+            } else if (URL.equals(name)){
+                event.setUrl(value);
+            } else if (LOCATION.equals(name)){
+                event.setLocation(value);
+            } else if (RSVP.equals(name)){
+                event.setRequiresRSVP("1".equals(value));
+            } else if (EVENT_TYPE.equals(name)) {
+                event.setTypeId(toEventTypeId(value));
             }
         }
 
         event.setStartDateTime(toDateTime(event.getStartDateTime(), startHour, startMinute));
         event.setEndDateTime(toDateTime(event.getEndDateTime(), endHour, endMinute));
+        event.setAddress(toAddress(street, city, state, zipCode, country));
     }
 
     private static Date toDateTime(Date date, int hour, int minute){
@@ -170,6 +214,30 @@ public class NodeAttribute extends Attribute {
         }
     }
 
+    private static String toAddress(String street, String city, String state, String zipCode, String country){
+        String line1 = street;
+        String line2 = Joiner.on(",").skipNulls().join(city, state, zipCode);
+        String line3 = !Strings.isNullOrEmpty(country) ? new Locale("", country).getDisplayCountry() : null;
+
+        return Joiner.on("\n").skipNulls().join(line1, line2, line3);
+    }
+
+    private static long toEventTypeId (String value){
+        if ("match".equals(value)){
+            return IsEventType.MATCH;
+        } else if ("training".equals(value)){
+            return IsEventType.TRAINING;
+        } else if ("training".equals(value)){
+            return IsEventType.TRAINING;
+        } else if ("event".equals(value)){
+            return IsEventType.EVENT;
+        } else if ("tournament".equals(value)){
+            return IsEventType.TOURNAMENT;
+        } else {
+            return IsEventType.OTHER;
+        }
+    }
+
     //-- Getter/Setter
     public long getNodeId() {
         return nodeId;
@@ -180,27 +248,6 @@ public class NodeAttribute extends Attribute {
     }
 
     //-- Private
-    private static void mediaSetter(String name, String value, Media media){
-        if (NAME.equalsIgnoreCase(name) || TITLE.equalsIgnoreCase(name)) {
-            media.setTitle(value);
-        } else if (DESCRIPTION.equalsIgnoreCase(name)) {
-            media.setDescription(value);
-        } else if (SIZE.equalsIgnoreCase(name)) {
-            try {
-                media.setSize(Long.parseLong(value));
-            } catch (Exception e) {
-                LOG.warn("Invalid size: " + value, e);
-            }
-        } else if (URL.equalsIgnoreCase(name)) {
-            media.setUrl(value);
-        } else if (IMAGE_URL.equals(name)) {
-            media.setImageUrl(value);
-        } else if (THUMBNAIL_URL.equals(name)) {
-            media.setThumbnailUrl(value);
-        } else if (OEMBED.equals(name)) {
-            media.setOembed(!Strings.isNullOrEmpty(value));
-        }
-    }
     private static void mediaISAttributes(String isType, String isId, Media media){
         if (media.isOembed()) {
             media.setTypeId(IsMediaTypeDao.VIDEO);
@@ -222,34 +269,6 @@ public class NodeAttribute extends Attribute {
                 } else if (contentType.startsWith("video/")) {
                     media.setTypeId(IsMediaTypeDao.VIDEO);
                 }
-            }
-        }
-    }
-
-    private static void eventSetter(String name, String value, Event event){
-        if (TITLE.equals(name)){
-            event.setTitle(value);
-        } else if (NOTES.equals(name)){
-            event.setNotes(value);
-        } else if (URL.equals(name)){
-            event.setUrl(value);
-        } else if (LOCATION.equals(name)){
-            event.setLocation(value);
-        } else if (RSVP.equals(name)){
-            event.setRequiresRSVP("1".equals(value));
-        } else if (EVENT_TYPE.equals(name)){
-            if ("match".equals(value)){
-                event.setTypeId(IsEventType.MATCH);
-            } else if ("training".equals(value)){
-                event.setTypeId(IsEventType.TRAINING);
-            } else if ("training".equals(value)){
-                event.setTypeId(IsEventType.TRAINING);
-            } else if ("event".equals(value)){
-                event.setTypeId(IsEventType.EVENT);
-            } else if ("tournament".equals(value)){
-                event.setTypeId(IsEventType.TOURNAMENT);
-            } else {
-                event.setTypeId(IsEventType.OTHER);
             }
         }
     }

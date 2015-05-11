@@ -50,6 +50,11 @@ public class NodeAttributeTest {
         NodeAttribute attr19 = new NodeAttribute(2, node, NodeAttribute.END_HOUR, "14");
         NodeAttribute attr20 = new NodeAttribute(2, node, NodeAttribute.END_TIME, "00");
         NodeAttribute attr21 = new NodeAttribute(2, node, NodeAttribute.EVENT_TYPE, "match");
+        NodeAttribute attr22 = new NodeAttribute(2, node, NodeAttribute.STREET, "3030 Linton");
+        NodeAttribute attr23 = new NodeAttribute(2, node, NodeAttribute.CITY, "Montreal");
+        NodeAttribute attr24 = new NodeAttribute(2, node, NodeAttribute.ZIP_CODE, "H0H 0H0");
+        NodeAttribute attr25 = new NodeAttribute(2, node, NodeAttribute.STATE, "QC");
+        NodeAttribute attr26 = new NodeAttribute(2, node, NodeAttribute.COUNTRY, "CA");
 
 
         Event post = new Event(1);
@@ -57,7 +62,7 @@ public class NodeAttributeTest {
         post.setEndDateTime(new SimpleDateFormat("yyyy-mm-dd").parse("2010-12-01"));
 
         // When
-        NodeAttribute.toEvent(Arrays.asList(attr11, attr12, attr13, attr14, attr15, attr16, attr17, attr18, attr19, attr20, attr21), post);
+        NodeAttribute.toEvent(Arrays.asList(attr11, attr12, attr13, attr14, attr15, attr16, attr17, attr18, attr19, attr20, attr21, attr22, attr23, attr24, attr25, attr26), post);
 
         // Then
         Event expected = new Event(1);
@@ -69,6 +74,7 @@ public class NodeAttributeTest {
         expected.setStartDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 12:30"));
         expected.setEndDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 14:00"));
         expected.setTypeId(IsEventType.MATCH);
+        expected.setAddress("3030 Linton\nMontreal,QC,H0H 0H0\nCanada");
         assertThat(post, equalTo(expected));
     }
 
