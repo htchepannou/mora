@@ -108,8 +108,6 @@ public class NodeAttribute extends Attribute {
         String isType = null;
         String isId = null;
 
-        media.setTypeId(IsMediaTypeDao.UNKNOWN);
-
         for (NodeAttribute attr : attributes) {
             if (attr.getNodeId() != media.getId()) {
                 continue;
@@ -163,6 +161,7 @@ public class NodeAttribute extends Attribute {
 
             String name = attr.getName();
             String value = attr.getValue();
+
             if (STREET.equals(name)) {
                 street = value;
             } else if (CITY.equals(name)){
@@ -227,8 +226,6 @@ public class NodeAttribute extends Attribute {
             return IsEventType.MATCH;
         } else if ("training".equals(value)){
             return IsEventType.TRAINING;
-        } else if ("training".equals(value)){
-            return IsEventType.TRAINING;
         } else if ("event".equals(value)){
             return IsEventType.EVENT;
         } else if ("tournament".equals(value)){
@@ -249,6 +246,8 @@ public class NodeAttribute extends Attribute {
 
     //-- Private
     private static void mediaISAttributes(String isType, String isId, Media media){
+        media.setTypeId(IsMediaTypeDao.UNKNOWN);
+
         if (media.isOembed()) {
             media.setTypeId(IsMediaTypeDao.VIDEO);
         } else if (!Strings.isNullOrEmpty(isId)){
