@@ -12,6 +12,7 @@ import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.User;
 import tchepannou.mora.insidesoccer.config.JdbcConfig;
+import tchepannou.mora.insidesoccer.domain.IsEventType;
 
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
@@ -37,7 +38,7 @@ public class IsEventDaoIT {
         Event result = dao.findById(101);
 
         // Then
-        Event expected = new Event(101, new EventType(EventType.GAME), new Space(100), new User(100));
+        Event expected = new Event(101, new EventType(IsEventType.MATCH), new Space(100), new User(100));
         expected.setTitle("title1");
         expected.setNotes("This is a content1");
         expected.setDeleted(false);

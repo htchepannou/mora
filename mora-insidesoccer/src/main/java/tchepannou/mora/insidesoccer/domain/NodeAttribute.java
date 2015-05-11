@@ -6,7 +6,6 @@ import org.jsoup.Jsoup;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import tchepannou.mora.core.domain.Event;
-import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.insidesoccer.dao.impl.IsMediaTypeDao;
@@ -239,12 +238,18 @@ public class NodeAttribute extends Attribute {
         } else if (RSVP.equals(name)){
             event.setRequiresRSVP("1".equals(value));
         } else if (EVENT_TYPE.equals(name)){
-            if ("game".equals(value)){
-                event.setTypeId(EventType.GAME);
-            } else if ("practice".equals(value)){
-                event.setTypeId(EventType.PRACTICE);
+            if ("match".equals(value)){
+                event.setTypeId(IsEventType.MATCH);
+            } else if ("training".equals(value)){
+                event.setTypeId(IsEventType.TRAINING);
+            } else if ("training".equals(value)){
+                event.setTypeId(IsEventType.TRAINING);
+            } else if ("event".equals(value)){
+                event.setTypeId(IsEventType.EVENT);
+            } else if ("tournament".equals(value)){
+                event.setTypeId(IsEventType.TOURNAMENT);
             } else {
-                event.setTypeId(EventType.OTHER);
+                event.setTypeId(IsEventType.OTHER);
             }
         }
     }

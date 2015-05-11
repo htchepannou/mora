@@ -2,7 +2,6 @@ package tchepannou.mora.insidesoccer.domain;
 
 import org.junit.Test;
 import tchepannou.mora.core.domain.Event;
-import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.core.domain.Media;
 import tchepannou.mora.core.domain.Post;
 import tchepannou.mora.insidesoccer.dao.impl.IsMediaTypeDao;
@@ -50,7 +49,7 @@ public class NodeAttributeTest {
         NodeAttribute attr18 = new NodeAttribute(2, node, NodeAttribute.MINUTE, "30");
         NodeAttribute attr19 = new NodeAttribute(2, node, NodeAttribute.END_HOUR, "14");
         NodeAttribute attr20 = new NodeAttribute(2, node, NodeAttribute.END_TIME, "00");
-        NodeAttribute attr21 = new NodeAttribute(2, node, NodeAttribute.EVENT_TYPE, "game");
+        NodeAttribute attr21 = new NodeAttribute(2, node, NodeAttribute.EVENT_TYPE, "match");
 
 
         Event post = new Event(1);
@@ -69,7 +68,7 @@ public class NodeAttributeTest {
         expected.setRequiresRSVP(true);
         expected.setStartDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 12:30"));
         expected.setEndDateTime(new SimpleDateFormat("yyyy-mm-dd HH:mm").parse("2010-12-01 14:00"));
-        expected.setTypeId(EventType.GAME);
+        expected.setTypeId(IsEventType.MATCH);
         assertThat(post, equalTo(expected));
     }
 

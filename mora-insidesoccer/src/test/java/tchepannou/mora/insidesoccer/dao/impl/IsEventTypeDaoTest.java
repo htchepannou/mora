@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tchepannou.mora.core.dao.EventTypeDao;
 import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.insidesoccer.config.JdbcConfig;
+import tchepannou.mora.insidesoccer.domain.IsEventType;
 
 import java.util.List;
 
@@ -23,18 +24,22 @@ public class IsEventTypeDaoTest {
     public void testFindAll() throws Exception {
         List<EventType> result = dao.findAll();
 
-        assertThat(result).hasSize(3);
+        assertThat(result).hasSize(5);
         assertThat(result).contains(
-                new EventType(EventType.GAME, "game"),
-                new EventType(EventType.PRACTICE, "practice"),
-                new EventType(EventType.OTHER, "other")
+                new EventType(IsEventType.MATCH, "match"),
+                new EventType(IsEventType.TRAINING, "training"),
+                new EventType(IsEventType.TOURNAMENT, "tournament"),
+                new EventType(IsEventType.EVENT, "event"),
+                new EventType(IsEventType.OTHER, "other")
         );
     }
 
     @Test
     public void testFindById() throws Exception {
-        assertThat(dao.findById(EventType.GAME)).isEqualTo(new EventType(EventType.GAME, "game"));
-        assertThat(dao.findById(EventType.PRACTICE)).isEqualTo(new EventType(EventType.PRACTICE, "practice"));
-        assertThat(dao.findById(EventType.OTHER)).isEqualTo(new EventType(EventType.OTHER, "other"));
+        assertThat(dao.findById(IsEventType.TRAINING)).isEqualTo(new EventType(IsEventType.TRAINING, "training"));
+        assertThat(dao.findById(IsEventType.MATCH)).isEqualTo(new EventType(IsEventType.MATCH, "match"));
+        assertThat(dao.findById(IsEventType.TOURNAMENT)).isEqualTo(new EventType(IsEventType.TOURNAMENT, "tournament"));
+        assertThat(dao.findById(IsEventType.EVENT)).isEqualTo(new EventType(IsEventType.EVENT, "event"));
+        assertThat(dao.findById(IsEventType.OTHER)).isEqualTo(new EventType(IsEventType.OTHER, "other"));
     }
 }

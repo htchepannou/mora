@@ -16371,3 +16371,551 @@ Using default security password: f7398463-114e-43a4-90e3-305789be4645
 2015-05-10 08:54:44.082 DEBUG 23840 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
 2015-05-10 08:54:44.082 DEBUG 23840 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
 2015-05-10 08:54:44.164  INFO 23840 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@774698ab: startup date [Sun May 10 08:54:00 EDT 2015]; root of context hierarchy
+2015-05-10 22:28:15.103  INFO 24904 --- [main] o.a.maven.surefire.booter.ForkedBooter   : Starting ForkedBooter v2.15 on herve-3.local with PID 24904 (/Users/herve/.m2/repository/org/apache/maven/surefire/surefire-booter/2.15/surefire-booter-2.15.jar started by herve in /Users/herve/Projects/mora/mora-rest-security)
+2015-05-10 22:28:16.043  INFO 24904 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@774698ab: startup date [Sun May 10 22:28:16 EDT 2015]; root of context hierarchy
+2015-05-10 22:28:17.466  INFO 24904 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'beanNameViewResolver': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter; factoryMethodName=beanNameViewResolver; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter.class]]
+2015-05-10 22:28:17.548  INFO 24904 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Overriding bean definition for bean 'ignoredPathsWebSecurityConfigurerAdapter': replacing [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.autoconfigure.security.SpringBootWebSecurityConfiguration; factoryMethodName=ignoredPathsWebSecurityConfigurerAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/autoconfigure/security/SpringBootWebSecurityConfiguration.class]] with [Root bean: class [null]; scope=; abstract=false; lazyInit=false; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=org.springframework.boot.actuate.autoconfigure.ManagementSecurityAutoConfiguration; factoryMethodName=ignoredPathsWebSecurityConfigurerAdapter; initMethodName=null; destroyMethodName=(inferred); defined in class path resource [org/springframework/boot/actuate/autoconfigure/ManagementSecurityAutoConfiguration.class]]
+2015-05-10 22:28:18.823  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [class org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$dd7dae38] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:18.867  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$761fe3da] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:18.911  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionAttributeSource' of type [class org.springframework.transaction.annotation.AnnotationTransactionAttributeSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:18.927  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'transactionInterceptor' of type [class org.springframework.transaction.interceptor.TransactionInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:18.938  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.config.internalTransactionAdvisor' of type [class org.springframework.transaction.interceptor.BeanFactoryTransactionAttributeSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:18.995  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'cacheOperationSource' of type [class org.springframework.cache.annotation.AnnotationCacheOperationSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:19.014  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'cacheInterceptor' of type [class org.springframework.cache.interceptor.CacheInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:19.028  INFO 24904 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cache.config.internalCacheAdvisor' of type [class org.springframework.cache.interceptor.BeanFactoryCacheOperationSourceAdvisor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2015-05-10 22:28:19.753  INFO 24904 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 18080 (http)
+2015-05-10 22:28:20.180  INFO 24904 --- [main] o.apache.catalina.core.StandardService   : Starting service Tomcat
+2015-05-10 22:28:20.183  INFO 24904 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.0.20
+2015-05-10 22:28:20.427  INFO 24904 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2015-05-10 22:28:20.428  INFO 24904 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4389 ms
+2015-05-10 22:28:22.413  INFO 24904 --- [localhost-startStop-1] o.s.j.d.DriverManagerDataSource          : Loaded JDBC driver: com.mysql.jdbc.Driver
+2015-05-10 22:28:23.591  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/info],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.592  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/configprops],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.593  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/trace],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.594  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2015-05-10 22:28:23.595  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/metrics],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.596  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/autoconfig],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.597  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/beans],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.598  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env/{name:.*}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2015-05-10 22:28:23.599  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/env],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.599  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/mappings],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:23.601  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/health],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(java.security.Principal)
+2015-05-10 22:28:23.602  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/shutdown],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.ShutdownMvcEndpoint.invoke()
+2015-05-10 22:28:23.603  INFO 24904 --- [localhost-startStop-1] o.s.b.a.e.mvc.EndpointHandlerMapping     : Mapped "{[/dump],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2015-05-10 22:28:24.158  INFO 24904 --- [localhost-startStop-1] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: 6aeaac0d-d9bf-4067-ae03-f4b272d9c107
+
+2015-05-10 22:28:24.193  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/css/**'], []
+2015-05-10 22:28:24.193  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/js/**'], []
+2015-05-10 22:28:24.194  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/images/**'], []
+2015-05-10 22:28:24.194  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/**/favicon.ico'], []
+2015-05-10 22:28:24.195  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/error'], []
+2015-05-10 22:28:24.252  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3842ec69, org.springframework.security.web.context.SecurityContextPersistenceFilter@7cc4eab7, org.springframework.security.web.header.HeaderWriterFilter@4506ae1a, org.springframework.security.web.authentication.logout.LogoutFilter@6ad75ea2, tchepannou.mora.rest.core.security.CorsFilter@3449fd50, tchepannou.mora.rest.core.security.TokenAuthenticationFilter@7fd41a6b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75468be9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@248f6be0, org.springframework.security.web.session.SessionManagementFilter@45328a02, org.springframework.security.web.access.ExceptionTranslationFilter@6b928bfe, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d84abc7]
+2015-05-10 22:28:24.268  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/info'], Ant [pattern='/info/**'], Ant [pattern='/info.*'], Ant [pattern='/health'], Ant [pattern='/health/**'], Ant [pattern='/health.*'], Ant [pattern='/configprops'], Ant [pattern='/configprops/**'], Ant [pattern='/configprops.*'], Ant [pattern='/trace'], Ant [pattern='/trace/**'], Ant [pattern='/trace.*'], Ant [pattern='/metrics'], Ant [pattern='/metrics/**'], Ant [pattern='/metrics.*'], Ant [pattern='/autoconfig'], Ant [pattern='/autoconfig/**'], Ant [pattern='/autoconfig.*'], Ant [pattern='/beans'], Ant [pattern='/beans/**'], Ant [pattern='/beans.*'], Ant [pattern='/env'], Ant [pattern='/env/**'], Ant [pattern='/env.*'], Ant [pattern='/mappings'], Ant [pattern='/mappings/**'], Ant [pattern='/mappings.*'], Ant [pattern='/shutdown'], Ant [pattern='/shutdown/**'], Ant [pattern='/shutdown.*'], Ant [pattern='/dump'], Ant [pattern='/dump/**'], Ant [pattern='/dump.*']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b4116e1, org.springframework.security.web.context.SecurityContextPersistenceFilter@34bdf4c0, org.springframework.security.web.header.HeaderWriterFilter@4663e960, org.springframework.security.web.authentication.logout.LogoutFilter@738825e4, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1b5d0090, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@108ebb29, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@497f68b1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@68ccb3ec, org.springframework.security.web.session.SessionManagementFilter@2a4211f3, org.springframework.security.web.access.ExceptionTranslationFilter@1266ce30, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@20356f0e]
+2015-05-10 22:28:24.290  INFO 24904 --- [localhost-startStop-1] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.boot.autoconfigure.security.SpringBootWebSecurityConfiguration$ApplicationNoWebSecurityConfigurerAdapter$1@2be37900, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c01ea91, org.springframework.security.web.context.SecurityContextPersistenceFilter@547f6bd4, org.springframework.security.web.header.HeaderWriterFilter@1a12e251, org.springframework.security.web.csrf.CsrfFilter@21e4638f, org.springframework.security.web.authentication.logout.LogoutFilter@4ed9382, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bed930e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7660e648, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4d2209ff, org.springframework.security.web.session.SessionManagementFilter@2e5b9482, org.springframework.security.web.access.ExceptionTranslationFilter@7c50f0a]
+2015-05-10 22:28:24.584  INFO 24904 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'metricFilter' to: [/*]
+2015-05-10 22:28:24.585  INFO 24904 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'characterEncodingFilter' to: [/*]
+2015-05-10 22:28:24.585  INFO 24904 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2015-05-10 22:28:24.585  INFO 24904 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2015-05-10 22:28:24.585  INFO 24904 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2015-05-10 22:28:24.586  INFO 24904 --- [localhost-startStop-1] o.s.b.c.embedded.FilterRegistrationBean  : Mapping filter: 'applicationContextIdFilter' to: [/*]
+2015-05-10 22:28:24.586  INFO 24904 --- [localhost-startStop-1] o.s.b.c.e.ServletRegistrationBean        : Mapping servlet: 'dispatcherServlet' to [/]
+2015-05-10 22:28:25.203  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@774698ab: startup date [Sun May 10 22:28:16 EDT 2015]; root of context hierarchy
+2015-05-10 22:28:25.288  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/access_token],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public tchepannou.mora.rest.security.dto.AccessTokenDto tchepannou.mora.rest.security.controller.AccessTokenController.get(java.security.Principal)
+2015-05-10 22:28:25.291  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/access_token],methods=[DELETE],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void tchepannou.mora.rest.security.controller.AccessTokenController.delete(java.security.Principal) throws tchepannou.mora.core.exception.AccessTokenException
+2015-05-10 22:28:25.292  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/access_token],methods=[PUT],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public tchepannou.mora.rest.security.dto.AccessTokenDto tchepannou.mora.rest.security.controller.AccessTokenController.create(tchepannou.mora.rest.security.dto.AuthRequest) throws tchepannou.mora.core.exception.AccessTokenException
+2015-05-10 22:28:25.293  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles/{roleId}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public tchepannou.mora.rest.core.dto.EnumDto tchepannou.mora.rest.security.controller.RoleController.get(long)
+2015-05-10 22:28:25.297  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/roles],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public java.util.List<tchepannou.mora.rest.core.dto.EnumDto> tchepannou.mora.rest.security.controller.RoleController.all()
+2015-05-10 22:28:25.313  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[GET],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public tchepannou.mora.rest.security.dto.UserDto tchepannou.mora.rest.security.controller.UserController.get(long)
+2015-05-10 22:28:25.316  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[POST],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public tchepannou.mora.rest.security.dto.UserDto tchepannou.mora.rest.security.controller.UserController.update(long,tchepannou.mora.rest.security.dto.SaveUserDto) throws tchepannou.mora.core.exception.UserException
+2015-05-10 22:28:25.322  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users/{userId}],methods=[DELETE],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public void tchepannou.mora.rest.security.controller.UserController.delete(long)
+2015-05-10 22:28:25.325  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/users],methods=[PUT],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public tchepannou.mora.rest.security.dto.UserDto tchepannou.mora.rest.security.controller.UserController.create(tchepannou.mora.rest.security.dto.CreateUserDto) throws tchepannou.mora.core.exception.UserException
+2015-05-10 22:28:25.328  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[],custom=[]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2015-05-10 22:28:25.328  INFO 24904 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],methods=[],params=[],headers=[],consumes=[],produces=[text/html],custom=[]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest)
+2015-05-10 22:28:25.388  INFO 24904 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-05-10 22:28:25.388  INFO 24904 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-05-10 22:28:25.464  INFO 24904 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2015-05-10 22:28:25.833  INFO 24904 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 18080 (http)
+2015-05-10 22:28:25.847  INFO 24904 --- [main] o.a.maven.surefire.booter.ForkedBooter   : Started ForkedBooter in 11.312 seconds (JVM running for 13.423)
+2015-05-10 22:28:26.481  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:26.492  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 10 ms.
+2015-05-10 22:28:26.493  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:26.543  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 50 ms.
+2015-05-10 22:28:29.429  INFO 24904 --- [http-nio-18080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2015-05-10 22:28:29.430  INFO 24904 --- [http-nio-18080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2015-05-10 22:28:29.471  INFO 24904 --- [http-nio-18080-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 41 ms
+2015-05-10 22:28:29.499 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:29.505  INFO 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:29.521 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:29.536 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:29.541 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:29.621 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:29.622 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:29.658  INFO 24904 --- [http-nio-18080-exec-1] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:29 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:29.662 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:29.725 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:29.726 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:29.727 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:31.397  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:31.409  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 11 ms.
+2015-05-10 22:28:31.409  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:31.416  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 6 ms.
+2015-05-10 22:28:31.494 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:31.494  INFO 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : token=????
+2015-05-10 22:28:31.495 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(????)
+2015-05-10 22:28:31.495 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:31.495 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:31.540  INFO 24904 --- [http-nio-18080-exec-2] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:31 EDT 2015, principal=????, type=AUTHENTICATION_FAILURE, data={type=org.springframework.security.authentication.BadCredentialsException, message=???? is not a valid token}]
+2015-05-10 22:28:31.625  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:31.630  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 5 ms.
+2015-05-10 22:28:31.630  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:31.634  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 4 ms.
+2015-05-10 22:28:31.662 DEBUG 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:31.663  INFO 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:31.663 DEBUG 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:31.668  INFO 24904 --- [http-nio-18080-exec-3] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:31 EDT 2015, principal=anonymous, type=AUTHORIZATION_FAILURE, data={type=org.springframework.security.access.AccessDeniedException, message=Access is denied}]
+2015-05-10 22:28:31.725  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:31.731  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 5 ms.
+2015-05-10 22:28:31.731  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:31.734  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:31.792 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:31.792  INFO 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:31.792 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:31.898 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.c.s.impl.AccessTokenServiceImpl      : authenticate(ray.sponsible, '*********')
+2015-05-10 22:28:31.903 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:31.903 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE username=? AND deleted=?]
+2015-05-10 22:28:31.907 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:31.907 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_password WHERE user_id=?]
+2015-05-10 22:28:31.965  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:31.968  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:31.968  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:31.971  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:31.986 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:31.986  INFO 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : token=xc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:31.987 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(xc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:31.987 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:31.987 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:32.017  INFO 24904 --- [http-nio-18080-exec-5] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:32 EDT 2015, principal=xc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_FAILURE, data={type=org.springframework.security.authentication.CredentialsExpiredException, message=xc9a50e1e0085b13c4bba866f6dfe57c has expired}]
+2015-05-10 22:28:32.037  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.042  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 5 ms.
+2015-05-10 22:28:32.045  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.054  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 9 ms.
+2015-05-10 22:28:32.072 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.073  INFO 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:32.073 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:32.119 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.c.s.impl.AccessTokenServiceImpl      : authenticate(ray.sponsible@gmail.com, '*********')
+2015-05-10 22:28:32.119 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.119 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE email=? AND deleted=?]
+2015-05-10 22:28:32.122 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.122 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_password WHERE user_id=?]
+2015-05-10 22:28:32.124 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.124 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE user_id=? AND expiry_date>?]
+2015-05-10 22:28:32.133 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [UPDATE t_access_token SET expiry_date=? WHERE id=?]
+2015-05-10 22:28:32.134 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE t_access_token SET expiry_date=? WHERE id=?]
+2015-05-10 22:28:32.142 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2015-05-10 22:28:32.143 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2015-05-10 22:28:32.150 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows and returned 1 keys
+2015-05-10 22:28:32.233 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.234 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:32.296  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.300  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 3 ms.
+2015-05-10 22:28:32.300  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.321  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 21 ms.
+2015-05-10 22:28:32.339 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.339  INFO 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:32.339 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:32.340  INFO 24904 --- [http-nio-18080-exec-7] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:32 EDT 2015, principal=anonymous, type=AUTHORIZATION_FAILURE, data={type=org.springframework.security.access.AccessDeniedException, message=Access is denied}]
+2015-05-10 22:28:32.375  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.399  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 23 ms.
+2015-05-10 22:28:32.400  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.407  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 7 ms.
+2015-05-10 22:28:32.425 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.425  INFO 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:32.425 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:32.446 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.c.s.impl.AccessTokenServiceImpl      : authenticate(????, '*********')
+2015-05-10 22:28:32.446 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.446 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE username=? AND deleted=?]
+2015-05-10 22:28:32.467  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.469  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:32.470  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.472  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:32.499 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.499  INFO 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:32.499 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:32.542 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.c.s.impl.AccessTokenServiceImpl      : authenticate(ray.sponsible@gmail.com, '*********')
+2015-05-10 22:28:32.542 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.542 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE email=? AND deleted=?]
+2015-05-10 22:28:32.545 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.545 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_password WHERE user_id=?]
+2015-05-10 22:28:32.575  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.577  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:32.580  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.591  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 11 ms.
+2015-05-10 22:28:32.605 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.605  INFO 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:32.606 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:32.606 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.606 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:32.620 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.621 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:32.629  INFO 24904 --- [http-nio-18080-exec-10] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:32 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:32.630 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:32.632 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:32.633 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.633 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:32.646 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.c.s.impl.AccessTokenServiceImpl      : expire(tchepannou.mora.core.domain.AccessToken@2369f7e[userId=1,value=bc9a50e1e0085b13c4bba866f6dfe57c,creationDate=2014-01-01 10:30:55.0,expiryDate=2030-12-01 14:30:55.0,id=1])
+2015-05-10 22:28:32.672 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2015-05-10 22:28:32.673 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE t_access_token SET expiry_date=? WHERE id=?]
+2015-05-10 22:28:32.674 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows
+2015-05-10 22:28:32.684 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.684 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:32.699  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.701  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:32.702  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.704  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:32.715 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.715  INFO 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : token=???
+2015-05-10 22:28:32.715 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(???)
+2015-05-10 22:28:32.716 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.716 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:32.723  INFO 24904 --- [http-nio-18080-exec-1] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:32 EDT 2015, principal=???, type=AUTHENTICATION_FAILURE, data={type=org.springframework.security.authentication.BadCredentialsException, message=??? is not a valid token}]
+2015-05-10 22:28:32.737  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.739  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:32.740  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.755  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 15 ms.
+2015-05-10 22:28:32.774 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.774  INFO 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:32.774 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:32.815 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.c.s.impl.AccessTokenServiceImpl      : authenticate(????, '*********')
+2015-05-10 22:28:32.816 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.816 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE username=? AND deleted=?]
+2015-05-10 22:28:32.850  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.853  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:32.853  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.861  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 7 ms.
+2015-05-10 22:28:32.883 DEBUG 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:32.884  INFO 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : token=xc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:32.884 DEBUG 24904 --- [http-nio-18080-exec-3] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(xc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:32.884 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:32.885 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:32.932  INFO 24904 --- [http-nio-18080-exec-3] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:32 EDT 2015, principal=xc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_FAILURE, data={type=org.springframework.security.authentication.CredentialsExpiredException, message=xc9a50e1e0085b13c4bba866f6dfe57c has expired}]
+2015-05-10 22:28:32.975  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:32.977  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:32.978  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:32.981  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:33.003 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:33.004  INFO 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:33.004 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:33.023 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.c.s.impl.AccessTokenServiceImpl      : authenticate(ray.sponsible, '*********')
+2015-05-10 22:28:33.023 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:33.023 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE username=? AND deleted=?]
+2015-05-10 22:28:33.025 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:33.025 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_password WHERE user_id=?]
+2015-05-10 22:28:33.028 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:33.028 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE user_id=? AND expiry_date>?]
+2015-05-10 22:28:33.032 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL batch update [UPDATE t_access_token SET expiry_date=? WHERE id=?]
+2015-05-10 22:28:33.032 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE t_access_token SET expiry_date=? WHERE id=?]
+2015-05-10 22:28:33.033 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2015-05-10 22:28:33.033 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2015-05-10 22:28:33.035 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows and returned 1 keys
+2015-05-10 22:28:33.066 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:33.069 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:33.107  INFO 24904 --- [main] WebAppIntegrationTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-05-10 22:28:33.107  INFO 24904 --- [main] WebAppIntegrationTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7ea0438c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@3831fb48, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7083e548, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1f315f3d, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@63f1d374]
+2015-05-10 22:28:33.157  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:33.185  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 27 ms.
+2015-05-10 22:28:33.186  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:33.196  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 10 ms.
+2015-05-10 22:28:33.267 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:33.267  INFO 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:33.268 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:33.275 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.core.service.impl.RoleServiceImpl    : findById(999)
+2015-05-10 22:28:33.277 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:33.277 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_role WHERE id=?]
+2015-05-10 22:28:33.314  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:33.316  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:33.316  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:33.320  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:33.366 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:33.367  INFO 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:33.367 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:33.370 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.core.service.impl.RoleServiceImpl    : findByAll()
+2015-05-10 22:28:33.371 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:33.371 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_role]
+2015-05-10 22:28:33.567  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:33.569  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:33.569  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:33.572  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:33.617 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:33.617  INFO 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:33.617 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:33.620 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.core.service.impl.RoleServiceImpl    : findById(1)
+2015-05-10 22:28:33.620 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:33.620 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_role WHERE id=?]
+2015-05-10 22:28:33.703  INFO 24904 --- [main] WebAppIntegrationTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2015-05-10 22:28:33.704  INFO 24904 --- [main] WebAppIntegrationTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@58182d7, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1eedf268, org.springframework.test.context.support.DirtiesContextTestExecutionListener@654322b0, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6d9069ab, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@648ec9f4]
+2015-05-10 22:28:33.743  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:33.748  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 4 ms.
+2015-05-10 22:28:33.748  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:33.750  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:33.794 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:33.794  INFO 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:33.795 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:33.970  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:33.972  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:33.972  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:33.976  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:33.989 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:33.990  INFO 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:33.990 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:34.034  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.036  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:34.037  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.039  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:34.051 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.051  INFO 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:34.051 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:34.052 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.052 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:34.058 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.059 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.067  INFO 24904 --- [http-nio-18080-exec-10] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:34 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:34.067 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:34.071 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.071 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.243  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.249  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 6 ms.
+2015-05-10 22:28:34.250  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.252  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:34.273 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.274  INFO 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:34.274 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:34.293  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.300  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 6 ms.
+2015-05-10 22:28:34.301  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.304  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:34.318 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.318  INFO 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:34.318 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:34.340 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.340 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE email=? AND deleted=?]
+2015-05-10 22:28:34.341 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.341 DEBUG 24904 --- [http-nio-18080-exec-2] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE username=? AND deleted=?]
+2015-05-10 22:28:34.359  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.361  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:34.362  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.369  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 4 ms.
+2015-05-10 22:28:34.393 DEBUG 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.393  INFO 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:34.394 DEBUG 24904 --- [http-nio-18080-exec-3] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:34.394 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.394 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:34.423 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.423 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.448  INFO 24904 --- [http-nio-18080-exec-3] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:34 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:34.448 DEBUG 24904 --- [http-nio-18080-exec-3] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:34.451 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.451 DEBUG 24904 --- [http-nio-18080-exec-3] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.492  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.494  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:34.497  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.519  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 22 ms.
+2015-05-10 22:28:34.549 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.549  INFO 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:34.549 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:34.549 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.549 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:34.577 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.577 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.587  INFO 24904 --- [http-nio-18080-exec-4] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:34 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:34.587 DEBUG 24904 --- [http-nio-18080-exec-4] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:34.592 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.592 DEBUG 24904 --- [http-nio-18080-exec-4] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.661  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.665  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 4 ms.
+2015-05-10 22:28:34.665  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.668  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:34.693 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.693  INFO 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:34.693 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:34.693 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.693 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:34.719 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.719 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.727  INFO 24904 --- [http-nio-18080-exec-5] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:34 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:34.727 DEBUG 24904 --- [http-nio-18080-exec-5] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:34.731 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.731 DEBUG 24904 --- [http-nio-18080-exec-5] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.802  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.804  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:34.804  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.808  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:34.821 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.821  INFO 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:34.821 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:34.822 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.822 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:34.849 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.849 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.884  INFO 24904 --- [http-nio-18080-exec-6] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:34 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:34.884 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:34.886 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:34.886 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:34.923 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2015-05-10 22:28:34.923 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE t_user SET deleted=? WHERE id=?]
+2015-05-10 22:28:34.926 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows
+2015-05-10 22:28:34.959  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:34.962  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 3 ms.
+2015-05-10 22:28:34.962  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:34.965  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:34.978 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:34.978  INFO 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:34.979 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:35.002  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:35.005  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:35.005  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:35.007  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:35.020 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:35.020  INFO 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:35.020 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:35.037  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:35.039  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:35.039  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:35.042  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:35.060 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:35.060  INFO 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:35.060 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:35.093  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:35.095  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:35.095  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:35.098  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:35.109 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:35.109  INFO 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:35.109 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:35.109 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:35.109 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:35.115 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:35.115 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:35.121  INFO 24904 --- [http-nio-18080-exec-10] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:35 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:35.121 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:35.123 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:35.123 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:35.150  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:35.153  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:35.154  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:35.157  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:35.168 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:35.168  INFO 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:35.168 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:35.169 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:35.169 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:35.183 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:35.184 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:35.189  INFO 24904 --- [http-nio-18080-exec-1] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:35 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:35.190 DEBUG 24904 --- [http-nio-18080-exec-1] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:35.193 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:35.193 DEBUG 24904 --- [http-nio-18080-exec-1] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:35.242  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:35.248  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 5 ms.
+2015-05-10 22:28:35.248  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:35.252  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 4 ms.
+2015-05-10 22:28:35.916 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:35.916  INFO 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:35.916 DEBUG 24904 --- [http-nio-18080-exec-2] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:35.975  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:35.977  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:35.977  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:36.000  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 22 ms.
+2015-05-10 22:28:36.047 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:36.047  INFO 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:36.047 DEBUG 24904 --- [http-nio-18080-exec-6] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:36.061 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.061 DEBUG 24904 --- [http-nio-18080-exec-6] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE email=? AND deleted=?]
+2015-05-10 22:28:36.096  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:36.099  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:36.099  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:36.102  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:36.117 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:36.117  INFO 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : token=null
+2015-05-10 22:28:36.117 DEBUG 24904 --- [http-nio-18080-exec-9] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: org.springframework.security.authentication.AnonymousAuthenticationToken@52a3d06d: Principal: anonymous; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_ANONYMOUS
+2015-05-10 22:28:36.153 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.153 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE email=? AND deleted=?]
+2015-05-10 22:28:36.154 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.154 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE username=? AND deleted=?]
+2015-05-10 22:28:36.156 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2015-05-10 22:28:36.156 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2015-05-10 22:28:36.159 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows and returned 1 keys
+2015-05-10 22:28:36.163 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing SQL update and returning generated keys
+2015-05-10 22:28:36.163 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement
+2015-05-10 22:28:36.177 DEBUG 24904 --- [http-nio-18080-exec-9] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows and returned 1 keys
+2015-05-10 22:28:36.334 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.334 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.342 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.342 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_password WHERE user_id=?]
+2015-05-10 22:28:36.372  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:36.375  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:36.376  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:36.378  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:36.381 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.381 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.400 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:36.400  INFO 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:36.401 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:36.401 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.401 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:36.407 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.407 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.413  INFO 24904 --- [http-nio-18080-exec-7] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:36 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:36.413 DEBUG 24904 --- [http-nio-18080-exec-7] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:36.415 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.415 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.426 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2015-05-10 22:28:36.426 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE t_user SET deleted=? WHERE id=?]
+2015-05-10 22:28:36.427 DEBUG 24904 --- [http-nio-18080-exec-7] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows
+2015-05-10 22:28:36.444 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.445 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.488  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:36.491  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 3 ms.
+2015-05-10 22:28:36.492  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:36.495  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 2 ms.
+2015-05-10 22:28:36.522 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:36.522  INFO 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:36.522 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:36.522 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.522 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:36.540 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.541 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.553  INFO 24904 --- [http-nio-18080-exec-8] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:36 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:36.553 DEBUG 24904 --- [http-nio-18080-exec-8] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:36.556 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.556 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.578 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.579 DEBUG 24904 --- [http-nio-18080-exec-8] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE email=? AND deleted=?]
+2015-05-10 22:28:36.597  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-clean.sql]
+2015-05-10 22:28:36.602  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-clean.sql] in 2 ms.
+2015-05-10 22:28:36.602  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executing SQL script from class path resource [db/rest-security-populate.sql]
+2015-05-10 22:28:36.605  INFO 24904 --- [main] o.s.jdbc.datasource.init.ScriptUtils     : Executed SQL script from class path resource [db/rest-security-populate.sql] in 3 ms.
+2015-05-10 22:28:36.622 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.622 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.645 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticating...
+2015-05-10 22:28:36.645  INFO 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : token=bc9a50e1e0085b13c4bba866f6dfe57c
+2015-05-10 22:28:36.645 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.c.s.impl.AccessTokenServiceImpl      : findByValue(bc9a50e1e0085b13c4bba866f6dfe57c)
+2015-05-10 22:28:36.645 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.645 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_access_token WHERE value=?]
+2015-05-10 22:28:36.655 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.655 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.661  INFO 24904 --- [http-nio-18080-exec-10] o.s.b.a.audit.listener.AuditListener     : AuditEvent [timestamp=Sun May 10 22:28:36 EDT 2015, principal=bc9a50e1e0085b13c4bba866f6dfe57c, type=AUTHENTICATION_SUCCESS, data={}]
+2015-05-10 22:28:36.661 DEBUG 24904 --- [http-nio-18080-exec-10] t.m.r.c.s.TokenAuthenticationFilter      : Authenticated: tchepannou.mora.rest.core.security.TokenAuthentication@66b92918: Principal: bc9a50e1e0085b13c4bba866f6dfe57c; Credentials: [PROTECTED]; Authenticated: true; Details: null; Granted Authorities: ROLE_USER
+2015-05-10 22:28:36.665 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.665 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.719 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.719 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE email=? AND deleted=?]
+2015-05-10 22:28:36.720 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.720 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE username=? AND deleted=?]
+2015-05-10 22:28:36.721 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL update
+2015-05-10 22:28:36.721 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [UPDATE t_user SET username=?, email=?, firstname=?, lastname=?, last_update=? WHERE id=?]
+2015-05-10 22:28:36.722 DEBUG 24904 --- [http-nio-18080-exec-10] o.s.jdbc.core.JdbcTemplate               : SQL update affected 1 rows
+2015-05-10 22:28:36.830 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL query
+2015-05-10 22:28:36.832 DEBUG 24904 --- [main] o.s.jdbc.core.JdbcTemplate               : Executing prepared SQL statement [SELECT * FROM t_user WHERE id=?]
+2015-05-10 22:28:36.845  INFO 24904 --- [Thread-2] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@774698ab: startup date [Sun May 10 22:28:16 EDT 2015]; root of context hierarchy

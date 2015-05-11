@@ -7,7 +7,7 @@ insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(102, 
 insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(103, 100, 'minute', '30');
 insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(104, 100, 'end_hour', '15');
 insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(105, 100, 'end_time', '30');
-insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(106, 100, 'event_type', 'game');
+insert into nattr(nattr_id, nattr_node_fk, nattr_name, nattr_value) values(106, 100, 'event_type', 'match');
 insert into nprel(nprel_id, nprel_node_fk, nprel_party_fk, nprel_type_fk, nprel_rank) values(101, 100, 100, 4, 10000);
 
 -- findById_invalid_type

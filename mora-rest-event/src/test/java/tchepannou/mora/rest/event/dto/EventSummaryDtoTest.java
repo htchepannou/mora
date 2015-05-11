@@ -6,6 +6,7 @@ import tchepannou.mora.core.domain.EventType;
 import tchepannou.mora.core.domain.Space;
 import tchepannou.mora.core.domain.SpaceType;
 import tchepannou.mora.core.domain.User;
+import tchepannou.mora.insidesoccer.domain.IsEventType;
 import tchepannou.mora.rest.core.dto.EnumDto;
 import tchepannou.mora.rest.core.dto.SpaceSummaryDto;
 import tchepannou.mora.rest.core.dto.UserSummaryDto;
@@ -28,7 +29,7 @@ public class EventSummaryDtoTest {
         space.setName("Test");
         space.setLogoUrl("http://www.google.com/logo.png");
 
-        EventType type = new EventType(EventType.GAME, "game");
+        EventType type = new EventType(IsEventType.MATCH, "match");
 
         Event event = new Event (1, type, space, user);
         event.setLocation("foo");
